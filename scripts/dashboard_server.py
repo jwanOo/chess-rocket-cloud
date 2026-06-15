@@ -192,6 +192,26 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
             tactics, lock = self._tactics_for_request()
             with lock:
                 self._send_json(200, tactics.state())
+        elif path == "/api/coach-status":
+            # Diagnostic endpoint: shows whether SAP AI Core is reachable
+            # and which env-var keys the container actually sees set.
+            # Never returns the secret values — only booleans + provider label.
+            keys = (
+                "AICORE_ORCH_AUTH_URL",
+                "AICORE_ORCH_CLIENT_ID",
+                "AICORE_ORCH_CLIENT_SECRET",
+                "AICORE_ORCH_BASE_URL",
+                "AICORE_ORCH_RESOURCE_GROUP",
+                "AICORE_DIRECT_DEPLOYMENT_ID",
+                "AICORE_DIRECT_MODEL_NAME",
+            )
+            present = {k: bool(os.environ.get(k, "").strip()) for k in keys}
+            self._send_json(200, {
+                "available": sap_coach.is_available(),
+                "provider": sap_coach.provider_label(),
+                "env_keys_present": present,
+                "missing_keys": [k for k, v in present.items() if not v],
+            })
         else:
             self.send_error(404)
 

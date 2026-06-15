@@ -54,11 +54,14 @@ services:
         value: anthropic--claude-4.7-opus
 
       # ─── CORS allow-list ───
-      # The Vercel-deployed frontend lives on a different origin. Without
-      # this, browsers strip the session cookie and /api/coach 401s.
-      # Trailing slash + protocol must match exactly what the browser sends.
+      # On Render the same container hosts BOTH the static HTML and the
+      # /api/* routes, so calls are same-origin. The Python server's CORS
+      # logic mirrors the Origin header when this var is empty/unset, which
+      # is the safest default for same-origin deployments. If you ever serve
+      # the frontend from a separate domain, set this to a comma-separated
+      # list of allowed origins (no trailing slash).
       - key: CORS_ALLOWED_ORIGINS
-        value: https://chessrocket.vercel.app,https://scripts-three-bay.vercel.app,https://chess-rocket.vercel.app
+        value: ""
 
       # ─── Runtime knobs ───
       - key: STOCKFISH_PATH
