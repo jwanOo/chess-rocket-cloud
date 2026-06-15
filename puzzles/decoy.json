@@ -1,0 +1,1194 @@
+[
+  {
+    "fen": "3Rrk2/p4ppp/2N5/2p5/4n3/2P3P1/qr2PP1P/3R2K1 w - - 4 27",
+    "solution_moves": [
+      "d8e8",
+      "f8e8",
+      "d1d8"
+    ],
+    "solution_san": [
+      "Rxe8+",
+      "Kxe8",
+      "Rd8#"
+    ],
+    "motif": "decoy",
+    "difficulty": "beginner",
+    "difficulty_rating": 674,
+    "explanation": "Rxe8+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "0hQeY",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1r1k/1ppb2pp/1n3b2/p6R/P7/1B1P3P/1PP2PP1/R1BQ2K1 w - - 5 21",
+    "solution_moves": [
+      "h5h7",
+      "h8h7",
+      "d1h5"
+    ],
+    "solution_san": [
+      "Rxh7+",
+      "Kxh7",
+      "Qh5#"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 802,
+    "explanation": "Rxh7+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "opening",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "0CYwL",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/6bp/4p1p1/p2pP3/q2Q2P1/P6P/1P1R3K/8 b - - 0 36",
+    "solution_moves": [
+      "a4d4",
+      "d2d4",
+      "g7e5",
+      "h2g2",
+      "e5d4"
+    ],
+    "solution_san": [
+      "Qxd4",
+      "Rxd4",
+      "Bxe5+",
+      "Kg2",
+      "Bxd4"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 820,
+    "explanation": "Qxd4 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "capturingDefender",
+      "crushing",
+      "endgame",
+      "fork",
+      "long"
+    ],
+    "lichess_id": "0cqb0",
+    "source": "lichess"
+  },
+  {
+    "fen": "2R2rk1/p4ppp/1p2p3/8/3P3B/1n2P2P/P2q1PP1/2R3K1 w - - 0 21",
+    "solution_moves": [
+      "c8f8",
+      "g8f8",
+      "c1c8"
+    ],
+    "solution_san": [
+      "Rxf8+",
+      "Kxf8",
+      "Rc8#"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 821,
+    "explanation": "Rxf8+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "endgame",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "pillsburysMate",
+      "short"
+    ],
+    "lichess_id": "0WwTM",
+    "source": "lichess"
+  },
+  {
+    "fen": "5r1k/6p1/p2q3p/1p3R2/3p1N2/1QP4P/PP3PPK/4r3 w - - 7 33",
+    "solution_moves": [
+      "f5f8",
+      "d6f8",
+      "f4g6",
+      "h8h7",
+      "g6f8"
+    ],
+    "solution_san": [
+      "Rxf8+",
+      "Qxf8",
+      "Ng6+",
+      "Kh7",
+      "Nxf8+"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 843,
+    "explanation": "Rxf8+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "endgame",
+      "fork",
+      "long"
+    ],
+    "lichess_id": "0cb4I",
+    "source": "lichess"
+  },
+  {
+    "fen": "6rk/p3RpRp/1p2bP2/8/7P/r1P5/8/6K1 w - - 9 38",
+    "solution_moves": [
+      "g7g8",
+      "h8g8",
+      "e7e8"
+    ],
+    "solution_san": [
+      "Rxg8+",
+      "Kxg8",
+      "Re8#"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 854,
+    "explanation": "Rxg8+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "08TGD",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r1qkb1r/1p1n1ppp/p3p3/1B1p4/Q2P2b1/4PN2/PP3PPP/RN2K2R w KQk - 0 10",
+    "solution_moves": [
+      "b5d7",
+      "d8d7",
+      "a4d7",
+      "e8d7",
+      "f3e5"
+    ],
+    "solution_san": [
+      "Bxd7+",
+      "Qxd7",
+      "Qxd7+",
+      "Kxd7",
+      "Ne5+"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 854,
+    "explanation": "Bxd7+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "long",
+      "opening"
+    ],
+    "lichess_id": "0ksMf",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2r1k/2p1q1pp/1p3p2/p3p2R/P3P3/1B1P4/1PP1Q1PP/5RK1 w - - 2 23",
+    "solution_moves": [
+      "h5h7",
+      "h8h7",
+      "e2h5"
+    ],
+    "solution_san": [
+      "Rxh7+",
+      "Kxh7",
+      "Qh5#"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 855,
+    "explanation": "Rxh7+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "0lXkV",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r1k3/p2n1p1r/3P1Bp1/1B2p2p/4P3/2PQ1Pb1/P7/qN1K3R w - - 0 22",
+    "solution_moves": [
+      "b5d7",
+      "e8d7",
+      "d3b5"
+    ],
+    "solution_san": [
+      "Bxd7+",
+      "Kxd7",
+      "Qb5+"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 886,
+    "explanation": "Bxd7+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "0X0z0",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r3/6pp/pp2k3/2p1r3/8/PPR1R1P1/3P1K1P/8 w - - 6 35",
+    "solution_moves": [
+      "e3e5",
+      "e6e5",
+      "c3e3",
+      "e5d4",
+      "e3e8"
+    ],
+    "solution_san": [
+      "Rxe5+",
+      "Kxe5",
+      "Re3+",
+      "Kd4",
+      "Rxe8"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 895,
+    "explanation": "Rxe5+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "endgame",
+      "exposedKing",
+      "long",
+      "rookEndgame",
+      "skewer"
+    ],
+    "lichess_id": "0TXFh",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r3/pp5p/4k3/2p1r3/3p4/PP1P4/3KR2P/5R2 w - - 2 32",
+    "solution_moves": [
+      "e2e5",
+      "e6e5",
+      "f1e1",
+      "e5d6",
+      "e1e8"
+    ],
+    "solution_san": [
+      "Rxe5+",
+      "Kxe5",
+      "Re1+",
+      "Kd6",
+      "Rxe8"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1010,
+    "explanation": "Rxe5+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "endgame",
+      "exposedKing",
+      "long",
+      "rookEndgame",
+      "skewer"
+    ],
+    "lichess_id": "01A3W",
+    "source": "lichess"
+  },
+  {
+    "fen": "1rb3k1/q4rP1/4p2p/3p3p/3P1P2/2P5/2QK3P/3R2R1 w - - 1 30",
+    "solution_moves": [
+      "c2h7",
+      "g8h7",
+      "g7g8q"
+    ],
+    "solution_san": [
+      "Qh7+",
+      "Kxh7",
+      "g8=Q#"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1034,
+    "explanation": "Qh7+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "attraction",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "promotion",
+      "short"
+    ],
+    "lichess_id": "001w5",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k3rr/1pp1nB2/p2qp2p/3p3Q/8/2N1P2P/PPPP2Rb/R1B2K2 b - - 1 24",
+    "solution_moves": [
+      "g8g2",
+      "f1g2",
+      "d6g3"
+    ],
+    "solution_san": [
+      "Rxg2",
+      "Kxg2",
+      "Qg3+"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1038,
+    "explanation": "Rxg2 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00rzv",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/6p1/5bk1/N6p/8/1P6/6PP/3rRK2 b - - 2 45",
+    "solution_moves": [
+      "d1e1",
+      "f1e1",
+      "f6c3",
+      "e1d1",
+      "c3a5"
+    ],
+    "solution_san": [
+      "Rxe1+",
+      "Kxe1",
+      "Bc3+",
+      "Kd1",
+      "Bxa5"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1054,
+    "explanation": "Rxe1+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "endgame",
+      "fork",
+      "long"
+    ],
+    "lichess_id": "01DJq",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r3k1/5ppp/p3nb2/3q4/1Q6/P3B2P/2R2PP1/2R3K1 b - - 4 30",
+    "solution_moves": [
+      "c8c2",
+      "c1c2",
+      "d5d1",
+      "g1h2",
+      "d1c2"
+    ],
+    "solution_san": [
+      "Rxc2",
+      "Rxc2",
+      "Qd1+",
+      "Kh2",
+      "Qxc2"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1060,
+    "explanation": "Rxc2 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "fork",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00vjg",
+    "source": "lichess"
+  },
+  {
+    "fen": "rn2kbnr/pp6/2p2p2/4P3/4P1pq/2N3N1/PPPB1KB1/R2Q1R2 b kq - 2 17",
+    "solution_moves": [
+      "f8c5",
+      "d2e3",
+      "c5e3",
+      "f2e3",
+      "h4g3"
+    ],
+    "solution_san": [
+      "Bc5+",
+      "Be3",
+      "Bxe3+",
+      "Kxe3",
+      "Qxg3+"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1086,
+    "explanation": "Bc5+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "exposedKing",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00DBg",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/n2P3p/1p2p1pQ/pP6/q3p1p1/8/5PPP/5RK1 w - - 0 35",
+    "solution_moves": [
+      "h6f8",
+      "g8f8",
+      "d7d8q"
+    ],
+    "solution_san": [
+      "Qxf8+",
+      "Kxf8",
+      "d8=Q+"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1132,
+    "explanation": "Qxf8+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "attraction",
+      "crushing",
+      "endgame",
+      "promotion",
+      "short"
+    ],
+    "lichess_id": "01do1",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r3r2/Q1qk3p/2pp1npb/2p2P2/8/2N5/PP3PPP/4RRK1 w - - 1 20",
+    "solution_moves": [
+      "e1e7",
+      "d7e7",
+      "a7c7"
+    ],
+    "solution_san": [
+      "Re7+",
+      "Kxe7",
+      "Qxc7+"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1139,
+    "explanation": "Re7+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "deflection",
+      "master",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00d9q",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/2R1qpp1/7p/8/5Q2/1PP5/5PPP/3r1RK1 b - - 0 26",
+    "solution_moves": [
+      "d1f1",
+      "g1f1",
+      "d8d1"
+    ],
+    "solution_san": [
+      "Rxf1+",
+      "Kxf1",
+      "Rd1#"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1154,
+    "explanation": "Rxf1+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "01Xzx",
+    "source": "lichess"
+  },
+  {
+    "fen": "3b1r2/1r1P2pk/7p/4R3/P6P/4RpP1/5P2/6K1 w - - 4 45",
+    "solution_moves": [
+      "e5e8",
+      "f8g8",
+      "e8g8",
+      "h7g8",
+      "e3e8",
+      "g8f7",
+      "e8d8"
+    ],
+    "solution_san": [
+      "Re8",
+      "Rg8",
+      "Rxg8",
+      "Kxg8",
+      "Re8+",
+      "Kf7",
+      "Rxd8"
+    ],
+    "motif": "decoy",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1183,
+    "explanation": "Re8 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "endgame",
+      "fork",
+      "veryLong"
+    ],
+    "lichess_id": "01GwB",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rk1r/1pp2p2/p2p3p/3N4/3P2q1/8/PPP5/1K2Q1NR w - - 2 24",
+    "solution_moves": [
+      "e1e8",
+      "f8e8",
+      "d5f6",
+      "e8e7",
+      "f6g4"
+    ],
+    "solution_san": [
+      "Qxe8+",
+      "Kxe8",
+      "Nf6+",
+      "Ke7",
+      "Nxg4"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1338,
+    "explanation": "Qxe8+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "fork",
+      "long",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "003mh",
+    "source": "lichess"
+  },
+  {
+    "fen": "r6r/pp2kb2/3p1p2/1N1Pp3/3bP3/P2B2P1/1P1Q2PP/7K b - - 7 28",
+    "solution_moves": [
+      "h8h2",
+      "h1h2",
+      "a8h8",
+      "d2h6",
+      "h8h6"
+    ],
+    "solution_san": [
+      "Rxh2+",
+      "Kxh2",
+      "Rh8+",
+      "Qh6",
+      "Rxh6#"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1382,
+    "explanation": "Rxh2+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "kingsideAttack",
+      "long",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "pillsburysMate",
+      "sacrifice"
+    ],
+    "lichess_id": "00BrZ",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r4k1/p5pp/5p2/2Rb4/1P4P1/P7/3r3P/3B1RK1 w - - 0 35",
+    "solution_moves": [
+      "c5d5",
+      "d2d5",
+      "d1b3",
+      "g8f8",
+      "b3d5"
+    ],
+    "solution_san": [
+      "Rxd5",
+      "Rxd5",
+      "Bb3",
+      "Kf8",
+      "Bxd5"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1402,
+    "explanation": "Rxd5 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "endgame",
+      "long",
+      "pin",
+      "sacrifice"
+    ],
+    "lichess_id": "00W5B",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2qk3/5p1r/p1p1p3/1p1pP1N1/P1nP2Pn/2P3B1/2P2P2/R1QR2K1 b q - 0 21",
+    "solution_moves": [
+      "d8g5",
+      "c1g5",
+      "h4f3",
+      "g1g2",
+      "f3g5"
+    ],
+    "solution_san": [
+      "Qxg5",
+      "Qxg5",
+      "Nf3+",
+      "Kg2",
+      "Nxg5"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1419,
+    "explanation": "Qxg5 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "fork",
+      "long",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "00Kq4",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r5/4ppkp/6p1/1p6/1P6/P3B3/1br2PPP/1R1R2K1 w - - 3 23",
+    "solution_moves": [
+      "b1b2",
+      "c2b2",
+      "e3d4",
+      "f7f6",
+      "d4b2"
+    ],
+    "solution_san": [
+      "Rxb2",
+      "Rxb2",
+      "Bd4+",
+      "f6",
+      "Bxb2"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1428,
+    "explanation": "Rxb2 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "endgame",
+      "fork",
+      "long",
+      "sacrifice"
+    ],
+    "lichess_id": "006wz",
+    "source": "lichess"
+  },
+  {
+    "fen": "3rk2r/pp2qpp1/2b1pn2/6Np/2p4P/2N1RP2/PPPQ2P1/2KR4 w k - 2 18",
+    "solution_moves": [
+      "d2d8",
+      "e7d8",
+      "d1d8",
+      "e8d8",
+      "g5f7"
+    ],
+    "solution_san": [
+      "Qxd8+",
+      "Qxd8",
+      "Rxd8+",
+      "Kxd8",
+      "Nxf7+"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1433,
+    "explanation": "Qxd8+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00VDp",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r3k/pp4bp/3Bn1p1/7n/8/8/PP3P1K/3R1RN1 b - - 2 27",
+    "solution_moves": [
+      "d8d6",
+      "d1d6",
+      "g7e5",
+      "h2h1",
+      "e5d6"
+    ],
+    "solution_san": [
+      "Rxd6",
+      "Rxd6",
+      "Be5+",
+      "Kh1",
+      "Bxd6"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1455,
+    "explanation": "Rxd6 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "exposedKing",
+      "fork",
+      "long",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "00PUc",
+    "source": "lichess"
+  },
+  {
+    "fen": "2rr2k1/5ppp/p7/1p1nP3/1B1P1PP1/PK5P/2R5/3R4 b - - 5 30",
+    "solution_moves": [
+      "c8c2",
+      "b3c2",
+      "d5e3",
+      "c2d3",
+      "e3d1"
+    ],
+    "solution_san": [
+      "Rxc2",
+      "Kxc2",
+      "Ne3+",
+      "Kd3",
+      "Nxd1"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1468,
+    "explanation": "Rxc2 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "endgame",
+      "fork",
+      "long"
+    ],
+    "lichess_id": "00Rmm",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/1b4bR/p2P2p1/3p2N1/2p5/2P2N2/PP6/2K5 w - - 0 29",
+    "solution_moves": [
+      "h7g7",
+      "g8g7",
+      "g5e6",
+      "g7g8",
+      "e6d8"
+    ],
+    "solution_san": [
+      "Rxg7+",
+      "Kxg7",
+      "Ne6+",
+      "Kg8",
+      "Nxd8"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1474,
+    "explanation": "Rxg7+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "endgame",
+      "exposedKing",
+      "fork",
+      "long",
+      "sacrifice"
+    ],
+    "lichess_id": "00761",
+    "source": "lichess"
+  },
+  {
+    "fen": "r5k1/1p3p2/2p1ppp1/3p4/2nP4/1QB4P/rPP1BPP1/qNKR3R b - - 4 22",
+    "solution_moves": [
+      "a1b1",
+      "c1b1",
+      "a2a1"
+    ],
+    "solution_san": [
+      "Qxb1+",
+      "Kxb1",
+      "Ra1#"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1474,
+    "explanation": "Qxb1+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00aDl",
+    "source": "lichess"
+  },
+  {
+    "fen": "1n3r1k/p5pp/8/7Q/4P3/2NPB3/PPP3qP/R2KRr2 b - - 4 21",
+    "solution_moves": [
+      "f1e1",
+      "d1e1",
+      "f8f1"
+    ],
+    "solution_san": [
+      "Rxe1+",
+      "Kxe1",
+      "Rf1#"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1505,
+    "explanation": "Rxe1+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "01CQ7",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k4r/ppp1q1p1/3b2p1/3Q4/1P2NPn1/P1P5/6P1/R1B2RKN b - - 0 21",
+    "solution_moves": [
+      "h8h1",
+      "g1h1",
+      "e7h4",
+      "h1g1",
+      "h4h2"
+    ],
+    "solution_san": [
+      "Rxh1+",
+      "Kxh1",
+      "Qh4+",
+      "Kg1",
+      "Qh2#"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1508,
+    "explanation": "Rxh1+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "kingsideAttack",
+      "long",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "0156a",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3k1nr/pp3ppp/1q2b3/8/1n1B4/6P1/P2QPPBP/R3K1NR b KQkq - 0 13",
+    "solution_moves": [
+      "b6d4",
+      "d2d4",
+      "b4c2",
+      "e1f1",
+      "c2d4"
+    ],
+    "solution_san": [
+      "Qxd4",
+      "Qxd4",
+      "Nc2+",
+      "Kf1",
+      "Nxd4"
+    ],
+    "motif": "decoy",
+    "difficulty": "advanced",
+    "difficulty_rating": 1527,
+    "explanation": "Qxd4 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "fork",
+      "long",
+      "opening",
+      "sacrifice"
+    ],
+    "lichess_id": "00WUu",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/R5bp/q2p4/3Ppn1p/4Q3/4B2P/5PP1/5RK1 b - - 0 24",
+    "solution_moves": [
+      "a6f1",
+      "g1f1",
+      "f5g3",
+      "f1e1",
+      "g3e4"
+    ],
+    "solution_san": [
+      "Qxf1+",
+      "Kxf1",
+      "Ng3+",
+      "Ke1",
+      "Nxe4"
+    ],
+    "motif": "decoy",
+    "difficulty": "expert",
+    "difficulty_rating": 1615,
+    "explanation": "Qxf1+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "long",
+      "middlegame",
+      "pin",
+      "sacrifice"
+    ],
+    "lichess_id": "00sKo",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/pR3pp1/8/5p1p/5q2/5n2/PP4R1/6QK w - - 0 30",
+    "solution_moves": [
+      "g2g7",
+      "g8h8",
+      "g7h7",
+      "h8h7",
+      "b7f7",
+      "h7h8",
+      "g1g7"
+    ],
+    "solution_san": [
+      "Rxg7+",
+      "Kh8",
+      "Rh7+",
+      "Kxh7",
+      "Rxf7+",
+      "Kh8",
+      "Qg7#"
+    ],
+    "motif": "decoy",
+    "difficulty": "expert",
+    "difficulty_rating": 1655,
+    "explanation": "Rxg7+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "endgame",
+      "mate",
+      "mateIn4",
+      "sacrifice",
+      "veryLong"
+    ],
+    "lichess_id": "010MJ",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2rk1/1p2b1p1/pq2p1P1/3pn3/1P1P4/P1N1P3/6P1/R2QK2R w KQ - 0 18",
+    "solution_moves": [
+      "h1h8",
+      "g8h8",
+      "d1h5",
+      "h8g8",
+      "h5h7"
+    ],
+    "solution_san": [
+      "Rh8+",
+      "Kxh8",
+      "Qh5+",
+      "Kg8",
+      "Qh7#"
+    ],
+    "motif": "decoy",
+    "difficulty": "expert",
+    "difficulty_rating": 1680,
+    "explanation": "Rh8+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "fork",
+      "long",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "00NHK",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1b1R/1pq3p1/p1k3P1/3p4/1P1Q4/4PP2/P1P5/2K5 w - - 0 27",
+    "solution_moves": [
+      "h8f8",
+      "d8f8",
+      "d4c5",
+      "c6d7",
+      "c5f8"
+    ],
+    "solution_san": [
+      "Rxf8",
+      "Rxf8",
+      "Qc5+",
+      "Kd7",
+      "Qxf8"
+    ],
+    "motif": "decoy",
+    "difficulty": "expert",
+    "difficulty_rating": 1709,
+    "explanation": "Rxf8 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "endgame",
+      "fork",
+      "long",
+      "sacrifice"
+    ],
+    "lichess_id": "00MwU",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/4rkb1/R5R1/5P1p/P6P/6P1/1r2p3/4K3 w - - 0 45",
+    "solution_moves": [
+      "g6g7",
+      "f7g7",
+      "f5f6",
+      "g7f7",
+      "f6e7"
+    ],
+    "solution_san": [
+      "Rxg7+",
+      "Kxg7",
+      "f6+",
+      "Kf7",
+      "fxe7"
+    ],
+    "motif": "decoy",
+    "difficulty": "expert",
+    "difficulty_rating": 1723,
+    "explanation": "Rxg7+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "advantage",
+      "attraction",
+      "endgame",
+      "exposedKing",
+      "fork",
+      "long",
+      "sacrifice"
+    ],
+    "lichess_id": "00cRN",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/1q1p2pp/p3p3/2p1Q3/8/1B6/PPP2PbP/3RR1K1 w - - 0 22",
+    "solution_moves": [
+      "d1d7",
+      "b7d7",
+      "b3e6",
+      "g8h8",
+      "e6d7"
+    ],
+    "solution_san": [
+      "Rxd7",
+      "Qxd7",
+      "Bxe6+",
+      "Kh8",
+      "Bxd7"
+    ],
+    "motif": "decoy",
+    "difficulty": "expert",
+    "difficulty_rating": 1771,
+    "explanation": "Rxd7 is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "attraction",
+      "fork",
+      "long",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "0128O",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b3k1/pp4b1/n1pqprQ1/4p3/2P2PP1/P2B4/1P6/R1B1K2R w KQ - 2 20",
+    "solution_moves": [
+      "h1h8",
+      "g8h8",
+      "g6h7"
+    ],
+    "solution_san": [
+      "Rh8+",
+      "Kxh8",
+      "Qh7#"
+    ],
+    "motif": "decoy",
+    "difficulty": "expert",
+    "difficulty_rating": 1777,
+    "explanation": "Rh8+ is the key \u2014 it sets up a decoy. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "kingsideAttack",
+      "master",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "pin",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00Ueq",
+    "source": "lichess"
+  }
+]

@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#16213e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Chess Rocket">
+<!--
+  When deployed to Vercel + Fly, the build pipeline replaces this meta with the
+  Fly URL so the static frontend knows where to send /api/* calls. Empty value
+  means same-origin (used during local dev when this server hosts both).
+-->
+<!-- Empty content = same-origin: API calls go to whatever host serves the page.
+     Local dev (`uv run python scripts/dashboard_server.py`) → 127.0.0.1:8088
+     hits the Python backend that talks to SAP AI Core. The Vercel deploy
+     sets this via the build pipeline (or you can hardcode the Fly URL here
+     before deploying). -->
+<meta name="cr-backend-url" content="">
+<title>Chess Rocket Dashboard</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2316213e'/%3E%3Ctext x='50%25' y='62%25' font-size='44' text-anchor='middle' fill='%23e94560'%3E%E2%99%9E%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='40' fill='%2316213e'/%3E%3Ctext x='50%25' y='65%25' font-size='130' text-anchor='middle' fill='%23e94560'%3E%E2%99%9E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+<!-- chess.js powers the offline-mode fallback. Loaded async so it never
+     blocks the first paint; the OfflineMode shim below waits for window.Chess
+     to exist before activating. Tiny (~30 KB gzipped). -->
+<script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0-beta.6/dist/chess.min.js" defer></script>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --text: #e0e0e0;
+    --text-dim: #888;
+    --accent: #e94560;
+    --green: #4caf50;
+    --light-green: #8bc34a;
+    --blue: #2196f3;
+    --yellow: #ffc107;
+    --orange: #ff9800;
+    --red: #f44336;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  header {
+    background: var(--surface);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent);
+  }
+  header h1 { font-size: 1.3rem; font-weight: 600; }
+  header h1 span { color: var(--accent); }
+  .header-stats { display: flex; gap: 16px; font-size: 0.9rem; color: var(--text-dim); }
+  .nav-links { display: flex; gap: 18px; font-size: 0.9rem; align-items: center; }
+  .nav-links a { color: var(--text-dim); text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+  .nav-links a.active { color: var(--accent); font-weight: 600; }
+  .nav-links a:hover { background: var(--surface2); color: var(--text); }
+  .main {
+    display: grid;
+    grid-template-columns: minmax(360px, 680px) 1fr;
+    gap: 16px;
+    padding: 16px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .board-col { display: flex; flex-direction: column; gap: 12px; }
+  .board-wrapper { width: 100%; aspect-ratio: 1; }
+  #board { width: 100% !important; height: auto !important; }
+  .board-info {
+    display: flex; justify-content: space-between;
+    font-size: 0.85rem; color: var(--text-dim);
+  }
+  .panels { display: flex; flex-direction: column; gap: 12px; }
+  .panel {
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--surface2);
+  }
+  .panel h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  /* Opening panel */
+  .opening-name { font-size: 1.1rem; font-weight: 600; }
+  .opening-eco { color: var(--accent); font-weight: 500; margin-left: 8px; }
+  .out-of-book { color: var(--text-dim); font-style: italic; }
+  /* Material panel */
+  .material-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .material-label { font-size: 0.85rem; }
+  .material-value { font-weight: 600; font-size: 1.1rem; }
+  .material-diff { font-size: 0.9rem; font-weight: 600; }
+  .material-diff.positive { color: var(--green); }
+  .material-diff.negative { color: var(--red); }
+  .material-diff.even { color: var(--text-dim); }
+  .captured { font-size: 1.2rem; letter-spacing: 2px; min-height: 1.5em; }
+  /* Eval bar */
+  .eval-container { display: flex; align-items: center; gap: 12px; }
+  .eval-bar-outer {
+    flex: 1; height: 20px; background: #333;
+    border-radius: 10px; overflow: hidden; position: relative;
+  }
+  .eval-bar-inner {
+    height: 100%; background: linear-gradient(90deg, #fff 0%, #ccc 100%);
+    transition: width 0.4s ease; border-radius: 10px;
+  }
+  .eval-score { font-weight: 700; font-size: 1rem; min-width: 60px; text-align: right; }
+  /* Status panel */
+  .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; font-size: 0.9rem; }
+  .status-label { color: var(--text-dim); }
+  .status-value { font-weight: 500; }
+  .check-indicator { color: var(--yellow); font-weight: 600; }
+  .checkmate-indicator { color: var(--red); font-weight: 700; }
+  /* Move history */
+  .move-history {
+    max-height: 200px; overflow-y: auto;
+    font-family: 'SF Mono', 'Consolas', monospace; font-size: 0.85rem;
+  }
+  .move-row { display: flex; align-items: baseline; padding: 2px 0; }
+  .move-num { color: var(--text-dim); min-width: 32px; text-align: right; margin-right: 8px; }
+  .move-cell { min-width: 80px; display: inline-flex; align-items: baseline; gap: 4px; }
+  .move-san { cursor: default; }
+  .badge { font-size: 0.7rem; font-weight: 700; border-radius: 3px; padding: 0 3px; }
+  .badge-best { color: var(--green); }
+  .badge-great { color: var(--light-green); }
+  .badge-good { color: var(--blue); }
+  .badge-inaccuracy { color: var(--yellow); }
+  .badge-mistake { color: var(--orange); }
+  .badge-blunder { color: var(--red); }
+  /* Game over banner */
+  .game-over-banner {
+    background: var(--surface2);
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    display: none;
+  }
+  .game-over-banner.visible { display: block; }
+  .game-over-result { font-size: 1.3rem; font-weight: 700; }
+  .game-over-details { font-size: 0.9rem; color: var(--text-dim); margin-top: 4px; }
+  /* Waiting state */
+  .waiting {
+    text-align: center; padding: 60px 20px;
+    color: var(--text-dim); font-size: 1.1rem;
+  }
+  .waiting .pulse { animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+  /* Setup + controls */
+  .setup-bar {
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  }
+  .setup-bar label { font-size: 0.8rem; color: var(--text-dim); }
+  .setup-bar select, .btn {
+    background: var(--surface2); color: var(--text);
+    border: 1px solid #2a4a7a; border-radius: 6px;
+    padding: 6px 10px; font-size: 0.85rem; cursor: pointer;
+  }
+  .btn:hover { background: #15498a; }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  .btn-primary:hover { background: #c93651; }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  /* Coach panel */
+  .coach { border-left-color: var(--accent) !important; }
+  .coach-text { font-size: 0.95rem; line-height: 1.5; }
+  .coach-text strong { color: var(--accent); }
+  .thinking { color: var(--yellow); font-style: italic; }
+  .thinking::after { content: '...'; animation: dots 1.2s steps(4,end) infinite; }
+  @keyframes dots { 0%{content:''} 25%{content:'.'} 50%{content:'..'} 75%{content:'...'} }
+  .last-engine { color: var(--light-green); font-weight: 600; }
+  .coach-source { margin-top: 10px; font-size: 0.7rem; color: var(--text-dim); }
+  .coach-source .dot { color: var(--green); }
+  /* Tactical alert */
+  .tactical-alert {
+    margin-bottom: 10px; padding: 10px 12px; border-radius: 6px;
+    font-size: 0.9rem; font-weight: 600; display: none;
+    border: 1px solid; line-height: 1.4;
+  }
+  .tactical-alert.visible { display: block; animation: flash 0.6s ease; }
+  .tactical-alert.mistake { background: rgba(255,152,0,0.12); border-color: var(--orange); color: var(--orange); }
+  .tactical-alert.blunder { background: rgba(244,67,54,0.14); border-color: var(--red); color: var(--red); }
+  .tactical-alert .undo-hint { display: block; font-weight: 400; font-size: 0.8rem; margin-top: 4px; color: var(--text); }
+  @keyframes flash { 0% { transform: scale(0.96); opacity: 0.4; } 100% { transform: scale(1); opacity: 1; } }
+  /* Board square highlights (override chessboard.js box-shadows) */
+  #board .square-55d63.hl-last   { box-shadow: inset 0 0 0 4px rgba(255,193,7,0.55); }
+  #board .square-55d63.hl-check  { box-shadow: inset 0 0 0 4px rgba(244,67,54,0.85); }
+  #board .square-55d63.hl-hint   { box-shadow: inset 0 0 0 5px rgba(76,175,80,0.95); }
+  #board .square-55d63.hl-sel    { box-shadow: inset 0 0 0 4px rgba(33,150,243,0.85); }
+  #board .square-55d63.hl-capture{ box-shadow: inset 0 0 0 4px rgba(33,150,243,0.65); cursor: pointer; }
+  #board .square-55d63.hl-dot {
+    background-image: radial-gradient(circle, rgba(33,150,243,0.55) 17%, transparent 19%);
+    cursor: pointer;
+  }
+  /* Coach actions: hint + ask */
+  .coach-actions { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+  .btn-hint {
+    background: var(--surface2); color: var(--text); border: 1px solid var(--green);
+    padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600;
+  }
+  .btn-hint:hover:not(:disabled) { background: var(--green); color: #06210a; }
+  .btn-hint:disabled { opacity: 0.5; cursor: not-allowed; }
+  .hint-level { font-size: 0.72rem; color: var(--text-dim); }
+  .coach-hint { margin-top: 8px; font-size: 0.9rem; color: var(--light-green); line-height: 1.45; }
+  .ask-row { display: flex; gap: 6px; margin-top: 12px; }
+  .ask-input {
+    flex: 1; background: var(--bg); border: 1px solid var(--surface2); color: var(--text);
+    border-radius: 6px; padding: 6px 9px; font-size: 0.85rem;
+  }
+  .ask-input:focus { outline: none; border-color: var(--blue); }
+  .btn-ask {
+    background: var(--blue); color: #fff; border: none; border-radius: 6px;
+    padding: 6px 14px; cursor: pointer; font-size: 0.85rem; font-weight: 600;
+  }
+  .btn-ask:disabled { opacity: 0.5; cursor: not-allowed; }
+  .coach-qa { margin-top: 10px; max-height: 180px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+  .qa-item { font-size: 0.85rem; line-height: 1.4; border-top: 1px solid var(--surface2); padding-top: 6px; }
+  .qa-q { color: var(--blue); font-weight: 600; }
+  .qa-a { color: var(--text); margin-top: 2px; }
+  /* Review highlights: your move (red) vs best move (green) */
+  #board .square-55d63.hl-played { box-shadow: inset 0 0 0 4px rgba(244,67,54,0.85); }
+  #board .square-55d63.hl-best   { box-shadow: inset 0 0 0 4px rgba(76,175,80,0.95); }
+  /* Game review */
+  .btn-review {
+    margin-top: 12px; background: var(--accent); color: #fff; border: none;
+    border-radius: 6px; padding: 8px 16px; cursor: pointer; font-size: 0.9rem; font-weight: 600;
+  }
+  .btn-review:hover:not(:disabled) { filter: brightness(1.1); }
+  .btn-review:disabled { opacity: 0.6; cursor: default; }
+  .review-body { margin-top: 12px; text-align: left; }
+  .review-summary { font-size: 0.9rem; line-height: 1.5; }
+  .review-cards { margin-top: 8px; font-size: 0.82rem; color: var(--light-green); }
+  .review-moments { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .moment-btn {
+    background: var(--surface2); color: var(--text); border: 1px solid var(--surface2);
+    border-radius: 6px; padding: 5px 9px; cursor: pointer; font-size: 0.8rem;
+  }
+  .moment-btn:hover, .moment-btn.active { border-color: var(--accent); }
+  .moment-btn .mb { font-weight: 700; }
+  .moment-btn .mb.mistake { color: var(--orange); }
+  .moment-btn .mb.blunder { color: var(--red); }
+  .moment-btn .mb.inaccuracy { color: var(--yellow); }
+  .moment-detail { margin-top: 10px; font-size: 0.88rem; line-height: 1.5; }
+  .moment-detail .good { color: var(--green); font-weight: 600; }
+  .moment-detail .bad { color: var(--red); font-weight: 600; }
+  .moment-legend { margin-top: 6px; font-size: 0.75rem; color: var(--text-dim); }
+  .review-nav { display: flex; gap: 6px; margin-top: 10px; }
+  .review-nav button {
+    background: var(--surface2); color: var(--text); border: none; border-radius: 6px;
+    padding: 5px 10px; cursor: pointer; font-size: 0.8rem;
+  }
+  .review-nav button:hover { background: var(--surface); }
+  /* What-if sandbox / simulation */
+  .btn-explore { border-color: var(--blue); color: var(--text); }
+  .btn-explore:hover:not(:disabled) { background: var(--blue); color: #fff; }
+  .sandbox-bar { align-items: center; }
+  .sandbox-tag { color: var(--blue); font-weight: 600; font-size: 0.85rem; }
+  .board-wrapper.sandbox-active #board { box-shadow: 0 0 0 3px var(--blue); border-radius: 4px; }
+  .sim-panel { border-left-color: var(--blue) !important; }
+  .sim-note { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 8px; line-height: 1.4; }
+  .sim-evalrow { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+  .sim-eval-label { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+  .sim-eval { font-size: 1.4rem; font-weight: 700; }
+  .sim-delta { font-size: 0.82rem; font-weight: 600; }
+  .sim-delta.pos { color: var(--green); }
+  .sim-delta.neg { color: var(--red); }
+  .sim-delta.even { color: var(--text-dim); }
+  .sim-move { font-size: 0.88rem; margin: 6px 0 2px; line-height: 1.4; }
+  .sim-move strong { color: var(--accent); }
+  .sim-verdict { font-size: 0.92rem; line-height: 1.5; margin: 4px 0 2px; }
+  .sim-verdict strong { color: var(--accent); }
+  .sim-block { font-size: 0.85rem; margin-top: 8px; line-height: 1.45; }
+  .sim-block .sim-k { color: var(--text-dim); }
+  .sim-cands-k { font-size: 0.78rem; color: var(--text-dim); margin-top: 12px; }
+  .sim-cands { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .sim-cand {
+    background: var(--surface2); color: var(--text); border: 1px solid #2a4a7a;
+    border-radius: 6px; padding: 4px 9px; cursor: pointer; font-size: 0.82rem;
+    font-family: 'SF Mono', 'Consolas', monospace;
+  }
+  .sim-cand:hover { border-color: var(--blue); background: #15498a; }
+  .sim-cand .sim-cand-eval { color: var(--text-dim); font-size: 0.75rem; margin-left: 4px; }
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }
+  /* Offline-mode banner — shown only when the Fly backend is unreachable
+     and the page falls back to a 100%-client engine. Yellow-amber so it's
+     impossible to miss but not alarming. Fixed at top so it stays visible
+     while playing. */
+  .offline-banner {
+    display: none;                                    /* JS un-hides it on fallback */
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(255, 152, 0, 0.96);
+    color: #1a1a2e; padding: 9px 14px;
+    font-size: 0.86rem; font-weight: 600; line-height: 1.4;
+    border-bottom: 2px solid var(--orange);
+    text-align: center;
+  }
+  .offline-banner.visible { display: block; }
+  .offline-banner small { font-weight: 400; opacity: 0.85; display: block; margin-top: 2px; font-size: 0.78rem; }
+  /* Voice cheat-sheet — kept compact + collapsed by default. The grid
+     collapses to a single column on phones via the @media query below. */
+  .voice-help summary { list-style: none; }
+  .voice-help summary::-webkit-details-marker { display: none; }
+  .voice-help summary::after {
+    content: '▸'; float: right; transition: transform 0.15s ease;
+    color: var(--text-dim); font-size: 0.85rem;
+  }
+  .voice-help[open] summary::after { transform: rotate(90deg); }
+  .voice-help-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin-top: 6px;
+  }
+  .vh-section .vh-cat {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--blue); margin-bottom: 4px; font-weight: 600;
+  }
+  .vh-section ul { list-style: none; padding: 0; margin: 0;
+                   font-size: 0.78rem; line-height: 1.55; }
+  .vh-section li { margin-bottom: 2px; }
+  .vh-section code {
+    background: var(--surface2); color: var(--text);
+    padding: 1px 5px; border-radius: 3px;
+    font-family: 'SF Mono', 'Consolas', monospace; font-size: 0.78rem;
+  }
+  .vh-section em { color: var(--text-dim); font-style: normal; }
+  /* ───────── Mobile-responsive layout (≤ 768px) ─────────
+     The desktop layout is a fixed 2-col grid (board + panels). On phones we
+     stack everything, shrink the header, increase tap targets, and let the
+     coach + voice mic occupy the full width. The mic FAB lives bottom-right
+     and is added by voice_control.js so it stays accessible at all times. */
+  @media (max-width: 768px) {
+    /* Aggressively mobile-first: kill desktop chrome that wastes vertical
+       space on a phone, give the board the full viewport width, and make
+       every interactive element ≥44 pt (Apple HIG minimum). */
+    html, body { overscroll-behavior-y: contain; }       /* no rubber-band when scrolling panels */
+    header { padding: 6px 10px; flex-wrap: wrap; gap: 4px; }
+    header h1 { font-size: 0.95rem; flex: 1 1 auto; }
+    .nav-links { gap: 8px; font-size: 0.8rem; order: 3; width: 100%; justify-content: center; padding-top: 4px; }
+    .nav-links a { padding: 6px 10px; min-height: 32px; }
+    .header-stats { display: none; }                     /* free up the row */
+    .main {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 6px;
+      padding-bottom: calc(96px + env(safe-area-inset-bottom));
+                                                          /* room for FAB above iPhone home-bar */
+    }
+    .board-col { gap: 6px; }
+    .board-wrapper {                                      /* exactly one square viewport edge */
+      width: 100%; max-width: min(96vw, calc(100vh - 220px));
+      margin: 0 auto;
+    }
+    .board-info { font-size: 0.78rem; }
+    .panel { padding: 9px 11px; }
+    .panel h2 { font-size: 0.7rem; margin-bottom: 6px; }
+    .coach-text, .coach-hint, .ask-input,
+    .moment-detail, .review-summary { font-size: 0.88rem; }
+    .move-cell { min-width: 70px; font-size: 0.82rem; }
+    .move-history { max-height: 120px; font-size: 0.8rem; }
+    .coach-qa { max-height: 110px; }
+    .setup-bar { gap: 6px; flex-wrap: wrap; }
+    .setup-bar select, .btn {
+      padding: 9px 11px; font-size: 0.9rem; min-height: 44px;
+    }
+    .btn-primary { min-height: 48px; flex: 1 1 100%; order: 99; }
+                                                          /* primary CTA always its own row */
+    .setup-bar label { display: none; }                   /* labels are obvious from selects */
+    .voice-help { display: block !important; }            /* always shown on mobile if mic supported */
+    .voice-help-grid { gap: 8px; }
+    /* Coach panel needs to be the FIRST card on phones — that's where the
+       attention should be after a move, not Material Balance. */
+    .panels { display: flex; flex-direction: column; gap: 8px; }
+    .panel.coach { order: 1; }
+    .panel:not(.coach):not(.voice-help):not(.sim-panel) { order: 5; }
+    .voice-help { order: 9; }
+    .game-over-banner { order: 0; }
+    /* Sim panel sits right below the coach when active. */
+    .sim-panel { order: 2; }
+    /* Hide the Engine + color selectors when a game is in progress —
+       you only need them at start; the board area is more valuable. */
+    #game-bar select, #game-bar label { display: none; }
+    #game-bar .btn-primary { display: none; }             /* "New Game" → use the action bar instead */
+    #game-bar #undo-btn, #game-bar #explore-btn { flex: 1; }
+    /* Tactical alert: bigger text, stuck to top of right column. */
+    .tactical-alert { font-size: 0.88rem; padding: 8px 10px; }
+    /* Sticky bottom bar — Undo/Hint live here so they're reachable with one
+       thumb on the train. The mic FAB hovers over the right end of this bar. */
+    .mobile-action-bar {
+      display: flex; gap: 8px; align-items: center; justify-content: space-between;
+      position: fixed; left: 0; right: 0; bottom: 0;
+      padding: 8px 14px 10px; padding-bottom: calc(10px + env(safe-area-inset-bottom));
+      background: rgba(22, 33, 62, 0.96);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 50; backdrop-filter: blur(8px);
+    }
+    .mobile-action-bar .btn { flex: 1; min-height: 44px; font-size: 0.9rem; }
+    .mobile-action-bar .spacer-fab { width: 64px; }    /* leave room for FAB */
+    .voice-help-grid { grid-template-columns: 1fr; }
+  }
+  .mobile-action-bar { display: none; }                /* shown only on mobile */
+</style>
+</head>
+<body>
+
+<!--
+  Offline-mode banner. Hidden by default; OfflineMode.activate() un-hides it
+  the moment the first /api/new request fails, and stays visible for the rest
+  of the session. Lets the user know why the AI coach is silent.
+-->
+<div class="offline-banner" id="offline-banner">
+  ⚠️ AI coach offline — server unreachable.
+  <small>You're playing against an in-browser engine. Moves work, voice works,
+  but the AI coach, hints, Q&amp;A and post-game review are unavailable until
+  the backend is back.</small>
+</div>
+
+<header>
+  <h1><span>Chess Rocket</span> Dashboard</h1>
+  <div class="nav-links">
+    <a href="/" class="active">Play</a>
+    <a href="/tactics">Tactics</a>
+    <a href="/setup">Setup</a>
+  </div>
+  <div class="header-stats">
+    <span id="session-info">Session #--</span>
+    <span id="streak-info">Streak: --</span>
+  </div>
+</header>
+
+<div class="main" id="main-content">
+  <div class="waiting" id="waiting">
+    <p class="pulse">No game in progress</p>
+    <p style="margin:12px 0;font-size:0.85rem">Pick a difficulty and color, then press Start to play right here.</p>
+    <div class="setup-bar" id="setup-waiting" style="justify-content:center;margin-top:16px;">
+      <label>Engine</label>
+      <select class="setup-elo">
+        <option value="auto">Auto (adaptive)</option>
+        <option value="400">400 (beginner)</option>
+        <option value="800" selected>800 (casual)</option>
+        <option value="1200">1200 (club)</option>
+        <option value="1600">1600 (strong)</option>
+        <option value="2000">2000 (expert)</option>
+      </select>
+      <label>You play</label>
+      <select class="setup-color">
+        <option value="white" selected>White</option>
+        <option value="black">Black</option>
+      </select>
+      <button class="btn btn-primary btn-start">Start Game</button>
+    </div>
+  </div>
+</div>
+
+<!-- Game layout (hidden until game data arrives) -->
+<template id="game-template">
+  <div class="board-col">
+    <div class="board-wrapper"><div id="board"></div></div>
+    <div class="board-info">
+      <span id="player-info">Playing as: White</span>
+      <span id="engine-info">Engine: 800 Elo</span>
+    </div>
+    <div class="setup-bar" id="game-bar">
+      <button class="btn btn-undo" id="undo-btn">↶ Undo</button>
+      <button class="btn btn-explore" id="explore-btn">🔬 Explore</button>
+      <span style="flex:1"></span>
+      <label>Engine</label>
+      <select class="setup-elo">
+        <option value="auto">Auto</option>
+        <option value="400">400</option>
+        <option value="800" selected>800</option>
+        <option value="1200">1200</option>
+        <option value="1600">1600</option>
+        <option value="2000">2000</option>
+      </select>
+      <select class="setup-color">
+        <option value="white" selected>White</option>
+        <option value="black">Black</option>
+      </select>
+      <button class="btn btn-primary btn-start">New Game</button>
+    </div>
+    <div class="setup-bar sandbox-bar" id="sandbox-bar" style="display:none;">
+      <span class="sandbox-tag">🔬 Exploring — moves don't affect your game</span>
+      <span style="flex:1"></span>
+      <button class="btn btn-sb-undo">↶ Back</button>
+      <button class="btn btn-sb-reset">⟲ Reset</button>
+      <button class="btn btn-primary btn-sb-exit">✕ Exit to game</button>
+    </div>
+  </div>
+  <div class="panels">
+    <div class="panel coach">
+      <h2>Coach</h2>
+      <div class="tactical-alert" id="tactical-alert"></div>
+      <div class="coach-text" id="coach-text">Make your move on the board. Tap a piece to see its legal moves.</div>
+      <div class="coach-actions">
+        <button class="btn-hint" id="hint-btn">💡 Hint</button>
+        <span class="hint-level" id="hint-level"></span>
+      </div>
+      <div class="coach-hint" id="coach-hint"></div>
+      <div class="ask-row">
+        <input class="ask-input" id="ask-input" placeholder="Ask the coach about this position…" maxlength="200">
+        <button class="btn-ask" id="ask-btn">Ask</button>
+      </div>
+      <div class="coach-qa" id="coach-qa"></div>
+      <div class="coach-source" id="coach-source"></div>
+    </div>
+    <div class="panel sim-panel" id="sim-panel" style="display:none;">
+      <h2>🔬 What-if Simulation</h2>
+      <div class="sim-note">Try any move for either side to see where it leads. Click a suggested move or drag a piece — nothing here touches your real game.</div>
+      <div class="sim-evalrow">
+        <span class="sim-eval-label">Eval</span>
+        <span class="sim-eval" id="sim-eval">0.00</span>
+        <span class="sim-delta" id="sim-delta"></span>
+      </div>
+      <div class="sim-move" id="sim-move"></div>
+      <div class="sim-verdict" id="sim-verdict"></div>
+      <div class="sim-block"><span class="sim-k">Line you're exploring:</span> <span id="sim-line">— start exploring —</span></div>
+      <div class="sim-block"><span class="sim-k">Engine predicts from here:</span> <span id="sim-predicted">—</span></div>
+      <div class="sim-cands-k">Best moves from this position (click to try):</div>
+      <div class="sim-cands" id="sim-candidates"></div>
+    </div>
+    <div class="panel" style="border-left-color: var(--accent);">
+      <h2>Opening</h2>
+      <div id="opening-display"><span class="out-of-book">Starting position</span></div>
+    </div>
+    <div class="panel" style="border-left-color: var(--blue);">
+      <h2>Material Balance</h2>
+      <div class="material-row">
+        <span class="material-label">White</span>
+        <span class="material-value" id="mat-white">39</span>
+      </div>
+      <div class="material-row">
+        <span class="material-label">Black</span>
+        <span class="material-value" id="mat-black">39</span>
+      </div>
+      <div class="material-row">
+        <span class="material-label">Advantage</span>
+        <span class="material-diff even" id="mat-diff">Even</span>
+      </div>
+      <div style="margin-top:6px;">
+        <div class="captured" id="captured-white" title="Pieces captured by White"></div>
+        <div class="captured" id="captured-black" title="Pieces captured by Black"></div>
+      </div>
+    </div>
+    <div class="panel" style="border-left-color: var(--green);">
+      <h2>Evaluation</h2>
+      <div class="eval-container">
+        <div class="eval-bar-outer">
+          <div class="eval-bar-inner" id="eval-bar" style="width:50%"></div>
+        </div>
+        <span class="eval-score" id="eval-score">0.0</span>
+      </div>
+    </div>
+    <div class="panel" style="border-left-color: var(--yellow);">
+      <h2>Game Status</h2>
+      <div class="status-grid">
+        <span class="status-label">Move</span>
+        <span class="status-value" id="move-number">1</span>
+        <span class="status-label">Turn</span>
+        <span class="status-value" id="turn-display">White</span>
+        <span class="status-label">Accuracy (W)</span>
+        <span class="status-value" id="acc-white">--</span>
+        <span class="status-label">Accuracy (B)</span>
+        <span class="status-value" id="acc-black">--</span>
+        <span class="status-label">Status</span>
+        <span class="status-value" id="check-status">--</span>
+      </div>
+    </div>
+    <div class="panel" style="border-left-color: var(--orange);">
+      <h2>Move History</h2>
+      <div class="move-history" id="move-history"></div>
+    </div>
+    <!-- Voice commands cheat-sheet. Kept hidden until the JS confirms
+         SpeechRecognition is supported (so we don't tease Firefox users
+         with a feature they can't use). The <details> wrapper makes the
+         panel collapsed by default — the title is a clickable summary. -->
+    <details class="panel voice-help" id="voice-help" style="display:none;border-left-color:var(--blue);">
+      <summary><h2 style="display:inline-block;margin:0;cursor:pointer;">🎤 Voice commands · click to expand</h2></summary>
+      <div class="voice-help-body">
+        <p style="font-size:0.82rem;color:var(--text-dim);margin:8px 0;line-height:1.45;">
+          Tap the mic button (the floating 🎤 circle at the bottom-right of the screen),
+          then say any of these. The parser is forgiving — STT mishears like
+          <em>"crook"</em> for <em>"rook"</em> are mapped automatically.
+        </p>
+        <div class="voice-help-grid">
+          <div class="vh-section">
+            <div class="vh-cat">Pieces</div>
+            <ul>
+              <li><code>knight</code> · also <em>horse</em>, <em>mike</em>, <em>night</em></li>
+              <li><code>bishop</code> · also <em>b shop</em>, <em>fish up</em></li>
+              <li><code>rook</code> · also <em>crook</em>, <em>cook</em>, <em>tower</em></li>
+              <li><code>queen</code> · also <em>quinn</em>, <em>gwen</em></li>
+              <li><code>king</code></li>
+              <li><code>pawn</code></li>
+            </ul>
+          </div>
+          <div class="vh-section">
+            <div class="vh-cat">Moves</div>
+            <ul>
+              <li><code>e4</code> — pawn move</li>
+              <li><code>knight to f3</code> — piece + square</li>
+              <li><code>knight takes e5</code> — capture</li>
+              <li><code>e2 to e4</code> — explicit from→to</li>
+              <li><code>castle short</code> — O-O</li>
+              <li><code>castle long</code> — O-O-O</li>
+              <li><code>e8 queen</code> — promotion</li>
+            </ul>
+          </div>
+          <div class="vh-section">
+            <div class="vh-cat">Controls</div>
+            <ul>
+              <li><code>undo</code> · take it back</li>
+              <li><code>hint</code></li>
+              <li><code>new game</code></li>
+              <li><code>explore</code> · open sandbox</li>
+              <li><code>exit explore</code></li>
+              <li><code>review</code> · post-game review</li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;color:var(--text-dim);margin-top:8px;line-height:1.45;">
+          Tip: NATO file letters work too (<em>"alpha 4"</em> → a4, <em>"echo 4"</em> → e4).
+          When two pieces could both legally make a move (e.g. two knights to e4),
+          you'll be asked which one — answer with the file letter.
+        </p>
+      </div>
+    </details>
+    <div class="game-over-banner" id="game-over">
+      <div class="game-over-result" id="game-over-result"></div>
+      <div class="game-over-details" id="game-over-details"></div>
+      <button class="btn-review" id="review-btn">📋 Review key moments</button>
+      <div class="review-body" id="review-body"></div>
+    </div>
+  </div>
+</template>
+
+<!--
+  voice_control.js is served by the same backend (or by Vercel as a static
+  asset on the deployed frontend). It exposes window.ChessVoice — see the
+  ChessVoice.mount({…}) call near the bottom of the IIFE below for wiring.
+-->
+<script src="/voice_control.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  const PIECE_UNICODE = {
+    P: '\u2659', N: '\u2658', B: '\u2657', R: '\u2656', Q: '\u2655',
+    p: '\u265f', n: '\u265e', b: '\u265d', r: '\u265c', q: '\u265b'
+  };
+
+  const BADGE_MAP = {
+    best:       { text: '\u2713', cls: 'badge-best' },
+    great:      { text: '\u2713', cls: 'badge-great' },
+    good:       { text: '\u2022', cls: 'badge-good' },
+    inaccuracy: { text: '?!', cls: 'badge-inaccuracy' },
+    mistake:    { text: '?',  cls: 'badge-mistake' },
+    blunder:    { text: '??', cls: 'badge-blunder' },
+  };
+
+  let board = null;
+  let lastFen = null;
+  let gameActive = false;
+  let busy = false;            // a move/engine reply is in flight
+  let currentState = null;     // latest server state
+  let lastCoaching = null;     // last coaching text rendered (for poll refresh)
+  let selectedSquare = null;   // click-to-move source square
+  let hintLevel = 0;           // graduated hint level for the current move
+  let hintHighlight = null;    // {from,to} square pair to keep highlighted
+  let lastQAaEl = null;        // last Q&A answer element (for streaming update)
+  let reviewData = null;       // post-game review payload
+  let reviewIdx = -1;          // index of the moment being reviewed (-1 = none)
+  let sandboxMode = false;     // in the what-if analysis sandbox?
+  let sandboxState = null;     // latest sandbox payload from the server
+
+  function initBoard(orientation) {
+    const main = document.getElementById('main-content');
+    const tmpl = document.getElementById('game-template');
+    main.innerHTML = '';
+    main.appendChild(tmpl.content.cloneNode(true));
+    board = Chessboard('board', {
+      position: 'start',
+      orientation: orientation || 'white',
+      draggable: true,
+      onDragStart: onDragStart,
+      onDrop: onDrop,
+      onSnapEnd: onSnapEnd,
+      pieceTheme: 'https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png',
+    });
+    window.addEventListener('resize', () => board.resize());
+    document.getElementById('board').addEventListener('click', onBoardClick);
+    gameActive = true;
+  }
+
+  function isMyTurn() {
+    return currentState && !currentState.is_game_over && !busy &&
+      currentState.turn === (currentState.player_color || 'white');
+  }
+
+  // The legal-move map + side to move come from the sandbox while exploring,
+  // otherwise from the live game.
+  function activeLegalMap() {
+    const st = sandboxMode ? sandboxState : currentState;
+    return (st && st.legal_moves_map) || {};
+  }
+  function canPickUp(piece) {
+    const pieceColor = piece[0] === 'w' ? 'white' : 'black';
+    if (sandboxMode) {
+      return sandboxState && !sandboxState.is_game_over &&
+        pieceColor === sandboxState.turn;
+    }
+    return isMyTurn() && pieceColor === (currentState.player_color || 'white');
+  }
+
+  function onDragStart(source, piece) {
+    if (!canPickUp(piece)) return false;
+    selectedSquare = source;                                   // also arms click-to-move
+    paintMoveOptions(source);                                  // show legal targets
+    return true;
+  }
+
+  function onDrop(source, target, piece) {
+    // Releasing on the same square = a "click" to select; keep the dots so the
+    // player can then click a destination square (click-to-move).
+    if (target === source) return 'snapback';
+    clearMoveOptions();
+    const legal = activeLegalMap();
+    const targets = legal[source] || [];
+    if (targets.indexOf(target) === -1) return 'snapback';     // illegal: revert
+    let promotion = null;
+    if ((piece === 'wP' && target[1] === '8') ||
+        (piece === 'bP' && target[1] === '1')) {
+      promotion = 'q';                                         // auto-queen
+    }
+    if (sandboxMode) sandboxSendMove(source, target, promotion);
+    else sendMove(source, target, promotion);                  // accept drop
+  }
+
+  function onSnapEnd() {
+    const st = sandboxMode ? sandboxState : currentState;
+    if (st && st.fen) board.position(st.fen);
+  }
+
+  // ---- click-to-move + square highlighting -------------------------------
+  function squareEl(sq) { return document.querySelector('#board .square-' + sq); }
+
+  function clearHighlights() {
+    document.querySelectorAll('#board .hl-sel, #board .hl-dot, #board .hl-capture')
+      .forEach(e => e.classList.remove('hl-sel', 'hl-dot', 'hl-capture'));
+  }
+  function paintMoveOptions(source) {
+    clearHighlights();                                         // visuals only
+    const sel = squareEl(source);
+    if (sel) sel.classList.add('hl-sel');
+    const targets = activeLegalMap()[source] || [];
+    const pos = board.position();
+    targets.forEach(t => {
+      const te = squareEl(t);
+      if (te) te.classList.add(pos[t] ? 'hl-capture' : 'hl-dot');
+    });
+  }
+  function clearMoveOptions() {                                // visuals + state
+    clearHighlights();
+    selectedSquare = null;
+  }
+
+  function onBoardClick(e) {
+    if (sandboxMode) {
+      if (!sandboxState || sandboxState.is_game_over) return;
+    } else if (!isMyTurn()) {
+      return;
+    }
+    const sqEl = e.target.closest('[class*="square-"]');
+    if (!sqEl) return;
+    const m = (sqEl.className.match(/square-([a-h][1-8])/) || [])[1];
+    if (!m) return;
+    const legal = activeLegalMap();
+    if (selectedSquare) {
+      const targets = legal[selectedSquare] || [];
+      if (targets.indexOf(m) !== -1) {                         // complete the move
+        const piece = board.position()[selectedSquare] || '';
+        let promo = null;
+        if ((piece === 'wP' && m[1] === '8') || (piece === 'bP' && m[1] === '1')) promo = 'q';
+        const from = selectedSquare;
+        clearMoveOptions();
+        if (sandboxMode) sandboxSendMove(from, m, promo);
+        else sendMove(from, m, promo);
+        return;
+      }
+      clearMoveOptions();                                      // tapped elsewhere
+    }
+    if (legal[m] && legal[m].length) {                         // select a piece
+      selectedSquare = m;
+      paintMoveOptions(m);
+    }
+  }
+
+  // Persistent highlights: last move, check, active hint move.
+  function applyHighlights(state) {
+    document.querySelectorAll('#board .hl-last, #board .hl-check, #board .hl-hint')
+      .forEach(e => e.classList.remove('hl-last', 'hl-check', 'hl-hint'));
+    if (state && state.last_move_uci) {
+      const f = squareEl(state.last_move_uci.slice(0, 2));
+      const t = squareEl(state.last_move_uci.slice(2, 4));
+      if (f) f.classList.add('hl-last');
+      if (t) t.classList.add('hl-last');
+    }
+    if (state && state.check_square) {
+      const c = squareEl(state.check_square);
+      if (c) c.classList.add('hl-check');
+    }
+    if (hintHighlight && hintHighlight.from) {
+      const hf = squareEl(hintHighlight.from);
+      const ht = squareEl(hintHighlight.to);
+      if (hf) hf.classList.add('hl-hint');
+      if (ht) ht.classList.add('hl-hint');
+    }
+  }
+
+  function capturedToUnicode(pieces, color) {
+    if (!pieces || !pieces.length) return '';
+    return pieces.map(p => {
+      const key = color === 'white' ? p.toLowerCase() : p.toUpperCase();
+      // White captures black pieces (lowercase), black captures white pieces (uppercase)
+      // "captured by white" means those are black pieces
+      const displayKey = color === 'white' ? p.toLowerCase() : p;
+      return PIECE_UNICODE[displayKey] || p;
+    }).join(' ');
+  }
+
+  function updatePanels(state) {
+    // Header
+    document.getElementById('session-info').textContent = 'Session #' + (state.session_number || 1);
+    const streak = state.streak || 0;
+    document.getElementById('streak-info').textContent = 'Streak: ' + streak + (streak >= 3 ? ' \uD83D\uDD25' : '');
+
+    // Board info
+    document.getElementById('player-info').textContent = 'Playing as: ' + capitalize(state.player_color || 'white');
+    const engineEl = document.getElementById('engine-info');
+    let engineTxt = 'Engine: ' + (state.target_elo || 800) + ' Elo';
+    if (state.suggested_delta && state.suggested_elo && state.suggested_elo !== state.target_elo) {
+      engineTxt += ' · 💡 next: ' + state.suggested_elo;
+    }
+    engineEl.textContent = engineTxt;
+    if (state.suggested_rationale) engineEl.title = state.suggested_rationale;
+
+    // Opening
+    const openingEl = document.getElementById('opening-display');
+    const op = state.current_opening;
+    if (op && op.name) {
+      openingEl.innerHTML = '<span class="opening-name">' + esc(op.name) + '</span>' +
+        (op.eco ? '<span class="opening-eco">' + esc(op.eco) + '</span>' : '');
+    } else {
+      const moveCount = (state.move_list || []).length;
+      openingEl.innerHTML = '<span class="out-of-book">' + (moveCount > 0 ? 'Out of book' : 'Starting position') + '</span>';
+    }
+
+    // Material
+    const mat = state.material || { white: 0, black: 0 };
+    document.getElementById('mat-white').textContent = mat.white;
+    document.getElementById('mat-black').textContent = mat.black;
+    const diff = mat.white - mat.black;
+    const diffEl = document.getElementById('mat-diff');
+    if (diff > 0) {
+      diffEl.textContent = '+' + diff + ' White';
+      diffEl.className = 'material-diff positive';
+    } else if (diff < 0) {
+      diffEl.textContent = diff + ' Black';
+      diffEl.className = 'material-diff negative';
+    } else {
+      diffEl.textContent = 'Even';
+      diffEl.className = 'material-diff even';
+    }
+
+    // Captured pieces
+    const cap = state.captured_pieces || { white: [], black: [] };
+    document.getElementById('captured-white').innerHTML =
+      cap.white.length ? '\u25B3 ' + capturedToUnicode(cap.white, 'white') : '';
+    document.getElementById('captured-black').innerHTML =
+      cap.black.length ? '\u25BD ' + capturedToUnicode(cap.black, 'black') : '';
+
+    // Eval bar
+    const evalScore = state.eval_score;
+    const evalEl = document.getElementById('eval-score');
+    const barEl = document.getElementById('eval-bar');
+    if (evalScore != null) {
+      const clamped = Math.max(-10, Math.min(10, evalScore));
+      const pct = Math.round(((clamped + 10) / 20) * 100);
+      barEl.style.width = pct + '%';
+      evalEl.textContent = (evalScore > 0 ? '+' : '') + evalScore.toFixed(1);
+    } else {
+      barEl.style.width = '50%';
+      evalEl.textContent = '--';
+    }
+
+    // Game status
+    const fen = state.fen || '';
+    const parts = fen.split(' ');
+    const turnColor = parts[1] === 'b' ? 'Black' : 'White';
+    const fullmove = parts[5] || '1';
+    document.getElementById('move-number').textContent = fullmove;
+    document.getElementById('turn-display').textContent = turnColor + ' to play';
+
+    const acc = state.accuracy || { white: 0, black: 0 };
+    document.getElementById('acc-white').textContent =
+      acc.white ? acc.white.toFixed(1) + '%' : '--';
+    document.getElementById('acc-black').textContent =
+      acc.black ? acc.black.toFixed(1) + '%' : '--';
+
+    const statusEl = document.getElementById('check-status');
+    if (state.is_checkmate) {
+      statusEl.innerHTML = '<span class="checkmate-indicator">Checkmate!</span>';
+    } else if (state.is_stalemate) {
+      statusEl.innerHTML = '<span class="check-indicator">Stalemate</span>';
+    } else if (state.is_check) {
+      statusEl.innerHTML = '<span class="check-indicator">Check!</span>';
+    } else {
+      statusEl.textContent = 'In progress';
+    }
+
+    // Move history with annotations
+    const moveList = state.move_list || [];
+    const annotations = state.move_annotations || [];
+    const annotMap = {};
+    annotations.forEach(a => { annotMap[a.ply] = a; });
+
+    const historyEl = document.getElementById('move-history');
+    let html = '';
+    for (let i = 0; i < moveList.length; i += 2) {
+      const moveNum = Math.floor(i / 2) + 1;
+      const whiteMove = moveList[i];
+      const blackMove = i + 1 < moveList.length ? moveList[i + 1] : '';
+
+      html += '<div class="move-row">';
+      html += '<span class="move-num">' + moveNum + '.</span>';
+      html += renderMoveCell(whiteMove, annotMap[i]);
+      if (blackMove) {
+        html += renderMoveCell(blackMove, annotMap[i + 1]);
+      }
+      html += '</div>';
+    }
+    historyEl.innerHTML = html;
+    historyEl.scrollTop = historyEl.scrollHeight;
+
+    // Game over banner
+    const banner = document.getElementById('game-over');
+    if (state.is_game_over && state.result) {
+      banner.classList.add('visible');
+      let resultText = state.result;
+      if (state.result === '1-0') resultText = '1-0 \u2014 White wins';
+      else if (state.result === '0-1') resultText = '0-1 \u2014 Black wins';
+      else if (state.result === '1/2-1/2') resultText = '\u00BD-\u00BD \u2014 Draw';
+      document.getElementById('game-over-result').textContent = resultText;
+      const totalMoves = Math.ceil(moveList.length / 2);
+      const playerColor = state.player_color || 'white';
+      const playerAcc = acc[playerColor] || 0;
+      document.getElementById('game-over-details').textContent =
+        'Accuracy: ' + playerAcc.toFixed(1) + '% \u00B7 ' + totalMoves + ' moves';
+    } else {
+      banner.classList.remove('visible');
+    }
+  }
+
+  function renderMoveCell(san, annot) {
+    let badgeHtml = '';
+    if (annot && annot.classification) {
+      const b = BADGE_MAP[annot.classification];
+      if (b) {
+        badgeHtml = '<span class="badge ' + b.cls + '">' + b.text + '</span>';
+      }
+    }
+    return '<span class="move-cell"><span class="move-san">' + esc(san) + '</span>' + badgeHtml + '</span>';
+  }
+
+  function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  // ---- coaching + helpers ------------------------------------------------
+  function mdBold(s) {
+    return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                 .replace(/\n/g, '<br>');
+  }
+  function lossLabel(cp) {
+    // Raw centipawn loss can be a huge mate-score artifact; phrase it sanely.
+    if (cp >= 1000) return 'a game-losing blunder';
+    return '−' + cp + 'cp';
+  }
+  function setCoach(html) {
+    const el = document.getElementById('coach-text');
+    if (el) el.innerHTML = html;
+  }
+  function setControlsDisabled(disabled) {
+    document.querySelectorAll('.btn-start, .btn-undo, .btn-explore, .setup-elo, .setup-color')
+      .forEach(el => { el.disabled = disabled; });
+  }
+  function setSource(src) {
+    const el = document.getElementById('coach-source');
+    if (el && src) el.innerHTML = '<span class="dot">●</span> Coach: ' + esc(src);
+  }
+  function setHint(html) {
+    const el = document.getElementById('coach-hint');
+    if (el) el.innerHTML = html;
+  }
+  function setHintAskDisabled(disabled) {
+    document.querySelectorAll('#hint-btn, #ask-btn, #ask-input')
+      .forEach(el => { if (el) el.disabled = disabled; });
+  }
+  // Reset hint/selection state when the position changes (new move/game/undo).
+  function resetMoveAids() {
+    hintLevel = 0;
+    hintHighlight = null;
+    setHint('');
+    const lvl = document.getElementById('hint-level');
+    if (lvl) lvl.textContent = '';
+    clearMoveOptions();
+  }
+  function addQA(question) {
+    const log = document.getElementById('coach-qa');
+    if (!log) return;
+    const item = document.createElement('div');
+    item.className = 'qa-item';
+    const q = document.createElement('div');
+    q.className = 'qa-q';
+    q.textContent = 'Q: ' + question;
+    const a = document.createElement('div');
+    a.className = 'qa-a';
+    a.innerHTML = '<span class="thinking">Coach is thinking</span>';
+    item.appendChild(q);
+    item.appendChild(a);
+    log.appendChild(item);
+    log.scrollTop = log.scrollHeight;
+    lastQAaEl = a;
+  }
+  function renderTactical(state) {
+    const el = document.getElementById('tactical-alert');
+    if (!el) return;
+    const t = state.tactical_alert;
+    if (t && t.text) {
+      el.className = 'tactical-alert visible ' + (t.severity || 'mistake');
+      el.innerHTML = '⚠️ ' + esc(t.text) +
+        '<span class="undo-hint">Press <strong>Undo</strong> to take it back and try ' +
+        (t.best_move ? esc(t.best_move) : 'a better move') + ' instead.</span>';
+    } else {
+      el.className = 'tactical-alert';
+      el.innerHTML = '';
+    }
+  }
+
+  // BACKEND_URL resolution order (first non-empty wins):
+  //   1. ?backend=https://… query param   (ad-hoc testing — try a different host)
+  //   2. localStorage['cr-backend-url']    (set in DevTools to override persistently)
+  //   3. window.CR_BACKEND_URL             (inline-script injection)
+  //   4. <meta name="cr-backend-url">      (build-time injection — used by Vercel)
+  //   5. ""  → same-origin                  (local dev: dashboard_server.py serves both)
+  //
+  // The Vercel-deployed page sets the meta tag to the Render.com backend URL.
+  // The Python server hosting localhost:8088 leaves it empty so calls stay
+  // same-origin and the session cookie just works.
+  const BACKEND_URL = (() => {
+    try {
+      const qp = new URLSearchParams(location.search).get('backend');
+      if (qp) return qp.replace(/\/+$/, '');
+      const ls = (typeof localStorage !== 'undefined') &&
+                 localStorage.getItem('cr-backend-url');
+      if (ls) return String(ls).replace(/\/+$/, '');
+    } catch (_) { /* sandboxed iframe / private mode */ }
+    if (typeof window !== 'undefined' && window.CR_BACKEND_URL) {
+      return String(window.CR_BACKEND_URL).replace(/\/+$/, '');
+    }
+    // Localhost/dev override: when this same HTML is served by the Python
+    // dashboard_server.py at 127.0.0.1:8088, ignore the meta tag (which
+    // points at Render for the Vercel deploy) and stay same-origin so the
+    // local SAP AI Core integration is hit directly.
+    const host = (typeof location !== 'undefined' && location.hostname) || '';
+    if (host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0') {
+      return '';
+    }
+    const meta = document.querySelector('meta[name="cr-backend-url"]')?.content || '';
+    return meta.replace(/\/+$/, '');
+  })();
+  function _api(path) { return BACKEND_URL + path; }
+
+  // ────────────────── Offline-mode fallback ──────────────────
+  // When the Fly backend is unreachable (trial credits exhausted, network
+  // partition, cold-start timeout — anything that makes /api/new throw or
+  // return a non-2xx) we transparently fall back to a 100%-client engine.
+  //
+  // Trade-offs we accept in offline mode:
+  //   • No AI coach (would need SAP AI Core round-trip)
+  //   • No move accuracy classification (would need Stockfish full-strength)
+  //   • No what-if sandbox / hints / Q&A / post-game review
+  //   • No TTS read-aloud (per the user's request — keeps it quiet)
+  //   • No cross-session progress / SRS cards / streaks
+  //
+  // What still works:
+  //   • Drag / tap / voice to make moves (chess.js validates legality)
+  //   • Engine plays back with a capture-prefer heuristic (1500-ish-ELO feel)
+  //   • Undo, new game, voice commands — all client-only
+  const OfflineMode = {
+    active: false,
+    game: null,                                  // chess.js instance
+    playerColor: 'white',
+    targetElo: 800,
+    sessionNumber: 1,
+
+    // Wait until <script defer> for chess.js has run.
+    async _ready() {
+      const start = Date.now();
+      while (typeof window.Chess === 'undefined') {
+        if (Date.now() - start > 5000) {
+          throw new Error('chess.js never loaded — offline mode unavailable');
+        }
+        await new Promise(r => setTimeout(r, 50));
+      }
+    },
+
+    activate() {
+      if (this.active) return;
+      this.active = true;
+      const banner = document.getElementById('offline-banner');
+      if (banner) banner.classList.add('visible');
+      // Disable backend-only buttons + inputs.
+      document.querySelectorAll('#hint-btn, #ask-btn, #ask-input, #explore-btn, #review-btn')
+        .forEach(el => { if (el) { el.disabled = true; el.title = 'Unavailable in offline mode'; } });
+      console.warn('[chess-rocket] Backend unreachable — offline mode engaged');
+    },
+
+    // Build the same shape the real /api/game returns, so the rest of the
+    // dashboard code can render this state without knowing it's local.
+    _state(lastMoveUci, lastMoveSan) {
+      const g = this.game;
+      const legal = {};
+      g.moves({ verbose: true }).forEach(m => {
+        (legal[m.from] = legal[m.from] || []).push(m.to);
+      });
+      const moveList = g.history();
+      const fen = g.fen();
+      const isOver = g.isGameOver ? g.isGameOver()
+                                  : (g.in_checkmate?.() || g.in_stalemate?.() || g.in_draw?.());
+      let result = null;
+      if (isOver) {
+        if (g.isCheckmate?.() || g.in_checkmate?.()) {
+          result = g.turn() === 'w' ? '0-1' : '1-0';
+        } else result = '1/2-1/2';
+      }
+      // Material balance, rough.
+      let matW = 0, matB = 0;
+      const VAL = { p: 1, n: 3, b: 3, r: 5, q: 9 };
+      g.board().forEach(row => row.forEach(sq => {
+        if (!sq) return;
+        const v = VAL[sq.type] || 0;
+        if (sq.color === 'w') matW += v; else matB += v;
+      }));
+      return {
+        fen,
+        move_list: moveList,
+        last_move_uci: lastMoveUci || null,
+        last_move_san: lastMoveSan || null,
+        legal_moves_map: legal,
+        turn: g.turn() === 'w' ? 'white' : 'black',
+        player_color: this.playerColor,
+        target_elo: this.targetElo,
+        coaching: lastMoveUci
+          ? '_Offline mode_ — playing in your browser. AI coach unavailable.'
+          : '_Offline mode_ — your move. AI coach is unavailable while the server is down, but voice and the board work.',
+        coach_source: 'offline-engine',
+        is_check: g.isCheck?.() || g.in_check?.() || false,
+        is_checkmate: g.isCheckmate?.() || g.in_checkmate?.() || false,
+        is_stalemate: g.isStalemate?.() || g.in_stalemate?.() || false,
+        is_game_over: !!isOver,
+        result,
+        check_square: null,
+        eval_score: null,                             // no eval w/o full-strength engine
+        material: { white: matW, black: matB },
+        captured_pieces: { white: [], black: [] },
+        accuracy: { white: 0, black: 0 },
+        move_annotations: [],
+        session_number: this.sessionNumber,
+        streak: 0,
+        offline: true,
+      };
+    },
+
+    // Pick the engine's reply. We don't need full Stockfish here — a tiny
+    // capture-prefer + check-prefer heuristic plays a credible casual game.
+    _engineReply() {
+      const moves = this.game.moves({ verbose: true });
+      if (!moves.length) return null;
+      // Score each move; rank purely on simple chess motives.
+      const VAL = { p: 100, n: 300, b: 300, r: 500, q: 900, k: 0 };
+      const scored = moves.map(m => {
+        let s = Math.random() * 30;                  // tie-break jitter
+        if (m.captured) s += VAL[m.captured] || 100;
+        if (m.san.includes('+')) s += 40;
+        if (m.san.includes('#')) s += 100000;
+        if (m.flags.includes('p')) s += 800;          // promotion
+        if (m.flags.includes('k')) s += 30;           // castle
+        // Push minor pieces in opening; centralise.
+        const file = m.to.charCodeAt(0) - 97;
+        const rank = parseInt(m.to[1], 10) - 1;
+        const dist = Math.abs(file - 3.5) + Math.abs(rank - 3.5);
+        s += (7 - dist) * 5;
+        return { m, s };
+      });
+      scored.sort((a, b) => b.s - a.s);
+      // Higher Elo → more deterministic; lower → randomise top-N more.
+      const topN = this.targetElo >= 1600 ? 1
+                : this.targetElo >= 1100 ? 3
+                : 6;
+      const pick = scored[Math.floor(Math.random() * Math.min(topN, scored.length))];
+      return pick.m;
+    },
+
+    async apiNew(body) {
+      await this._ready();
+      this.game = new window.Chess();
+      this.playerColor = (body && body.color) || 'white';
+      this.targetElo = (body && body.elo && body.elo !== 'auto') ? Number(body.elo) : 800;
+      this.sessionNumber = (this.sessionNumber || 0) + 1;
+      // If the player chose black, the engine moves first.
+      if (this.playerColor === 'black') {
+        const m = this._engineReply();
+        if (m) this.game.move(m);
+      }
+      return this._state();
+    },
+
+    apiMove(body) {
+      const { from, to, promotion } = body || {};
+      const playerSide = this.playerColor === 'white' ? 'w' : 'b';
+      if (!this.game || this.game.turn() !== playerSide) return { illegal: true };
+      const move = this.game.move({ from, to, promotion: promotion || 'q' });
+      if (!move) return { illegal: true };
+      // Engine reply (if game still ongoing).
+      let engineSan = null, engineUci = null;
+      if (!(this.game.isGameOver?.() || this.game.in_checkmate?.() || this.game.in_stalemate?.())) {
+        const e = this._engineReply();
+        if (e) {
+          this.game.move(e);
+          engineSan = e.san;
+          engineUci = e.from + e.to + (e.promotion || '');
+        }
+      }
+      const st = this._state(engineUci || (move.from + move.to + (move.promotion || '')),
+                              engineSan || move.san);
+      st.engine_move = engineSan;
+      return st;
+    },
+
+    apiUndo() {
+      if (!this.game) return this._state();
+      this.game.undo();                              // engine's last
+      this.game.undo();                              // player's last
+      return this._state();
+    },
+
+    apiGame() {
+      if (!this.game) return { fen: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1',
+                                move_list: [], legal_moves_map: {}, turn: 'white',
+                                player_color: 'white', target_elo: 800,
+                                offline: true, coaching: 'Offline mode — press Start Game.' };
+      return this._state();
+    },
+
+    // SAP AI Core via the same-origin Vercel /api/coach function. The
+    // engine layer is offline (we have no Stockfish in serverless), so we
+    // build a coaching CONTEXT from chess.js state — FEN, last move, who's
+    // to move, opening prefix — and let Claude do its thing.
+    async apiOfflineNotice(kind, body) {
+      try {
+        const g = this.game;
+        const fen = g.fen();
+        const hist = g.history();
+        const mover = g.turn() === 'w' ? 'black' : 'white'; // who just moved
+        const moveNumber = Math.floor(hist.length / 2) + 1;
+        const lastSan = hist[hist.length - 1] || null;
+        const recent = hist.slice(-8).join(' ');
+        const turn = g.turn() === 'w' ? 'white' : 'black';
+
+        if (kind === 'coach') {
+          if (!lastSan) return { coaching: 'Make your first move when you are ready.', source: 'offline' };
+          const ctx = {
+            fen, move_san: lastSan, move_number: moveNumber, mover,
+            level: 'intermediate', elo: this.targetElo,
+            classification: 'good', cp_loss: 0, is_best: false,
+            best_move_san: null, best_line: null,
+            eval_before: 0, eval_after: 0, recent, opening: null,
+          };
+          const r = await fetch('/api/coach', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ kind: 'move', ctx }),
+          });
+          const d = await r.json().catch(() => ({}));
+          return { coaching: d.text || 'Coach unavailable.', source: d.source || 'sap-ai-core' };
+        }
+
+        if (kind === 'hint') {
+          const level = (body && body.level) || 1;
+          const facts = {
+            fen, level: 'intermediate', elo: this.targetElo,
+            your_color: this.playerColor, move_number: moveNumber, turn,
+            opening: null, eval_white: '0.00', recent, candidates: [],
+          };
+          const r = await fetch('/api/coach', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ kind: 'hint', facts, level }),
+          });
+          const d = await r.json().catch(() => ({}));
+          return { hint: d.text || 'Hint unavailable.', source: d.source || 'sap-ai-core' };
+        }
+
+        if (kind === 'ask') {
+          const question = (body && body.question) || '';
+          if (!question.trim()) return { answer: 'Ask me anything about this position.', source: 'offline' };
+          const facts = {
+            fen, level: 'intermediate', elo: this.targetElo,
+            your_color: this.playerColor, move_number: moveNumber, turn,
+            opening: null, eval_white: '0.00', recent, candidates: [],
+          };
+          const r = await fetch('/api/coach', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ kind: 'ask', facts, question }),
+          });
+          const d = await r.json().catch(() => ({}));
+          return { answer: d.text || 'Coach unavailable.', source: d.source || 'sap-ai-core' };
+        }
+
+        if (kind === 'review') {
+          const summary = {
+            result: g.isGameOver?.() ? (g.isCheckmate?.() ? (g.turn()==='w'?'0-1':'1-0') : '1/2-1/2') : 'ongoing',
+            player_color: this.playerColor, target_elo: this.targetElo,
+            level: 'intermediate', accuracy: 0, counts: {},
+            total_moves: hist.length, blunders: 0, mistakes: 0, inaccuracies: 0,
+          };
+          const r = await fetch('/api/coach', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ kind: 'review', summary }),
+          });
+          const d = await r.json().catch(() => ({}));
+          return { review: d.text || 'Review unavailable.', source: d.source || 'sap-ai-core' };
+        }
+      } catch (e) {
+        if (kind === 'coach')  return { coaching: 'Coach call failed: ' + e, source: 'error' };
+        if (kind === 'hint')   return { hint: 'Hint call failed: ' + e, source: 'error' };
+        if (kind === 'ask')    return { answer: 'Ask call failed: ' + e, source: 'error' };
+        return { error: String(e) };
+      }
+      return {};
+    },
+  };
+  // Expose for console debugging.
+  window.OfflineMode = OfflineMode;
+
+  // The page tries the real backend first (your local dashboard_server.py
+  // talking to SAP AI Core, OR a deployed copy of it). If the backend is
+  // unreachable, postJSON below silently falls back to OfflineMode so the
+  // UI never freezes. Local dev (`uv run python scripts/dashboard_server.py`
+  // → http://localhost:8088) gives you the full AI coach exactly as before;
+  // the fallback only fires when there genuinely is no backend.
+
+  async function postJSON(url, body) {
+    // Already in offline mode? Route to the local shim immediately.
+    if (OfflineMode.active) {
+      if (url === '/api/new')   return OfflineMode.apiNew(body);
+      if (url === '/api/move')  return OfflineMode.apiMove(body);
+      if (url === '/api/undo')  return OfflineMode.apiUndo();
+      if (url === '/api/game')  return OfflineMode.apiGame();
+      if (url === '/api/coach') return OfflineMode.apiOfflineNotice('coach', body);
+      if (url === '/api/hint')  return OfflineMode.apiOfflineNotice('hint', body);
+      if (url === '/api/ask')   return OfflineMode.apiOfflineNotice('ask', body);
+      if (url === '/api/review')return OfflineMode.apiOfflineNotice('review', body);
+      if (url.startsWith('/api/sandbox')) return { error: 'Sandbox unavailable in offline mode.' };
+      return {};
+    }
+    // Try the real backend with a hard 8-second timeout so a stalled Fly
+    // machine doesn't make the page hang forever before we fall back.
+    try {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 8000);
+      const resp = await fetch(_api(url), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body || {}),
+        credentials: 'include',
+        signal: ctrl.signal,
+      });
+      clearTimeout(t);
+      if (!resp.ok) throw new Error('backend ' + resp.status);
+      return await resp.json();
+    } catch (e) {
+      // First failure → engage offline mode and retry the same call locally.
+      OfflineMode.activate();
+      try { await OfflineMode._ready(); } catch (e2) {
+        return { error: 'Backend unreachable and offline engine failed to load.' };
+      }
+      return postJSON(url, body);
+    }
+  }
+
+  // ---- actions -----------------------------------------------------------
+  async function sendMove(from, to, promotion) {
+    busy = true;
+    setControlsDisabled(true);
+    setCoach('<span class="thinking">Engine is thinking</span>');
+    try {
+      const state = await postJSON('/api/move', { from, to, promotion });
+      if (state && state.illegal) {
+        if (currentState) board.position(currentState.fen);
+        setCoach('That move is not legal — try another.');
+        return;
+      }
+      resetMoveAids();
+      applyState(state);
+      renderTactical(state);
+      // Show the instant heuristic note + engine reply while the AI coach thinks.
+      let head = mdBold(state.coaching || '');
+      if (state.engine_move) {
+        head += '<br><span class="last-engine">Engine replied ' +
+                esc(state.engine_move) + '</span>';
+      }
+      head += '<br><span class="thinking">Coach is analyzing your move</span>';
+      setCoach(head);
+      // Fetch the dynamic Claude coaching (SAP AI Core) for this move.
+      const coach = await postJSON('/api/coach', {});
+      if (coach && coach.coaching) {
+        setCoach(mdBold(coach.coaching));
+        setSource(coach.source);
+        lastCoaching = coach.coaching;
+      }
+    } catch (e) {
+      if (currentState) board.position(currentState.fen);
+      setCoach('Connection error — is the server still running?');
+    } finally {
+      busy = false;
+      setControlsDisabled(false);
+    }
+  }
+
+  async function startGame(elo, color) {
+    busy = true;
+    try {
+      const state = await postJSON('/api/new', { elo: elo, color: color });
+      if (!gameActive) initBoard(state.player_color || 'white');
+      resetMoveAids();
+      const qa = document.getElementById('coach-qa');
+      if (qa) qa.innerHTML = '';
+      // Reset any prior review UI.
+      reviewData = null; reviewIdx = -1;
+      const rb = document.getElementById('review-body'); if (rb) rb.innerHTML = '';
+      const rbtn = document.getElementById('review-btn');
+      if (rbtn) { rbtn.style.display = ''; rbtn.disabled = false; }
+      clearReviewHighlights();
+      applyState(state);
+      renderTactical(state);
+      setCoach(mdBold(state.coaching || 'New game — your move.'));
+      setSource(state.coach_source);
+    } finally {
+      busy = false;
+      setControlsDisabled(false);
+    }
+  }
+
+  async function undoMove() {
+    if (busy) return;
+    busy = true;
+    setControlsDisabled(true);
+    try {
+      const state = await postJSON('/api/undo', {});
+      resetMoveAids();
+      applyState(state);
+      renderTactical(state);
+      setCoach(mdBold(state.coaching || 'Move taken back.'));
+    } finally {
+      busy = false;
+      setControlsDisabled(false);
+    }
+  }
+
+  async function getHint() {
+    if (busy || !currentState || currentState.is_game_over) return;
+    if (!isMyTurn()) { setHint("It's not your move yet — wait for the engine."); return; }
+    hintLevel = Math.min(3, hintLevel + 1);
+    const reqFen = currentState.fen;
+    setHintAskDisabled(true);
+    setHint('<span class="thinking">Coach is thinking</span>');
+    try {
+      const r = await postJSON('/api/hint', { level: hintLevel });
+      if (currentState.fen !== reqFen) return;                 // position moved on
+      setHint(mdBold(r.hint || ''));
+      const lvl = document.getElementById('hint-level');
+      if (lvl) lvl.textContent = 'Hint ' + hintLevel + '/3' +
+        (hintLevel < 3 ? ' · press again for more' : '');
+      if (r.highlight && r.highlight.from) {
+        hintHighlight = r.highlight;
+        applyHighlights(currentState);
+      }
+      if (r.source) setSource(r.source);
+    } catch (e) {
+      setHint('Could not reach the coach for a hint.');
+    } finally {
+      setHintAskDisabled(false);
+    }
+  }
+
+  async function askCoach() {
+    const input = document.getElementById('ask-input');
+    if (!input) return;
+    const q = (input.value || '').trim();
+    if (!q || !currentState) return;
+    input.value = '';
+    addQA(q);
+    setHintAskDisabled(true);
+    try {
+      const r = await postJSON('/api/ask', { question: q });
+      if (lastQAaEl) lastQAaEl.innerHTML = mdBold(r.answer || 'No answer.');
+      if (r.source) setSource(r.source);
+    } catch (e) {
+      if (lastQAaEl) lastQAaEl.textContent = 'Could not reach the coach.';
+    } finally {
+      setHintAskDisabled(false);
+      const log = document.getElementById('coach-qa');
+      if (log) log.scrollTop = log.scrollHeight;
+    }
+  }
+
+  // ---- post-game review --------------------------------------------------
+  async function getReview() {
+    const btn = document.getElementById('review-btn');
+    const bodyEl = document.getElementById('review-body');
+    if (btn) btn.disabled = true;
+    if (bodyEl) bodyEl.innerHTML = '<span class="thinking">Coach is reviewing your game</span>';
+    try {
+      const data = await postJSON('/api/review', {});
+      if (data.error) { if (bodyEl) bodyEl.textContent = data.error; if (btn) btn.disabled = false; return; }
+      renderReview(data);
+    } catch (e) {
+      if (bodyEl) bodyEl.textContent = 'Could not load the review.';
+      if (btn) btn.disabled = false;
+    }
+  }
+
+  function clearReviewHighlights() {
+    document.querySelectorAll('#board .hl-played, #board .hl-best')
+      .forEach(e => e.classList.remove('hl-played', 'hl-best'));
+  }
+
+  function renderReview(data) {
+    reviewData = data;
+    const btn = document.getElementById('review-btn');
+    if (btn) btn.style.display = 'none';
+    let html = '<div class="review-summary">' + mdBold(data.summary_text || '') + '</div>';
+    const n = data.cards_created || 0;
+    html += '<div class="review-cards">📇 ' + n + ' flashcard' +
+            (n === 1 ? '' : 's') + ' saved for spaced-repetition review.</div>';
+    const moments = data.moments || [];
+    if (moments.length) {
+      html += '<div class="review-moments">';
+      moments.forEach((m, i) => {
+        html += '<button class="moment-btn" data-i="' + i + '">Move ' + m.move_number +
+          ': ' + esc(m.played) + ' <span class="mb ' + esc(m.classification) + '">' +
+          esc(m.classification) + '</span></button>';
+      });
+      html += '</div><div class="moment-detail" id="moment-detail"></div>';
+      html += '<div class="review-nav" id="review-nav" style="display:none">' +
+        '<button class="rev-prev">‹ Prev</button>' +
+        '<button class="rev-next">Next ›</button>' +
+        '<button class="rev-exit">Return to final position</button></div>';
+    } else {
+      html += '<div class="review-cards">No major mistakes to review — well played!</div>';
+    }
+    const bodyEl = document.getElementById('review-body');
+    if (bodyEl) bodyEl.innerHTML = html;
+    if (moments.length) showMoment(0);
+  }
+
+  function showMoment(i) {
+    if (!reviewData || !reviewData.moments[i]) return;
+    reviewIdx = i;
+    const m = reviewData.moments[i];
+    board.position(m.fen_before, false);
+    clearHighlights();
+    document.querySelectorAll('#board .hl-last, #board .hl-check, #board .hl-hint')
+      .forEach(e => e.classList.remove('hl-last', 'hl-check', 'hl-hint'));
+    clearReviewHighlights();
+    if (m.played_uci) {
+      [m.played_uci.slice(0, 2), m.played_uci.slice(2, 4)].forEach(sq => {
+        const el = squareEl(sq); if (el) el.classList.add('hl-played');
+      });
+    }
+    if (m.best_uci) {
+      [m.best_uci.slice(0, 2), m.best_uci.slice(2, 4)].forEach(sq => {
+        const el = squareEl(sq); if (el) el.classList.add('hl-best');
+      });
+    }
+    const detail = document.getElementById('moment-detail');
+    if (detail) {
+      const pc = (currentState && currentState.player_color === 'black') ? 'Black' : 'White';
+      detail.innerHTML =
+        '<div><strong>Move ' + m.move_number + '</strong> · you (' + pc +
+        ') played <span class="bad">' + esc(m.played) + '</span> (' +
+        lossLabel(m.cp_loss) + '). Engine’s best ' + pc.toLowerCase() +
+        ' move: <span class="good">' + esc(m.best) + '</span>.</div>' +
+        '<div style="margin-top:6px">' + mdBold(m.explanation || '') + '</div>' +
+        '<div class="moment-legend"><span class="good">▮</span> best move · ' +
+        '<span class="bad">▮</span> your move</div>';
+    }
+    const nav = document.getElementById('review-nav');
+    if (nav) nav.style.display = 'flex';
+    document.querySelectorAll('.moment-btn').forEach((b, j) =>
+      b.classList.toggle('active', j === i));
+  }
+
+  function exitReview() {
+    reviewIdx = -1;
+    clearReviewHighlights();
+    if (currentState && currentState.fen) {
+      board.position(currentState.fen, false);
+      applyHighlights(currentState);
+    }
+    const detail = document.getElementById('moment-detail');
+    if (detail) detail.innerHTML = '';
+    const nav = document.getElementById('review-nav');
+    if (nav) nav.style.display = 'none';
+    document.querySelectorAll('.moment-btn').forEach(b => b.classList.remove('active'));
+  }
+
+  // ---- what-if sandbox (analysis board) ----------------------------------
+  function updateEvalBar(evalScore, label) {
+    const evalEl = document.getElementById('eval-score');
+    const barEl = document.getElementById('eval-bar');
+    if (!evalEl || !barEl) return;
+    if (evalScore != null) {
+      const clamped = Math.max(-10, Math.min(10, evalScore));
+      barEl.style.width = Math.round(((clamped + 10) / 20) * 100) + '%';
+      evalEl.textContent = label || ((evalScore > 0 ? '+' : '') + evalScore.toFixed(1));
+    } else {
+      barEl.style.width = '50%';
+      evalEl.textContent = '--';
+    }
+  }
+
+  async function enterSandbox() {
+    if (!gameActive || sandboxMode || busy) return;
+    try {
+      const st = await postJSON('/api/sandbox/start', {});
+      sandboxMode = true;
+      clearMoveOptions();
+      const gb = document.getElementById('game-bar');
+      const sb = document.getElementById('sandbox-bar');
+      const sp = document.getElementById('sim-panel');
+      if (gb) gb.style.display = 'none';
+      if (sb) sb.style.display = 'flex';
+      if (sp) sp.style.display = 'block';
+      const bw = document.querySelector('.board-wrapper');
+      if (bw) bw.classList.add('sandbox-active');
+      sandboxApply(st);
+    } catch (e) { /* leave the game view up on failure */ }
+  }
+
+  async function exitSandbox() {
+    if (!sandboxMode) return;
+    try { await postJSON('/api/sandbox/exit', {}); } catch (e) { /* ignore */ }
+    sandboxMode = false;
+    sandboxState = null;
+    clearMoveOptions();
+    document.querySelectorAll('#board .hl-hint, #board .hl-last, #board .hl-check')
+      .forEach(el => el.classList.remove('hl-hint', 'hl-last', 'hl-check'));
+    const gb = document.getElementById('game-bar');
+    const sb = document.getElementById('sandbox-bar');
+    const sp = document.getElementById('sim-panel');
+    if (gb) gb.style.display = '';
+    if (sb) sb.style.display = 'none';
+    if (sp) sp.style.display = 'none';
+    const bw = document.querySelector('.board-wrapper');
+    if (bw) bw.classList.remove('sandbox-active');
+    // Snap the board + panels back to the real game.
+    if (currentState) { lastFen = null; applyState(currentState); }
+  }
+
+  function sandboxApply(state) {
+    if (!state || !state.active) {
+      if (state && state.error) setSimVerdict(esc(state.error));
+      return;
+    }
+    sandboxState = state;
+    board.position(state.fen);
+    renderSim(state);
+    sandboxHighlights(state);
+    updateEvalBar(state.eval_white, state.eval_label);   // live eval feedback
+  }
+
+  function setSimVerdict(html) {
+    const el = document.getElementById('sim-verdict');
+    if (el) el.innerHTML = html;
+  }
+
+  function renderSim(state) {
+    const evalEl = document.getElementById('sim-eval');
+    if (evalEl) evalEl.textContent = state.eval_label ||
+      (state.eval_white != null ? state.eval_white.toFixed(2) : '—');
+
+    const deltaEl = document.getElementById('sim-delta');
+    if (deltaEl) {
+      if (state.eval_white != null && state.eval_base != null && !state.is_game_over) {
+        const d = state.eval_white - state.eval_base;
+        deltaEl.textContent = '(' + (d > 0 ? '+' : '') + d.toFixed(2) + ' vs the game position)';
+        deltaEl.className = 'sim-delta ' + (Math.abs(d) < 0.2 ? 'even' : (d > 0 ? 'pos' : 'neg'));
+      } else {
+        deltaEl.textContent = '';
+        deltaEl.className = 'sim-delta';
+      }
+    }
+
+    const lineEl = document.getElementById('sim-line');
+    if (lineEl) lineEl.textContent = state.line_display || '— start exploring —';
+
+    const predEl = document.getElementById('sim-predicted');
+    if (predEl) predEl.textContent = state.is_game_over
+      ? (state.result_text || 'this line is over')
+      : (state.predicted_line || '—');
+
+    const cEl = document.getElementById('sim-candidates');
+    if (cEl) {
+      if (state.candidates && state.candidates.length) {
+        cEl.innerHTML = state.candidates.map(c =>
+          '<button class="sim-cand" data-uci="' + esc(c.uci || '') + '" title="' +
+          esc(c.line || '') + '">' + esc(c.san) +
+          '<span class="sim-cand-eval">' + esc(c.label) + '</span></button>').join('');
+      } else {
+        cEl.innerHTML = '<span class="sim-note">No moves — this line is over.</span>';
+      }
+    }
+
+    const mEl = document.getElementById('sim-move');
+    if (state.sim) {
+      const s = state.sim;
+      const b = BADGE_MAP[s.classification] || { text: '', cls: '' };
+      const moverCap = capitalize(s.mover);
+      const sw = (s.swing_cp > 0 ? '+' : '') + (s.swing_cp / 100).toFixed(2);
+      let html = moverCap + ' tried <strong>' + esc(s.move_san) + '</strong> ' +
+        '<span class="badge ' + b.cls + '">' + b.text + ' ' + esc(s.classification) +
+        '</span> · eval swing ' + sw + ' for ' + esc(s.mover);
+      if (!s.is_best && s.best_move_san !== s.move_san)
+        html += ' · engine’s best was <strong>' + esc(s.best_move_san) + '</strong>';
+      if (mEl) mEl.innerHTML = html;
+      setSimVerdict('<span class="thinking">Coach is judging this move</span>');
+    } else {
+      if (mEl) mEl.textContent = '';
+      setSimVerdict('');
+    }
+  }
+
+  function sandboxHighlights(state) {
+    document.querySelectorAll('#board .hl-last, #board .hl-check, #board .hl-hint')
+      .forEach(e => e.classList.remove('hl-last', 'hl-check', 'hl-hint'));
+    if (state.last_move_uci) {
+      const f = squareEl(state.last_move_uci.slice(0, 2));
+      const t = squareEl(state.last_move_uci.slice(2, 4));
+      if (f) f.classList.add('hl-last');
+      if (t) t.classList.add('hl-last');
+    }
+    if (state.check_square) {
+      const c = squareEl(state.check_square);
+      if (c) c.classList.add('hl-check');
+    }
+    // Show the engine's #1 move from this position (green).
+    const top = state.candidates && state.candidates[0];
+    if (top && top.uci) {
+      const f = squareEl(top.uci.slice(0, 2));
+      const t = squareEl(top.uci.slice(2, 4));
+      if (f) f.classList.add('hl-hint');
+      if (t) t.classList.add('hl-hint');
+    }
+  }
+
+  async function sandboxSendMove(from, to, promo) {
+    if (!sandboxMode) return;
+    clearMoveOptions();
+    try {
+      const st = await postJSON('/api/sandbox/move', { from, to, promotion: promo });
+      if (st && st.illegal) {
+        if (sandboxState && sandboxState.fen) board.position(sandboxState.fen);
+        return;
+      }
+      sandboxApply(st);
+      // Fetch the AI verdict for the move just tried (streams in after the
+      // instant engine numbers), mirroring the live-game move → coach flow.
+      if (st && st.sim) {
+        const reqFen = st.fen;
+        const v = await postJSON('/api/sandbox/coach', {});
+        if (sandboxMode && sandboxState && sandboxState.fen === reqFen) {
+          setSimVerdict(mdBold(v.verdict || ''));
+          if (v.source) setSource(v.source);
+        }
+      }
+    } catch (e) {
+      setSimVerdict('Could not simulate — is the server still running?');
+    }
+  }
+
+  async function sandboxUndo() {
+    if (!sandboxMode) return;
+    try { sandboxApply(await postJSON('/api/sandbox/undo', {})); } catch (e) { /* ignore */ }
+  }
+  async function sandboxReset() {
+    if (!sandboxMode) return;
+    try { sandboxApply(await postJSON('/api/sandbox/reset', {})); } catch (e) { /* ignore */ }
+  }
+
+  function applyState(state) {
+    if (!state || !state.fen) return;
+    currentState = state;
+    // While exploring, keep the latest game state but never touch the board or
+    // panels — the sandbox owns the display until the player exits.
+    if (sandboxMode) return;
+    if (!gameActive) initBoard(state.player_color || 'white');
+    const expected = state.player_color === 'black' ? 'black' : 'white';
+    if (board.orientation() !== expected) board.orientation(expected);
+    if (state.fen !== lastFen) {
+      board.position(state.fen, true);
+      lastFen = state.fen;
+    }
+    updatePanels(state);
+    applyHighlights(state);
+  }
+
+  // ---- control wiring (event delegation; elements are recreated) ---------
+  document.addEventListener('click', (e) => {
+    const startBtn = e.target.closest('.btn-start');
+    if (startBtn) {
+      const bar = startBtn.closest('.setup-bar');
+      const rawElo = bar.querySelector('.setup-elo').value;
+      const elo = rawElo === 'auto' ? 'auto' : parseInt(rawElo, 10);
+      const color = bar.querySelector('.setup-color').value;
+      startGame(elo, color);
+      return;
+    }
+    if (e.target.closest('.btn-undo')) { undoMove(); return; }
+    if (e.target.closest('#explore-btn')) { enterSandbox(); return; }
+    if (e.target.closest('.btn-sb-undo')) { sandboxUndo(); return; }
+    if (e.target.closest('.btn-sb-reset')) { sandboxReset(); return; }
+    if (e.target.closest('.btn-sb-exit')) { exitSandbox(); return; }
+    const cand = e.target.closest('.sim-cand');
+    if (cand) {
+      const u = cand.getAttribute('data-uci');
+      if (u && u.length >= 4) {
+        sandboxSendMove(u.slice(0, 2), u.slice(2, 4), u.length > 4 ? u[4] : null);
+      }
+      return;
+    }
+    if (e.target.closest('#hint-btn')) { getHint(); return; }
+    if (e.target.closest('#ask-btn')) { askCoach(); return; }
+    if (e.target.closest('#review-btn')) { getReview(); return; }
+    const mb = e.target.closest('.moment-btn');
+    if (mb) { showMoment(parseInt(mb.getAttribute('data-i'), 10)); return; }
+    if (e.target.closest('.rev-prev')) { showMoment(Math.max(0, reviewIdx - 1)); return; }
+    if (e.target.closest('.rev-next')) {
+      showMoment(Math.min((reviewData ? reviewData.moments.length - 1 : 0), reviewIdx + 1));
+      return;
+    }
+    if (e.target.closest('.rev-exit')) { exitReview(); return; }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.target && e.target.id === 'ask-input') {
+      e.preventDefault();
+      askCoach();
+    }
+  });
+
+  // The Setup page (POST /api/new with start_fen) hands us a server-seeded
+  // game whose move_list is still empty. Those flags + a non-standard FEN
+  // tell us "yes, there really is a game waiting for the user", so the
+  // poll() skip-the-waiting-screen heuristic doesn't fire incorrectly.
+  const STANDARD_START_FEN_PREFIX =
+    'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR';
+  const _qs = new URLSearchParams(window.location.search);
+  const _comingFromSetup = _qs.has('play') || _qs.has('explore');
+  const _shouldAutoExplore = _qs.has('explore');
+  // Strip the query so a refresh doesn't keep re-triggering the auto-handoff.
+  if (_comingFromSetup && window.history && window.history.replaceState) {
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+
+  // ---- light polling: refresh panels; only touch board when idle ---------
+  async function poll() {
+    if (busy || sandboxMode) return;
+    try {
+      const resp = await fetch(_api('/api/game'),
+                               { credentials: 'include' });
+      if (!resp.ok) return;
+      const state = await resp.json();
+      if (!state || !state.fen) return;
+      if (sandboxMode) return;           // entered the sandbox during the fetch
+      // A *real* "no game yet" state has empty move_list AND the standard
+      // start FEN AND no Setup hand-off in flight. Without all three, the
+      // dashboard would steal a custom-seeded position and show the waiting
+      // screen, which is exactly the "Play from this position just starts a
+      // new game" bug the user reported.
+      const isStandardStart = state.fen.startsWith(STANDARD_START_FEN_PREFIX);
+      if (!gameActive && state.move_list && state.move_list.length === 0
+          && !currentState && isStandardStart && !_comingFromSetup) {
+        // No game started in the browser yet — leave the setup screen up.
+        return;
+      }
+      if (!gameActive) initBoard(state.player_color || 'white');
+      currentState = state;
+      const expected = state.player_color === 'black' ? 'black' : 'white';
+      if (board.orientation() !== expected) board.orientation(expected);
+      updatePanels(state);
+      if (state.fen !== lastFen) {
+        board.position(state.fen, true);
+        lastFen = state.fen;
+        renderTactical(state);
+        hintHighlight = null;
+        applyHighlights(state);
+      }
+      // Repaint coaching whenever it changes — this lets the richer AI text
+      // appear a few seconds after a move (it replaces the heuristic line on
+      // the server once /api/coach completes), and keeps observer tabs in sync.
+      if (state.coaching && state.coaching !== lastCoaching) {
+        setCoach(mdBold(state.coaching));
+        setSource(state.coach_source);
+        lastCoaching = state.coaching;
+      }
+    } catch (e) {
+      // server may be down; retry next tick
+    }
+  }
+
+  // First poll BEFORE setting up the interval so an explore-handoff can
+  // synchronously open the sandbox once the game is initialized.
+  (async () => {
+    await poll();
+    if (_shouldAutoExplore && gameActive && !sandboxMode) {
+      enterSandbox();
+    }
+    setInterval(poll, 1000);
+  })();
+
+  // ─────────── Voice control wiring ───────────
+  // The host page exposes its game state + actions to the voice module.
+  // ChessVoice.mount injects the floating mic button and a transcript
+  // banner; tapping the FAB does one round of Web Speech API listening,
+  // pipes the transcript through the parser, and either submits a move
+  // or fires the named command below.
+  if (window.ChessVoice && window.ChessVoice.isSupported()) {
+    // Reveal the voice cheat-sheet ONLY when speech actually works in this
+    // browser. Otherwise the panel stays display:none and we don't tease
+    // Firefox/older-Safari users with commands they can't use.
+    const _vhInit = setInterval(() => {
+      const el = document.getElementById('voice-help');
+      if (el) { el.style.display = ''; clearInterval(_vhInit); }
+    }, 250);
+    window.ChessVoice.mount({
+      // The voice parser needs `legal_moves_map`, `fen`, and `turn`
+      // (whose move is it). Our `currentState` already has all three.
+      getState: () => currentState,
+      // Submit a move via the same path the board's drag-and-drop uses;
+      // sendMove() is async so awaiting it lets the mic FAB show its
+      // "thinking" state until the engine reply lands.
+      submitMove: async (from, to, promotion) => {
+        if (sandboxMode) return sandboxSendMove(from, to, promotion);
+        return sendMove(from, to, promotion);
+      },
+      // Spoken control words → existing functions. Names are matched as
+      // word-boundary substrings so "please undo" still triggers undo.
+      commands: {
+        'undo':         () => undoMove(),
+        'take it back': () => undoMove(),
+        'hint':         () => getHint(),
+        'new game':     () => {
+          const bar = document.querySelector('#game-bar') ||
+                      document.querySelector('#setup-waiting');
+          if (!bar) return;
+          const elo = bar.querySelector('.setup-elo').value;
+          const color = bar.querySelector('.setup-color').value;
+          startGame(elo === 'auto' ? 'auto' : parseInt(elo, 10), color);
+        },
+        'explore':      () => enterSandbox(),
+        'analysis':     () => enterSandbox(),
+        'exit explore': () => exitSandbox(),
+        'review':       () => getReview(),
+      },
+    });
+  }
+})();
+</script>
+</body>
+</html>

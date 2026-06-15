@@ -1,0 +1,1173 @@
+[
+  {
+    "fen": "8/8/1p1k2p1/pP2p1Pp/P3P2P/2K5/8/8 b - - 11 61",
+    "solution_moves": [
+      "d6c5",
+      "c3b3",
+      "c5d4"
+    ],
+    "solution_san": [
+      "Kc5",
+      "Kb3",
+      "Kd4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "beginner",
+    "difficulty_rating": 718,
+    "explanation": "Kc5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "master",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "0aNCI",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/1k6/2p5/PpP5/1K6/8/8 b - - 8 63",
+    "solution_moves": [
+      "b6a5",
+      "b3b2",
+      "a5a4"
+    ],
+    "solution_san": [
+      "Ka5",
+      "Kb2",
+      "Kxa4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "beginner",
+    "difficulty_rating": 738,
+    "explanation": "Ka5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "0AC8g",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/R3rk2/6p1/6P1/5K2/8/8/8 w - - 3 45",
+    "solution_moves": [
+      "a7e7",
+      "f7e7",
+      "f4e5"
+    ],
+    "solution_san": [
+      "Rxe7+",
+      "Kxe7",
+      "Ke5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "beginner",
+    "difficulty_rating": 745,
+    "explanation": "Rxe7+ is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "rookEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "0MH1w",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/8/6p1/5KPk/8/8/8 w - - 0 81",
+    "solution_moves": [
+      "f4f5",
+      "h4h3",
+      "f5g5"
+    ],
+    "solution_san": [
+      "Kf5",
+      "Kh3",
+      "Kxg5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "beginner",
+    "difficulty_rating": 754,
+    "explanation": "Kf5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "03mv2",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/p1p5/Pp1p3p/1P1Pk1P1/2P3P1/4K3/8 b - - 0 50",
+    "solution_moves": [
+      "h5g4",
+      "e2d2",
+      "e4f3"
+    ],
+    "solution_san": [
+      "hxg4",
+      "Kd2",
+      "Kf3"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "beginner",
+    "difficulty_rating": 790,
+    "explanation": "hxg4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "02P6P",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/p4k2/P2p3p/3P3P/5K2/8/8 b - - 5 48",
+    "solution_moves": [
+      "f6f5",
+      "f3e3",
+      "f5g4"
+    ],
+    "solution_san": [
+      "Kf5",
+      "Ke3",
+      "Kg4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 800,
+    "explanation": "Kf5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "01tUB",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/8/1p1K4/1P6/Pk6/8/8 b - - 8 50",
+    "solution_moves": [
+      "b3a3",
+      "d5c5",
+      "a3a4"
+    ],
+    "solution_san": [
+      "Kxa3",
+      "Kc5",
+      "Ka4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 824,
+    "explanation": "Kxa3 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "master",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "0CC7Z",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/5p2/2k1p1p1/3rP2p/2K2P1P/3R2P1/8/8 w - - 12 58",
+    "solution_moves": [
+      "d3d5",
+      "e6d5",
+      "c4d4"
+    ],
+    "solution_san": [
+      "Rxd5",
+      "exd5+",
+      "Kd4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 831,
+    "explanation": "Rxd5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "master",
+      "rookEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "0OCd5",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/2p3k1/1p1p2p1/3P3Q/2P1P3/p6K/B7 b - - 0 50",
+    "solution_moves": [
+      "g5h4",
+      "h2h3",
+      "g6g5"
+    ],
+    "solution_san": [
+      "gxh4",
+      "Kh3",
+      "Kg5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 868,
+    "explanation": "gxh4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "0VQxN",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/2n5/2K5/1p2k3/1P6/8/8/8 w - - 3 52",
+    "solution_moves": [
+      "c6c7",
+      "e5d5",
+      "c7b6",
+      "d5c4",
+      "b6a5"
+    ],
+    "solution_san": [
+      "Kxc7",
+      "Kd5",
+      "Kb6",
+      "Kc4",
+      "Ka5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 884,
+    "explanation": "Kxc7 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "hangingPiece",
+      "long",
+      "zugzwang"
+    ],
+    "lichess_id": "0J4KQ",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/2p5/3k2p1/1p1P1p2/1P3P2/3K2Pp/7P/8 w - - 2 44",
+    "solution_moves": [
+      "d3d4",
+      "g6g5",
+      "f4g5"
+    ],
+    "solution_san": [
+      "Kd4",
+      "g5",
+      "fxg5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 944,
+    "explanation": "Kd4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "000o3",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/4k1p1/1p1p3p/pP3P1P/P1P2K2/8/8 b - - 4 52",
+    "solution_moves": [
+      "e6f5",
+      "f3e3",
+      "f5g4"
+    ],
+    "solution_san": [
+      "Kf5",
+      "Ke3",
+      "Kg4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1053,
+    "explanation": "Kf5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "01wxe",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/1p6/3k1p2/pP2pP1p/P3P2P/1K4P1/8 b - - 1 41",
+    "solution_moves": [
+      "d5c4",
+      "b2c2",
+      "b6b5",
+      "c2d2",
+      "c4b3"
+    ],
+    "solution_san": [
+      "Kc4",
+      "Kc2",
+      "b5",
+      "Kd2",
+      "Kb3"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1054,
+    "explanation": "Kc4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "quietMove",
+      "zugzwang"
+    ],
+    "lichess_id": "046wz",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/5r2/1p1pBk2/p1pP4/P1P2K2/1P6/8 w - - 0 47",
+    "solution_moves": [
+      "e5f6",
+      "f5f6",
+      "f3f4"
+    ],
+    "solution_san": [
+      "Bxf6",
+      "Kxf6",
+      "Kf4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1065,
+    "explanation": "Bxf6 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "02myt",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/7p/6pP/p2k1p2/1p1P1P2/PP2K3/8/8 w - - 0 50",
+    "solution_moves": [
+      "a3b4",
+      "a5b4",
+      "e3d3",
+      "d5e6",
+      "d3c4"
+    ],
+    "solution_san": [
+      "axb4",
+      "axb4",
+      "Kd3",
+      "Ke6",
+      "Kc4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1066,
+    "explanation": "axb4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "lichess_id": "01BTT",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/3k2p1/p2n1p2/1pBP1Pp1/1P2K1P1/7P/8 w - - 2 46",
+    "solution_moves": [
+      "c4d5",
+      "d6d5",
+      "e3d3",
+      "d5d6",
+      "d3c4",
+      "d6c6",
+      "d4d5"
+    ],
+    "solution_san": [
+      "Bxd5",
+      "Kxd5",
+      "Kd3",
+      "Kd6",
+      "Kc4",
+      "Kc6",
+      "d5+"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1096,
+    "explanation": "Bxd5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "veryLong",
+      "zugzwang"
+    ],
+    "lichess_id": "03FZ5",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/5k2/6p1/3rK1P1/5P2/8/8 w - - 0 69",
+    "solution_moves": [
+      "e4d4",
+      "f6e6",
+      "d4e4"
+    ],
+    "solution_san": [
+      "Kxd4",
+      "Ke6",
+      "Ke4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1118,
+    "explanation": "Kxd4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "01ghr",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/4k2p/4p1p1/4P1P1/rK3P1P/8/8 w - - 0 48",
+    "solution_moves": [
+      "b3a3",
+      "e6d7",
+      "a3b4",
+      "d7c6",
+      "b4c4"
+    ],
+    "solution_san": [
+      "Kxa3",
+      "Kd7",
+      "Kb4",
+      "Kc6",
+      "Kc4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1118,
+    "explanation": "Kxa3 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "long",
+      "zugzwang"
+    ],
+    "lichess_id": "02ccm",
+    "source": "lichess"
+  },
+  {
+    "fen": "4k3/1p2r3/1P4p1/4p1Pp/2R1K2P/8/8/8 w - - 1 44",
+    "solution_moves": [
+      "c4c8",
+      "e8d7",
+      "c8c7",
+      "d7d6",
+      "c7e7",
+      "d6e7",
+      "e4e5"
+    ],
+    "solution_san": [
+      "Rc8+",
+      "Kd7",
+      "Rc7+",
+      "Kd6",
+      "Rxe7",
+      "Kxe7",
+      "Kxe5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1125,
+    "explanation": "Rc8+ is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "exposedKing",
+      "rookEndgame",
+      "veryLong",
+      "zugzwang"
+    ],
+    "lichess_id": "06VY4",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/1p6/p3k3/P1P1p1p1/4P1P1/2K5/8 w - - 4 41",
+    "solution_moves": [
+      "c2c3",
+      "e5d6",
+      "c3d4",
+      "d6c6",
+      "d4e4"
+    ],
+    "solution_san": [
+      "Kc3",
+      "Kd6",
+      "Kd4",
+      "Kc6",
+      "Kxe4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1150,
+    "explanation": "Kc3 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "lichess_id": "04PnX",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/1k3p2/p3p3/Pp2Pp1p/1P1K3P/8/6P1/8 w - - 1 43",
+    "solution_moves": [
+      "d4c5",
+      "b7c7",
+      "g2g3",
+      "f7f6",
+      "e5f6"
+    ],
+    "solution_san": [
+      "Kc5",
+      "Kc7",
+      "g3",
+      "f6",
+      "exf6"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1201,
+    "explanation": "Kc5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "quietMove",
+      "zugzwang"
+    ],
+    "lichess_id": "067E4",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/p6p/1p1k1p1P/1Pp2P2/2P5/P3K3/8 w - - 5 40",
+    "solution_moves": [
+      "e2e3",
+      "d5d6",
+      "e3d4",
+      "a6a5",
+      "b4a5"
+    ],
+    "solution_san": [
+      "Ke3",
+      "Kd6",
+      "Kd4",
+      "a5",
+      "bxa5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1260,
+    "explanation": "Ke3 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "lichess_id": "08pbR",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/p1p2k2/1p3p1p/1P5P/P1P2KP1/8/8 w - - 1 45",
+    "solution_moves": [
+      "f3f4",
+      "f6e6",
+      "f4g5"
+    ],
+    "solution_san": [
+      "Kf4",
+      "Ke6",
+      "Kg5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1261,
+    "explanation": "Kf4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "071op",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/8/kPp1p1p1/p1P1P1Pp/7P/1K6/8 w - - 1 48",
+    "solution_moves": [
+      "b2a3",
+      "a5b6",
+      "a3a4",
+      "b6c7",
+      "a4a5"
+    ],
+    "solution_san": [
+      "Ka3",
+      "Kb6",
+      "Kxa4",
+      "Kc7",
+      "Ka5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1268,
+    "explanation": "Ka3 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "lichess_id": "04zcb",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/4k3/p1p1p1p1/P1P3P1/4K3/1P6/8 w - - 2 40",
+    "solution_moves": [
+      "e3e4",
+      "e6f6",
+      "e4d5",
+      "e5e4",
+      "d5e4"
+    ],
+    "solution_san": [
+      "Ke4",
+      "Kf6",
+      "Kd5",
+      "e4",
+      "Kxe4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1315,
+    "explanation": "Ke4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "lichess_id": "04qjR",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/8/1k4p1/2Q5/8/2K5/8 b - - 0 62",
+    "solution_moves": [
+      "b5c4",
+      "c2d2",
+      "c4d4",
+      "d2e2",
+      "d4e4"
+    ],
+    "solution_san": [
+      "Kxc4",
+      "Kd2",
+      "Kd4",
+      "Ke2",
+      "Ke4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1328,
+    "explanation": "Kxc4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "long",
+      "zugzwang"
+    ],
+    "lichess_id": "03WcF",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/1pk5/4p1p1/2K1Pp1p/2P2P1P/6P1/8 w - - 0 39",
+    "solution_moves": [
+      "c4b4",
+      "b6b5",
+      "c3c4",
+      "b5c4",
+      "b4c4"
+    ],
+    "solution_san": [
+      "Kb4",
+      "b5",
+      "c4",
+      "bxc4",
+      "Kxc4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1372,
+    "explanation": "Kb4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "quietMove",
+      "zugzwang"
+    ],
+    "lichess_id": "04iyl",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/k6p/p4p1P/K1p1pP2/2P1P3/1P6/8 b - - 0 49",
+    "solution_moves": [
+      "a6b6",
+      "a4a3",
+      "b6b5",
+      "a3a2",
+      "b5a4"
+    ],
+    "solution_san": [
+      "Kb6",
+      "Ka3",
+      "Kb5",
+      "Ka2",
+      "Ka4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1380,
+    "explanation": "Kb6 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "lichess_id": "00m6L",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/6pp/5k2/8/4p1PP/6K1/5P2/8 b - - 2 46",
+    "solution_moves": [
+      "f6e5",
+      "f2f4",
+      "e5d4"
+    ],
+    "solution_san": [
+      "Ke5",
+      "f4+",
+      "Kd4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1436,
+    "explanation": "Ke5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "08Mr3",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/5p2/4k3/6p1/4P1P1/3K4/8/8 b - - 6 56",
+    "solution_moves": [
+      "e6e5",
+      "d3e3",
+      "f7f6",
+      "e3f3",
+      "e5d4"
+    ],
+    "solution_san": [
+      "Ke5",
+      "Ke3",
+      "f6",
+      "Kf3",
+      "Kd4"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1462,
+    "explanation": "Ke5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "master",
+      "pawnEndgame",
+      "quietMove",
+      "zugzwang"
+    ],
+    "lichess_id": "01wap",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/6p1/3kP3/8/4K3/8/8 b - - 2 56",
+    "solution_moves": [
+      "d5e5",
+      "e3f3",
+      "e5f5",
+      "f3g3",
+      "f5g5"
+    ],
+    "solution_san": [
+      "Kxe5",
+      "Kf3",
+      "Kf5",
+      "Kg3",
+      "Kg5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1523,
+    "explanation": "Kxe5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "zugzwang"
+    ],
+    "lichess_id": "03E2z",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/p6p/4k1p1/P1p1P1P1/4K3/1P6/8 w - - 0 40",
+    "solution_moves": [
+      "a4a5",
+      "e5e6",
+      "e3d4",
+      "h6h5",
+      "g4h5"
+    ],
+    "solution_san": [
+      "a5",
+      "Ke6",
+      "Kd4",
+      "h5",
+      "gxh5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1527,
+    "explanation": "a5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "quietMove",
+      "zugzwang"
+    ],
+    "lichess_id": "03nUA",
+    "source": "lichess"
+  },
+  {
+    "fen": "1n6/1k3p1p/p2Bp1p1/Pp1pP1P1/1K1P1P1P/1P6/8/8 w - - 5 43",
+    "solution_moves": [
+      "d6b8",
+      "b7b8",
+      "b4c5",
+      "b8c7",
+      "b3b4",
+      "c7b7",
+      "c5d6"
+    ],
+    "solution_san": [
+      "Bxb8",
+      "Kxb8",
+      "Kc5",
+      "Kc7",
+      "b4",
+      "Kb7",
+      "Kd6"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1534,
+    "explanation": "Bxb8 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "quietMove",
+      "veryLong",
+      "zugzwang"
+    ],
+    "lichess_id": "04Xjf",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/8/pp6/4k1p1/P1P3P1/1P2K3/8 b - - 3 53",
+    "solution_moves": [
+      "a5a4",
+      "b2b3",
+      "a4b3"
+    ],
+    "solution_san": [
+      "a4",
+      "b3",
+      "axb3"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1544,
+    "explanation": "a4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "pawnEndgame",
+      "quietMove",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "02kQm",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/4k3/2pb1p2/5P2/p1P1KB2/2P5/P7/8 b - - 5 49",
+    "solution_moves": [
+      "d6f4",
+      "e4f4",
+      "e7d6",
+      "f4e4",
+      "d6c5",
+      "e4d3",
+      "a4a3"
+    ],
+    "solution_san": [
+      "Bxf4",
+      "Kxf4",
+      "Kd6",
+      "Ke4",
+      "Kc5",
+      "Kd3",
+      "a3"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1561,
+    "explanation": "Bxf4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "bishopEndgame",
+      "crushing",
+      "endgame",
+      "master",
+      "veryLong",
+      "zugzwang"
+    ],
+    "lichess_id": "05PrB",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/5p2/1k2p3/pp1rPp1p/5P1P/1P2K1P1/P2R4/8 w - - 0 33",
+    "solution_moves": [
+      "d2d5",
+      "e6d5",
+      "e3d4",
+      "b6c6",
+      "a2a3"
+    ],
+    "solution_san": [
+      "Rxd5",
+      "exd5",
+      "Kd4",
+      "Kc6",
+      "a3"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "advanced",
+    "difficulty_rating": 1594,
+    "explanation": "Rxd5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "long",
+      "rookEndgame",
+      "zugzwang"
+    ],
+    "lichess_id": "01VR8",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/p7/1pp5/2P5/PP6/4Kp2/5Pk1/8 b - - 0 41",
+    "solution_moves": [
+      "b6c5",
+      "b4c5",
+      "a7a5",
+      "e3e4",
+      "g2f2"
+    ],
+    "solution_san": [
+      "bxc5",
+      "bxc5",
+      "a5",
+      "Ke4",
+      "Kxf2"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "expert",
+    "difficulty_rating": 1611,
+    "explanation": "bxc5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "pawnEndgame",
+      "quietMove",
+      "zugzwang"
+    ],
+    "lichess_id": "04yy4",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/5p2/4k3/6p1/4P3/3K3P/8 b - - 3 48",
+    "solution_moves": [
+      "e5e4",
+      "d2e2",
+      "f6f5",
+      "e2d2",
+      "e4f3",
+      "d2d3",
+      "f3g2"
+    ],
+    "solution_san": [
+      "Ke4",
+      "Ke2",
+      "f5",
+      "Kd2",
+      "Kf3",
+      "Kd3",
+      "Kg2"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "expert",
+    "difficulty_rating": 1656,
+    "explanation": "Ke4 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "pawnEndgame",
+      "quietMove",
+      "veryLong",
+      "zugzwang"
+    ],
+    "lichess_id": "05o9S",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/1p1k1n2/p2p1P2/PP1K1N2/8/8/8 w - - 0 49",
+    "solution_moves": [
+      "b4b5",
+      "f6e4",
+      "f4d5"
+    ],
+    "solution_san": [
+      "b5",
+      "Ne4",
+      "Nxd5"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "expert",
+    "difficulty_rating": 1670,
+    "explanation": "b5 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "knightEndgame",
+      "master",
+      "quietMove",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "05QfW",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/6p1/8/8/4P2k/5KpP/8/8 w - - 4 47",
+    "solution_moves": [
+      "f3g2",
+      "h4g5",
+      "g2g3"
+    ],
+    "solution_san": [
+      "Kg2",
+      "Kg5",
+      "Kxg3"
+    ],
+    "motif": "zugzwang",
+    "difficulty": "expert",
+    "difficulty_rating": 1720,
+    "explanation": "Kg2 is the key \u2014 it sets up a zugzwang. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "master",
+      "pawnEndgame",
+      "short",
+      "zugzwang"
+    ],
+    "lichess_id": "00HqY",
+    "source": "lichess"
+  }
+]

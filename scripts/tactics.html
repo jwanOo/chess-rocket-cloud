@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#16213e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Chess Rocket">
+<!-- Backend URL injected at deploy time; empty = same-origin (works for both
+     local dev and Render container deployment where one server hosts both). -->
+<meta name="cr-backend-url" content="">
+<title>Tactics Trainer — Chess Rocket</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2316213e'/%3E%3Ctext x='50%25' y='62%25' font-size='44' text-anchor='middle' fill='%23e94560'%3E%E2%99%9E%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='40' fill='%2316213e'/%3E%3Ctext x='50%25' y='65%25' font-size='130' text-anchor='middle' fill='%23e94560'%3E%E2%99%9E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface2: #0f3460;
+    --text: #e0e0e0;
+    --text-dim: #888;
+    --accent: #e94560;
+    --green: #4caf50;
+    --light-green: #8bc34a;
+    --blue: #2196f3;
+    --yellow: #ffc107;
+    --orange: #ff9800;
+    --red: #f44336;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  header {
+    background: var(--surface);
+    padding: 12px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 2px solid var(--accent);
+  }
+  header h1 { font-size: 1.3rem; font-weight: 600; }
+  header h1 span { color: var(--accent); }
+  .nav-links { display: flex; gap: 18px; font-size: 0.9rem; align-items: center; }
+  .nav-links a { color: var(--text-dim); text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+  .nav-links a.active { color: var(--accent); font-weight: 600; }
+  .nav-links a:hover { background: var(--surface2); color: var(--text); }
+  .header-stats { display: flex; gap: 16px; font-size: 0.85rem; color: var(--text-dim); }
+  .main {
+    display: grid;
+    grid-template-columns: minmax(360px, 680px) 1fr;
+    gap: 16px;
+    padding: 16px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .board-col { display: flex; flex-direction: column; gap: 12px; }
+  .board-wrapper { width: 100%; aspect-ratio: 1; position: relative; }
+  #board { width: 100% !important; height: auto !important; }
+  .board-info { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-dim); }
+  .panels { display: flex; flex-direction: column; gap: 12px; }
+  .panel {
+    background: var(--surface); border-radius: 8px; padding: 14px 16px;
+    border-left: 3px solid var(--surface2);
+  }
+  .panel h2 {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--text-dim); margin-bottom: 8px;
+  }
+  /* Setup bar */
+  .setup-bar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .setup-bar label { font-size: 0.8rem; color: var(--text-dim); }
+  .setup-bar select, .btn {
+    background: var(--surface2); color: var(--text);
+    border: 1px solid #2a4a7a; border-radius: 6px;
+    padding: 6px 10px; font-size: 0.85rem; cursor: pointer;
+  }
+  .btn:hover:not(:disabled) { background: #15498a; }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  .btn-primary:hover:not(:disabled) { background: #c93651; }
+  .btn-success { background: var(--green); border-color: var(--green); color: #06210a; font-weight: 600; }
+  .btn-warn   { background: var(--surface2); border-color: var(--orange); color: var(--orange); font-weight: 600; }
+  .btn-warn:hover:not(:disabled) { background: var(--orange); color: #1a0e00; }
+  /* Prompt panel */
+  .prompt { border-left-color: var(--accent) !important; }
+  .prompt-title { font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+  .prompt-side { font-size: 0.95rem; color: var(--text); margin-bottom: 6px; }
+  .prompt-meta { font-size: 0.78rem; color: var(--text-dim); }
+  .prompt-meta b { color: var(--text); }
+  .prompt-progress { margin-top: 6px; font-size: 0.82rem; color: var(--light-green); }
+  /* Feedback */
+  .feedback { margin-top: 10px; padding: 10px 12px; border-radius: 6px;
+              font-size: 0.92rem; font-weight: 500; line-height: 1.45; display: none; border: 1px solid; }
+  .feedback.visible { display: block; animation: flash 0.5s ease; }
+  .feedback.ok      { background: rgba(76,175,80,0.12);  border-color: var(--green);  color: var(--light-green); }
+  .feedback.err     { background: rgba(244,67,54,0.12);  border-color: var(--red);    color: var(--red); }
+  .feedback.done    { background: rgba(33,150,243,0.12); border-color: var(--blue);   color: var(--blue); font-weight: 700; }
+  .feedback.skipped { background: rgba(255,152,0,0.12);  border-color: var(--orange); color: var(--orange); }
+  @keyframes flash { 0% { transform: scale(0.97); opacity: 0.4; } 100% { transform: scale(1); opacity: 1; } }
+  /* Hint panel */
+  .hint-panel { border-left-color: var(--green) !important; }
+  .hint-text { font-size: 0.92rem; line-height: 1.5; min-height: 1.5em; }
+  .hint-text strong { color: var(--accent); }
+  .hint-meta { font-size: 0.72rem; color: var(--text-dim); margin-top: 4px; }
+  /* Solution reveal */
+  .solution-reveal {
+    margin-top: 8px; padding: 10px; border-radius: 6px; background: var(--surface2);
+    font-family: 'SF Mono', 'Consolas', monospace; font-size: 0.88rem; line-height: 1.6;
+  }
+  .solution-reveal b { color: var(--light-green); }
+  .solution-reveal .move-played { color: var(--accent); }
+  /* Stats */
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .stat { text-align: center; }
+  .stat-value { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+  .stat-label { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+  .theme-stats { margin-top: 12px; font-size: 0.82rem; }
+  .theme-stat-row {
+    display: flex; justify-content: space-between; padding: 3px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.06);
+  }
+  .theme-stat-row:last-child { border-bottom: none; }
+  .theme-stat-row .theme-name { color: var(--text); }
+  .theme-stat-row .theme-rate { color: var(--text-dim); font-family: 'SF Mono', monospace; }
+  /* Board highlights */
+  #board .square-55d63.hl-last      { box-shadow: inset 0 0 0 4px rgba(255,193,7,0.55); }
+  #board .square-55d63.hl-check     { box-shadow: inset 0 0 0 4px rgba(244,67,54,0.85); }
+  #board .square-55d63.hl-hint      { box-shadow: inset 0 0 0 5px rgba(76,175,80,0.95); }
+  #board .square-55d63.hl-sel       { box-shadow: inset 0 0 0 4px rgba(33,150,243,0.85); }
+  #board .square-55d63.hl-capture   { box-shadow: inset 0 0 0 4px rgba(33,150,243,0.65); cursor: pointer; }
+  #board .square-55d63.hl-correct   { box-shadow: inset 0 0 0 4px rgba(76,175,80,0.95); }
+  #board .square-55d63.hl-wrong     { box-shadow: inset 0 0 0 4px rgba(244,67,54,0.85); }
+  #board .square-55d63.hl-dot {
+    background-image: radial-gradient(circle, rgba(33,150,243,0.55) 17%, transparent 19%);
+    cursor: pointer;
+  }
+  /* Empty state */
+  .empty {
+    text-align: center; padding: 60px 20px; color: var(--text-dim); font-size: 1.05rem;
+  }
+  .empty .pulse { animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+  /* Pulse the "Next Puzzle ›" button when a puzzle is over so the user has
+     an obvious next action — the bug "the board stopped reacting" usually
+     boils down to "the puzzle finished and I didn't realise". */
+  #next-btn.glow {
+    animation: glow 1.4s ease-in-out infinite;
+    box-shadow: 0 0 0 0 rgba(76,175,80,0.8);
+  }
+  @keyframes glow {
+    0%,100% { box-shadow: 0 0 0 0 rgba(76,175,80,0.6); }
+    50%     { box-shadow: 0 0 0 8px rgba(76,175,80,0); }
+  }
+  /* Coach panel: a deeper LLM-driven explanation + free-form Q&A. Visually
+     mirrors the dashboard's coach panel so the experience is consistent
+     across the two pages. */
+  .coach-panel { border-left-color: var(--accent) !important; }
+  .coach-text  { font-size: 0.93rem; line-height: 1.55; min-height: 1.5em; }
+  .coach-text strong { color: var(--accent); }
+  .coach-actions { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+  .coach-source-tag { font-size: 0.7rem; color: var(--text-dim); }
+  .coach-source-tag .dot { color: var(--green); margin-right: 3px; }
+  .ask-row { display: flex; gap: 6px; margin-top: 10px; }
+  .ask-input {
+    flex: 1; background: var(--bg); border: 1px solid var(--surface2); color: var(--text);
+    border-radius: 6px; padding: 6px 9px; font-size: 0.85rem;
+  }
+  .ask-input:focus { outline: none; border-color: var(--blue); }
+  .btn-ask {
+    background: var(--blue); color: #fff; border: none; border-radius: 6px;
+    padding: 6px 14px; cursor: pointer; font-size: 0.85rem; font-weight: 600;
+  }
+  .btn-ask:disabled { opacity: 0.5; cursor: not-allowed; }
+  .coach-qa { margin-top: 10px; max-height: 220px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+  .qa-item { font-size: 0.86rem; line-height: 1.45; border-top: 1px solid var(--surface2); padding-top: 6px; }
+  .qa-q { color: var(--blue); font-weight: 600; }
+  .qa-a { color: var(--text); margin-top: 2px; }
+  .qa-a.thinking { color: var(--yellow); font-style: italic; }
+  .qa-a.thinking::after { content: '...'; animation: dots 1.2s steps(4,end) infinite; }
+  @keyframes dots { 0%{content:''} 25%{content:'.'} 50%{content:'..'} 75%{content:'...'} }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }
+  /* Mobile-responsive — same approach as dashboard.html: stack the panels
+     under the board, hide the header stats, give buttons real tap-targets. */
+  @media (max-width: 768px) {
+    header { padding: 8px 12px; }
+    header h1 { font-size: 1.05rem; }
+    .nav-links { gap: 10px; font-size: 0.82rem; }
+    .nav-links a { padding: 4px 6px; }
+    .header-stats { display: none; }
+    .main {
+      grid-template-columns: 1fr;
+      gap: 10px; padding: 8px; padding-bottom: 110px;
+    }
+    .panel { padding: 10px 12px; }
+    .panel h2 { font-size: 0.7rem; }
+    .setup-bar { gap: 6px; }
+    .setup-bar select, .btn {
+      padding: 8px 11px; font-size: 0.88rem; min-height: 40px;
+    }
+    .btn-primary, #next-btn { min-height: 44px; }
+    .coach-qa { max-height: 140px; }
+    .ask-input { min-height: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span>Chess Rocket</span> Tactics</h1>
+  <div class="nav-links">
+    <a href="/">Play</a>
+    <a href="/tactics" class="active">Tactics</a>
+    <a href="/setup">Setup</a>
+  </div>
+  <div class="header-stats">
+    <span id="header-totals">— attempted</span>
+    <span id="header-rate">— solved</span>
+  </div>
+</header>
+
+<div class="main" id="main-content">
+  <!-- LEFT: board + setup bar -->
+  <div class="board-col">
+    <div class="board-wrapper"><div id="board"></div></div>
+    <div class="board-info">
+      <span id="side-indicator">Pick a theme to start</span>
+      <span id="motif-indicator"></span>
+    </div>
+    <div class="setup-bar">
+      <label>Theme</label>
+      <select id="theme-select">
+        <option value="">Mixed (all themes)</option>
+      </select>
+      <label>Max rating</label>
+      <select id="rating-select">
+        <option value="">Any</option>
+        <option value="900">≤ 900</option>
+        <option value="1100">≤ 1100</option>
+        <option value="1300" selected>≤ 1300</option>
+        <option value="1500">≤ 1500</option>
+        <option value="1800">≤ 1800</option>
+      </select>
+      <span style="flex:1"></span>
+      <button class="btn btn-primary" id="new-btn">New Puzzle</button>
+    </div>
+  </div>
+
+  <!-- RIGHT: prompt, hints, solution, stats -->
+  <div class="panels">
+    <div class="panel prompt">
+      <h2>Puzzle</h2>
+      <div id="prompt-body" class="empty">
+        <p class="pulse">Pick a theme and press <b>New Puzzle</b>.</p>
+        <p style="margin-top:10px;font-size:0.85rem">Each puzzle is a real tactical position. Find the best move — for multi-move puzzles, the engine will play your opponent.</p>
+      </div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+
+    <div class="panel hint-panel" id="hint-card" style="display:none;">
+      <h2>Hint</h2>
+      <div class="hint-text" id="hint-text">Stuck? Tap Hint for a nudge — three levels, each more revealing.</div>
+      <div class="hint-meta" id="hint-meta"></div>
+      <div class="setup-bar" style="margin-top:10px;">
+        <button class="btn" id="hint-btn">💡 Hint</button>
+        <button class="btn btn-warn" id="skip-btn">Reveal Solution</button>
+        <span style="flex:1"></span>
+        <button class="btn btn-success" id="next-btn" style="display:none;">Next Puzzle ›</button>
+      </div>
+    </div>
+
+    <!-- AI Coach panel: explain the puzzle in depth + free-form Q&A. -->
+    <div class="panel coach-panel" id="coach-card" style="display:none;">
+      <h2>Coach</h2>
+      <div class="coach-text" id="coach-text">Press <b>💬 Explain</b> for the coach's take on this position, or just ask anything below.</div>
+      <div class="coach-actions">
+        <button class="btn" id="explain-btn">💬 Explain</button>
+        <span class="coach-source-tag" id="coach-source"></span>
+      </div>
+      <div class="ask-row">
+        <input class="ask-input" id="ask-input"
+               placeholder="Ask anything about this position…" maxlength="240">
+        <button class="btn-ask" id="ask-btn">Ask</button>
+      </div>
+      <div class="coach-qa" id="coach-qa"></div>
+    </div>
+
+    <div class="panel" id="solution-card" style="display:none; border-left-color: var(--blue);">
+      <h2>Solution</h2>
+      <div class="solution-reveal" id="solution-text"></div>
+    </div>
+
+    <div class="panel" style="border-left-color: var(--yellow);">
+      <h2>Stats</h2>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-value" id="stat-attempted">0</div>
+          <div class="stat-label">Attempted</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-solved">0</div>
+          <div class="stat-label">Solved</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-perfect">0</div>
+          <div class="stat-label">Perfect</div>
+        </div>
+      </div>
+      <div class="theme-stats" id="theme-stats"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Voice module — see ChessVoice.mount() at the bottom of the IIFE. -->
+<script src="/voice_control.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  // BACKEND_URL is empty during local dev (same origin). On Vercel it gets
+  // replaced at build time with the Fly.io URL.
+  const BACKEND_URL = (
+    document.querySelector('meta[name="cr-backend-url"]')?.content || ''
+  ).replace(/\/+$/, '');
+
+  // ---------- state ----------
+  let board = null;
+  let currentState = null;     // latest TacticsSession state from the server
+  let busy = false;
+  let busySince = 0;           // timestamp; used by the watchdog below
+  let selectedSquare = null;   // click-to-move source
+  let hintHighlight = null;    // {from,to} active level-3 hint
+  let lastWrongHighlight = null; // {from,to} of last incorrect attempt
+  let replayTimer = null;      // active setTimeout id while a replay is animating
+  const recentIds = [];        // exclude_ids to avoid repeats
+  const FETCH_TIMEOUT_MS = 8000;       // default for board / hint / skip calls
+  const COACH_TIMEOUT_MS = 45000;      // LLM round-trip (XSUAA + Claude) is slow
+  const BUSY_WATCHDOG_MS = 12000;      // force-unstick after this many ms
+  const REPLAY_STEP_MS = 850;          // delay between animated replay plies
+
+  // ---------- helpers ----------
+  function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function mdBold(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g,'<br>'); }
+  function capitalize(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
+  function squareEl(sq) { return document.querySelector('#board .square-' + sq); }
+
+  // The single source of truth for whether the UI is locked. Wrapping the
+  // raw flag means we always update both the variable and the DOM together,
+  // and the watchdog can spot a stuck flag.
+  function setBusy(v) {
+    busy = !!v;
+    busySince = busy ? Date.now() : 0;
+    setControlsDisabled(busy);
+  }
+
+  // Safety net: if `busy` gets stuck longer than the watchdog window (e.g.
+  // because chessboard.js misbehaved or a callback chain swallowed an
+  // exception), force-unstick so the page doesn't end up frozen.
+  setInterval(() => {
+    if (busy && busySince && Date.now() - busySince > BUSY_WATCHDOG_MS) {
+      console.warn('tactics: busy flag stuck for', BUSY_WATCHDOG_MS, 'ms, recovering.');
+      setBusy(false);
+      setFeedback('That request stalled — please try again.', 'err');
+    }
+  }, 1000);
+
+  // Fetch with a per-call timeout. If the server hangs the UI never has to.
+  // The default works for cheap endpoints (move/hint/skip); LLM-backed calls
+  // (explain/ask) pass a longer budget via the `timeoutMs` argument because
+  // the SAP AI Core round-trip can legitimately take 5–15 s, especially on
+  // the first call when the XSUAA token isn't yet cached.
+  // `credentials: 'include'` lets the session cookie travel cross-origin
+  // when the deployed frontend (Vercel) talks to the backend (Fly).
+  async function _fetchJSON(url, init, timeoutMs) {
+    const ctrl = new AbortController();
+    const limit = Number.isFinite(timeoutMs) ? timeoutMs : FETCH_TIMEOUT_MS;
+    const tid = setTimeout(() => ctrl.abort(), limit);
+    try {
+      const fullUrl = url.startsWith('/') ? BACKEND_URL + url : url;
+      const r = await fetch(fullUrl, {
+        ...init,
+        signal: ctrl.signal,
+        credentials: 'include',
+      });
+      if (!r.ok) {
+        // 404 typically means the server hasn't been restarted to pick up
+        // newly-added endpoints — surface that rather than the generic
+        // "could not reach" message.
+        if (r.status === 404) throw new Error('endpoint missing — restart the server');
+        throw new Error('HTTP ' + r.status);
+      }
+      return await r.json();
+    } finally {
+      clearTimeout(tid);
+    }
+  }
+  async function getJSON(url, timeoutMs) {
+    return _fetchJSON(url, { cache: 'no-cache' }, timeoutMs);
+  }
+  async function postJSON(url, body, timeoutMs) {
+    return _fetchJSON(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body || {}),
+    }, timeoutMs);
+  }
+
+  // ---------- board init ----------
+  function initBoard(orientation) {
+    if (board) board.destroy();
+    board = Chessboard('board', {
+      position: 'start',
+      orientation: orientation || 'white',
+      draggable: true,
+      onDragStart, onDrop, onSnapEnd,
+      pieceTheme: 'https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png',
+    });
+    window.removeEventListener('resize', _resize);
+    window.addEventListener('resize', _resize);
+    const el = document.getElementById('board');
+    el.removeEventListener('click', onBoardClick);
+    el.addEventListener('click', onBoardClick);
+  }
+  function _resize() { if (board) board.resize(); }
+
+  // ---------- legal-move map (from server state) ----------
+  function legalMap() {
+    return (currentState && currentState.legal_moves_map) || {};
+  }
+  function isPlayerTurn() {
+    // True only during the solving phase — used to decide whether *legal*
+    // (puzzle-aware) moves are accepted. The free-exploration path (after
+    // solve/skip) is gated by isExplorationMode() instead.
+    return currentState && currentState.active && currentState.is_player_turn
+           && !currentState.solved && !currentState.failed && !busy;
+  }
+  function pieceColor(piece) { return piece && piece[0] === 'w' ? 'white' : 'black'; }
+
+  // After a puzzle is solved or revealed, allow free piece movement on the
+  // board (no validation, no server call). The board would otherwise refuse
+  // to drag because `is_player_turn` is false — and the user reads that as
+  // "the board froze". Free exploration is what every modern puzzle UI does.
+  function isExplorationMode() {
+    return currentState && currentState.active && !busy
+        && (currentState.solved || currentState.failed);
+  }
+
+  function onDragStart(source, piece) {
+    if (busy) return false;
+    if (!currentState || !currentState.active) return false;
+    if (isExplorationMode()) {
+      // Anything goes — the user is studying the position.
+      return true;
+    }
+    if (!currentState.is_player_turn) return false;
+    if (pieceColor(piece) !== currentState.player_color) return false;
+    selectedSquare = source;
+    paintMoveOptions(source);
+    return true;
+  }
+  function onDrop(source, target, piece) {
+    if (target === source) return 'snapback';
+    clearMoveOptions();
+    if (isExplorationMode()) {
+      // Free move: chessboard.js handles the piece animation; we don't talk
+      // to the server, don't validate, don't snap back. The next puzzle
+      // load will reset everything.
+      return;
+    }
+    const targets = legalMap()[source] || [];
+    if (targets.indexOf(target) === -1) return 'snapback';
+    let promo = null;
+    if ((piece === 'wP' && target[1] === '8') || (piece === 'bP' && target[1] === '1')) promo = 'q';
+    submitMove(source, target, promo);
+  }
+  function onSnapEnd() {
+    // While exploring, leave the user-arranged position alone. Otherwise
+    // resync to the server's view in case chessboard.js animated to a
+    // slightly stale position.
+    if (isExplorationMode()) return;
+    if (currentState && currentState.fen) safeBoardPosition(currentState.fen, false);
+  }
+
+  // ---------- click-to-move + highlights ----------
+  function clearLightHighlights() {
+    document.querySelectorAll('#board .hl-sel, #board .hl-dot, #board .hl-capture')
+      .forEach(e => e.classList.remove('hl-sel', 'hl-dot', 'hl-capture'));
+  }
+  function clearMoveOptions() { clearLightHighlights(); selectedSquare = null; }
+  function paintMoveOptions(source) {
+    clearLightHighlights();
+    const sel = squareEl(source);
+    if (sel) sel.classList.add('hl-sel');
+    const targets = legalMap()[source] || [];
+    const pos = board.position();
+    targets.forEach(t => {
+      const te = squareEl(t);
+      if (te) te.classList.add(pos[t] ? 'hl-capture' : 'hl-dot');
+    });
+  }
+  function clearAttemptHighlights() {
+    document.querySelectorAll('#board .hl-correct, #board .hl-wrong')
+      .forEach(e => e.classList.remove('hl-correct', 'hl-wrong'));
+  }
+  function applyPersistentHighlights() {
+    document.querySelectorAll('#board .hl-last, #board .hl-check, #board .hl-hint')
+      .forEach(e => e.classList.remove('hl-last', 'hl-check', 'hl-hint'));
+    if (!currentState) return;
+    if (currentState.last_move_uci) {
+      [currentState.last_move_uci.slice(0,2), currentState.last_move_uci.slice(2,4)]
+        .forEach(sq => { const el = squareEl(sq); if (el) el.classList.add('hl-last'); });
+    }
+    if (currentState.check_square) {
+      const c = squareEl(currentState.check_square);
+      if (c) c.classList.add('hl-check');
+    }
+    if (hintHighlight) {
+      [hintHighlight.from, hintHighlight.to].forEach(sq => {
+        const el = squareEl(sq); if (el) el.classList.add('hl-hint');
+      });
+    }
+  }
+
+  function onBoardClick(e) {
+    if (!isPlayerTurn()) return;
+    const sqEl = e.target.closest('[class*="square-"]');
+    if (!sqEl) return;
+    const sq = (sqEl.className.match(/square-([a-h][1-8])/) || [])[1];
+    if (!sq) return;
+    const lm = legalMap();
+    if (selectedSquare) {
+      const targets = lm[selectedSquare] || [];
+      if (targets.indexOf(sq) !== -1) {
+        const piece = board.position()[selectedSquare] || '';
+        let promo = null;
+        if ((piece === 'wP' && sq[1] === '8') || (piece === 'bP' && sq[1] === '1')) promo = 'q';
+        const from = selectedSquare;
+        clearMoveOptions();
+        submitMove(from, sq, promo);
+        return;
+      }
+      clearMoveOptions();
+    }
+    if (lm[sq] && lm[sq].length) {
+      selectedSquare = sq;
+      paintMoveOptions(sq);
+    }
+  }
+
+  // ---------- API actions ----------
+  // Every action below follows the same shape: setBusy(true) → try/catch ⟶
+  // restore + show user-facing error on failure → setBusy(false) in finally.
+  // The catch is critical: without it, a network/timeout error would silently
+  // leave the UI half-disabled — what the user reported as the board "not
+  // responding".
+
+  async function startNewPuzzle() {
+    // A pending replay must be killed first or it will stomp on the board
+    // a second after the new puzzle's start FEN renders.
+    cancelReplay();
+    if (busy) return;
+    setBusy(true);
+    setFeedback('', null);
+    setHintText('Stuck? Tap Hint for a nudge — three levels, each more revealing.');
+    setHintMeta('');
+    const nextBtn = document.getElementById('next-btn');
+    nextBtn.style.display = 'none';
+    nextBtn.classList.remove('glow');
+    document.getElementById('solution-card').style.display = 'none';
+    // Reset the coach panel: its Q&A history is per-puzzle.
+    document.getElementById('coach-qa').innerHTML = '';
+    setCoachText('Press <b>💬 Explain</b> for the coach\'s take on this position, or just ask anything below.');
+    setCoachSource('');
+    hintHighlight = null;
+    lastWrongHighlight = null;
+    clearAttemptHighlights();
+    try {
+      const theme = document.getElementById('theme-select').value || null;
+      const rating = document.getElementById('rating-select').value || null;
+      const state = await postJSON('/api/tactics/new', {
+        theme: theme || undefined,
+        max_rating: rating ? parseInt(rating, 10) : undefined,
+        exclude_ids: recentIds.slice(-30),
+      });
+      if (!state || !state.active) {
+        renderEmpty(state && state.error ? state.error :
+          'No puzzle available right now — try a different theme.');
+        return;
+      }
+      applyState(state);
+      document.getElementById('hint-card').style.display = '';
+      document.getElementById('coach-card').style.display = '';
+    } catch (e) {
+      console.warn('tactics: startNewPuzzle failed', e);
+      setFeedback('Could not load a puzzle — is the server running? Try again.', 'err');
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  // ---------- Coach panel: explain + ask ----------------------------------
+
+  function setCoachText(html) {
+    const el = document.getElementById('coach-text');
+    if (el) el.innerHTML = html;
+  }
+  function setCoachSource(src) {
+    const el = document.getElementById('coach-source');
+    if (!el) return;
+    el.innerHTML = src ? `<span class="dot">●</span> Coach: ${esc(src)}` : '';
+  }
+
+  // Append a Q&A pair to the chat-style log. Returns the answer DIV so the
+  // caller can update it once the LLM response arrives.
+  function appendQA(question) {
+    const log = document.getElementById('coach-qa');
+    if (!log) return null;
+    const item = document.createElement('div');
+    item.className = 'qa-item';
+    const q = document.createElement('div');
+    q.className = 'qa-q';
+    q.textContent = `Q: ${question}`;
+    const a = document.createElement('div');
+    a.className = 'qa-a thinking';
+    a.textContent = 'Coach is thinking';
+    item.appendChild(q);
+    item.appendChild(a);
+    log.appendChild(item);
+    log.scrollTop = log.scrollHeight;
+    return a;
+  }
+
+  // Ask the server's tactics-explain endpoint. We do NOT touch `setBusy()`
+  // here: explanations should never lock the board (the user can keep
+  // playing the puzzle while Claude composes), and the watchdog isn't
+  // relevant. The button itself is just disabled briefly.
+  async function fetchExplanation({ silent = false } = {}) {
+    const btn = document.getElementById('explain-btn');
+    if (btn && btn.disabled) return;
+    if (btn) btn.disabled = true;
+    if (!silent) {
+      setCoachText('<span style="color: var(--yellow); font-style: italic;">Coach is composing… (this can take ~10s)</span>');
+    }
+    try {
+      // Use the longer LLM timeout — the SAP AI Core round-trip is slow.
+      const r = await postJSON('/api/tactics/explain', {}, COACH_TIMEOUT_MS);
+      if (r && r.explanation) {
+        setCoachText(mdBold(r.explanation));
+        setCoachSource(r.source || '');
+      } else if (!silent) {
+        setCoachText('<em style="color: var(--text-dim)">No explanation right now — try Ask instead.</em>');
+      }
+    } catch (e) {
+      console.warn('tactics: fetchExplanation failed', e);
+      const msg = (e && e.message) || '';
+      if (!silent) {
+        if (msg.includes('endpoint missing')) {
+          setCoachText('<em style="color: var(--orange)">Restart the server to enable the coach: <code>pkill -f dashboard_server.py</code> then relaunch.</em>');
+        } else if (msg === 'The user aborted a request.' || /abort/i.test(msg)) {
+          setCoachText('Coach took too long to respond. Try again — once the AI Core token caches, follow-up calls are faster.');
+        } else {
+          setCoachText('Could not reach the coach (' + esc(msg || 'unknown') + ').');
+        }
+      }
+    } finally {
+      if (btn) btn.disabled = false;
+    }
+  }
+
+  async function askCoach() {
+    const input = document.getElementById('ask-input');
+    const askBtn = document.getElementById('ask-btn');
+    if (!input || !askBtn) return;
+    const q = (input.value || '').trim();
+    if (!q) return;
+    input.value = '';
+    askBtn.disabled = true;
+    input.disabled = true;
+    const aEl = appendQA(q);
+    try {
+      // Same long timeout as the explain endpoint — both go through the LLM.
+      const r = await postJSON('/api/tactics/ask', { question: q }, COACH_TIMEOUT_MS);
+      if (aEl) {
+        aEl.classList.remove('thinking');
+        aEl.innerHTML = mdBold(r && r.answer ? r.answer : 'No answer.');
+      }
+      if (r && r.source) setCoachSource(r.source);
+    } catch (e) {
+      console.warn('tactics: askCoach failed', e);
+      const msg = (e && e.message) || '';
+      if (aEl) {
+        aEl.classList.remove('thinking');
+        if (msg.includes('endpoint missing')) {
+          aEl.innerHTML = '<em style="color: var(--orange)">Restart the server first: <code>pkill -f dashboard_server.py</code> then relaunch.</em>';
+        } else if (/abort/i.test(msg)) {
+          aEl.textContent = 'Coach took too long to respond. Try a shorter question or try again.';
+        } else {
+          aEl.textContent = 'Could not reach the coach (' + msg + ').';
+        }
+      }
+    } finally {
+      askBtn.disabled = false;
+      input.disabled = false;
+      input.focus();
+      const log = document.getElementById('coach-qa');
+      if (log) log.scrollTop = log.scrollHeight;
+    }
+  }
+
+  async function submitMove(from, to, promo) {
+    if (busy || !currentState || !currentState.active) return;
+    setBusy(true);
+    try {
+      const r = await postJSON('/api/tactics/move',
+        { from, to, promotion: promo });
+      if (!r || r.error === 'no active puzzle') {
+        // Stale move (e.g. user dragged after the puzzle finished). Snap the
+        // board back to whatever the server thinks the truth is.
+        if (currentState && currentState.fen) safeBoardPosition(currentState.fen);
+        return;
+      }
+      if (r.correct === false) {
+        // Wrong move: server keeps the FEN unchanged. Restore the board (the
+        // piece visually flew to the target during drag), flash a red badge,
+        // and tell the user.
+        applyState({...(currentState || {}), ...r});
+        lastWrongHighlight = { from, to };
+        flashAttempt(from, to, false);
+        setFeedback(
+          `That's not it — try again. ` +
+          `<span style="opacity:0.7">(${currentState.attempts} ` +
+          `${currentState.attempts === 1 ? 'try' : 'tries'})</span>`, 'err');
+        return;
+      }
+      // Correct ply.
+      applyState(r);
+      flashAttempt(from, to, true);
+      if (r.opponent_san) {
+        setFeedback(`✅ <b>${esc(r.played_san)}</b> — opponent replies <b>${esc(r.opponent_san)}</b>. Find the next move.`, 'ok');
+      } else if (r.finished) {
+        finishPuzzle(true, r);
+      } else {
+        setFeedback(`✅ <b>${esc(r.played_san)}</b> — keep going.`, 'ok');
+      }
+    } catch (e) {
+      console.warn('tactics: submitMove failed', e);
+      // Snap the piece back to the server-known FEN so the board stays in
+      // sync, then surface the error so the user knows to retry.
+      if (currentState && currentState.fen) safeBoardPosition(currentState.fen);
+      setFeedback('Move failed — connection error. Please try again.', 'err');
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function getHint() {
+    if (busy || !currentState || !currentState.active) return;
+    if (currentState.solved || currentState.failed) return;
+    const nextLevel = Math.min(3, (currentState.hints_used || 0) + 1);
+    setBusy(true);
+    setHintText('<em style="color: var(--yellow);">Thinking…</em>');
+    try {
+      const r = await postJSON('/api/tactics/hint', { level: nextLevel });
+      setHintText(mdBold(r.text || ''));
+      setHintMeta(`Hint ${r.level}/3` + (r.level < 3 ? ' · press again for more' : ''));
+      if (r.highlight && r.highlight.from) {
+        hintHighlight = r.highlight;
+        applyPersistentHighlights();
+      }
+      if (r.state) {
+        currentState = { ...currentState, ...r.state };
+      }
+    } catch (e) {
+      console.warn('tactics: getHint failed', e);
+      setHintText('Could not reach the coach — try again.');
+      setHintMeta('');
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function skipPuzzle() {
+    if (busy || !currentState || !currentState.active) return;
+    if (currentState.solved || currentState.failed) return;
+    setBusy(true);
+    try {
+      const r = await postJSON('/api/tactics/skip', {});
+      applyState(r);
+      finishPuzzle(false, r);
+    } catch (e) {
+      console.warn('tactics: skipPuzzle failed', e);
+      setFeedback('Could not reveal solution — server unreachable.', 'err');
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  // ---------- visual feedback ----------
+  function flashAttempt(from, to, ok) {
+    clearAttemptHighlights();
+    [from, to].forEach(sq => {
+      const el = squareEl(sq);
+      if (el) el.classList.add(ok ? 'hl-correct' : 'hl-wrong');
+    });
+    setTimeout(clearAttemptHighlights, ok ? 600 : 900);
+  }
+
+  function setControlsDisabled(d) {
+    document.querySelectorAll('#new-btn, #hint-btn, #skip-btn, #next-btn, #theme-select, #rating-select')
+      .forEach(el => { el.disabled = d; });
+  }
+  function setFeedback(html, kind) {
+    const el = document.getElementById('feedback');
+    if (!html) { el.className = 'feedback'; el.innerHTML = ''; return; }
+    el.className = 'feedback visible' + (kind ? ' ' + kind : '');
+    el.innerHTML = html;
+  }
+  function setHintText(html) { document.getElementById('hint-text').innerHTML = html; }
+  function setHintMeta(t) { document.getElementById('hint-meta').textContent = t || ''; }
+
+  function finishPuzzle(solved, payload) {
+    const nextBtn = document.getElementById('next-btn');
+    nextBtn.style.display = '';
+    nextBtn.classList.add('glow');             // pulse so the user notices it
+    if (currentState && currentState.puzzle_id) {
+      recentIds.push(currentState.puzzle_id);
+      if (recentIds.length > 100) recentIds.splice(0, recentIds.length - 100);
+    }
+    if (solved) {
+      const tries = (currentState.attempts || 0) === 0 && (currentState.hints_used || 0) === 0
+        ? 'first try'
+        : `${currentState.hints_used || 0} hint${(currentState.hints_used || 0) === 1 ? '' : 's'}`;
+      const expl = (payload && payload.solved_explanation)
+                || (currentState && currentState.explanation)
+                || '';
+      setFeedback(
+        `🎉 <b>Solved!</b> ${mdBold(expl)} <span style="opacity:0.85">(${esc(tries)})</span>` +
+        `<br><span style="opacity:0.7;font-weight:400">Ask the coach below, drag pieces freely to study the position, or press <b>Next Puzzle ›</b>.</span>`,
+        'done');
+      revealSolution(payload);
+      // Auto-fetch a deeper LLM explanation now that the position is solved.
+      // Fire-and-forget — the user can already interact with everything else.
+      fetchExplanation({ silent: false });
+    } else {
+      setFeedback(
+        'Solution revealed. <b>Watch the line play out</b> on the board.' +
+        '<br><span style="opacity:0.7;font-weight:400">After the replay, drag pieces freely to explore — or press <b>Next Puzzle ›</b>.</span>',
+        'skipped');
+      revealSolution(payload);
+      // The user gave up: rewind the board and animate the full combination
+      // so the pattern sticks. After the animation finishes, the board is
+      // unlocked for free exploration via isExplorationMode().
+      playReplay(payload);
+      // Auto-fetch a deeper explanation alongside the visual replay so by
+      // the time the animation ends, the coach's prose is waiting.
+      fetchExplanation({ silent: false });
+    }
+    refreshProgress();
+  }
+
+  // ---------- animated solution replay ------------------------------------
+
+  // Cancel any in-flight replay so a new puzzle / next click never collides
+  // with a still-running setTimeout chain.
+  function cancelReplay() {
+    if (replayTimer) {
+      clearTimeout(replayTimer);
+      replayTimer = null;
+    }
+  }
+
+  // Walk through `payload.replay_fens` step-by-step on the board,
+  // highlighting the from/to squares of the move that just produced each
+  // position. Disables board interaction for the duration so a stray click
+  // can't desync the displayed position from the underlying puzzle state.
+  function playReplay(payload) {
+    cancelReplay();
+    if (!board) return;
+    const fens = (payload && payload.replay_fens) || [];
+    const sans = (payload && (payload.revealed_solution_san
+                              || payload.solution_san)) || [];
+    const ucis = (payload && (payload.revealed_solution_uci
+                              || payload.solution_moves)) || [];
+    if (fens.length < 2) return;  // nothing to animate
+
+    // Lock the board for the duration of the replay (it's auto-unlocked at
+    // the end and would also be reset by the next puzzle anyway).
+    setBusy(true);
+    let step = 0;
+    safeBoardPosition(fens[0], false);   // jump to start without an animation
+    document.querySelectorAll('#board .hl-last, #board .hl-check, #board .hl-hint')
+      .forEach(e => e.classList.remove('hl-last', 'hl-check', 'hl-hint'));
+
+    const tickStep = () => {
+      step += 1;
+      if (step >= fens.length) {
+        // Done. Leave the board on the final position with last-move
+        // highlight, drop the busy lock, and let the user hit "Next Puzzle".
+        const lastUci = ucis[ucis.length - 1] || '';
+        document.querySelectorAll('#board .hl-last')
+          .forEach(e => e.classList.remove('hl-last'));
+        if (lastUci.length >= 4) {
+          [lastUci.slice(0, 2), lastUci.slice(2, 4)].forEach(sq => {
+            const el = squareEl(sq); if (el) el.classList.add('hl-last');
+          });
+        }
+        replayTimer = null;
+        setBusy(false);
+        return;
+      }
+      // Animate to the next position and highlight the move that produced it.
+      safeBoardPosition(fens[step], true);
+      const u = ucis[step - 1] || '';
+      document.querySelectorAll('#board .hl-last')
+        .forEach(e => e.classList.remove('hl-last'));
+      if (u.length >= 4) {
+        [u.slice(0, 2), u.slice(2, 4)].forEach(sq => {
+          const el = squareEl(sq); if (el) el.classList.add('hl-last');
+        });
+      }
+      // Update the in-progress label so the user can read along.
+      const labelEl = document.getElementById('replay-step-label');
+      if (labelEl) {
+        const sanNow = sans[step - 1] || '';
+        labelEl.textContent = `Replay: move ${step}/${fens.length - 1}`
+          + (sanNow ? ` — ${sanNow}` : '');
+      }
+      replayTimer = setTimeout(tickStep, REPLAY_STEP_MS);
+    };
+    replayTimer = setTimeout(tickStep, REPLAY_STEP_MS);
+  }
+
+  function revealSolution(payload) {
+    // Populate the "Solution" panel from the server's `revealed_solution_san`
+    // (now sent on BOTH solve and skip). Falls back gracefully to whatever
+    // SAN list the current state happens to carry.
+    const card = document.getElementById('solution-card');
+    const out = document.getElementById('solution-text');
+    if (!card || !out) return;
+    const moves = (payload && payload.revealed_solution_san)
+               || (payload && payload.solution_san)
+               || [];
+    let html = '';
+    if (Array.isArray(moves) && moves.length) {
+      // Render as "1.Rf8+ Kd7 2.Qb5+ c6 3.Qxb7#" with the final mating move
+      // bolded in green so the student instantly sees the decisive move.
+      const isMate = moves[moves.length - 1].endsWith('#');
+      const parts = moves.map((san, i) => {
+        const num = (i % 2 === 0)
+          ? `<span style="color: var(--text-dim)">${Math.floor(i/2) + 1}.</span>`
+          : '';
+        const isLast = i === moves.length - 1;
+        const styled = isLast
+          ? `<b style="color: var(--light-green)">${esc(san)}</b>`
+          : esc(san);
+        return (num ? num + ' ' : '') + styled;
+      });
+      html += `<b>Line:</b> ${parts.join(' ')}`;
+      if (isMate) html += '  <span style="color: var(--light-green)">✓ checkmate</span>';
+      html += '<br>';
+    }
+    // Optional human-written narration for the position (not always present).
+    const why = (payload && payload.solved_explanation)
+             || (currentState && currentState.explanation)
+             || '';
+    if (why) {
+      html += `<span style="color: var(--text-dim)">Why:</span> ${mdBold(why)}`;
+    }
+    if (!html) html = '<span style="color: var(--text-dim)">No solution data.</span>';
+    out.innerHTML = html;
+    card.style.display = '';
+  }
+
+  // ---------- render full state -> UI ----------
+  // Defensive: any chessboard.js call is wrapped so a render glitch (e.g.
+  // mid-animation, or a torn-down board after a fast theme swap) can never
+  // throw out of applyState — that used to leave busy stuck.
+  function safeBoardPosition(fen, animate) {
+    if (!board || !fen) return;
+    try { board.position(fen, animate !== false); }
+    catch (e) { console.warn('tactics: board.position failed', e); }
+  }
+
+  function applyState(state) {
+    if (!state || !state.active) {
+      currentState = state;
+      return;
+    }
+    const orientationChanged = !currentState
+      || currentState.player_color !== state.player_color;
+    if (!board || orientationChanged) {
+      initBoard(state.player_color || 'white');
+    }
+    // Always reset click-to-move state on any state update — the previous
+    // selection might no longer be legal in the new position, and a stale
+    // selection makes the board feel "stuck" on the next click.
+    selectedSquare = null;
+    clearLightHighlights();
+    currentState = state;
+    if (state.fen) safeBoardPosition(state.fen, true);
+    renderPrompt(state);
+    applyPersistentHighlights();
+  }
+
+  function renderPrompt(state) {
+    const body = document.getElementById('prompt-body');
+    body.classList.remove('empty');
+    const motif = (state.motif || 'tactic').replace(/_/g, ' ');
+    const rating = state.difficulty_rating ? `~${state.difficulty_rating}` : (state.difficulty || '?');
+    const themeLabel = state.theme_label || state.theme || '';
+    const sideToMove = capitalize(state.side_to_move || 'white');
+    const playerSide = capitalize(state.player_color || 'white');
+    const myTurn = state.is_player_turn;
+    const promptHead = myTurn
+      ? `${sideToMove} to move — find the <b>${esc(motif)}</b>.`
+      : `Engine is replying…`;
+    body.innerHTML = `
+      <div class="prompt-title">${esc(themeLabel)}</div>
+      <div class="prompt-side">${promptHead}</div>
+      <div class="prompt-meta">
+        Difficulty <b>${esc(rating)}</b> · You play <b>${esc(playerSide)}</b>
+      </div>
+      <div class="prompt-progress">
+        Move <b>${state.current_player_move_index || 1}</b>
+        of <b>${state.total_player_moves || 1}</b>
+      </div>
+    `;
+    document.getElementById('side-indicator').textContent =
+      `${sideToMove} to move`;
+    document.getElementById('motif-indicator').textContent =
+      themeLabel + (rating ? ` · ${rating}` : '');
+    if (state.solved || state.failed) {
+      document.getElementById('next-btn').style.display = '';
+    } else {
+      document.getElementById('next-btn').style.display = 'none';
+    }
+  }
+
+  function renderEmpty(text) {
+    const body = document.getElementById('prompt-body');
+    body.className = 'empty';
+    body.innerHTML = `<p class="pulse">${esc(text)}</p>`;
+    document.getElementById('hint-card').style.display = 'none';
+    document.getElementById('solution-card').style.display = 'none';
+  }
+
+  // ---------- themes + progress ----------
+  async function loadThemes() {
+    try {
+      const data = await getJSON('/api/tactics/themes');
+      const sel = document.getElementById('theme-select');
+      const themes = (data && data.themes) || [];
+      // Keep the leading "Mixed" option, replace the rest.
+      sel.innerHTML = '<option value="">Mixed (all themes)</option>';
+      themes.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.theme;
+        const rng = (t.min_rating != null && t.max_rating != null)
+          ? ` (${t.min_rating}–${t.max_rating})` : '';
+        opt.textContent = `${t.label} · ${t.count}${rng}`;
+        sel.appendChild(opt);
+      });
+    } catch (e) { /* ignore — server may not be up yet */ }
+  }
+
+  async function refreshProgress() {
+    try {
+      const p = await getJSON('/api/tactics/progress');
+      const t = (p && p.totals) || { attempted: 0, solved: 0, perfect: 0 };
+      document.getElementById('stat-attempted').textContent = t.attempted;
+      document.getElementById('stat-solved').textContent = t.solved;
+      document.getElementById('stat-perfect').textContent = t.perfect;
+      document.getElementById('header-totals').textContent = `${t.attempted} attempted`;
+      const rate = t.attempted ? Math.round(100 * t.solved / t.attempted) : 0;
+      document.getElementById('header-rate').textContent = `${rate}% solved`;
+      // Per-theme breakdown.
+      const byTheme = (p && p.by_theme) || {};
+      const rows = Object.keys(byTheme).map(theme => {
+        const r = byTheme[theme];
+        const themeRate = r.attempted ? Math.round(100 * r.solved / r.attempted) : 0;
+        return { theme, ...r, rate: themeRate };
+      }).sort((a, b) => b.attempted - a.attempted);
+      const out = document.getElementById('theme-stats');
+      if (!rows.length) {
+        out.innerHTML = '<div style="color: var(--text-dim); text-align:center; padding:6px 0;">No attempts yet.</div>';
+      } else {
+        out.innerHTML = rows.map(r =>
+          `<div class="theme-stat-row">
+             <span class="theme-name">${esc(r.theme.replace(/-/g, ' '))}</span>
+             <span class="theme-rate">${r.solved}/${r.attempted} · ${r.rate}%</span>
+           </div>`
+        ).join('');
+      }
+    } catch (e) { /* ignore */ }
+  }
+
+  // ---------- wiring ----------
+  document.getElementById('new-btn').addEventListener('click', startNewPuzzle);
+  document.getElementById('hint-btn').addEventListener('click', getHint);
+  document.getElementById('skip-btn').addEventListener('click', skipPuzzle);
+  document.getElementById('next-btn').addEventListener('click', startNewPuzzle);
+  document.getElementById('explain-btn').addEventListener('click', () => fetchExplanation());
+  document.getElementById('ask-btn').addEventListener('click', askCoach);
+
+  // Enter inside the ask box submits the question; Enter elsewhere advances
+  // to the next puzzle once one is finished. Both checks are explicit so we
+  // never accidentally swallow Enter while the user is typing.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+    if (e.target && e.target.id === 'ask-input') {
+      e.preventDefault();
+      askCoach();
+      return;
+    }
+    if (currentState
+        && (currentState.solved || currentState.failed)
+        && !busy) {
+      e.preventDefault();
+      startNewPuzzle();
+    }
+  });
+
+  // ---------- boot ----------
+  // Render an empty board immediately so chessboard.js sizing kicks in.
+  initBoard('white');
+  loadThemes();
+  refreshProgress();
+
+  // ─────────── Voice control (tactics-specific commands) ───────────
+  // The same voice module the play page uses, scoped to the puzzle UI.
+  // Move utterances ("knight to f3") submit via submitMove just like a
+  // mouse drag would; named commands map to the existing buttons.
+  if (window.ChessVoice && window.ChessVoice.isSupported()) {
+    window.ChessVoice.mount({
+      getState: () => currentState,
+      submitMove: async (from, to, promotion) => submitMove(from, to, promotion),
+      commands: {
+        'hint':            () => getHint(),
+        'reveal':          () => skipPuzzle(),
+        'reveal solution': () => skipPuzzle(),
+        'show solution':   () => skipPuzzle(),
+        'next puzzle':     () => startNewPuzzle(),
+        'next':            () => {
+          if (currentState && (currentState.solved || currentState.failed)) {
+            startNewPuzzle();
+          }
+        },
+        'new puzzle':      () => startNewPuzzle(),
+        'explain':         () => fetchExplanation(),
+      },
+    });
+  }
+})();
+</script>
+</body>
+</html>

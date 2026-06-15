@@ -1,0 +1,1062 @@
+[
+  {
+    "fen": "Qn1qk2r/2N2pp1/p1b5/6p1/4p3/8/PP3PPP/R3KBNR b KQk - 0 13",
+    "solution_moves": [
+      "d8c7",
+      "a8b8",
+      "c7b8"
+    ],
+    "solution_san": [
+      "Qxc7",
+      "Qxb8+",
+      "Qxb8"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "beginner",
+    "difficulty_rating": 695,
+    "explanation": "Qxc7 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "hangingPiece",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "0JCgu",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/2k5/3p4/1N1Pp3/2n1P1p1/2P3P1/2K5/8 b - - 0 52",
+    "solution_moves": [
+      "c7b6",
+      "b5a3",
+      "c4a3"
+    ],
+    "solution_san": [
+      "Kb6",
+      "Na3",
+      "Nxa3+"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 832,
+    "explanation": "Kb6 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "knightEndgame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "0YH4K",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3b1k1/3P1pp1/6np/1p6/2pqN3/5P2/6PP/3R1BK1 w - - 0 38",
+    "solution_moves": [
+      "d1d4",
+      "e8d7",
+      "d4d7"
+    ],
+    "solution_san": [
+      "Rxd4",
+      "Bxd7",
+      "Rxd7"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 838,
+    "explanation": "Rxd4 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "1cJ8l",
+    "source": "lichess"
+  },
+  {
+    "fen": "r5k1/3qnr2/p1pp2pQ/4ppB1/PP6/2PP3P/5PP1/R3R1K1 b - - 5 24",
+    "solution_moves": [
+      "f7h7",
+      "h6h7",
+      "g8h7"
+    ],
+    "solution_san": [
+      "Rh7",
+      "Qxh7+",
+      "Kxh7"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 852,
+    "explanation": "Rh7 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "10lnt",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rrk1/p7/1p2p1q1/2p2p2/2P3p1/1PPP2R1/3Q2PP/4R1K1 b - - 1 27",
+    "solution_moves": [
+      "f5f4",
+      "g3e3",
+      "f4e3"
+    ],
+    "solution_san": [
+      "f4",
+      "Rge3",
+      "fxe3"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 859,
+    "explanation": "f4 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "endgame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "0yKn0",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr4/ppp2p1p/2nb1p2/4N2q/3P4/2P3r1/PP1BBP2/R4QK1 w - - 0 16",
+    "solution_moves": [
+      "f2g3",
+      "h5e2",
+      "f1e2"
+    ],
+    "solution_san": [
+      "fxg3",
+      "Qxe2",
+      "Qxe2"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 869,
+    "explanation": "fxg3 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "hangingPiece",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "1N0kW",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/pp2nppp/2p1p3/Q2pP3/PPbP1N1P/6P1/5P2/2R1R1K1 b - - 0 22",
+    "solution_moves": [
+      "b7b6",
+      "c1c4",
+      "b6a5"
+    ],
+    "solution_san": [
+      "b6",
+      "Rxc4",
+      "bxa5"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 874,
+    "explanation": "b6 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "0XUWV",
+    "source": "lichess"
+  },
+  {
+    "fen": "5n2/5P1p/1k1K4/5P2/2p5/8/7P/8 w - - 0 49",
+    "solution_moves": [
+      "d6e7",
+      "c4c3",
+      "e7f8"
+    ],
+    "solution_san": [
+      "Ke7",
+      "c3",
+      "Kxf8"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 880,
+    "explanation": "Ke7 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "knightEndgame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "1UVLL",
+    "source": "lichess"
+  },
+  {
+    "fen": "rnb3k1/p1p2p2/1p1p1N1p/3Pr3/4p3/2P1P3/P1P2PPP/2KR1B1R b - - 0 14",
+    "solution_moves": [
+      "g8g7",
+      "f6e4",
+      "e5e4"
+    ],
+    "solution_san": [
+      "Kg7",
+      "Nxe4",
+      "Rxe4"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 897,
+    "explanation": "Kg7 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "defensiveMove",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "1QA6g",
+    "source": "lichess"
+  },
+  {
+    "fen": "1b6/6p1/1PPkp3/3p1p2/3P3p/4KP1B/5P2/8 w - - 2 36",
+    "solution_moves": [
+      "c6c7",
+      "b8c7",
+      "b6c7"
+    ],
+    "solution_san": [
+      "c7",
+      "Bxc7",
+      "bxc7"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 899,
+    "explanation": "c7 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "advantage",
+      "bishopEndgame",
+      "endgame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "0T1h6",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/1p3r2/p1p2P1p/3pr1qP/1P3RP1/P3p2Q/8/5R1K w - - 1 38",
+    "solution_moves": [
+      "f4f5",
+      "e3e2",
+      "f5g5"
+    ],
+    "solution_san": [
+      "Rf5",
+      "e2",
+      "Rxg5+"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 965,
+    "explanation": "Rf5 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "endgame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "06Eew",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/3b4/k6p/p4p2/4pr2/P5r1/1R3P1N/7K w - - 0 40",
+    "solution_moves": [
+      "f2g3",
+      "f4f3",
+      "h2f3"
+    ],
+    "solution_san": [
+      "fxg3",
+      "Rf3",
+      "Nxf3"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1045,
+    "explanation": "fxg3 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "endgame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "02utb",
+    "source": "lichess"
+  },
+  {
+    "fen": "rn1qk2r/ppp2ppp/5b2/3P4/4P3/5Q1P/PPP2PP1/RN2KB1R b KQkq - 0 10",
+    "solution_moves": [
+      "f6b2",
+      "f3b3",
+      "b2a1"
+    ],
+    "solution_san": [
+      "Bxb2",
+      "Qb3",
+      "Bxa1"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1046,
+    "explanation": "Bxb2 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "01Bmi",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3k2r/pp1n1p2/4p1p1/3pPnPp/2pP1Q1P/2B2N2/qPPK1P2/3R3R w kq - 0 20",
+    "solution_moves": [
+      "d1a1",
+      "a2a1",
+      "h1a1"
+    ],
+    "solution_san": [
+      "Ra1",
+      "Qxa1",
+      "Rxa1"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1112,
+    "explanation": "Ra1 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "01xk5",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b1k2r/pppq1pb1/2n3pp/3pPpB1/3P4/1N3N2/PPP2PPP/R2Q1RK1 w kq - 0 11",
+    "solution_moves": [
+      "b3c5",
+      "h6g5",
+      "c5d7"
+    ],
+    "solution_san": [
+      "Nc5",
+      "hxg5",
+      "Nxd7"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1138,
+    "explanation": "Nc5 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "0ATQt",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/7p/p1k2p2/1p2pP2/1P2P2P/3NK3/8/3n4 w - - 4 46",
+    "solution_moves": [
+      "e3d2",
+      "d1e3",
+      "d2e3"
+    ],
+    "solution_san": [
+      "Kd2",
+      "Ne3",
+      "Kxe3"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1157,
+    "explanation": "Kd2 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "endgame",
+      "knightEndgame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "07HMI",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r1qk1nr/1b1p1ppp/p3p3/4P3/1bp5/2NPB1Q1/PPP2PPP/R3K2R w KQk - 2 13",
+    "solution_moves": [
+      "g3g7",
+      "b4f8",
+      "g7h8"
+    ],
+    "solution_san": [
+      "Qxg7",
+      "Bf8",
+      "Qxh8"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1172,
+    "explanation": "Qxg7 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "07e4t",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r2R1k1/p5p1/2p4p/2PpQ3/2nP4/B3PP1P/P5PK/4q3 b - - 10 34",
+    "solution_moves": [
+      "b8e8",
+      "e5e8",
+      "g8h7",
+      "a3c1",
+      "e1c1"
+    ],
+    "solution_san": [
+      "Rxe8",
+      "Qxe8+",
+      "Kh7",
+      "Bc1",
+      "Qxc1"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1184,
+    "explanation": "Rxe8 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "endgame",
+      "long",
+      "trappedPiece"
+    ],
+    "lichess_id": "08V6a",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2qb2r/6k1/p2p1p2/1ppN1Pp1/4P1Q1/2PP2PP/P7/3R1RK1 b - - 0 29",
+    "solution_moves": [
+      "e8h5",
+      "g4h5",
+      "h8h5"
+    ],
+    "solution_san": [
+      "Bh5",
+      "Qxh5",
+      "Rxh5"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1185,
+    "explanation": "Bh5 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "01Lo7",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1r3k1/3n1ppp/p2bpnb1/8/P1pN3P/2N1P3/3PBPq1/B1RQK2R w K - 0 17",
+    "solution_moves": [
+      "e2f3",
+      "g2h1",
+      "f3h1"
+    ],
+    "solution_san": [
+      "Bf3",
+      "Qxh1+",
+      "Bxh1"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1188,
+    "explanation": "Bf3 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "fork",
+      "master",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "0598v",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1rk1/p2nppbp/2p2np1/q1Pp4/p2P1B2/PP1BP2P/5PP1/R2Q1RK1 w - - 0 16",
+    "solution_moves": [
+      "b3b4",
+      "a5b5",
+      "d3b5"
+    ],
+    "solution_san": [
+      "b4",
+      "Qb5",
+      "Bxb5"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1227,
+    "explanation": "b4 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "01V4g",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2qk1nr/p2b2pp/2pbpp2/2ppN3/5P2/1P2P2P/PBPP2P1/RN1QK2R w KQkq - 0 10",
+    "solution_moves": [
+      "d1h5",
+      "g7g6",
+      "e5g6",
+      "h7g6",
+      "h5h8"
+    ],
+    "solution_san": [
+      "Qh5+",
+      "g6",
+      "Nxg6",
+      "hxg6",
+      "Qxh8"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1237,
+    "explanation": "Qh5+ is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "long",
+      "opening",
+      "pin",
+      "trappedPiece"
+    ],
+    "lichess_id": "02cdm",
+    "source": "lichess"
+  },
+  {
+    "fen": "Q1b2rk1/2q2p1p/1p2pbp1/pP6/2P5/P2B1N2/5PPP/3R1RK1 b - - 0 20",
+    "solution_moves": [
+      "c8b7",
+      "a8a7",
+      "f8a8",
+      "a7a8",
+      "b7a8"
+    ],
+    "solution_san": [
+      "Bb7",
+      "Qa7",
+      "Ra8",
+      "Qxa8+",
+      "Bxa8"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1259,
+    "explanation": "Bb7 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "long",
+      "master",
+      "middlegame",
+      "trappedPiece"
+    ],
+    "lichess_id": "00AhO",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/3bnppp/p4n2/1pp5/4N3/1B1P1N2/PPP2PPP/6K1 b - - 1 19",
+    "solution_moves": [
+      "f6e4",
+      "d3e4",
+      "c5c4",
+      "b3c4",
+      "b5c4"
+    ],
+    "solution_san": [
+      "Nxe4",
+      "dxe4",
+      "c4",
+      "Bxc4",
+      "bxc4"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1275,
+    "explanation": "Nxe4 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "endgame",
+      "long",
+      "trappedPiece"
+    ],
+    "lichess_id": "01zU8",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b1k1nr/ppp2pbp/3p1qp1/4p3/2BnP3/N2P2QP/PPP2PP1/R1B1K2R w KQkq - 0 10",
+    "solution_moves": [
+      "c1g5",
+      "f6g5",
+      "g3g5"
+    ],
+    "solution_san": [
+      "Bg5",
+      "Qxg5",
+      "Qxg5"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1357,
+    "explanation": "Bg5 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "opening",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "009FP",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4r1k/pp1b1p1p/3p1n2/2p1pp2/4P2q/3P1B1P/PPP1Q2K/R1B3R1 w - - 2 18",
+    "solution_moves": [
+      "c1g5",
+      "h4g5",
+      "g1g5"
+    ],
+    "solution_san": [
+      "Bg5",
+      "Qxg5",
+      "Rxg5"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1371,
+    "explanation": "Bg5 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "035Y0",
+    "source": "lichess"
+  },
+  {
+    "fen": "rn3rk1/pp3ppp/2p1p1b1/8/2P1q3/P4N1P/2P1BPP1/R1Q2RK1 w - - 4 19",
+    "solution_moves": [
+      "e2d3",
+      "e4f3",
+      "g2f3"
+    ],
+    "solution_san": [
+      "Bd3",
+      "Qxf3",
+      "gxf3"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1388,
+    "explanation": "Bd3 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "02itv",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3r1k1/ppp2ppp/2nbpq2/5b2/3P4/2P1BN2/P1PQBPPP/3R1RK1 w - - 8 12",
+    "solution_moves": [
+      "e3g5",
+      "f6g6",
+      "f3h4",
+      "h7h6",
+      "h4g6"
+    ],
+    "solution_san": [
+      "Bg5",
+      "Qg6",
+      "Nh4",
+      "h6",
+      "Nxg6"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1394,
+    "explanation": "Bg5 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "long",
+      "middlegame",
+      "trappedPiece"
+    ],
+    "lichess_id": "00YeV",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2bnr/ppQp3p/2n2q1k/6pP/2B1P3/2PP4/PP3PP1/RNB1K2R b KQ - 0 11",
+    "solution_moves": [
+      "f8d6",
+      "c7d6",
+      "f6d6"
+    ],
+    "solution_san": [
+      "Bd6",
+      "Qxd6",
+      "Qxd6"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1418,
+    "explanation": "Bd6 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "00ZWf",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2qk2r/1Qp3p1/p1nbbn1p/3p1p2/3P4/P1N1PN1P/1PPB1P2/R3KB1R b KQkq - 0 13",
+    "solution_moves": [
+      "c6a5",
+      "b7a8",
+      "d8a8"
+    ],
+    "solution_san": [
+      "Na5",
+      "Qxa8",
+      "Qxa8"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1425,
+    "explanation": "Na5 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "master",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "02FSn",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1rk1/pp2bppp/2ppnn2/8/N1P1P3/q1P4P/P2N2PB/R2Q1R1K w - - 1 17",
+    "solution_moves": [
+      "d2b1",
+      "a3a4",
+      "d1a4"
+    ],
+    "solution_san": [
+      "Nb1",
+      "Qxa4",
+      "Qxa4"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1526,
+    "explanation": "Nb1 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "master",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "00BM8",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3k2r/pppqbppp/2n1b3/3p2PQ/PP1Pp2P/2P1P3/5PB1/RNB1K1NR b KQkq - 0 11",
+    "solution_moves": [
+      "e6g4",
+      "g2h3",
+      "g4h5",
+      "h3d7",
+      "e8d7"
+    ],
+    "solution_san": [
+      "Bg4",
+      "Bh3",
+      "Bxh5",
+      "Bxd7+",
+      "Kxd7"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1544,
+    "explanation": "Bg4 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "long",
+      "middlegame",
+      "trappedPiece"
+    ],
+    "lichess_id": "01HgH",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bqr3/ppp1k1pp/1b3n2/nP1pp1NP/4P3/2PP4/P4PP1/RNBQK2R w KQ - 0 12",
+    "solution_moves": [
+      "c1a3",
+      "e7d7",
+      "g5f7",
+      "d8e7",
+      "a3e7"
+    ],
+    "solution_san": [
+      "Ba3+",
+      "Kd7",
+      "Nf7",
+      "Qe7",
+      "Bxe7"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1564,
+    "explanation": "Ba3+ is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "long",
+      "middlegame",
+      "trappedPiece"
+    ],
+    "lichess_id": "01rBE",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rr1k/pp4pp/2p1B3/2bnpP1q/8/2NP1R2/PPPB2QP/4K3 w - - 7 21",
+    "solution_moves": [
+      "f3h3",
+      "c5f2",
+      "e1f2",
+      "h5h3",
+      "g2h3"
+    ],
+    "solution_san": [
+      "Rh3",
+      "Bf2+",
+      "Kxf2",
+      "Qxh3",
+      "Qxh3"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "advanced",
+    "difficulty_rating": 1594,
+    "explanation": "Rh3 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "long",
+      "master",
+      "middlegame",
+      "trappedPiece"
+    ],
+    "lichess_id": "01sqg",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/ppp1kpp1/3b2np/3p3b/3P1B2/2P4P/PPBN1PP1/5K2 w - - 1 24",
+    "solution_moves": [
+      "f4d6",
+      "e7d6",
+      "g2g4",
+      "g6f4",
+      "g4h5"
+    ],
+    "solution_san": [
+      "Bxd6+",
+      "Kxd6",
+      "g4",
+      "Nf4",
+      "gxh5"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "expert",
+    "difficulty_rating": 1638,
+    "explanation": "Bxd6+ is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "trappedPiece"
+    ],
+    "lichess_id": "01ctt",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3kb1r/1p4p1/p1p1bp2/4p1Bp/4P3/2NQ1PP1/PPP2qBP/R6K w kq - 0 17",
+    "solution_moves": [
+      "g5e3",
+      "e6c4",
+      "e3f2",
+      "c4d3",
+      "c2d3"
+    ],
+    "solution_san": [
+      "Be3",
+      "Bc4",
+      "Bxf2",
+      "Bxd3",
+      "cxd3"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "expert",
+    "difficulty_rating": 1644,
+    "explanation": "Be3 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "long",
+      "middlegame",
+      "trappedPiece"
+    ],
+    "lichess_id": "01iqw",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/5ppp/4b3/1p1pPpPP/2pP4/b1P5/rqNQKP2/2RRN3 w - - 6 24",
+    "solution_moves": [
+      "c1b1",
+      "b2b3",
+      "b1b3"
+    ],
+    "solution_san": [
+      "Rb1",
+      "Qb3",
+      "Rxb3"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "expert",
+    "difficulty_rating": 1693,
+    "explanation": "Rb1 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "00DdW",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4r1k/pp4pp/2pp1b2/4p3/N2qP3/3Q4/PPP2PPP/3RR1K1 w - - 4 17",
+    "solution_moves": [
+      "d3b3",
+      "b7b5",
+      "d1d4"
+    ],
+    "solution_san": [
+      "Qb3",
+      "b5",
+      "Rxd4"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "expert",
+    "difficulty_rating": 1742,
+    "explanation": "Qb3 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "00e63",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/p3pp1p/2Q3pb/q3P3/N4P2/P5P1/3r3P/2R2R1K w - - 1 25",
+    "solution_moves": [
+      "c1c5",
+      "d2d1",
+      "c5a5"
+    ],
+    "solution_san": [
+      "Rc5",
+      "Rd1",
+      "Rxa5"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "expert",
+    "difficulty_rating": 1749,
+    "explanation": "Rc5 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "master",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "026Br",
+    "source": "lichess"
+  },
+  {
+    "fen": "Nn1q1r1k/pb6/1pp1Qp1p/2Pp2p1/3Pn3/P7/1P2PPPP/R3KBNR b KQ - 0 17",
+    "solution_moves": [
+      "b7c8",
+      "e6c8",
+      "d8c8"
+    ],
+    "solution_san": [
+      "Bc8",
+      "Qxc8",
+      "Qxc8"
+    ],
+    "motif": "trapped_piece",
+    "difficulty": "expert",
+    "difficulty_rating": 1789,
+    "explanation": "Bc8 is the key \u2014 it sets up a trapped piece. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "middlegame",
+      "short",
+      "trappedPiece"
+    ],
+    "lichess_id": "01vxD",
+    "source": "lichess"
+  }
+]

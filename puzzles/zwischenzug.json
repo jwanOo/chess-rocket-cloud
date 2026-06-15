@@ -1,0 +1,1051 @@
+[
+  {
+    "fen": "r4rk1/pp3pp1/2p1pn1p/7q/3PN3/2P5/PP2QPP1/R4RK1 w - - 0 19",
+    "solution_moves": [
+      "e4f6",
+      "g7f6",
+      "e2h5"
+    ],
+    "solution_san": [
+      "Nxf6+",
+      "gxf6",
+      "Qxh5"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 835,
+    "explanation": "Nxf6+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "kingsideAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "0IC0n",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3kbnr/pp3ppp/2n1p3/8/3q4/P4B2/1P3PPP/RNBQK2R w KQkq - 0 10",
+    "solution_moves": [
+      "f3c6",
+      "b7c6",
+      "d1d4"
+    ],
+    "solution_san": [
+      "Bxc6+",
+      "bxc6",
+      "Qxd4"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 845,
+    "explanation": "Bxc6+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "opening",
+      "short"
+    ],
+    "lichess_id": "1xVVV",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q2k1/1pp2p1p/6pB/p7/1br3P1/8/PPP1B2P/2KR3R w - - 0 20",
+    "solution_moves": [
+      "d1d8",
+      "a8d8",
+      "e2c4"
+    ],
+    "solution_san": [
+      "Rxd8+",
+      "Rxd8",
+      "Bxc4"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 854,
+    "explanation": "Rxd8+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "0rIa4",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3kbnr/pp3ppp/2n5/8/3q4/5B2/PP3PPP/RN1QK2R w KQkq - 0 11",
+    "solution_moves": [
+      "f3c6",
+      "b7c6",
+      "d1d4"
+    ],
+    "solution_san": [
+      "Bxc6+",
+      "bxc6",
+      "Qxd4"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 873,
+    "explanation": "Bxc6+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "opening",
+      "short"
+    ],
+    "lichess_id": "1Agev",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bq1rk1/pp3pp1/2n2b1p/3Q4/8/P1N1PN1P/1P3PP1/R3KB1R b KQ - 0 13",
+    "solution_moves": [
+      "f6c3",
+      "b2c3",
+      "d8d5"
+    ],
+    "solution_san": [
+      "Bxc3+",
+      "bxc3",
+      "Qxd5"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 874,
+    "explanation": "Bxc3+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "opening",
+      "short"
+    ],
+    "lichess_id": "11Zkj",
+    "source": "lichess"
+  },
+  {
+    "fen": "5r1k/ppb3p1/2p3pp/8/7q/3Br2P/PPQ3P1/5R1K w - - 0 29",
+    "solution_moves": [
+      "f1f8",
+      "h8h7",
+      "d3g6"
+    ],
+    "solution_san": [
+      "Rxf8+",
+      "Kh7",
+      "Bxg6#"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 884,
+    "explanation": "Rxf8+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "hangingPiece",
+      "intermezzo",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "1ezNi",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3k2r/pp3ppp/2n1p3/8/3q4/5B1P/PP1Q1PP1/R4RK1 w kq - 0 15",
+    "solution_moves": [
+      "f3c6",
+      "b7c6",
+      "d2d4"
+    ],
+    "solution_san": [
+      "Bxc6+",
+      "bxc6",
+      "Qxd4"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 885,
+    "explanation": "Bxc6+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "1iAXx",
+    "source": "lichess"
+  },
+  {
+    "fen": "R3r1k1/5pp1/4p2p/P2p4/8/2P3QP/q4PP1/1R4K1 b - - 0 26",
+    "solution_moves": [
+      "a2b1",
+      "g1h2",
+      "e8a8"
+    ],
+    "solution_san": [
+      "Qxb1+",
+      "Kh2",
+      "Rxa8"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 887,
+    "explanation": "Qxb1+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "hangingPiece",
+      "intermezzo",
+      "short"
+    ],
+    "lichess_id": "1ahy2",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3k2r/pp1q1ppp/8/3Qb3/8/2N5/PP3PPP/R3K2R b KQkq - 0 14",
+    "solution_moves": [
+      "e5c3",
+      "b2c3",
+      "d7d5"
+    ],
+    "solution_san": [
+      "Bxc3+",
+      "bxc3",
+      "Qxd5"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 890,
+    "explanation": "Bxc3+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "01zpX",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3kb1r/1pp2pp1/p1n1p1p1/8/3qB3/7P/PPP2PP1/R1BQ1RK1 w kq - 0 14",
+    "solution_moves": [
+      "e4c6",
+      "b7c6",
+      "d1d4"
+    ],
+    "solution_san": [
+      "Bxc6+",
+      "bxc6",
+      "Qxd4"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 890,
+    "explanation": "Bxc6+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "1u7hq",
+    "source": "lichess"
+  },
+  {
+    "fen": "rn2k2r/ppp2ppp/2q1bp2/1B1p4/3P4/1Pb1PN2/P1PQ1PPP/R3K2R w KQkq - 0 10",
+    "solution_moves": [
+      "b5c6",
+      "b8c6",
+      "d2c3"
+    ],
+    "solution_san": [
+      "Bxc6+",
+      "Nxc6",
+      "Qxc3"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 923,
+    "explanation": "Bxc6+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "02X7P",
+    "source": "lichess"
+  },
+  {
+    "fen": "rnbqk2r/1p3ppp/p4b2/2PQ4/8/2N2N2/PP2PPPP/R3KB1R b KQkq - 0 9",
+    "solution_moves": [
+      "f6c3",
+      "b2c3",
+      "d8d5"
+    ],
+    "solution_san": [
+      "Bxc3+",
+      "bxc3",
+      "Qxd5"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 948,
+    "explanation": "Bxc3+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "opening",
+      "short"
+    ],
+    "lichess_id": "00Htd",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bqk2r/pp3ppp/5b2/3Q4/8/2N1P3/PP3PPP/R3KB1R b KQkq - 0 11",
+    "solution_moves": [
+      "f6c3",
+      "b2c3",
+      "d8d5"
+    ],
+    "solution_san": [
+      "Bxc3+",
+      "bxc3",
+      "Qxd5"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1029,
+    "explanation": "Bxc3+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "03Fdm",
+    "source": "lichess"
+  },
+  {
+    "fen": "rn1B1rk1/3b1pbp/p2p2p1/1pp5/3Pn3/5N1P/PPBQNPP1/R3K2R b KQ - 0 15",
+    "solution_moves": [
+      "e4d2",
+      "f3d2",
+      "f8d8"
+    ],
+    "solution_san": [
+      "Nxd2",
+      "Nxd2",
+      "Rxd8"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1033,
+    "explanation": "Nxd2 is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "02rcU",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r1r1k1/3R4/p1p1PppB/1p2q3/2n2N2/2P5/PP4PP/1K6 w - - 0 29",
+    "solution_moves": [
+      "d7g7",
+      "g8h8",
+      "f4g6"
+    ],
+    "solution_san": [
+      "Rg7+",
+      "Kh8",
+      "Nxg6#"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1043,
+    "explanation": "Rg7+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "intermezzo",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "065Vb",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/pp2qppp/2p5/3N3P/3b2n1/1P2P3/1P1K2P1/R3R3 w - - 0 24",
+    "solution_moves": [
+      "d5e7",
+      "e8e7",
+      "e3d4"
+    ],
+    "solution_san": [
+      "Nxe7+",
+      "Rxe7",
+      "exd4"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1064,
+    "explanation": "Nxe7+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "intermezzo",
+      "kingsideAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "04H0e",
+    "source": "lichess"
+  },
+  {
+    "fen": "2R2rk1/5ppp/3qpn2/n7/3P4/4rPPP/4N1B1/2Q2RK1 w - - 0 24",
+    "solution_moves": [
+      "c8f8",
+      "d6f8",
+      "c1e3"
+    ],
+    "solution_san": [
+      "Rxf8+",
+      "Qxf8",
+      "Qxe3"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1071,
+    "explanation": "Rxf8+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "03ney",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r5/4k3/7p/p2R1p1n/P4P2/N7/5P1P/6K1 b - - 0 32",
+    "solution_moves": [
+      "c8c1",
+      "g1g2",
+      "h5f4",
+      "g2g3",
+      "f4d5"
+    ],
+    "solution_san": [
+      "Rc1+",
+      "Kg2",
+      "Nxf4+",
+      "Kg3",
+      "Nxd5"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1089,
+    "explanation": "Rc1+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "fork",
+      "intermezzo",
+      "long"
+    ],
+    "lichess_id": "04jmi",
+    "source": "lichess"
+  },
+  {
+    "fen": "7Q/4k1p1/p7/4r3/8/3q1P2/1P3P1P/R4RK1 b - - 0 39",
+    "solution_moves": [
+      "e5g5",
+      "g1h1",
+      "d3f3"
+    ],
+    "solution_san": [
+      "Rg5+",
+      "Kh1",
+      "Qxf3#"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1171,
+    "explanation": "Rg5+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "intermezzo",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "04pwH",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4qk1/pp2r2p/4p1PQ/3pRpP1/3P4/2P5/PP6/5RK1 b - - 0 27",
+    "solution_moves": [
+      "f8h6",
+      "g5h6",
+      "h7g6"
+    ],
+    "solution_san": [
+      "Qxh6",
+      "gxh6",
+      "hxg6"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1185,
+    "explanation": "Qxh6 is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "capturingDefender",
+      "endgame",
+      "intermezzo",
+      "short"
+    ],
+    "lichess_id": "03WiF",
+    "source": "lichess"
+  },
+  {
+    "fen": "Q4rk1/5ppp/4p3/1q1p4/8/8/P5PP/1R5K w - - 0 24",
+    "solution_moves": [
+      "a8f8",
+      "g8f8",
+      "b1b5"
+    ],
+    "solution_san": [
+      "Qxf8+",
+      "Kxf8",
+      "Rxb5"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1297,
+    "explanation": "Qxf8+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "intermezzo",
+      "short"
+    ],
+    "lichess_id": "01e5j",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/1p4p1/p1pqPRQR/4p3/P7/1P2P3/6PP/6K1 b - - 0 27",
+    "solution_moves": [
+      "d6d1",
+      "g1f2",
+      "f8f6"
+    ],
+    "solution_san": [
+      "Qd1+",
+      "Kf2",
+      "Rxf6+"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1366,
+    "explanation": "Qd1+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "endgame",
+      "intermezzo",
+      "short"
+    ],
+    "lichess_id": "01Xwq",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/1R5R/5bk1/8/1r5P/4r1PK/8/8 w - - 0 44",
+    "solution_moves": [
+      "h4h5",
+      "g6f5",
+      "b7b4"
+    ],
+    "solution_san": [
+      "h5+",
+      "Kf5",
+      "Rxb4"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1392,
+    "explanation": "h5+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "intermezzo",
+      "short"
+    ],
+    "lichess_id": "01ddN",
+    "source": "lichess"
+  },
+  {
+    "fen": "1R3rk1/p4ppp/3bpn2/3p4/q2P4/2N3P1/P3PP1P/2B2RK1 w - - 0 18",
+    "solution_moves": [
+      "b8f8",
+      "g8f8",
+      "c3a4"
+    ],
+    "solution_san": [
+      "Rxf8+",
+      "Kxf8",
+      "Nxa4"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1398,
+    "explanation": "Rxf8+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00km1",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r4/1Q3ppk/1p2q2p/1R6/2P1p3/1P2P1PP/5P2/3R3K b - - 0 34",
+    "solution_moves": [
+      "e6h3",
+      "h1g1",
+      "d8d1"
+    ],
+    "solution_san": [
+      "Qxh3+",
+      "Kg1",
+      "Rxd1#"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1414,
+    "explanation": "Qxh3+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "intermezzo",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "02mvf",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rr1k/2p3pp/p2P4/1p3p2/1P4P1/1BP1q2R/P4QP1/R5K1 b - - 0 25",
+    "solution_moves": [
+      "e3f2",
+      "g1f2",
+      "f5g4",
+      "f2g1",
+      "g4h3"
+    ],
+    "solution_san": [
+      "Qxf2+",
+      "Kxf2",
+      "fxg4+",
+      "Kg1",
+      "gxh3"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1418,
+    "explanation": "Qxf2+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "discoveredCheck",
+      "intermezzo",
+      "kingsideAttack",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "01tjv",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b1qknQ/6p1/6P1/p2p1NR1/5P2/1P2p3/P1P4P/4R2K b - - 0 32",
+    "solution_moves": [
+      "e8e4",
+      "h1g1",
+      "c8f5"
+    ],
+    "solution_san": [
+      "Qe4+",
+      "Kg1",
+      "Bxf5"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1426,
+    "explanation": "Qe4+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "01X6J",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2qk2r/2pn1p1n/pp1p2Bp/3Pp1b1/PPP1P3/2N1B3/3N2PP/R2Q1RK1 b kq - 0 17",
+    "solution_moves": [
+      "g5e3",
+      "g1h1",
+      "f7g6"
+    ],
+    "solution_san": [
+      "Bxe3+",
+      "Kh1",
+      "fxg6"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1432,
+    "explanation": "Bxe3+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "hangingPiece",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00WzS",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k1r1r2/pp4p1/6q1/2Qp4/5NP1/2P4p/PPN4P/R4R1K b - - 0 30",
+    "solution_moves": [
+      "g6e4",
+      "h1g1",
+      "f8f4"
+    ],
+    "solution_san": [
+      "Qe4+",
+      "Kg1",
+      "Rxf4"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1473,
+    "explanation": "Qe4+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "fork",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00QnO",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/pp2qR2/3p2pB/2nP4/P1P5/2P5/5QPP/4rRK1 b - - 0 24",
+    "solution_moves": [
+      "e1f1",
+      "g1f1",
+      "e7f7",
+      "f2f7",
+      "g8f7"
+    ],
+    "solution_san": [
+      "Rxf1+",
+      "Kxf1",
+      "Qxf7",
+      "Qxf7+",
+      "Kxf7"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1481,
+    "explanation": "Rxf1+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "0155R",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr2nr/ppp2ppp/3pb3/q7/7Q/PBNnB2P/1PP3P1/R4K1R w - - 0 16",
+    "solution_moves": [
+      "b3e6",
+      "f7e6",
+      "c2d3"
+    ],
+    "solution_san": [
+      "Bxe6+",
+      "fxe6",
+      "cxd3"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1560,
+    "explanation": "Bxe6+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "01jhf",
+    "source": "lichess"
+  },
+  {
+    "fen": "B4rk1/p3b1pp/1q2bp2/1p2p3/2p2P2/3PR1P1/PPPN3P/R1BQ2K1 b - - 0 16",
+    "solution_moves": [
+      "b6e3",
+      "g1g2",
+      "f8a8"
+    ],
+    "solution_san": [
+      "Qxe3+",
+      "Kg2",
+      "Rxa8"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "advanced",
+    "difficulty_rating": 1569,
+    "explanation": "Qxe3+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "hangingPiece",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00qIK",
+    "source": "lichess"
+  },
+  {
+    "fen": "2Q2rk1/3R1p1p/p3p1p1/1p4q1/5P2/P1N5/BPP3bP/2K4R b - - 0 20",
+    "solution_moves": [
+      "g5f4",
+      "c1b1",
+      "f8c8"
+    ],
+    "solution_san": [
+      "Qxf4+",
+      "Kb1",
+      "Rxc8"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "expert",
+    "difficulty_rating": 1602,
+    "explanation": "Qxf4+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00bnu",
+    "source": "lichess"
+  },
+  {
+    "fen": "2rr2k1/pp3ppp/2n5/3p4/QP1N4/P3P3/1q3PPP/2R2RK1 b - - 2 20",
+    "solution_moves": [
+      "c6d4",
+      "c1c8",
+      "d4e2",
+      "g1h1",
+      "d8c8"
+    ],
+    "solution_san": [
+      "Nxd4",
+      "Rxc8",
+      "Ne2+",
+      "Kh1",
+      "Rxc8"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "expert",
+    "difficulty_rating": 1604,
+    "explanation": "Nxd4 is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "long",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "02HYo",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1r1k/pp4pp/2qbP1p1/8/3p1B2/1P3QP1/P6P/R4R1K w - - 0 27",
+    "solution_moves": [
+      "f3c6",
+      "b7c6",
+      "f4d6"
+    ],
+    "solution_san": [
+      "Qxc6",
+      "bxc6",
+      "Bxd6"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "expert",
+    "difficulty_rating": 1648,
+    "explanation": "Qxc6 is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "03Cz5",
+    "source": "lichess"
+  },
+  {
+    "fen": "rn2r1k1/pp1q1p2/2pQ2bp/4P3/5R2/2PB4/PP4PP/R5K1 w - - 9 24",
+    "solution_moves": [
+      "d3g6",
+      "d7d6",
+      "g6f7",
+      "g8h8",
+      "e5d6"
+    ],
+    "solution_san": [
+      "Bxg6",
+      "Qxd6",
+      "Bxf7+",
+      "Kh8",
+      "exd6"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "expert",
+    "difficulty_rating": 1653,
+    "explanation": "Bxg6 is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "fork",
+      "intermezzo",
+      "long",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "021Un",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4k2/8/2p3Bb/4p1R1/3q4/PQ6/2K2P2/1N6 b - - 0 30",
+    "solution_moves": [
+      "d4f2",
+      "b1d2",
+      "h6g5",
+      "b3f3",
+      "f2f3"
+    ],
+    "solution_san": [
+      "Qxf2+",
+      "Nd2",
+      "Bxg5",
+      "Qf3+",
+      "Qxf3"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "expert",
+    "difficulty_rating": 1689,
+    "explanation": "Qxf2+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "intermezzo",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00Nte",
+    "source": "lichess"
+  },
+  {
+    "fen": "2rr2k1/p5p1/1p5p/2pq1p1P/8/P4QR1/5PP1/4R1K1 w - - 0 32",
+    "solution_moves": [
+      "e1e8",
+      "g8f7",
+      "f3d5",
+      "d8d5",
+      "e8c8"
+    ],
+    "solution_san": [
+      "Re8+",
+      "Kf7",
+      "Qxd5+",
+      "Rxd5",
+      "Rxc8"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "expert",
+    "difficulty_rating": 1732,
+    "explanation": "Re8+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "endgame",
+      "intermezzo",
+      "long"
+    ],
+    "lichess_id": "00DII",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r1q1rk1/p2bbpp1/2ppp2p/8/3Nn2B/2N3R1/PPP2PPP/R2Q2K1 w - - 0 14",
+    "solution_moves": [
+      "h4e7",
+      "d8e7",
+      "c3e4"
+    ],
+    "solution_san": [
+      "Bxe7",
+      "Qxe7",
+      "Nxe4"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "expert",
+    "difficulty_rating": 1733,
+    "explanation": "Bxe7 is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "03Mqr",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r4k/p4p1p/b4p2/8/4P2P/1P1r1QP1/P4PB1/2qR2K1 w - - 0 26",
+    "solution_moves": [
+      "f3f6",
+      "h8g8",
+      "d1c1"
+    ],
+    "solution_san": [
+      "Qxf6+",
+      "Kg8",
+      "Rxc1"
+    ],
+    "motif": "zwischenzug",
+    "difficulty": "expert",
+    "difficulty_rating": 1782,
+    "explanation": "Qxf6+ is the key \u2014 it sets up a zwischenzug. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "fork",
+      "intermezzo",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00bri",
+    "source": "lichess"
+  }
+]

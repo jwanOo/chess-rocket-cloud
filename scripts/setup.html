@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#16213e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Chess Rocket">
+<title>Setup Position — Chess Rocket</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2316213e'/%3E%3Ctext x='50%25' y='62%25' font-size='44' text-anchor='middle' fill='%23e94560'%3E%E2%99%9E%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='40' fill='%2316213e'/%3E%3Ctext x='50%25' y='65%25' font-size='130' text-anchor='middle' fill='%23e94560'%3E%E2%99%9E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+<style>
+  :root {
+    --bg: #1a1a2e; --surface: #16213e; --surface2: #0f3460;
+    --text: #e0e0e0; --text-dim: #888; --accent: #e94560;
+    --green: #4caf50; --light-green: #8bc34a; --blue: #2196f3;
+    --yellow: #ffc107; --orange: #ff9800; --red: #f44336;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg); color: var(--text); min-height: 100vh;
+  }
+  header {
+    background: var(--surface); padding: 12px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 2px solid var(--accent);
+  }
+  header h1 { font-size: 1.3rem; font-weight: 600; }
+  header h1 span { color: var(--accent); }
+  .nav-links { display: flex; gap: 18px; font-size: 0.9rem; align-items: center; }
+  .nav-links a { color: var(--text-dim); text-decoration: none; padding: 4px 10px; border-radius: 4px; }
+  .nav-links a.active { color: var(--accent); font-weight: 600; }
+  .nav-links a:hover { background: var(--surface2); color: var(--text); }
+  .header-hint { font-size: 0.85rem; color: var(--text-dim); }
+
+  .main {
+    display: grid; grid-template-columns: minmax(360px, 680px) 1fr;
+    gap: 16px; padding: 16px; max-width: 1440px; margin: 0 auto;
+  }
+  .board-col { display: flex; flex-direction: column; gap: 10px; }
+  /* chessboard.js renders spare-pieces strips ABOVE and BELOW the board.
+     They get the .spare-pieces-7492f class — give them a tinted background
+     so it's obvious they're trays. */
+  #board { width: 100% !important; height: auto !important; }
+  #board .spare-pieces-7492f { background: var(--surface); }
+  /* Highlight the legality footer per state */
+  .legality {
+    padding: 10px 12px; border-radius: 6px; font-size: 0.92rem; font-weight: 500;
+    line-height: 1.45; border: 1px solid;
+  }
+  .legality.ok  { background: rgba(76,175,80,0.12);  border-color: var(--green);  color: var(--light-green); }
+  .legality.err { background: rgba(244,67,54,0.12);  border-color: var(--red);    color: var(--red); }
+
+  .panels { display: flex; flex-direction: column; gap: 12px; }
+  .panel {
+    background: var(--surface); border-radius: 8px; padding: 14px 16px;
+    border-left: 3px solid var(--surface2);
+  }
+  .panel h2 {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--text-dim); margin-bottom: 10px;
+  }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .row > label { font-size: 0.85rem; color: var(--text-dim); }
+  .pill-group { display: flex; gap: 4px; }
+  .pill {
+    padding: 5px 10px; font-size: 0.8rem; font-weight: 600;
+    background: var(--surface2); color: var(--text-dim);
+    border: 1px solid #2a4a7a; border-radius: 6px; cursor: pointer;
+    user-select: none;
+  }
+  .pill.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .pill:hover { background: #15498a; color: var(--text); }
+  .pill.on:hover { background: #c93651; color: #fff; }
+  .castling-pills .pill { font-family: 'SF Mono', 'Consolas', monospace; }
+  .fen-row { display: flex; gap: 6px; }
+  .fen-input {
+    flex: 1; background: var(--bg); border: 1px solid var(--surface2);
+    color: var(--text); border-radius: 6px; padding: 7px 10px;
+    font-size: 0.82rem; font-family: 'SF Mono', monospace;
+  }
+  .fen-input:focus { outline: none; border-color: var(--blue); }
+  .btn {
+    background: var(--surface2); color: var(--text);
+    border: 1px solid #2a4a7a; border-radius: 6px;
+    padding: 7px 12px; font-size: 0.85rem; cursor: pointer;
+  }
+  .btn:hover:not(:disabled) { background: #15498a; }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  .btn-primary:hover:not(:disabled) { background: #c93651; }
+  .btn-explore { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 600; }
+  .btn-explore:hover:not(:disabled) { background: #1976d2; }
+  .toolbar { display: flex; gap: 6px; flex-wrap: wrap; }
+  .toolbar .btn { font-size: 0.78rem; padding: 5px 10px; }
+
+  .play-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .play-row select {
+    background: var(--surface2); color: var(--text);
+    border: 1px solid #2a4a7a; border-radius: 6px;
+    padding: 6px 10px; font-size: 0.85rem;
+  }
+  .action-row {
+    display: flex; gap: 8px; margin-top: 4px;
+  }
+  .action-row .btn { flex: 1; padding: 9px 14px; font-size: 0.92rem; }
+
+  .examples { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+  .example {
+    text-align: left; background: transparent; border: 1px dashed var(--surface2);
+    color: var(--text-dim); padding: 4px 8px; font-size: 0.78rem;
+    border-radius: 4px; cursor: pointer; font-family: 'SF Mono', monospace;
+  }
+  .example:hover { background: var(--surface2); color: var(--text); }
+  .example b { color: var(--text); font-family: 'Segoe UI', sans-serif; font-weight: 600; }
+
+  .help {
+    font-size: 0.8rem; line-height: 1.5; color: var(--text-dim);
+    background: rgba(33,150,243,0.06); border-left: 3px solid var(--blue);
+    padding: 8px 12px; border-radius: 4px;
+  }
+  .help kbd {
+    background: var(--surface2); color: var(--text); padding: 1px 5px;
+    border-radius: 3px; font-family: 'SF Mono', monospace; font-size: 0.78em;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span>Chess Rocket</span> Setup</h1>
+  <div class="nav-links">
+    <a href="/">Play</a>
+    <a href="/tactics">Tactics</a>
+    <a href="/setup" class="active">Setup</a>
+  </div>
+  <div class="header-hint">Build any position, then play or explore from it</div>
+</header>
+
+<div class="main">
+  <!-- LEFT: board + spare-piece trays (rendered automatically by chessboard.js) -->
+  <div class="board-col">
+    <div id="board"></div>
+    <div id="legality" class="legality ok">✓ Legal starting position.</div>
+    <div class="help">
+      <b>How to use:</b> drag pieces from the trays above/below the board onto any square.
+      Drag a piece OFF the board to remove it. Set side-to-move and castling rights on the right.
+      When you're happy, hit <kbd>▶ Play from this position</kbd> to play it out vs. the engine,
+      or <kbd>🔬 Explore</kbd> to ask the engine what it thinks.
+    </div>
+  </div>
+
+  <!-- RIGHT: position controls + actions -->
+  <div class="panels">
+    <div class="panel">
+      <h2>Position</h2>
+
+      <div class="row">
+        <label>Side to move</label>
+        <div class="pill-group" id="stm-group">
+          <span class="pill on" data-stm="w">White</span>
+          <span class="pill" data-stm="b">Black</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Castling rights</label>
+        <div class="pill-group castling-pills" id="castling-group">
+          <span class="pill on" data-castle="K" title="White can castle kingside">K</span>
+          <span class="pill on" data-castle="Q" title="White can castle queenside">Q</span>
+          <span class="pill on" data-castle="k" title="Black can castle kingside">k</span>
+          <span class="pill on" data-castle="q" title="Black can castle queenside">q</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label style="min-width: 70px;">FEN</label>
+        <div class="fen-row" style="flex:1;">
+          <input class="fen-input" id="fen-input"
+                 value="rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+                 spellcheck="false" autocomplete="off">
+          <button class="btn" id="copy-fen-btn" title="Copy FEN">Copy</button>
+          <button class="btn" id="load-fen-btn" title="Load this FEN onto the board">Load</button>
+        </div>
+      </div>
+
+      <div class="toolbar" style="margin-top: 6px;">
+        <button class="btn" id="reset-btn" title="Standard starting position">⟲ Reset</button>
+        <button class="btn" id="empty-btn" title="Empty board">🗑️ Clear</button>
+        <button class="btn" id="flip-btn" title="Flip orientation">⇋ Flip</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Try one of these</h2>
+      <div class="examples">
+        <button class="example" data-fen="r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 6">
+          <b>Italian Opening:</b> r1bqk2r/pppp1ppp/… (early middlegame)
+        </button>
+        <button class="example" data-fen="r2qkb1r/pp1n1ppp/2p1pn2/3p4/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQkq - 0 7">
+          <b>Queen's Gambit Declined:</b> a typical tabiya
+        </button>
+        <button class="example" data-fen="8/8/8/4k3/8/3K4/8/4R3 w - - 0 1">
+          <b>K+R vs K endgame:</b> practice the classic mate
+        </button>
+        <button class="example" data-fen="r1b2rk1/pp2nppp/2n5/2pq4/3P4/P1P1PN2/2Q2PPP/R1B1KB1R w KQ - 0 12">
+          <b>Tactical middlegame:</b> who's better, and what's the threat?
+        </button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Play / Explore</h2>
+      <div class="play-row" style="margin-bottom: 10px;">
+        <label>Engine Elo</label>
+        <select id="elo-select">
+          <option value="auto">Auto (adaptive)</option>
+          <option value="400">400 (beginner)</option>
+          <option value="800">800 (casual)</option>
+          <option value="1200" selected>1200 (club)</option>
+          <option value="1600">1600 (strong)</option>
+          <option value="2000">2000 (expert)</option>
+        </select>
+        <label>You play</label>
+        <select id="color-select">
+          <option value="white" selected>White</option>
+          <option value="black">Black</option>
+        </select>
+      </div>
+      <div class="action-row">
+        <button class="btn btn-primary" id="play-btn" title="Start a real game from this position">
+          ▶ Play from this position
+        </button>
+        <button class="btn btn-explore" id="explore-btn"
+                title="Open the engine sandbox seeded with this position">
+          🔬 Explore
+        </button>
+      </div>
+      <div id="action-error" style="margin-top: 8px; font-size: 0.82rem; color: var(--red); display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  // ---------- editor state ----------
+  // Side to move + castling rights are tracked separately from the board's
+  // piece placement (chessboard.js only knows about the position diagram).
+  let sideToMove = 'w';
+  let castling = new Set(['K', 'Q', 'k', 'q']);
+  let board = null;
+
+  // ---------- helpers ----------
+  function $(sel) { return document.querySelector(sel); }
+  function $$(sel) { return Array.from(document.querySelectorAll(sel)); }
+
+  // Build a full FEN from chessboard.js's piece placement plus our editor's
+  // side-to-move + castling rights. We always emit "-" for en-passant and
+  // 0/1 for the half-move / full-move counters: those don't matter for a
+  // freshly-placed position and python-chess's is_valid() is fine with them.
+  function buildFEN() {
+    if (!board) return '';
+    const placement = board.fen();   // e.g. "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR"
+    let cast = ['K','Q','k','q'].filter(c => castling.has(c)).join('') || '-';
+    return `${placement} ${sideToMove} ${cast} - 0 1`;
+  }
+
+  // Reflect editor state back into the FEN <input>. Called whenever any of
+  // (board, side-to-move, castling) change.
+  function syncFenFromEditor() {
+    const fen = buildFEN();
+    const input = $('#fen-input');
+    if (input.value !== fen) input.value = fen;
+    refreshLegality(fen);
+  }
+
+  // The reverse direction: parse the FEN <input> and push it into the board
+  // + side-to-move + castling pills. Tolerates "position-only" FENs (just
+  // the placement) by defaulting the rest.
+  function loadFenIntoEditor(fen) {
+    if (!fen) return false;
+    const trimmed = fen.trim();
+    const parts = trimmed.split(/\s+/);
+    const placement = parts[0];
+    // Quick sanity check: must have 8 ranks separated by /
+    if (!placement || placement.split('/').length !== 8) {
+      setLegality('FEN looks malformed (need 8 ranks separated by `/`).', false);
+      return false;
+    }
+    try {
+      board.position(placement, false);
+    } catch (e) {
+      setLegality('Could not place pieces from that FEN.', false);
+      return false;
+    }
+    sideToMove = (parts[1] === 'b') ? 'b' : 'w';
+    castling = new Set();
+    const c = parts[2] || 'KQkq';
+    for (const ch of c) if ('KQkq'.includes(ch)) castling.add(ch);
+    paintControls();
+    syncFenFromEditor();
+    return true;
+  }
+
+  function paintControls() {
+    $$('#stm-group .pill').forEach(el =>
+      el.classList.toggle('on', el.dataset.stm === sideToMove));
+    $$('#castling-group .pill').forEach(el =>
+      el.classList.toggle('on', castling.has(el.dataset.castle)));
+  }
+
+  function setLegality(html, ok) {
+    const el = $('#legality');
+    el.className = 'legality ' + (ok ? 'ok' : 'err');
+    el.innerHTML = (ok ? '✓ ' : '✗ ') + html;
+    // Disable the action buttons when the position is illegal — fail-fast
+    // saves a server round-trip just to be told the same thing.
+    $('#play-btn').disabled = !ok;
+    $('#explore-btn').disabled = !ok;
+  }
+
+  // Lightweight client-side legality check (cheap heuristics; the real
+  // verdict happens server-side via python-chess's is_valid()). Covers the
+  // common authoring mistakes so the user gets immediate feedback.
+  function refreshLegality(fen) {
+    const placement = fen.split(' ')[0];
+    // Count kings.
+    const wK = (placement.match(/K/g) || []).length;
+    const bK = (placement.match(/k/g) || []).length;
+    if (wK !== 1) return setLegality(`White must have exactly one king (found ${wK}).`, false);
+    if (bK !== 1) return setLegality(`Black must have exactly one king (found ${bK}).`, false);
+    // No pawns on rank 1 or 8.
+    const ranks = placement.split('/');
+    if (/[Pp]/.test(ranks[0]))
+      return setLegality('Pawns can\'t live on the 8th rank.', false);
+    if (/[Pp]/.test(ranks[7]))
+      return setLegality('Pawns can\'t live on the 1st rank.', false);
+    // Pawn count.
+    const wp = (placement.match(/P/g) || []).length;
+    const bp = (placement.match(/p/g) || []).length;
+    if (wp > 8) return setLegality(`Too many white pawns (${wp}/8).`, false);
+    if (bp > 8) return setLegality(`Too many black pawns (${bp}/8).`, false);
+    setLegality(`Looks legal — ${sideToMove === 'w' ? 'White' : 'Black'} to move.`, true);
+  }
+
+  // ---------- start the game / explore from this FEN ----------
+  async function startGame(modeExplore = false) {
+    const fen = buildFEN();
+    const eloRaw = $('#elo-select').value;
+    const elo = eloRaw === 'auto' ? 'auto' : parseInt(eloRaw, 10);
+    const color = $('#color-select').value;
+    const errEl = $('#action-error');
+    errEl.style.display = 'none';
+    errEl.textContent = '';
+
+    try {
+      const r = await fetch('/api/new', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ elo, color, start_fen: fen }),
+      });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok || (data && data.illegal)) {
+        const msg = (data && data.error) || `Server rejected the position (${r.status}).`;
+        errEl.textContent = msg;
+        errEl.style.display = 'block';
+        return;
+      }
+      // The game is now seeded server-side. Hand off to the right page.
+      // We always append a `?play=1` (or `?explore=1`) flag so the dashboard
+      // knows this is a Setup hand-off and never falls through to its
+      // "no game yet" waiting screen — that screen would otherwise let the
+      // user accidentally clobber the custom position with a fresh game.
+      window.location.href = modeExplore ? '/?explore=1' : '/?play=1';
+    } catch (e) {
+      errEl.textContent = 'Could not reach the server: ' + (e.message || e);
+      errEl.style.display = 'block';
+    }
+  }
+
+  // ---------- wiring ----------
+  function init() {
+    board = Chessboard('board', {
+      position: 'start',
+      draggable: true,
+      sparePieces: true,        // built-in piece trays above/below
+      dropOffBoard: 'trash',    // dragging a piece off the board removes it
+      pieceTheme: 'https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png',
+      onChange: () => syncFenFromEditor(),
+    });
+    window.addEventListener('resize', () => board && board.resize());
+
+    // Side-to-move pills.
+    $$('#stm-group .pill').forEach(el => el.addEventListener('click', () => {
+      sideToMove = el.dataset.stm;
+      paintControls();
+      syncFenFromEditor();
+    }));
+    // Castling pills (toggle each independently).
+    $$('#castling-group .pill').forEach(el => el.addEventListener('click', () => {
+      const k = el.dataset.castle;
+      if (castling.has(k)) castling.delete(k);
+      else castling.add(k);
+      paintControls();
+      syncFenFromEditor();
+    }));
+
+    // FEN field load / copy.
+    $('#load-fen-btn').addEventListener('click', () => {
+      loadFenIntoEditor($('#fen-input').value);
+    });
+    $('#fen-input').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        loadFenIntoEditor($('#fen-input').value);
+      }
+    });
+    $('#copy-fen-btn').addEventListener('click', async () => {
+      const btn = $('#copy-fen-btn');
+      try {
+        await navigator.clipboard.writeText($('#fen-input').value);
+        const old = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = old; }, 1200);
+      } catch (e) { /* ignore — older browsers */ }
+    });
+
+    // Toolbar.
+    $('#reset-btn').addEventListener('click', () => {
+      loadFenIntoEditor('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1');
+    });
+    $('#empty-btn').addEventListener('click', () => {
+      board.position({}, false);  // empty
+      castling = new Set();        // no rooks/king ⇒ no rights
+      paintControls();
+      syncFenFromEditor();
+    });
+    $('#flip-btn').addEventListener('click', () => board.flip());
+
+    // Examples.
+    $$('.example').forEach(el => el.addEventListener('click', () => {
+      loadFenIntoEditor(el.dataset.fen);
+    }));
+
+    // Action buttons.
+    $('#play-btn').addEventListener('click', () => startGame(false));
+    $('#explore-btn').addEventListener('click', () => startGame(true));
+
+    // First paint.
+    paintControls();
+    syncFenFromEditor();
+  }
+
+  // chessboard.js needs the DOM to be ready and the board <div> measured.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>

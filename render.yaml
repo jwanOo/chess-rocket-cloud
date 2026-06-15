@@ -1,0 +1,68 @@
+# Render.com Blueprint for the Chess Rocket backend.
+#
+# One-click deployment: push this repo to GitHub, then on render.com choose
+# "New → Blueprint" and point at the repo. Render reads this file and
+# provisions the service automatically.
+#
+# Why Render over Fly.io for this project:
+#   • Free tier: 512 MB RAM, no credit card required (Fly trial caps at
+#     256 MB which OOM-kills Stockfish).
+#   • Sleeps after 15 min idle and cold-starts on the next request
+#     (~30s first call). Acceptable trade-off for a free demo backend.
+#   • Native Docker support — reuses the existing Dockerfile unchanged.
+#
+# After the service is live, copy its URL (https://chess-rocket-backend.onrender.com)
+# into the Vercel deployment's <meta name="cr-backend-url"> tag (see
+# DEPLOYMENT.md for the full handoff).
+
+services:
+  - type: web
+    name: chess-rocket-backend
+    runtime: docker
+    region: frankfurt              # closest to user (Berlin); keeps SAP AI Core
+                                   # → eu10 latency reasonable. Change if needed.
+    plan: free                     # 512 MB / 0.1 CPU / sleeps 15 min idle
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz      # backend exposes this; Render uses it as readiness probe
+    autoDeploy: true               # push to main → redeploy
+
+    envVars:
+      # ─── SAP AI Core OAuth + deployment identity ───
+      # These names are the EXACT keys sap_coach.py reads
+      # (see scripts/sap_coach.py `_KEYS` tuple). Renaming them breaks the
+      # config load and the coach silently falls back to heuristics with
+      # "SAP AI Core not configured" — which is exactly the bug we hit.
+      #
+      # The secrets (AUTH_URL, CLIENT_ID, CLIENT_SECRET, BASE_URL) are
+      # marked `sync: false` so Render prompts for them on first deploy
+      # and never echoes them back in the dashboard / Blueprint diff.
+      - key: AICORE_ORCH_AUTH_URL
+        sync: false
+      - key: AICORE_ORCH_CLIENT_ID
+        sync: false
+      - key: AICORE_ORCH_CLIENT_SECRET
+        sync: false
+      - key: AICORE_ORCH_BASE_URL
+        sync: false
+      - key: AICORE_ORCH_RESOURCE_GROUP
+        value: CPI
+      - key: AICORE_DIRECT_DEPLOYMENT_ID
+        value: db246f9f7a963785
+      - key: AICORE_DIRECT_MODEL_NAME
+        value: anthropic--claude-4.7-opus
+
+      # ─── CORS allow-list ───
+      # The Vercel-deployed frontend lives on a different origin. Without
+      # this, browsers strip the session cookie and /api/coach 401s.
+      # Trailing slash + protocol must match exactly what the browser sends.
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://chessrocket.vercel.app,https://scripts-three-bay.vercel.app,https://chess-rocket.vercel.app
+
+      # ─── Runtime knobs ───
+      - key: STOCKFISH_PATH
+        value: /usr/games/stockfish
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      # Render injects PORT automatically; the Dockerfile binds 0.0.0.0:$PORT.

@@ -1,0 +1,24 @@
+{
+  "name": "Chess Rocket",
+  "short_name": "Chess Rocket",
+  "description": "Adaptive chess coaching with Stockfish + Claude — voice control + mobile-friendly.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#1a1a2e",
+  "theme_color": "#16213e",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='40' fill='%2316213e'/%3E%3Ctext x='50%25' y='65%25' font-size='130' text-anchor='middle' fill='%23e94560'%3E%E2%99%9E%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='100' fill='%2316213e'/%3E%3Ctext x='50%25' y='65%25' font-size='340' text-anchor='middle' fill='%23e94560'%3E%E2%99%9E%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,1028 @@
+[
+  {
+    "fen": "2kr3r/p1p1Rpp1/2p2n1p/8/8/1P6/P1P2PPP/RNB3K1 b - - 0 16",
+    "solution_moves": [
+      "d8d1",
+      "e7e1",
+      "d1e1"
+    ],
+    "solution_san": [
+      "Rd1+",
+      "Re1",
+      "Rxe1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "beginner",
+    "difficulty_rating": 628,
+    "explanation": "Rd1+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "fork",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "007XE",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/B7/2p2pK1/3nr2p/8/1Q3PP1/P6r/8 w - - 1 32",
+    "solution_moves": [
+      "b3b8",
+      "e5e8",
+      "b8e8"
+    ],
+    "solution_san": [
+      "Qb8+",
+      "Re8",
+      "Qxe8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "beginner",
+    "difficulty_rating": 632,
+    "explanation": "Qb8+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00CpR",
+    "source": "lichess"
+  },
+  {
+    "fen": "r6k/2q3pp/8/2p5/R1np4/7P/2PB1PP1/6K1 w - - 0 33",
+    "solution_moves": [
+      "a4a8",
+      "c7b8",
+      "a8b8"
+    ],
+    "solution_san": [
+      "Rxa8+",
+      "Qb8",
+      "Rxb8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "beginner",
+    "difficulty_rating": 651,
+    "explanation": "Rxa8+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "hangingPiece",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "005N7",
+    "source": "lichess"
+  },
+  {
+    "fen": "5k2/p2r3p/1p4pP/3r1q2/4R3/2P5/PP3PQ1/K3R3 b - - 0 33",
+    "solution_moves": [
+      "d5d1",
+      "e1d1",
+      "d7d1"
+    ],
+    "solution_san": [
+      "Rd1+",
+      "Rxd1",
+      "Rxd1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "beginner",
+    "difficulty_rating": 750,
+    "explanation": "Rd1+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "007mr",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/p2q2p1/1p2p1Np/3p3P/3Pb1P1/2P5/PP3R2/6K1 w - - 0 34",
+    "solution_moves": [
+      "f2f8",
+      "g8h7",
+      "f8h8"
+    ],
+    "solution_san": [
+      "Rxf8+",
+      "Kh7",
+      "Rh8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "beginner",
+    "difficulty_rating": 763,
+    "explanation": "Rxf8+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "hookMate",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00HzH",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1n3k1/3R1ppp/2p5/5P2/8/1P2r3/P7/5RK1 w - - 0 34",
+    "solution_moves": [
+      "d7d8",
+      "e3e8",
+      "d8e8"
+    ],
+    "solution_san": [
+      "Rd8+",
+      "Re8",
+      "Rxe8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "beginner",
+    "difficulty_rating": 769,
+    "explanation": "Rd8+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00EXM",
+    "source": "lichess"
+  },
+  {
+    "fen": "5bk1/2R4p/6p1/8/4NP1P/3bP1K1/r7/8 w - - 3 46",
+    "solution_moves": [
+      "e4f6",
+      "g8h8",
+      "c7h7"
+    ],
+    "solution_san": [
+      "Nf6+",
+      "Kh8",
+      "Rxh7#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 803,
+    "explanation": "Nf6+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "arabianMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00H8a",
+    "source": "lichess"
+  },
+  {
+    "fen": "7k/6p1/1r5p/P4p2/3Rp3/4P3/5PPP/6K1 b - - 0 39",
+    "solution_moves": [
+      "b6b1",
+      "d4d1",
+      "b1d1"
+    ],
+    "solution_san": [
+      "Rb1+",
+      "Rd1",
+      "Rxd1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 849,
+    "explanation": "Rb1+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "rookEndgame",
+      "short"
+    ],
+    "lichess_id": "008aL",
+    "source": "lichess"
+  },
+  {
+    "fen": "R7/1p3kp1/2pK3p/3p1PP1/3r2nP/8/1P6/8 w - - 0 40",
+    "solution_moves": [
+      "g5g6",
+      "f7f6",
+      "a8f8"
+    ],
+    "solution_san": [
+      "g6+",
+      "Kf6",
+      "Rf8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 859,
+    "explanation": "g6+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00Keu",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/p2k4/1pp5/7P/1PKP1RP1/7r/8 b - - 1 46",
+    "solution_moves": [
+      "b5b4",
+      "c3c4",
+      "h2c2"
+    ],
+    "solution_san": [
+      "b4+",
+      "Kc4",
+      "Rc2#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 897,
+    "explanation": "b4+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "rookEndgame",
+      "short"
+    ],
+    "lichess_id": "00HzR",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bqr1k1/pp1nbpp1/2p5/3n2P1/2BP4/P7/1PQNNPP1/R3K2R w KQ - 1 14",
+    "solution_moves": [
+      "c2h7",
+      "g8f8",
+      "h7h8"
+    ],
+    "solution_san": [
+      "Qh7+",
+      "Kf8",
+      "Qh8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 908,
+    "explanation": "Qh7+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "002p5",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/p4p1p/1p6/6B1/3P2n1/P4Q2/1P4P1/7K b - - 0 34",
+    "solution_moves": [
+      "e8e1",
+      "f3f1",
+      "e1f1"
+    ],
+    "solution_san": [
+      "Re1+",
+      "Qf1",
+      "Rxf1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 990,
+    "explanation": "Re1+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "007Rn",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r3k1/3R1ppp/p1q5/2p2Q2/P7/7P/5PP1/6K1 w - - 4 27",
+    "solution_moves": [
+      "f5f7",
+      "g8h8",
+      "f7g7"
+    ],
+    "solution_san": [
+      "Qxf7+",
+      "Kh8",
+      "Qxg7#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 991,
+    "explanation": "Qxf7+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "0092z",
+    "source": "lichess"
+  },
+  {
+    "fen": "5r1k/pp4pp/5p2/1BbQp1r1/7K/7P/1PP3P1/3R3R b - - 3 26",
+    "solution_moves": [
+      "c5f2",
+      "g2g3",
+      "f2g3"
+    ],
+    "solution_san": [
+      "Bf2+",
+      "g3",
+      "Bxg3#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1018,
+    "explanation": "Bf2+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "morphysMate",
+      "short"
+    ],
+    "lichess_id": "001om",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r2k/3q3r/1p4pQ/p1pP4/2P4P/1N4p1/PP3RK1/8 w - - 2 38",
+    "solution_moves": [
+      "f2f8",
+      "e8f8",
+      "h6f8"
+    ],
+    "solution_san": [
+      "Rf8+",
+      "Rxf8",
+      "Qxf8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1024,
+    "explanation": "Rf8+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "009bR",
+    "source": "lichess"
+  },
+  {
+    "fen": "3rk2r/2qn2p1/p1Q1p3/3n3p/8/8/PP4PP/5R1K w k - 0 24",
+    "solution_moves": [
+      "c6e6",
+      "d5e7",
+      "e6f7"
+    ],
+    "solution_san": [
+      "Qxe6+",
+      "Ne7",
+      "Qf7#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1104,
+    "explanation": "Qxe6+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "fork",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "005nD",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/5ppp/r1p5/p1n1rP2/8/2P2N1P/2P3P1/3R2K1 w - - 0 22",
+    "solution_moves": [
+      "d1d8",
+      "e5e8",
+      "d8e8"
+    ],
+    "solution_san": [
+      "Rd8+",
+      "Re8",
+      "Rxe8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1118,
+    "explanation": "Rd8+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "001Wz",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r4k1/p4ppp/2Q5/3pq3/8/P6P/2PR1PP1/1R4K1 b - - 0 26",
+    "solution_moves": [
+      "b8b1",
+      "d2d1",
+      "b1d1"
+    ],
+    "solution_san": [
+      "Rxb1+",
+      "Rd1",
+      "Rxd1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1152,
+    "explanation": "Rxb1+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "004X6",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r6/5k2/2Q1pNp1/p5Pp/1p2P2P/2P4R/KP3P2/3q4 b - - 0 31",
+    "solution_moves": [
+      "b4b3",
+      "a2a3",
+      "d1a1"
+    ],
+    "solution_san": [
+      "b3+",
+      "Ka3",
+      "Qa1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1159,
+    "explanation": "b3+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "006HV",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r4/4kp1r/p2Np1p1/3bP3/P2n4/8/1P3RPP/5RK1 w - - 5 26",
+    "solution_moves": [
+      "f2f7",
+      "h7f7",
+      "f1f7"
+    ],
+    "solution_san": [
+      "Rxf7+",
+      "Rxf7",
+      "Rxf7#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1162,
+    "explanation": "Rxf7+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "hookMate",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "009IO",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bq1k1r/ppppn1pp/2n5/b5N1/4P3/B1P5/P4PPP/RN1QK2R w KQ - 2 10",
+    "solution_moves": [
+      "d1f3",
+      "f8e8",
+      "f3f7"
+    ],
+    "solution_san": [
+      "Qf3+",
+      "Ke8",
+      "Qf7#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1205,
+    "explanation": "Qf3+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "opening",
+      "short"
+    ],
+    "lichess_id": "00QZ3",
+    "source": "lichess"
+  },
+  {
+    "fen": "1R2R3/p7/1p1k3p/1Pb5/P5p1/6P1/5r1P/7K b - - 7 41",
+    "solution_moves": [
+      "f2f1",
+      "h1g2",
+      "f1g1"
+    ],
+    "solution_san": [
+      "Rf1+",
+      "Kg2",
+      "Rg1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1245,
+    "explanation": "Rf1+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "operaMate",
+      "short"
+    ],
+    "lichess_id": "009wR",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1k2/p2n3p/1p2Bpp1/2r2N2/4q3/6QP/P5P1/5R1K w - - 2 41",
+    "solution_moves": [
+      "g3d6",
+      "f8e8",
+      "d6e7"
+    ],
+    "solution_san": [
+      "Qd6+",
+      "Ke8",
+      "Qe7#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1245,
+    "explanation": "Qd6+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00KYU",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rk2/pbp2pp1/1p1N4/3P1q2/QPBP4/1KP2P2/P5r1/R3R3 b - - 0 25",
+    "solution_moves": [
+      "f5c2",
+      "b3a3",
+      "c2b2"
+    ],
+    "solution_san": [
+      "Qc2+",
+      "Ka3",
+      "Qb2#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1245,
+    "explanation": "Qc2+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00NUS",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rk2/p4q2/1p3Q1b/8/1p5N/2P1p3/P3P3/2K5 w - - 1 44",
+    "solution_moves": [
+      "h4g6",
+      "f8g8",
+      "f6h8"
+    ],
+    "solution_san": [
+      "Ng6+",
+      "Kg8",
+      "Qh8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1260,
+    "explanation": "Ng6+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "pin",
+      "short"
+    ],
+    "lichess_id": "005Bm",
+    "source": "lichess"
+  },
+  {
+    "fen": "7k/p5pp/2r2q2/2p4Q/8/8/P5PP/3r1R1K w - - 0 30",
+    "solution_moves": [
+      "h5e8",
+      "f6f8",
+      "e8f8"
+    ],
+    "solution_san": [
+      "Qe8+",
+      "Qf8",
+      "Qxf8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1295,
+    "explanation": "Qe8+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00MFe",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2n2k1/1bq2rpp/1p6/3P4/p3Q3/B3P3/PP3PPP/3R2K1 w - - 0 21",
+    "solution_moves": [
+      "e4e8",
+      "f7f8",
+      "e8f8"
+    ],
+    "solution_san": [
+      "Qe8+",
+      "Rf8",
+      "Qxf8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1326,
+    "explanation": "Qe8+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00P6j",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r3/1k6/pp3P2/1b5p/3R1p2/P1R2P2/1P4PP/6K1 b - - 0 35",
+    "solution_moves": [
+      "e8e1",
+      "g1f2",
+      "e1f1"
+    ],
+    "solution_san": [
+      "Re1+",
+      "Kf2",
+      "Rf1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1364,
+    "explanation": "Re1+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "operaMate",
+      "short"
+    ],
+    "lichess_id": "000Zo",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/6pk/1Q1p2n1/4p3/2P3P1/P2PPK1P/1B6/4q3 b - - 2 35",
+    "solution_moves": [
+      "g6h4",
+      "f3e4",
+      "e1h1"
+    ],
+    "solution_san": [
+      "Nh4+",
+      "Ke4",
+      "Qh1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1441,
+    "explanation": "Nh4+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00KHR",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r3k/6p1/4Q3/4B3/1p3P2/4PKP1/3q4/8 w - - 18 52",
+    "solution_moves": [
+      "e6h6",
+      "h8g8",
+      "h6g7"
+    ],
+    "solution_san": [
+      "Qh6+",
+      "Kg8",
+      "Qxg7#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1472,
+    "explanation": "Qh6+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "pin",
+      "short"
+    ],
+    "lichess_id": "009BH",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/3R3p/1p5q/3P4/3QP1pN/6P1/PPr3B1/5K2 b - - 0 25",
+    "solution_moves": [
+      "h6c1",
+      "d4d1",
+      "c1d1"
+    ],
+    "solution_san": [
+      "Qc1+",
+      "Qd1",
+      "Qxd1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1500,
+    "explanation": "Qc1+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00MIY",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r5/pR5p/5p1k/4p3/4R3/B4nPP/PP3P2/1K6 b - - 0 27",
+    "solution_moves": [
+      "f3d2",
+      "b1a1",
+      "c8c1"
+    ],
+    "solution_san": [
+      "Nd2+",
+      "Ka1",
+      "Rc1#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1516,
+    "explanation": "Nd2+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "fork",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "003Tx",
+    "source": "lichess"
+  },
+  {
+    "fen": "2bqkb1r/4p1p1/p6p/1pNPpp2/2r5/P1N1n3/1P2QPPP/R4RK1 w k - 0 19",
+    "solution_moves": [
+      "e2h5",
+      "g7g6",
+      "h5g6"
+    ],
+    "solution_san": [
+      "Qh5+",
+      "g6",
+      "Qxg6#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1529,
+    "explanation": "Qh5+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00csH",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4r2/1ppb1p2/p2p2p1/5P1k/4P3/2PBB1R1/PKP2P1q/8 w - - 5 27",
+    "solution_moves": [
+      "d3e2",
+      "h5h4",
+      "e3g5"
+    ],
+    "solution_san": [
+      "Be2+",
+      "Kh4",
+      "Bg5#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1550,
+    "explanation": "Be2+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00WqT",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bq3r/pp1nbkp1/2p1p2p/8/2BP4/1PN3P1/P3QP1P/3R1RK1 w - - 0 20",
+    "solution_moves": [
+      "e2e6",
+      "f7f8",
+      "e6f7"
+    ],
+    "solution_san": [
+      "Qxe6+",
+      "Kf8",
+      "Qf7#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "advanced",
+    "difficulty_rating": 1582,
+    "explanation": "Qxe6+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "000hf",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4r2/2q1Nb2/5Qpk/2n4p/pp5P/8/1PP2PP1/2KR3R w - - 0 29",
+    "solution_moves": [
+      "e7f5",
+      "h6h7",
+      "f6g7"
+    ],
+    "solution_san": [
+      "Nf5+",
+      "Kh7",
+      "Qg7#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "expert",
+    "difficulty_rating": 1657,
+    "explanation": "Nf5+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "master",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "pin",
+      "short"
+    ],
+    "lichess_id": "006pe",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bq3Q/1np3p1/p5k1/1p1Pp3/1Pn2BP1/2b2P2/P3K3/R4N2 w - - 0 36",
+    "solution_moves": [
+      "h8h5",
+      "g6f6",
+      "f4g5"
+    ],
+    "solution_san": [
+      "Qh5+",
+      "Kf6",
+      "Bg5#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "expert",
+    "difficulty_rating": 1663,
+    "explanation": "Qh5+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "007ku",
+    "source": "lichess"
+  },
+  {
+    "fen": "3k2q1/p2p3p/1p1P4/2p5/2P2Q1K/8/P5b1/5R2 w - - 3 37",
+    "solution_moves": [
+      "f4f8",
+      "g8f8",
+      "f1f8"
+    ],
+    "solution_san": [
+      "Qf8+",
+      "Qxf8",
+      "Rxf8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "expert",
+    "difficulty_rating": 1665,
+    "explanation": "Qf8+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00EEp",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/n7/P7/K2k4/P7/7P/5PP1/8 b - - 1 53",
+    "solution_moves": [
+      "d5c5",
+      "f2f3",
+      "a7c6"
+    ],
+    "solution_san": [
+      "Kc5",
+      "f3",
+      "Nc6#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "expert",
+    "difficulty_rating": 1670,
+    "explanation": "Kc5 is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "knightEndgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00PvX",
+    "source": "lichess"
+  },
+  {
+    "fen": "7k/2r3p1/1p2p2b/3p2NQ/1q1P4/1p6/5R2/6K1 w - - 2 39",
+    "solution_moves": [
+      "h5e8",
+      "b4f8",
+      "f2f8"
+    ],
+    "solution_san": [
+      "Qe8+",
+      "Qf8",
+      "Rxf8#"
+    ],
+    "motif": "mate_in_2",
+    "difficulty": "expert",
+    "difficulty_rating": 1736,
+    "explanation": "Qe8+ is the key \u2014 it sets up a mate in 2. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00TRo",
+    "source": "lichess"
+  }
+]

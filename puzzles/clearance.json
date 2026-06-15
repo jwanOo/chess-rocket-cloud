@@ -1,0 +1,1144 @@
+[
+  {
+    "fen": "6k1/p6p/2p3pB/3q4/3b4/P4QP1/1r5P/5R1K w - - 0 28",
+    "solution_moves": [
+      "f3d5",
+      "c6d5",
+      "f1f8"
+    ],
+    "solution_san": [
+      "Qxd5+",
+      "cxd5",
+      "Rf8#"
+    ],
+    "motif": "clearance",
+    "difficulty": "beginner",
+    "difficulty_rating": 602,
+    "explanation": "Qxd5+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "endgame",
+      "master",
+      "mate",
+      "mateIn2",
+      "operaMate",
+      "short"
+    ],
+    "lichess_id": "04YLh",
+    "source": "lichess"
+  },
+  {
+    "fen": "5k2/pp3P2/4K3/6Nr/8/2P5/PP1r4/6R1 w - - 3 44",
+    "solution_moves": [
+      "g5h7",
+      "h5h7",
+      "g1g8"
+    ],
+    "solution_san": [
+      "Nh7+",
+      "Rxh7",
+      "Rg8#"
+    ],
+    "motif": "clearance",
+    "difficulty": "beginner",
+    "difficulty_rating": 773,
+    "explanation": "Nh7+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "0W9ho",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bq1rk1/pp2bpp1/2p1pn1p/8/2PPNn2/3Q1N2/PPB2PPP/R4RK1 w - - 0 13",
+    "solution_moves": [
+      "e4f6",
+      "e7f6",
+      "d3h7"
+    ],
+    "solution_san": [
+      "Nxf6+",
+      "Bxf6",
+      "Qh7#"
+    ],
+    "motif": "clearance",
+    "difficulty": "beginner",
+    "difficulty_rating": 783,
+    "explanation": "Nxf6+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "0QtZ5",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/pbp1qpp1/1p2pn1p/4n3/1P1PN3/P3P3/2Q2PPP/RB3RK1 w - - 0 19",
+    "solution_moves": [
+      "e4f6",
+      "g7f6",
+      "c2h7"
+    ],
+    "solution_san": [
+      "Nxf6+",
+      "gxf6",
+      "Qh7#"
+    ],
+    "motif": "clearance",
+    "difficulty": "beginner",
+    "difficulty_rating": 793,
+    "explanation": "Nxf6+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "0OKdO",
+    "source": "lichess"
+  },
+  {
+    "fen": "5r1k/p6p/1p1p3q/4p1N1/3p1nR1/3P4/PPP4P/6RK w - - 0 31",
+    "solution_moves": [
+      "g5f7",
+      "f8f7",
+      "g4g8"
+    ],
+    "solution_san": [
+      "Nf7+",
+      "Rxf7",
+      "Rg8#"
+    ],
+    "motif": "clearance",
+    "difficulty": "beginner",
+    "difficulty_rating": 799,
+    "explanation": "Nf7+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "06k0H",
+    "source": "lichess"
+  },
+  {
+    "fen": "1br2r1k/1pq2ppB/p7/2Ppn2Q/1P6/P6P/1B3PP1/R4RK1 b - - 1 22",
+    "solution_moves": [
+      "e5f3",
+      "g2f3",
+      "c7h2"
+    ],
+    "solution_san": [
+      "Nf3+",
+      "gxf3",
+      "Qh2#"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 817,
+    "explanation": "Nf3+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "0GgNa",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1rk1/1bp2pp1/4pb1p/pn4N1/3PN2P/2P5/PPQ2PP1/1K1R3R w - - 0 16",
+    "solution_moves": [
+      "e4f6",
+      "g7f6",
+      "c2h7"
+    ],
+    "solution_san": [
+      "Nxf6+",
+      "gxf6",
+      "Qh7#"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 834,
+    "explanation": "Nxf6+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "0XwHG",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rr1k/2p2p1p/2p4q/p1n2bN1/P4P2/1P2P1R1/2pP2QP/2KN2R1 w - - 0 24",
+    "solution_moves": [
+      "g5f7",
+      "f8f7",
+      "g3g8",
+      "e8g8",
+      "g2g8"
+    ],
+    "solution_san": [
+      "Nxf7+",
+      "Rxf7",
+      "Rg8+",
+      "Rxg8",
+      "Qxg8#"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 857,
+    "explanation": "Nxf7+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "long",
+      "master",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "0DWyK",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/7p/1P4p1/1r6/8/4B1P1/5P1P/1rR3K1 b - - 0 41",
+    "solution_moves": [
+      "b1c1",
+      "e3c1",
+      "b5b1"
+    ],
+    "solution_san": [
+      "Rxc1+",
+      "Bxc1",
+      "Rb1"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 869,
+    "explanation": "Rxc1+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "crushing",
+      "endgame",
+      "pin",
+      "short"
+    ],
+    "lichess_id": "0cZkt",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r5k/5p1p/4pPp1/p3P1P1/2p1B3/2P2N2/Pq1Q2KP/8 b - - 3 36",
+    "solution_moves": [
+      "b2d2",
+      "f3d2",
+      "b8b2"
+    ],
+    "solution_san": [
+      "Qxd2+",
+      "Nxd2",
+      "Rb2"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 885,
+    "explanation": "Qxd2+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "endgame",
+      "pin",
+      "short"
+    ],
+    "lichess_id": "084Ml",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r1rbk1/1n3pp1/2b4p/1p2p2P/1P2Nn1q/2PQ2N1/1BB2PP1/R3R1K1 w - - 4 25",
+    "solution_moves": [
+      "e4f6",
+      "g7f6",
+      "d3h7"
+    ],
+    "solution_san": [
+      "Nf6+",
+      "gxf6",
+      "Qh7#"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 926,
+    "explanation": "Nf6+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "04zl6",
+    "source": "lichess"
+  },
+  {
+    "fen": "6R1/ppp3P1/4k3/2qp4/8/1P6/PK6/8 w - - 1 45",
+    "solution_moves": [
+      "g8e8",
+      "e6d7",
+      "g7g8q"
+    ],
+    "solution_san": [
+      "Re8+",
+      "Kd7",
+      "g8=Q"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 940,
+    "explanation": "Re8+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "advantage",
+      "clearance",
+      "endgame",
+      "promotion",
+      "queenRookEndgame",
+      "short"
+    ],
+    "lichess_id": "02wKw",
+    "source": "lichess"
+  },
+  {
+    "fen": "1R6/1P6/4pkp1/5p2/3P4/3KP2p/8/1r6 w - - 0 44",
+    "solution_moves": [
+      "b8f8",
+      "f6e7",
+      "b7b8q",
+      "b1b8",
+      "f8b8"
+    ],
+    "solution_san": [
+      "Rf8+",
+      "Ke7",
+      "b8=Q",
+      "Rxb8",
+      "Rxb8"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1015,
+    "explanation": "Rf8+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "clearance",
+      "crushing",
+      "endgame",
+      "long",
+      "promotion",
+      "rookEndgame"
+    ],
+    "lichess_id": "00Aae",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/3KP1k1/8/8/8/8/2p1R3/2r5 b - - 11 59",
+    "solution_moves": [
+      "c1d1",
+      "d7e6",
+      "c2c1q"
+    ],
+    "solution_san": [
+      "Rd1+",
+      "Ke6",
+      "c1=Q"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1021,
+    "explanation": "Rd1+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "clearance",
+      "crushing",
+      "endgame",
+      "master",
+      "promotion",
+      "rookEndgame",
+      "short"
+    ],
+    "lichess_id": "00oYS",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/pp1k2p1/1b6/P2pr3/8/1NP1p1PP/1P4P1/3R3K b - - 0 26",
+    "solution_moves": [
+      "e3e2",
+      "d1e1",
+      "b6f2",
+      "e1e2",
+      "e5e2"
+    ],
+    "solution_san": [
+      "e2",
+      "Re1",
+      "Bf2",
+      "Rxe2",
+      "Rxe2"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1033,
+    "explanation": "e2 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "clearance",
+      "crushing",
+      "endgame",
+      "long"
+    ],
+    "lichess_id": "03xmf",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k5/1pp2pp1/4pnp1/2q4r/1p6/2r2PQP/B5P1/R2R3K w - - 4 29",
+    "solution_moves": [
+      "a2e6",
+      "f7e6",
+      "a1a8"
+    ],
+    "solution_san": [
+      "Bxe6+",
+      "fxe6",
+      "Ra8#"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1044,
+    "explanation": "Bxe6+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "01l01",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2r2/pp1n2k1/2p3pp/4Np2/2BP4/8/PP4PP/2KRR3 w - - 1 19",
+    "solution_moves": [
+      "e5d7",
+      "c8d7",
+      "e1e7",
+      "g7f6",
+      "e7d7"
+    ],
+    "solution_san": [
+      "Nxd7",
+      "Bxd7",
+      "Re7+",
+      "Kf6",
+      "Rxd7"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1069,
+    "explanation": "Nxd7 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "fork",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00Pc8",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1rk1/ppp1qpp1/1nn1b2p/2b1p3/4N3/2PQ1N1P/PPB2PP1/R1B2RK1 w - - 8 15",
+    "solution_moves": [
+      "e4f6",
+      "g7f6",
+      "d3h7"
+    ],
+    "solution_san": [
+      "Nf6+",
+      "gxf6",
+      "Qh7#"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1078,
+    "explanation": "Nf6+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "01f0q",
+    "source": "lichess"
+  },
+  {
+    "fen": "2krr3/1pp2p1p/p1b3p1/6qn/2BbP3/2N2P2/PP1BQ1PP/2RR3K b - - 2 19",
+    "solution_moves": [
+      "h5g3",
+      "h2g3",
+      "g5h5"
+    ],
+    "solution_san": [
+      "Ng3+",
+      "hxg3",
+      "Qh5#"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1133,
+    "explanation": "Ng3+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "04e55",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/5ppp/bQn1p3/8/8/Rp1q1NB1/3N1PPP/1R4K1 b - - 0 25",
+    "solution_moves": [
+      "d3b1",
+      "d2b1",
+      "d8d1",
+      "f3e1",
+      "d1e1"
+    ],
+    "solution_san": [
+      "Qxb1+",
+      "Nxb1",
+      "Rd1+",
+      "Ne1",
+      "Rxe1#"
+    ],
+    "motif": "clearance",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1182,
+    "explanation": "Qxb1+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "clearance",
+      "fork",
+      "long",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "038TX",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/p4ppp/1p6/4p3/3PQP2/2PKP2q/r7/2R1R3 w - - 0 33",
+    "solution_moves": [
+      "e1h1",
+      "a2h2",
+      "h1h2",
+      "h3h2",
+      "c1h1",
+      "h2h1",
+      "e4h1"
+    ],
+    "solution_san": [
+      "Rh1",
+      "Rh2",
+      "Rxh2",
+      "Qxh2",
+      "Rh1",
+      "Qxh1",
+      "Qxh1"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1211,
+    "explanation": "Rh1 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "crushing",
+      "endgame",
+      "veryLong"
+    ],
+    "lichess_id": "03CBj",
+    "source": "lichess"
+  },
+  {
+    "fen": "r6r/p3k1bR/1pBp1q2/3PpPpQ/3pP1P1/P7/1P6/R3K3 b Q - 8 27",
+    "solution_moves": [
+      "h8h7",
+      "h5h7",
+      "a8h8",
+      "h7h8",
+      "g7h8"
+    ],
+    "solution_san": [
+      "Rxh7",
+      "Qxh7",
+      "Rh8",
+      "Qxh8",
+      "Bxh8"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1252,
+    "explanation": "Rxh7 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "01lij",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2qk2r/ppp2pp1/2p2n2/7p/3bP1b1/2N3QP/PPP2PP1/R1B1KB1R b KQkq - 0 9",
+    "solution_moves": [
+      "d4c3",
+      "g3c3",
+      "d8d1"
+    ],
+    "solution_san": [
+      "Bxc3+",
+      "Qxc3",
+      "Qd1#"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1275,
+    "explanation": "Bxc3+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "mate",
+      "mateIn2",
+      "opening",
+      "short"
+    ],
+    "lichess_id": "01EUl",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r4/ppp1k3/4p3/2b1Pn1p/3N1R2/2P5/PP1B3P/6K1 w - - 1 26",
+    "solution_moves": [
+      "f4f5",
+      "e6f5",
+      "d2g5",
+      "e7e8",
+      "g5d8"
+    ],
+    "solution_san": [
+      "Rxf5",
+      "exf5",
+      "Bg5+",
+      "Ke8",
+      "Bxd8"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1352,
+    "explanation": "Rxf5 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "endgame",
+      "long",
+      "sacrifice",
+      "skewer"
+    ],
+    "lichess_id": "03XpN",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r3k2/3brqb1/3p3B/1p1Pp3/p3P2Q/PpP2P2/1P3KP1/R6R w - - 9 40",
+    "solution_moves": [
+      "h6g7",
+      "f7g7",
+      "h4h8",
+      "f8f7",
+      "h8b8"
+    ],
+    "solution_san": [
+      "Bxg7+",
+      "Qxg7",
+      "Qh8+",
+      "Kf7",
+      "Qxb8"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1366,
+    "explanation": "Bxg7+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "crushing",
+      "exposedKing",
+      "long",
+      "middlegame",
+      "skewer"
+    ],
+    "lichess_id": "02vM9",
+    "source": "lichess"
+  },
+  {
+    "fen": "R7/P4p2/7p/q3k1n1/5R2/7P/5PK1/8 w - - 3 47",
+    "solution_moves": [
+      "a8e8",
+      "e5f4",
+      "a7a8q",
+      "a5a8",
+      "e8a8"
+    ],
+    "solution_san": [
+      "Re8+",
+      "Kxf4",
+      "a8=Q",
+      "Qxa8+",
+      "Rxa8"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1390,
+    "explanation": "Re8+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "advantage",
+      "clearance",
+      "endgame",
+      "long",
+      "promotion"
+    ],
+    "lichess_id": "00PHg",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/3r2p1/Q1b5/1p1qPp2/5B2/8/1P4PP/6RK b - - 0 44",
+    "solution_moves": [
+      "d5g2",
+      "g1g2",
+      "d7d1"
+    ],
+    "solution_san": [
+      "Qxg2+",
+      "Rxg2",
+      "Rd1#"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1442,
+    "explanation": "Qxg2+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "pin",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "01pRy",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r4k1/2n2p2/2P1p1p1/8/1rR1P2P/5P2/8/B1R2K2 b - - 3 41",
+    "solution_moves": [
+      "b4c4",
+      "c1c4",
+      "b8b1",
+      "f1f2",
+      "b1a1"
+    ],
+    "solution_san": [
+      "Rxc4",
+      "Rxc4",
+      "Rb1+",
+      "Kf2",
+      "Rxa1"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1453,
+    "explanation": "Rxc4 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "endgame",
+      "exposedKing",
+      "fork",
+      "long"
+    ],
+    "lichess_id": "044c9",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/2R5/7P/8/3K4/pr4P1/1k3P2/8 b - - 0 42",
+    "solution_moves": [
+      "a3a2",
+      "c7a7",
+      "b3a3",
+      "a7a3",
+      "b2a3"
+    ],
+    "solution_san": [
+      "a2",
+      "Ra7",
+      "Ra3",
+      "Rxa3",
+      "Kxa3"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1469,
+    "explanation": "a2 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "clearance",
+      "crushing",
+      "endgame",
+      "long",
+      "rookEndgame"
+    ],
+    "lichess_id": "03YnY",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr1nQ1/ppp2p2/2n1pq2/3p4/2PP4/4P3/PP1N1PPP/R4RK1 b - - 0 15",
+    "solution_moves": [
+      "f8g6",
+      "g8h7",
+      "d8h8"
+    ],
+    "solution_san": [
+      "Ng6",
+      "Qh7",
+      "Rh8"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1473,
+    "explanation": "Ng6 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "middlegame",
+      "quietMove",
+      "short"
+    ],
+    "lichess_id": "01gA2",
+    "source": "lichess"
+  },
+  {
+    "fen": "Q7/4ppbk/6pp/5q2/P3n3/4PNBP/1r3PP1/3R2K1 b - - 0 31",
+    "solution_moves": [
+      "e4g3",
+      "f2g3",
+      "f5c2"
+    ],
+    "solution_san": [
+      "Nxg3",
+      "fxg3",
+      "Qc2"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1531,
+    "explanation": "Nxg3 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "crushing",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00ymq",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/p1Q2pp1/1p5p/4P3/5r1q/5R2/P3B1PP/R5K1 b - - 0 22",
+    "solution_moves": [
+      "f4f3",
+      "g2f3",
+      "h4d4",
+      "g1g2",
+      "d4a1"
+    ],
+    "solution_san": [
+      "Rxf3",
+      "gxf3",
+      "Qd4+",
+      "Kg2",
+      "Qxa1"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1575,
+    "explanation": "Rxf3 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "fork",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00UyQ",
+    "source": "lichess"
+  },
+  {
+    "fen": "1q5r/p3kpp1/2Q1p2p/3pP2P/2n3P1/2N2P2/PrP1N3/K3R2R b - - 1 26",
+    "solution_moves": [
+      "b2a2",
+      "c3a2",
+      "b8b2"
+    ],
+    "solution_san": [
+      "Rxa2+",
+      "Nxa2",
+      "Qb2#"
+    ],
+    "motif": "clearance",
+    "difficulty": "advanced",
+    "difficulty_rating": 1577,
+    "explanation": "Rxa2+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00rNc",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/5p1p/1r3p2/8/3P4/3N2P1/p4P1P/RrR3K1 b - - 4 31",
+    "solution_moves": [
+      "b1a1",
+      "c1a1",
+      "b6b1",
+      "g1g2",
+      "b1a1"
+    ],
+    "solution_san": [
+      "Rxa1",
+      "Rxa1",
+      "Rb1+",
+      "Kg2",
+      "Rxa1"
+    ],
+    "motif": "clearance",
+    "difficulty": "expert",
+    "difficulty_rating": 1637,
+    "explanation": "Rxa1 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "clearance",
+      "crushing",
+      "endgame",
+      "long"
+    ],
+    "lichess_id": "01MpA",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b1k2r/p4p1p/2p1p3/1pRnPp2/q2P4/2Q2N1P/5PP1/1B3RK1 w kq - 1 20",
+    "solution_moves": [
+      "c5d5",
+      "c6d5",
+      "c3c6"
+    ],
+    "solution_san": [
+      "Rxd5",
+      "cxd5",
+      "Qc6+"
+    ],
+    "motif": "clearance",
+    "difficulty": "expert",
+    "difficulty_rating": 1642,
+    "explanation": "Rxd5 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "crushing",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00yfJ",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r4k1/r5q1/p2p1pP1/4pn2/2p1P2Q/2Pb1BK1/P6R/2R5 w - - 0 36",
+    "solution_moves": [
+      "e4f5",
+      "d3f5",
+      "f3d5"
+    ],
+    "solution_san": [
+      "exf5",
+      "Bxf5",
+      "Bd5+"
+    ],
+    "motif": "clearance",
+    "difficulty": "expert",
+    "difficulty_rating": 1706,
+    "explanation": "exf5 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "crushing",
+      "kingsideAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00IMS",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2k1bnr/p1pp1Bpp/1p6/4N1q1/3p4/2P5/PP2QPbP/RN2K2R w KQ - 0 11",
+    "solution_moves": [
+      "e5c6",
+      "g2c6",
+      "e2e8"
+    ],
+    "solution_san": [
+      "Nc6+",
+      "Bxc6",
+      "Qe8#"
+    ],
+    "motif": "clearance",
+    "difficulty": "expert",
+    "difficulty_rating": 1713,
+    "explanation": "Nc6+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "mate",
+      "mateIn2",
+      "opening",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "015Di",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1r2/1n4pk/p6p/1ppN1pb1/3n1B2/P2PN2P/1PPQ1PP1/R3R1K1 b - - 1 21",
+    "solution_moves": [
+      "g5f4",
+      "d5f4",
+      "d8g5",
+      "d2d1",
+      "g5f4"
+    ],
+    "solution_san": [
+      "Bxf4",
+      "Nxf4",
+      "Qg5",
+      "Qd1",
+      "Qxf4"
+    ],
+    "motif": "clearance",
+    "difficulty": "expert",
+    "difficulty_rating": 1762,
+    "explanation": "Bxf4 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00Ar2",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1rk1/p1p2pp1/3bbn1p/4N3/8/1P4P1/PBQPPP1P/RN2K2R b KQ - 2 12",
+    "solution_moves": [
+      "d6e5",
+      "b2e5",
+      "d8d5",
+      "f2f3",
+      "d5e5"
+    ],
+    "solution_san": [
+      "Bxe5",
+      "Bxe5",
+      "Qd5",
+      "f3",
+      "Qxe5"
+    ],
+    "motif": "clearance",
+    "difficulty": "expert",
+    "difficulty_rating": 1772,
+    "explanation": "Bxe5 is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "fork",
+      "long",
+      "opening"
+    ],
+    "lichess_id": "005HG",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1q2/5prk/p3pQpp/1p2P3/2p4R/2P2P1P/PPB2P2/6K1 w - - 3 30",
+    "solution_moves": [
+      "h4h6",
+      "h7g8",
+      "f6h4"
+    ],
+    "solution_san": [
+      "Rxh6+",
+      "Kg8",
+      "Qh4"
+    ],
+    "motif": "clearance",
+    "difficulty": "expert",
+    "difficulty_rating": 1774,
+    "explanation": "Rxh6+ is the key \u2014 it sets up a clearance. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "crushing",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "00Huv",
+    "source": "lichess"
+  }
+]

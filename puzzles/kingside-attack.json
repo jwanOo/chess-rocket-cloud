@@ -1,0 +1,1001 @@
+[
+  {
+    "fen": "r4rk1/pb3ppp/1p2p3/3q4/3N4/2P4P/PPQ2PP1/R4RK1 b - - 2 18",
+    "solution_moves": [
+      "d5g2"
+    ],
+    "solution_san": [
+      "Qxg2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 633,
+    "explanation": "Qxg2# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00EdH",
+    "source": "lichess"
+  },
+  {
+    "fen": "rn2qrk1/ppp2N2/3pPpp1/3n4/6b1/8/P1QN1PPP/R4RK1 w - - 0 19",
+    "solution_moves": [
+      "c2g6"
+    ],
+    "solution_san": [
+      "Qxg6#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 664,
+    "explanation": "Qxg6# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00NiV",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k2bn1/ppp2Nrp/2b1p3/3q2BQ/8/2N5/PP3PPP/R4RK1 b - - 6 18",
+    "solution_moves": [
+      "d5g2"
+    ],
+    "solution_san": [
+      "Qxg2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 670,
+    "explanation": "Qxg2# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00FaB",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b4k/1pp3p1/1b1p1q1p/1p5Q/P1P1Bp2/3P4/6PP/5R1K w - - 2 24",
+    "solution_moves": [
+      "h5e8",
+      "f6f8",
+      "e8f8"
+    ],
+    "solution_san": [
+      "Qe8+",
+      "Qf8",
+      "Qxf8#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 702,
+    "explanation": "Qe8+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00ax2",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3kb1r/4ppp1/3q2p1/p2p4/Pp1PN3/8/1PP1QPPP/R1B1R1K1 b kq - 0 17",
+    "solution_moves": [
+      "d6h2",
+      "g1f1",
+      "h2h1"
+    ],
+    "solution_san": [
+      "Qxh2+",
+      "Kf1",
+      "Qh1#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 709,
+    "explanation": "Qxh2+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00Yey",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1rk1/ppp2ppp/2n5/3p2N1/3P4/1B5P/P1Q2PP1/R1B2bK1 w - - 0 17",
+    "solution_moves": [
+      "c2h7"
+    ],
+    "solution_san": [
+      "Qxh7#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 730,
+    "explanation": "Qxh7# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00Flp",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr3r/ppp2p2/2nb1n1p/4q1p1/Q1N5/2P1B3/PP2NPPP/R4RK1 b - - 3 13",
+    "solution_moves": [
+      "e5h2"
+    ],
+    "solution_san": [
+      "Qxh2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 751,
+    "explanation": "Qxh2# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00ad3",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k4r/pp3pp1/4pn2/2np2p1/8/1B1P1Pq1/PPPN3R/R2Q3K b - - 7 20",
+    "solution_moves": [
+      "g3h2"
+    ],
+    "solution_san": [
+      "Qxh2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 765,
+    "explanation": "Qxh2# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00DPQ",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/pbp1n1pp/1p1p4/3Pp1N1/2B4P/2PQ4/PP4q1/R2K3R w - - 0 18",
+    "solution_moves": [
+      "d3h7"
+    ],
+    "solution_san": [
+      "Qxh7#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 857,
+    "explanation": "Qxh7# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00S5q",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/2q2ppp/3pp3/4Pb1N/1p6/1p4Q1/PPP3PP/1K1RR3 w - - 0 22",
+    "solution_moves": [
+      "g3g7"
+    ],
+    "solution_san": [
+      "Qxg7#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 863,
+    "explanation": "Qxg7# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "0082f",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/1bp2ppp/p1q1pn2/2P1N3/8/3B4/P1P1QPPP/R4RK1 b - - 1 16",
+    "solution_moves": [
+      "c6g2"
+    ],
+    "solution_san": [
+      "Qxg2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 906,
+    "explanation": "Qxg2# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "004yJ",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3r1k1/6b1/p2Nn2p/1P1Qp3/6nq/2P3P1/1PB2P2/R1B1R1K1 b - - 0 30",
+    "solution_moves": [
+      "h4h2",
+      "g1f1",
+      "h2f2"
+    ],
+    "solution_san": [
+      "Qh2+",
+      "Kf1",
+      "Qxf2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 915,
+    "explanation": "Qh2+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00MGA",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2k1r/pp4p1/2pq2p1/3p4/3Q4/1N6/PPP2PPP/R4RK1 b - - 0 17",
+    "solution_moves": [
+      "d6h2"
+    ],
+    "solution_san": [
+      "Qxh2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 917,
+    "explanation": "Qxh2# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00KYE",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/pb1Q2pp/1p2p1q1/2b5/2P5/P1N1B2P/1P2BPP1/R4RK1 b - - 0 18",
+    "solution_moves": [
+      "g6g2"
+    ],
+    "solution_san": [
+      "Qxg2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 921,
+    "explanation": "Qxg2# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00beo",
+    "source": "lichess"
+  },
+  {
+    "fen": "4k2r/1bq2pb1/4p3/1p4p1/2pN4/R7/1P2BPPP/3Q1RK1 b k - 0 17",
+    "solution_moves": [
+      "c7h2"
+    ],
+    "solution_san": [
+      "Qxh2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 926,
+    "explanation": "Qxh2# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00b58",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bk3r/ppp1np1p/3P2pP/1N4q1/2BP1n2/8/PPP3P1/R1BQ2KR b - - 0 14",
+    "solution_moves": [
+      "g5g2"
+    ],
+    "solution_san": [
+      "Qxg2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 939,
+    "explanation": "Qxg2# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "oneMove",
+      "opening"
+    ],
+    "lichess_id": "00EDa",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1rk1/2p3pn/2pbp2p/p2p1p2/P4PQ1/1P1PP3/1BPN2PP/4RR1K w - - 0 16",
+    "solution_moves": [
+      "g4g7"
+    ],
+    "solution_san": [
+      "Qxg7#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 963,
+    "explanation": "Qxg7# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "007bH",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r4k1/p4ppp/4p3/p5n1/4P3/1P3PPq/QB3N1P/R5K1 b - - 0 30",
+    "solution_moves": [
+      "g5f3",
+      "g1h1",
+      "h3h2"
+    ],
+    "solution_san": [
+      "Nxf3+",
+      "Kh1",
+      "Qxh2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1011,
+    "explanation": "Nxf3+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00Sz9",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r2rk1/5ppp/bq2p3/p2pP1N1/Pb1p2P1/1P2P2P/2QN4/2R1K2R w K - 0 19",
+    "solution_moves": [
+      "c2h7"
+    ],
+    "solution_san": [
+      "Qxh7#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1053,
+    "explanation": "Qxh7# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "003AX",
+    "source": "lichess"
+  },
+  {
+    "fen": "b4b1r/3k1ppp/p2p4/1p2p3/3Pq3/N3B3/PP3PPP/R2Q1RK1 b - - 0 16",
+    "solution_moves": [
+      "e4g2"
+    ],
+    "solution_san": [
+      "Qxg2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1060,
+    "explanation": "Qxg2# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00DWo",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1rk1/p3R2p/2p2p2/1pP5/1n1P1P2/1q4P1/1B2Q2P/2K1R3 w - - 4 33",
+    "solution_moves": [
+      "e2g4",
+      "g8h8",
+      "g4g7"
+    ],
+    "solution_san": [
+      "Qg4+",
+      "Kh8",
+      "Qg7#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1203,
+    "explanation": "Qg4+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00Us6",
+    "source": "lichess"
+  },
+  {
+    "fen": "1n1q2rk/p3b3/1pr1p1Rp/2p1P3/4N3/2PP1N1P/P3B2K/6R1 w - - 0 29",
+    "solution_moves": [
+      "g6h6"
+    ],
+    "solution_san": [
+      "Rxh6#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1215,
+    "explanation": "Rxh6# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00qoE",
+    "source": "lichess"
+  },
+  {
+    "fen": "b4rk1/qn2r3/1p3ppp/1P1p4/1Q1PnB2/P3P3/4BPPP/5RK1 w - - 0 29",
+    "solution_moves": [
+      "b4e7",
+      "f8f7",
+      "e7e8",
+      "g8g7",
+      "f4h6"
+    ],
+    "solution_san": [
+      "Qxe7",
+      "Rf7",
+      "Qe8+",
+      "Kg7",
+      "Bxh6+"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1226,
+    "explanation": "Qxe7 is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "exposedKing",
+      "kingsideAttack",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00SgB",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/p1p3p1/bp2p2p/5p2/R1qPB3/2P5/2Q2PPP/5RK1 b - - 1 24",
+    "solution_moves": [
+      "c4f1"
+    ],
+    "solution_san": [
+      "Qxf1#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1244,
+    "explanation": "Qxf1# is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove"
+    ],
+    "lichess_id": "00g5t",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r4k1/4Pp1p/p5pb/2q5/p2n4/P2Q2B1/r2N1PPP/3KR2R w - - 1 28",
+    "solution_moves": [
+      "e7e8q",
+      "b8e8",
+      "e1e8"
+    ],
+    "solution_san": [
+      "e8=Q+",
+      "Rxe8",
+      "Rxe8+"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1260,
+    "explanation": "e8=Q+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "crushing",
+      "kingsideAttack",
+      "middlegame",
+      "promotion",
+      "short"
+    ],
+    "lichess_id": "00L4x",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r2k/2q4r/2p4Q/p5P1/1p1Pp1P1/2P1N2P/PP6/4bRK1 w - - 1 29",
+    "solution_moves": [
+      "f1f8",
+      "e8f8",
+      "h6f8"
+    ],
+    "solution_san": [
+      "Rf8+",
+      "Rxf8",
+      "Qxf8#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1271,
+    "explanation": "Rf8+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00mFI",
+    "source": "lichess"
+  },
+  {
+    "fen": "r5k1/1pn2p1p/p2p2p1/2pP3P/P1Pb2q1/3B2B1/1P2QP2/R4RK1 b - - 0 21",
+    "solution_moves": [
+      "g4g3",
+      "g1h1",
+      "g3h3"
+    ],
+    "solution_san": [
+      "Qxg3+",
+      "Kh1",
+      "Qh3+"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1387,
+    "explanation": "Qxg3+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "kingsideAttack",
+      "master",
+      "middlegame",
+      "pin",
+      "short"
+    ],
+    "lichess_id": "012Fq",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4k1r/pp3pp1/4p3/3pP1np/6Pq/1PP5/P3B1PP/RN1Q1RK1 b - - 0 14",
+    "solution_moves": [
+      "h5g4",
+      "e2g4",
+      "h4h2"
+    ],
+    "solution_san": [
+      "hxg4",
+      "Bxg4",
+      "Qxh2+"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1395,
+    "explanation": "hxg4 is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "kingsideAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "009aD",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3qr1k/1p2b1p1/4p1Qp/2ppP3/p4P2/2P1P1P1/PP4P1/1K1R3R w - - 1 21",
+    "solution_moves": [
+      "h1h6",
+      "g7h6",
+      "g6h6",
+      "h8g8",
+      "d1h1"
+    ],
+    "solution_san": [
+      "Rxh6+",
+      "gxh6",
+      "Qxh6+",
+      "Kg8",
+      "Rh1"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1441,
+    "explanation": "Rxh6+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "defensiveMove",
+      "kingsideAttack",
+      "long",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "0199s",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1rk1/pbpn1p1n/1p1bp2Q/8/8/1B1P1NN1/PPP2PPP/R3K2R w KQ - 1 13",
+    "solution_moves": [
+      "g3h5",
+      "d8f6",
+      "h5f6"
+    ],
+    "solution_san": [
+      "Nh5",
+      "Qf6",
+      "Nxf6+"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1479,
+    "explanation": "Nh5 is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "kingsideAttack",
+      "middlegame",
+      "quietMove",
+      "short"
+    ],
+    "lichess_id": "012wC",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1rk1/p1p1bppp/2pp2b1/4p3/4n1PN/2NP3P/PPP2PK1/R1BQ1R2 w - - 0 12",
+    "solution_moves": [
+      "h4g6",
+      "e4c3",
+      "g6e7",
+      "d8e7",
+      "b2c3"
+    ],
+    "solution_san": [
+      "Nxg6",
+      "Nxc3",
+      "Nxe7+",
+      "Qxe7",
+      "bxc3"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1574,
+    "explanation": "Nxg6 is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "kingsideAttack",
+      "long",
+      "opening"
+    ],
+    "lichess_id": "00JYV",
+    "source": "lichess"
+  },
+  {
+    "fen": "5k2/2p5/N1PpQp2/1p2p1b1/1P2P1p1/r5Pq/5P2/R2R2K1 b - - 0 37",
+    "solution_moves": [
+      "a3g3",
+      "f2g3",
+      "g5e3"
+    ],
+    "solution_san": [
+      "Rxg3+",
+      "fxg3",
+      "Be3#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1587,
+    "explanation": "Rxg3+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "balestraMate",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00rwh",
+    "source": "lichess"
+  },
+  {
+    "fen": "6rk/5R2/3p1q1p/3P2pQ/1P2P3/3P1p1P/P1r3PB/1R5K b - - 1 28",
+    "solution_moves": [
+      "f3g2",
+      "h1g1",
+      "f6d4",
+      "f7f2",
+      "d4f2"
+    ],
+    "solution_san": [
+      "fxg2+",
+      "Kg1",
+      "Qd4+",
+      "Rf2",
+      "Qxf2#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1589,
+    "explanation": "fxg2+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "kingsideAttack",
+      "long",
+      "mate",
+      "mateIn3",
+      "middlegame"
+    ],
+    "lichess_id": "01LaG",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/pp3ppp/3p1q2/P1P1p3/2B5/2B2n2/2P2P1P/R2Q1R1K b - - 1 16",
+    "solution_moves": [
+      "f6f4",
+      "d1f3",
+      "f4f3"
+    ],
+    "solution_san": [
+      "Qf4",
+      "Qxf3",
+      "Qxf3+"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1618,
+    "explanation": "Qf4 is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "kingsideAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "002Ua",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/pbpp2p1/1p4Qp/3Nn3/3q1N2/3B4/PP3PPP/5RK1 w - - 6 21",
+    "solution_moves": [
+      "d5e7",
+      "g8h8",
+      "g6h7"
+    ],
+    "solution_san": [
+      "Ne7+",
+      "Kh8",
+      "Qh7#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1713,
+    "explanation": "Ne7+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00tgU",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3brk1/1pqnb2p/p3ppp1/2ppN2Q/5P2/1P1PP1R1/PBPN2PP/R5K1 w - - 0 16",
+    "solution_moves": [
+      "e5g6",
+      "e8g6",
+      "g3g6",
+      "h7g6",
+      "h5g6"
+    ],
+    "solution_san": [
+      "Nxg6",
+      "Bxg6",
+      "Rxg6+",
+      "hxg6",
+      "Qxg6+"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1758,
+    "explanation": "Nxg6 is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "kingsideAttack",
+      "long",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "00xMv",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2rk1/1p3ppp/2p5/pq6/3b4/1BP2Q2/PP3PPP/R3R1K1 w - - 0 18",
+    "solution_moves": [
+      "f3f7",
+      "f8f7",
+      "e1e8"
+    ],
+    "solution_san": [
+      "Qxf7+",
+      "Rxf7",
+      "Re8#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1779,
+    "explanation": "Qxf7+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "pin",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00rKj",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r2r1k/7n/p6q/1p1nNb2/7P/3P2Q1/PPP2P2/1K4RR w - - 1 31",
+    "solution_moves": [
+      "g3g8",
+      "f8g8",
+      "e5f7"
+    ],
+    "solution_san": [
+      "Qg8+",
+      "Rxg8",
+      "Nf7#"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1784,
+    "explanation": "Qg8+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "cornerMate",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00rqm",
+    "source": "lichess"
+  },
+  {
+    "fen": "r6k/q1p2p1p/1b2bPr1/p1ppP2Q/3P2p1/4B3/PP2NRPP/3R2K1 w - - 2 26",
+    "solution_moves": [
+      "e2f4",
+      "c5d4",
+      "f4g6",
+      "f7g6",
+      "h5h6"
+    ],
+    "solution_san": [
+      "Nf4",
+      "cxd4",
+      "Nxg6+",
+      "fxg6",
+      "Qh6"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1795,
+    "explanation": "Nf4 is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "kingsideAttack",
+      "long",
+      "middlegame",
+      "pin"
+    ],
+    "lichess_id": "002rd",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r2r1k1/3p1pb1/p2q3p/1p3Pp1/3p4/P6Q/BPP3PP/4RRK1 w - - 0 24",
+    "solution_moves": [
+      "e1e8",
+      "b8e8",
+      "f5f6"
+    ],
+    "solution_san": [
+      "Rxe8+",
+      "Rxe8",
+      "f6"
+    ],
+    "motif": "kingside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1795,
+    "explanation": "Rxe8+ is the key \u2014 it sets up a kingside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "kingsideAttack",
+      "master",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00h5T",
+    "source": "lichess"
+  }
+]

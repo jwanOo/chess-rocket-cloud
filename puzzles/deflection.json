@@ -1,0 +1,1123 @@
+[
+  {
+    "fen": "rk6/1r3ppp/3R4/pp1p4/2pP4/2P1P3/5PPP/R4K2 w - - 0 24",
+    "solution_moves": [
+      "d6d8",
+      "b8c7",
+      "d8a8"
+    ],
+    "solution_san": [
+      "Rd8+",
+      "Kc7",
+      "Rxa8"
+    ],
+    "motif": "deflection",
+    "difficulty": "beginner",
+    "difficulty_rating": 649,
+    "explanation": "Rd8+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "endgame",
+      "queensideAttack",
+      "rookEndgame",
+      "short",
+      "skewer"
+    ],
+    "lichess_id": "07sC5",
+    "source": "lichess"
+  },
+  {
+    "fen": "4kn2/6K1/5P2/5P2/8/8/8/8 w - - 7 54",
+    "solution_moves": [
+      "f6f7",
+      "e8e7",
+      "f5f6",
+      "e7e6",
+      "g7f8"
+    ],
+    "solution_san": [
+      "f7+",
+      "Ke7",
+      "f6+",
+      "Ke6",
+      "Kxf8"
+    ],
+    "motif": "deflection",
+    "difficulty": "beginner",
+    "difficulty_rating": 728,
+    "explanation": "f7+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "crushing",
+      "deflection",
+      "endgame",
+      "exposedKing",
+      "knightEndgame",
+      "long"
+    ],
+    "lichess_id": "06X4V",
+    "source": "lichess"
+  },
+  {
+    "fen": "6r1/p7/1ppkp1r1/4Np2/3P1P2/P1P2K1P/1P1R2P1/8 b - - 8 39",
+    "solution_moves": [
+      "g6g3",
+      "f3e2",
+      "g3g2"
+    ],
+    "solution_san": [
+      "Rg3+",
+      "Ke2",
+      "Rxg2+"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 808,
+    "explanation": "Rg3+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "endgame",
+      "interference",
+      "short"
+    ],
+    "lichess_id": "03H2V",
+    "source": "lichess"
+  },
+  {
+    "fen": "1R6/6pk/5p1p/2N5/6PK/r6P/8/8 b - - 2 40",
+    "solution_moves": [
+      "g7g5",
+      "h4h5",
+      "a3h3"
+    ],
+    "solution_san": [
+      "g5+",
+      "Kh5",
+      "Rxh3#"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 820,
+    "explanation": "g5+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "deflection",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "01pgJ",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/6p1/3PP2p/1B4p1/2P5/P1n5/6PP/5RK1 b - - 2 33",
+    "solution_moves": [
+      "c3e2",
+      "g1h1",
+      "f8f1"
+    ],
+    "solution_san": [
+      "Ne2+",
+      "Kh1",
+      "Rxf1#"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 835,
+    "explanation": "Ne2+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "deflection",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "053Os",
+    "source": "lichess"
+  },
+  {
+    "fen": "1R3nk1/5ppp/2N5/8/2P1P3/2r2P1b/5r2/3B3K w - - 0 28",
+    "solution_moves": [
+      "c6e7",
+      "g8h8",
+      "b8f8"
+    ],
+    "solution_san": [
+      "Ne7+",
+      "Kh8",
+      "Rxf8#"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 861,
+    "explanation": "Ne7+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "deflection",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "07Sg1",
+    "source": "lichess"
+  },
+  {
+    "fen": "7R/8/8/1kr5/3K4/8/8/8 w - - 10 56",
+    "solution_moves": [
+      "h8b8",
+      "b5c6",
+      "b8c8",
+      "c6d7",
+      "c8c5"
+    ],
+    "solution_san": [
+      "Rb8+",
+      "Kc6",
+      "Rc8+",
+      "Kd7",
+      "Rxc5"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 865,
+    "explanation": "Rb8+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "long",
+      "master",
+      "rookEndgame",
+      "skewer"
+    ],
+    "lichess_id": "06H5L",
+    "source": "lichess"
+  },
+  {
+    "fen": "5kr1/5p2/4p3/p6R/1p4P1/P2R2KP/1r6/8 w - - 0 38",
+    "solution_moves": [
+      "d3d8",
+      "f8e7",
+      "d8g8"
+    ],
+    "solution_san": [
+      "Rd8+",
+      "Ke7",
+      "Rxg8"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 866,
+    "explanation": "Rd8+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "rookEndgame",
+      "short",
+      "skewer"
+    ],
+    "lichess_id": "04711",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/4b1p1/3k3p/7P/1pKN2P1/1P6/8 w - - 2 51",
+    "solution_moves": [
+      "d3f4",
+      "d5e4",
+      "f4e6"
+    ],
+    "solution_san": [
+      "Nf4+",
+      "Ke4",
+      "Nxe6"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 881,
+    "explanation": "Nf4+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "0AzKx",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/3R3p/6pk/5p2/5PP1/7P/rr1B1K2/8 w - - 1 47",
+    "solution_moves": [
+      "g4g5",
+      "h6h5",
+      "d7h7"
+    ],
+    "solution_san": [
+      "g5+",
+      "Kh5",
+      "Rxh7#"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 885,
+    "explanation": "g5+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "deflection",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "01Ie5",
+    "source": "lichess"
+  },
+  {
+    "fen": "rn1qrk2/ppp3pQ/3p1pP1/3Pp3/2P1P3/8/PP3PP1/R1B1K3 w Q - 3 17",
+    "solution_moves": [
+      "h7h8",
+      "f8e7",
+      "h8g7"
+    ],
+    "solution_san": [
+      "Qh8+",
+      "Ke7",
+      "Qxg7#"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 939,
+    "explanation": "Qh8+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "deflection",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "002Mm",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/1R6/p1pk4/2q3bp/1QP5/P7/KP6/3r4 w - - 3 45",
+    "solution_moves": [
+      "b7d7",
+      "d6d7",
+      "b4c5"
+    ],
+    "solution_san": [
+      "Rd7+",
+      "Kxd7",
+      "Qxc5"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 978,
+    "explanation": "Rd7+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "00AoZ",
+    "source": "lichess"
+  },
+  {
+    "fen": "1R6/2P5/p5k1/6pp/1P6/6PK/r6P/8 b - - 0 40",
+    "solution_moves": [
+      "g5g4",
+      "h3h4",
+      "a2h2"
+    ],
+    "solution_san": [
+      "g4+",
+      "Kh4",
+      "Rxh2#"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1033,
+    "explanation": "g4+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "deflection",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "rookEndgame",
+      "short"
+    ],
+    "lichess_id": "00TFd",
+    "source": "lichess"
+  },
+  {
+    "fen": "7r/8/3b4/3p1P2/6R1/2kN4/4KP2/8 b - - 0 67",
+    "solution_moves": [
+      "h8e8",
+      "e2f3",
+      "c3d3"
+    ],
+    "solution_san": [
+      "Re8+",
+      "Kf3",
+      "Kxd3"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1065,
+    "explanation": "Re8+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "00PZo",
+    "source": "lichess"
+  },
+  {
+    "fen": "7Q/2p5/1p2prp1/p4k1p/q4p1P/8/6RK/8 w - - 0 38",
+    "solution_moves": [
+      "g2g5",
+      "f5e4",
+      "h8f6"
+    ],
+    "solution_san": [
+      "Rg5+",
+      "Ke4",
+      "Qxf6"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1133,
+    "explanation": "Rg5+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "0088O",
+    "source": "lichess"
+  },
+  {
+    "fen": "1q3r2/p5k1/1p2pbpp/2p5/2P1p3/2P2PQP/PP3P2/6RK w - - 0 30",
+    "solution_moves": [
+      "g3g6",
+      "g7h8",
+      "g6h6"
+    ],
+    "solution_san": [
+      "Qxg6+",
+      "Kh8",
+      "Qxh6#"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1141,
+    "explanation": "Qxg6+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "deflection",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "00J1Y",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/5p2/4p1p1/7R/2P5/2n2N2/5r2/2K4R w - - 0 38",
+    "solution_moves": [
+      "h5h8",
+      "g8g7",
+      "h1h7",
+      "g7f6",
+      "h8f8"
+    ],
+    "solution_san": [
+      "Rh8+",
+      "Kg7",
+      "R1h7+",
+      "Kf6",
+      "Rxf8"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1182,
+    "explanation": "Rh8+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "long"
+    ],
+    "lichess_id": "00L76",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/5r2/7k/6pp/7P/5PK1/R7/8 w - - 0 59",
+    "solution_moves": [
+      "a2a6",
+      "h6g7",
+      "h4g5"
+    ],
+    "solution_san": [
+      "Ra6+",
+      "Kg7",
+      "hxg5"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1184,
+    "explanation": "Ra6+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "master",
+      "rookEndgame",
+      "short"
+    ],
+    "lichess_id": "00JAo",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/7R/5p2/p7/7P/2p5/3k2N1/1K6 b - - 0 48",
+    "solution_moves": [
+      "c3c2",
+      "b1a2",
+      "c2c1q",
+      "h7d7",
+      "d2e2"
+    ],
+    "solution_san": [
+      "c2+",
+      "Ka2",
+      "c1=Q",
+      "Rd7+",
+      "Ke2"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1187,
+    "explanation": "c2+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "crushing",
+      "defensiveMove",
+      "deflection",
+      "endgame",
+      "long",
+      "promotion"
+    ],
+    "lichess_id": "004LZ",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3kb1r/ppp2pp1/3p4/1P2p3/2P3Qn/2N1P2q/PB1P1P1N/R4RK1 b kq - 0 15",
+    "solution_moves": [
+      "h4f3",
+      "h2f3",
+      "h3g4"
+    ],
+    "solution_san": [
+      "Nf3+",
+      "Nxf3",
+      "Qxg4#"
+    ],
+    "motif": "deflection",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1189,
+    "explanation": "Nf3+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "deflection",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00Zit",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k4r1/3p1p2/1Bn4p/5q2/5P2/1Q4P1/P7/1R4K1 b - - 3 29",
+    "solution_moves": [
+      "g8g3",
+      "b3g3",
+      "f5b1"
+    ],
+    "solution_san": [
+      "Rxg3+",
+      "Qxg3",
+      "Qxb1+"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1257,
+    "explanation": "Rxg3+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "01Dcf",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rrk1/pB4pp/2N2p2/2p5/6b1/1PN3P1/P1P2P1P/4RK2 b - - 0 21",
+    "solution_moves": [
+      "g4h3",
+      "f1g1",
+      "e8e1"
+    ],
+    "solution_san": [
+      "Bh3+",
+      "Kg1",
+      "Rxe1#"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1283,
+    "explanation": "Bh3+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "deflection",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "pillsburysMate",
+      "short"
+    ],
+    "lichess_id": "00zQz",
+    "source": "lichess"
+  },
+  {
+    "fen": "3qr1k1/p4p1p/6p1/3Q4/8/1P3P2/P5PP/3R2K1 b - - 0 26",
+    "solution_moves": [
+      "e8e1",
+      "d1e1",
+      "d8d5"
+    ],
+    "solution_san": [
+      "Re1+",
+      "Rxe1",
+      "Qxd5"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1354,
+    "explanation": "Re1+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "endgame",
+      "master",
+      "short"
+    ],
+    "lichess_id": "00Wfu",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/1p2R3/7p/P4rpB/8/2n3P1/1q4PP/3R2K1 w - - 2 33",
+    "solution_moves": [
+      "d1d8",
+      "f5f8",
+      "h5f7",
+      "g8h8",
+      "d8f8"
+    ],
+    "solution_san": [
+      "Rxd8+",
+      "Rf8",
+      "Bf7+",
+      "Kh8",
+      "Rxf8+"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1401,
+    "explanation": "Rxd8+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "exposedKing",
+      "hangingPiece",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00u0R",
+    "source": "lichess"
+  },
+  {
+    "fen": "5k2/6p1/p1b3Pp/2N2P1r/p7/8/1KP5/5R2 w - - 0 37",
+    "solution_moves": [
+      "c5e6",
+      "f8e7",
+      "e6g7"
+    ],
+    "solution_san": [
+      "Ne6+",
+      "Ke7",
+      "Nxg7"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1402,
+    "explanation": "Ne6+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "master",
+      "short"
+    ],
+    "lichess_id": "00DcC",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r3k1/p4pp1/1p5p/1Q6/2q5/5P2/1P4PP/3R2K1 w - - 4 31",
+    "solution_moves": [
+      "d1d8",
+      "c8d8",
+      "b5c4",
+      "d8d1",
+      "g1f2"
+    ],
+    "solution_san": [
+      "Rd8+",
+      "Rxd8",
+      "Qxc4",
+      "Rd1+",
+      "Kf2"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1432,
+    "explanation": "Rd8+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "endgame",
+      "long"
+    ],
+    "lichess_id": "00g5H",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1q3k1/3nbppp/pp2p3/4B3/8/2N2Q2/PPPR1PPP/6K1 w - - 1 19",
+    "solution_moves": [
+      "d2d7",
+      "c8d7",
+      "f3a8"
+    ],
+    "solution_san": [
+      "Rxd7",
+      "Qxd7",
+      "Qxa8+"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1435,
+    "explanation": "Rxd7 is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "0068B",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/p4pp1/Qp3q1p/2p1R3/8/2P2N1P/P1P2PPK/2r5 b - - 5 24",
+    "solution_moves": [
+      "f6f4",
+      "g2g3",
+      "f4f3",
+      "e5e8",
+      "g8h7",
+      "a6d3",
+      "f3d3"
+    ],
+    "solution_san": [
+      "Qf4+",
+      "g3",
+      "Qxf3",
+      "Re8+",
+      "Kh7",
+      "Qd3+",
+      "Qxd3"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1459,
+    "explanation": "Qf4+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "endgame",
+      "veryLong"
+    ],
+    "lichess_id": "00lvP",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/p3Q2p/5qp1/4p1k1/8/8/Pr4PP/6K1 w - - 2 37",
+    "solution_moves": [
+      "h2h4",
+      "g5f5",
+      "g2g4",
+      "f5g4",
+      "e7f6"
+    ],
+    "solution_san": [
+      "h4+",
+      "Kf5",
+      "g4+",
+      "Kxg4",
+      "Qxf6"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1470,
+    "explanation": "h4+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "endgame",
+      "long"
+    ],
+    "lichess_id": "00TLz",
+    "source": "lichess"
+  },
+  {
+    "fen": "r7/pp1Qp1B1/3b4/3k4/4q3/8/PP3PP1/5K2 w - - 5 35",
+    "solution_moves": [
+      "d7b7",
+      "d5e6",
+      "b7e4"
+    ],
+    "solution_san": [
+      "Qxb7+",
+      "Ke6",
+      "Qxe4+"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1481,
+    "explanation": "Qxb7+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "fork",
+      "master",
+      "short",
+      "skewer"
+    ],
+    "lichess_id": "01243",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/3R3p/6p1/4k3/2Bnp3/1P5P/P6r/4K3 w - - 2 41",
+    "solution_moves": [
+      "d7d5",
+      "e5f4",
+      "d5d4"
+    ],
+    "solution_san": [
+      "Rd5+",
+      "Kf4",
+      "Rxd4"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1513,
+    "explanation": "Rd5+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "endgame",
+      "master",
+      "short"
+    ],
+    "lichess_id": "00UEs",
+    "source": "lichess"
+  },
+  {
+    "fen": "2rqrbk1/pp3ppp/8/3p1N2/3NnnQ1/2P4P/PP3PP1/R4RK1 w - - 0 23",
+    "solution_moves": [
+      "f5h6",
+      "g8h8",
+      "h6f7"
+    ],
+    "solution_san": [
+      "Nh6+",
+      "Kh8",
+      "Nxf7+"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1525,
+    "explanation": "Nh6+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "kingsideAttack",
+      "middlegame",
+      "pin",
+      "short"
+    ],
+    "lichess_id": "00F5G",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/R4pp1/1p5p/3Q4/1PPp2q1/3P2P1/5P2/4K3 b - - 0 34",
+    "solution_moves": [
+      "f8e8",
+      "e1f1",
+      "g4h3",
+      "d5g2",
+      "e8e1",
+      "f1e1",
+      "h3g2"
+    ],
+    "solution_san": [
+      "Re8+",
+      "Kf1",
+      "Qh3+",
+      "Qg2",
+      "Re1+",
+      "Kxe1",
+      "Qxg2"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1528,
+    "explanation": "Re8+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "veryLong"
+    ],
+    "lichess_id": "006E1",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1bnr/2p2ppp/2bk4/R7/5P2/2N5/4N1PP/1R4K1 w - - 4 22",
+    "solution_moves": [
+      "b1d1",
+      "d6e7",
+      "a5e5",
+      "e7f6",
+      "d1d8"
+    ],
+    "solution_san": [
+      "Rd1+",
+      "Ke7",
+      "Re5+",
+      "Kf6",
+      "Rxd8"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1575,
+    "explanation": "Rd1+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "exposedKing",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00DkJ",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/p1r2p2/4r3/2P1PK2/1P4R1/3R2pk/8/8 b - - 3 46",
+    "solution_moves": [
+      "e6e5",
+      "f5e5",
+      "h3g4"
+    ],
+    "solution_san": [
+      "Rxe5+",
+      "Kxe5",
+      "Kxg4"
+    ],
+    "motif": "deflection",
+    "difficulty": "advanced",
+    "difficulty_rating": 1587,
+    "explanation": "Rxe5+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "endgame",
+      "rookEndgame",
+      "short"
+    ],
+    "lichess_id": "00Gc5",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bq4/p3p1bk/2p3p1/3pn2p/8/2NB3P/PPPBQ1P1/5RK1 w - - 2 18",
+    "solution_moves": [
+      "e2h5",
+      "h7g8",
+      "d3g6",
+      "e5g6",
+      "h5g6"
+    ],
+    "solution_san": [
+      "Qxh5+",
+      "Kg8",
+      "Bxg6",
+      "Nxg6",
+      "Qxg6"
+    ],
+    "motif": "deflection",
+    "difficulty": "expert",
+    "difficulty_rating": 1616,
+    "explanation": "Qxh5+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "deflection",
+      "long",
+      "middlegame",
+      "pin"
+    ],
+    "lichess_id": "00l7Y",
+    "source": "lichess"
+  },
+  {
+    "fen": "5Q1R/5p1p/1b3qp1/p6k/P2P4/8/1P2rPPP/5RK1 b - - 8 32",
+    "solution_moves": [
+      "f6f2",
+      "f1f2",
+      "e2e1",
+      "f2f1",
+      "b6d4",
+      "g1h1",
+      "e1f1"
+    ],
+    "solution_san": [
+      "Qxf2+",
+      "Rxf2",
+      "Re1+",
+      "Rf1",
+      "Bxd4+",
+      "Kh1",
+      "Rxf1#"
+    ],
+    "motif": "deflection",
+    "difficulty": "expert",
+    "difficulty_rating": 1619,
+    "explanation": "Qxf2+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "deflection",
+      "endgame",
+      "fork",
+      "master",
+      "mate",
+      "mateIn4",
+      "pin",
+      "sacrifice",
+      "veryLong"
+    ],
+    "lichess_id": "00O9Z",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r3k1/2r4p/4p1p1/1p1q1pP1/p2P1P1Q/P6R/4bB2/2R3K1 w - - 6 35",
+    "solution_moves": [
+      "h4h7",
+      "c7h7",
+      "c1c8",
+      "g8g7",
+      "c8c7"
+    ],
+    "solution_san": [
+      "Qxh7+",
+      "Rxh7",
+      "Rxc8+",
+      "Kg7",
+      "Rc7+"
+    ],
+    "motif": "deflection",
+    "difficulty": "expert",
+    "difficulty_rating": 1780,
+    "explanation": "Qxh7+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "kingsideAttack",
+      "long",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "001h8",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/1q3ppp/3B1n2/p2P4/8/PQ5P/5PPN/1R4K1 b - - 0 27",
+    "solution_moves": [
+      "e8e1",
+      "b1e1",
+      "b7b3"
+    ],
+    "solution_san": [
+      "Re1+",
+      "Rxe1",
+      "Qxb3"
+    ],
+    "motif": "deflection",
+    "difficulty": "expert",
+    "difficulty_rating": 1796,
+    "explanation": "Re1+ is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "deflection",
+      "equality",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00bFH",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1r2/ppp2p2/3p1nk1/4p1p1/2B1P3/2NP2Q1/PPP5/2K4R w - - 1 20",
+    "solution_moves": [
+      "g3h3",
+      "f8h8",
+      "h3f5",
+      "g6g7",
+      "f5g5"
+    ],
+    "solution_san": [
+      "Qh3",
+      "Rh8",
+      "Qf5+",
+      "Kg7",
+      "Qxg5+"
+    ],
+    "motif": "deflection",
+    "difficulty": "expert",
+    "difficulty_rating": 1797,
+    "explanation": "Qh3 is the key \u2014 it sets up a deflection. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "long",
+      "middlegame",
+      "quietMove"
+    ],
+    "lichess_id": "00Nay",
+    "source": "lichess"
+  }
+]

@@ -1,0 +1,1108 @@
+[
+  {
+    "fen": "2r5/1pR2pkp/4p1p1/1p1p4/3P4/PP1nPPPP/4K3/2R5 b - - 1 32",
+    "solution_moves": [
+      "d3c1",
+      "c7c1",
+      "c8c1"
+    ],
+    "solution_san": [
+      "Nxc1+",
+      "Rxc1",
+      "Rxc1"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 687,
+    "explanation": "Nxc1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "04hRz",
+    "source": "lichess"
+  },
+  {
+    "fen": "3k4/3r2p1/1p3p2/p4P2/8/8/PP1R1PPP/2rR2K1 b - - 0 35",
+    "solution_moves": [
+      "c1d1",
+      "d2d1",
+      "d7d1"
+    ],
+    "solution_san": [
+      "Rxd1+",
+      "Rxd1",
+      "Rxd1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 818,
+    "explanation": "Rxd1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "rookEndgame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0GnPa",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r2k/p5p1/3Q1p1p/2P5/1q6/8/P2B1PPP/4R1K1 b - - 7 41",
+    "solution_moves": [
+      "e8e1",
+      "d2e1",
+      "b4e1"
+    ],
+    "solution_san": [
+      "Rxe1+",
+      "Bxe1",
+      "Qxe1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 825,
+    "explanation": "Rxe1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "07AL3",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/p1Rr1k2/3r1p2/5p2/3RbP1p/P5PP/KP3P2/8 w - - 2 33",
+    "solution_moves": [
+      "c7d7",
+      "d6d7",
+      "d4d7"
+    ],
+    "solution_san": [
+      "Rxd7+",
+      "Rxd7",
+      "Rxd7+"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 827,
+    "explanation": "Rxd7+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0DEl8",
+    "source": "lichess"
+  },
+  {
+    "fen": "1Q2q1k1/1pp1rppp/p2p4/8/8/2P5/PP1n1PPP/4R1K1 w - - 2 23",
+    "solution_moves": [
+      "b8e8",
+      "e7e8",
+      "e1e8"
+    ],
+    "solution_san": [
+      "Qxe8+",
+      "Rxe8",
+      "Rxe8#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 828,
+    "explanation": "Qxe8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "05Pp0",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r6/5pkp/6p1/8/8/8/1R3PPP/rR4K1 b - - 0 39",
+    "solution_moves": [
+      "a1b1",
+      "b2b1",
+      "b8b1"
+    ],
+    "solution_san": [
+      "Rxb1+",
+      "Rxb1",
+      "Rxb1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 860,
+    "explanation": "Rxb1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "rookEndgame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "01rGp",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k5/pppn2p1/6n1/8/5p2/3PrPqN/PPP2QBR/4R1K1 b - - 1 21",
+    "solution_moves": [
+      "e3e1",
+      "f2e1",
+      "g3e1"
+    ],
+    "solution_san": [
+      "Rxe1+",
+      "Qxe1",
+      "Qxe1+"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 869,
+    "explanation": "Rxe1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "kingsideAttack",
+      "middlegame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0B7rf",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/pp3ppp/4r3/3q4/Q2p4/3P3P/PP3PP1/4RRK1 w - - 2 22",
+    "solution_moves": [
+      "a4e8",
+      "e6e8",
+      "e1e8"
+    ],
+    "solution_san": [
+      "Qxe8+",
+      "Rxe8",
+      "Rxe8#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 870,
+    "explanation": "Qxe8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "07PAM",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/p3k3/1q2rpp1/8/1p2R3/8/PPP1Q2P/1K6 b - - 1 30",
+    "solution_moves": [
+      "b6g1",
+      "e2e1",
+      "g1e1",
+      "e4e1",
+      "e6e1"
+    ],
+    "solution_san": [
+      "Qg1+",
+      "Qe1",
+      "Qxe1+",
+      "Rxe1",
+      "Rxe1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 872,
+    "explanation": "Qg1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "long",
+      "mate",
+      "mateIn3",
+      "xRayAttack"
+    ],
+    "lichess_id": "06Ipb",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/p1pb1ppp/6r1/2p5/Q1Pq1P2/NP3P2/P6P/4R2K w - - 1 25",
+    "solution_moves": [
+      "e1e8",
+      "d7e8",
+      "a4e8"
+    ],
+    "solution_san": [
+      "Re8+",
+      "Bxe8",
+      "Qxe8#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 899,
+    "explanation": "Re8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "sacrifice",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "05Gv1",
+    "source": "lichess"
+  },
+  {
+    "fen": "1Qr3k1/p4qpp/8/1p3p2/1P1Pp3/P1r1B3/5PPP/2R3K1 w - - 2 36",
+    "solution_moves": [
+      "b8c8",
+      "c3c8",
+      "c1c8",
+      "f7f8",
+      "c8f8"
+    ],
+    "solution_san": [
+      "Qxc8+",
+      "Rxc8",
+      "Rxc8+",
+      "Qf8",
+      "Rxf8+"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 944,
+    "explanation": "Qxc8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "kingsideAttack",
+      "long",
+      "xRayAttack"
+    ],
+    "lichess_id": "08XHD",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r3k1/1p3p1p/p2p2pB/3q4/P2b1PQ1/1P5P/2r3P1/2R2R1K w - - 0 26",
+    "solution_moves": [
+      "g4c8",
+      "c2c8",
+      "c1c8"
+    ],
+    "solution_san": [
+      "Qxc8+",
+      "Rxc8",
+      "Rxc8#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 952,
+    "explanation": "Qxc8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "pillsburysMate",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "09T0Q",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/5bp1/p4pBp/1p1p3P/8/4R3/PPP3P1/1K6 w - - 1 35",
+    "solution_moves": [
+      "e3e8",
+      "f7e8",
+      "g6e8"
+    ],
+    "solution_san": [
+      "Rxe8+",
+      "Bxe8",
+      "Bxe8"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 971,
+    "explanation": "Rxe8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "master",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "05adP",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/1r1P1pp1/7p/8/8/8/6PP/2RR3K w - - 1 35",
+    "solution_moves": [
+      "c1c8",
+      "b7d7",
+      "c8d8",
+      "d7d8",
+      "d1d8"
+    ],
+    "solution_san": [
+      "Rc8",
+      "Rxd7",
+      "Rxd8+",
+      "Rxd8",
+      "Rxd8+"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 974,
+    "explanation": "Rc8 is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "rookEndgame",
+      "xRayAttack"
+    ],
+    "lichess_id": "069H6",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r5/6kp/4pbp1/2Pq4/2QN4/4p3/6PP/2R3K1 w - - 4 32",
+    "solution_moves": [
+      "d4e6",
+      "d5e6",
+      "c4e6"
+    ],
+    "solution_san": [
+      "Nxe6+",
+      "Qxe6",
+      "Qxe6"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 984,
+    "explanation": "Nxe6+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0BiD8",
+    "source": "lichess"
+  },
+  {
+    "fen": "5k2/p4p1p/1p1Pp1pP/5b2/5P2/2R5/2rr4/2R3K1 w - - 9 37",
+    "solution_moves": [
+      "c3c8",
+      "c2c8",
+      "c1c8"
+    ],
+    "solution_san": [
+      "Rc8+",
+      "Rxc8",
+      "Rxc8#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1005,
+    "explanation": "Rc8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "collinearMove",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0791B",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/5ppp/p3Rn2/1p3q2/1P1B1P2/P5Q1/6PP/1R5K b - - 0 25",
+    "solution_moves": [
+      "f5b1",
+      "g3e1",
+      "b1e1",
+      "e6e1",
+      "e8e1"
+    ],
+    "solution_san": [
+      "Qxb1+",
+      "Qe1",
+      "Qxe1+",
+      "Rxe1",
+      "Rxe1+"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1040,
+    "explanation": "Qxb1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "hangingPiece",
+      "long",
+      "middlegame",
+      "xRayAttack"
+    ],
+    "lichess_id": "0BAKu",
+    "source": "lichess"
+  },
+  {
+    "fen": "r5k1/1p4bp/p1n1p1p1/3q4/3P3r/1Q2P2B/PP3P1P/3RK2R w K - 0 22",
+    "solution_moves": [
+      "h3e6",
+      "d5e6",
+      "b3e6"
+    ],
+    "solution_san": [
+      "Bxe6+",
+      "Qxe6",
+      "Qxe6+"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1047,
+    "explanation": "Bxe6+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "fork",
+      "middlegame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0BD4O",
+    "source": "lichess"
+  },
+  {
+    "fen": "r5k1/2p2ppp/1q6/2p1P3/8/5QB1/r4PPP/R5K1 w - - 0 28",
+    "solution_moves": [
+      "f3a8",
+      "a2a8",
+      "a1a8",
+      "b6b8",
+      "a8b8"
+    ],
+    "solution_san": [
+      "Qxa8+",
+      "Rxa8",
+      "Rxa8+",
+      "Qb8",
+      "Rxb8#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1128,
+    "explanation": "Qxa8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "long",
+      "mate",
+      "mateIn3",
+      "xRayAttack"
+    ],
+    "lichess_id": "03Q6i",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1rk1/p1QR1ppp/1p6/8/8/Pq2P3/5PPP/3R2K1 b - - 0 22",
+    "solution_moves": [
+      "b3d1",
+      "d7d1",
+      "d8d1"
+    ],
+    "solution_san": [
+      "Qxd1+",
+      "Rxd1",
+      "Rxd1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1160,
+    "explanation": "Qxd1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "09gK3",
+    "source": "lichess"
+  },
+  {
+    "fen": "5r1k/3p2bp/p4pp1/qp1Pr3/8/1Q4B1/PP2RPPP/4R1K1 b - - 0 23",
+    "solution_moves": [
+      "a5e1",
+      "e2e1",
+      "e5e1"
+    ],
+    "solution_san": [
+      "Qxe1+",
+      "Rxe1",
+      "Rxe1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1276,
+    "explanation": "Qxe1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "01GBu",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r2r1k/2R2ppp/p3P3/1p6/5N2/3BPN2/Pq3PPP/2R3K1 b - - 2 25",
+    "solution_moves": [
+      "b2c1",
+      "c7c1",
+      "c8c1"
+    ],
+    "solution_san": [
+      "Qxc1+",
+      "Rxc1",
+      "Rxc1+"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1295,
+    "explanation": "Qxc1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "09F3h",
+    "source": "lichess"
+  },
+  {
+    "fen": "3Qr2k/q5p1/2p1r1Bp/p7/Pp6/5P1P/1P4P1/4R2K w - - 2 39",
+    "solution_moves": [
+      "d8e8",
+      "e6e8",
+      "e1e8"
+    ],
+    "solution_san": [
+      "Qxe8+",
+      "Rxe8",
+      "Rxe8#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1339,
+    "explanation": "Qxe8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "pillsburysMate",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "03eaM",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/5pkp/2p3p1/2p1P3/5Q2/2Pq4/5PPP/1rR3K1 b - - 0 35",
+    "solution_moves": [
+      "d3d1",
+      "c1d1",
+      "b1d1"
+    ],
+    "solution_san": [
+      "Qd1+",
+      "Rxd1",
+      "Rxd1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1370,
+    "explanation": "Qd1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "sacrifice",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "08SqC",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/1q3ppp/p3p3/Qp1r4/7P/P4P2/1PP3P1/1K1R3R w - - 0 22",
+    "solution_moves": [
+      "a5d8",
+      "d5d8",
+      "d1d8"
+    ],
+    "solution_san": [
+      "Qxd8+",
+      "Rxd8",
+      "Rxd8#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1373,
+    "explanation": "Qxd8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "00Bg4",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/2R2qp1/7p/1pQ1B3/4pP2/8/4rPPP/r1R3K1 b - - 2 32",
+    "solution_moves": [
+      "e2e1",
+      "c1e1",
+      "a1e1"
+    ],
+    "solution_san": [
+      "Re1+",
+      "Rxe1",
+      "Rxe1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1448,
+    "explanation": "Re1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "00zkP",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr1r2/pp3RQ1/2p1p2p/3pP3/6P1/7P/PPP1q3/1K3R2 b - - 0 24",
+    "solution_moves": [
+      "e2f1",
+      "f7f1",
+      "f8f1"
+    ],
+    "solution_san": [
+      "Qxf1+",
+      "Rxf1",
+      "Rxf1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1459,
+    "explanation": "Qxf1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0BKEZ",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/1p4p1/p2p4/3P1R1Q/8/1N2q3/PPP2RPP/7K b - - 0 21",
+    "solution_moves": [
+      "e3e1",
+      "f2f1",
+      "e1f1",
+      "f5f1",
+      "f8f1"
+    ],
+    "solution_san": [
+      "Qe1+",
+      "Rf1",
+      "Qxf1+",
+      "Rxf1",
+      "Rxf1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1484,
+    "explanation": "Qe1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "long",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "xRayAttack"
+    ],
+    "lichess_id": "05Gq4",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/4rppp/2p2n2/ppqb4/5Q2/2P3P1/PPB2P1P/1N2R1K1 w - - 4 23",
+    "solution_moves": [
+      "f4b8",
+      "f6e8",
+      "b8e8",
+      "e7e8",
+      "e1e8"
+    ],
+    "solution_san": [
+      "Qb8+",
+      "Ne8",
+      "Qxe8+",
+      "Rxe8",
+      "Rxe8+"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1488,
+    "explanation": "Qb8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "kingsideAttack",
+      "long",
+      "middlegame",
+      "xRayAttack"
+    ],
+    "lichess_id": "06Roa",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r3k1/4q1p1/Q3p2p/1p1pNp2/3Pb3/P1r1P1PP/1R4P1/2R3K1 w - - 0 35",
+    "solution_moves": [
+      "a6c8",
+      "c3c8",
+      "c1c8"
+    ],
+    "solution_san": [
+      "Qxc8+",
+      "Rxc8",
+      "Rxc8+"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1497,
+    "explanation": "Qxc8+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "middlegame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "060KH",
+    "source": "lichess"
+  },
+  {
+    "fen": "r5k1/p1p2p2/2p4p/3b1Nq1/3p1Q2/1PbPp1P1/P1P1P2P/1R4K1 w - - 1 25",
+    "solution_moves": [
+      "f5h6",
+      "g5h6",
+      "f4h6"
+    ],
+    "solution_san": [
+      "Nxh6+",
+      "Qxh6",
+      "Qxh6"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1534,
+    "explanation": "Nxh6+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "kingsideAttack",
+      "middlegame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0BHVV",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r1q1k1/3b1p1p/p4Qp1/3P4/P3P3/2R5/1rB3PP/R5K1 b - - 0 34",
+    "solution_moves": [
+      "b2c2",
+      "c3c2",
+      "c8c2"
+    ],
+    "solution_san": [
+      "Rxc2",
+      "Rxc2",
+      "Rxc2"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1535,
+    "explanation": "Rxc2 is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "05qZH",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/4ppbp/6p1/3P4/2r1N2P/3Q2P1/2p2P2/1qR3K1 w - - 2 31",
+    "solution_moves": [
+      "c1b1",
+      "c2b1r",
+      "d3b1"
+    ],
+    "solution_san": [
+      "Rxb1",
+      "cxb1=R+",
+      "Qxb1"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1572,
+    "explanation": "Rxb1 is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "master",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "05UmM",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3k1nr/1bq2ppp/3bp3/1p2R3/5B2/P1N5/1P3PPP/R2Q2K1 w kq - 0 15",
+    "solution_moves": [
+      "c3b5",
+      "d6e5",
+      "b5c7",
+      "e5c7",
+      "f4c7"
+    ],
+    "solution_san": [
+      "Nxb5",
+      "Bxe5",
+      "Nxc7+",
+      "Bxc7",
+      "Bxc7"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1594,
+    "explanation": "Nxb5 is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "fork",
+      "long",
+      "middlegame",
+      "xRayAttack"
+    ],
+    "lichess_id": "03JmU",
+    "source": "lichess"
+  },
+  {
+    "fen": "r5k1/5pp1/2p2P2/pp1p2q1/7p/2PP3b/PP2rRPP/2Q2RKN b - - 5 30",
+    "solution_moves": [
+      "g5g2",
+      "f2g2",
+      "e2g2"
+    ],
+    "solution_san": [
+      "Qxg2+",
+      "Rxg2",
+      "Rxg2#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1621,
+    "explanation": "Qxg2+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "epauletteMate",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "operaMate",
+      "sacrifice",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0AQRf",
+    "source": "lichess"
+  },
+  {
+    "fen": "R1bQ1rk1/2P2pbp/6p1/1q6/1P2PP2/8/2P2KPP/4R3 b - - 2 25",
+    "solution_moves": [
+      "b5b6",
+      "f2g3",
+      "f8d8",
+      "c7d8q",
+      "b6d8"
+    ],
+    "solution_san": [
+      "Qb6+",
+      "Kg3",
+      "Rxd8",
+      "cxd8=Q+",
+      "Qxd8"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1647,
+    "explanation": "Qb6+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "long",
+      "middlegame",
+      "xRayAttack"
+    ],
+    "lichess_id": "043DK",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/5ppp/p2p4/1p2p3/4Pb1P/P1rRqP2/2Q1B1P1/3K3R b - - 1 26",
+    "solution_moves": [
+      "e3c1",
+      "c2c1",
+      "c3c1"
+    ],
+    "solution_san": [
+      "Qc1+",
+      "Qxc1",
+      "Rxc1#"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1672,
+    "explanation": "Qc1+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "operaMate",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0EV7I",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/5ppp/1q2p3/2Q1b2b/P3P3/3P4/P1RBPK1P/1r5R b - - 2 24",
+    "solution_moves": [
+      "e5d4",
+      "c5d4",
+      "b6d4",
+      "d2e3",
+      "d4f6"
+    ],
+    "solution_san": [
+      "Bd4+",
+      "Qxd4",
+      "Qxd4+",
+      "Be3",
+      "Qf6+"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1710,
+    "explanation": "Bd4+ is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "fork",
+      "long",
+      "middlegame",
+      "xRayAttack"
+    ],
+    "lichess_id": "03jHI",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/5p2/4p3/5r2/6K1/5RP1/PP5P/3q1Q2 b - - 4 50",
+    "solution_moves": [
+      "d1f1",
+      "f3f1",
+      "f5f1"
+    ],
+    "solution_san": [
+      "Qxf1",
+      "Rxf1",
+      "Rxf1"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1727,
+    "explanation": "Qxf1 is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "short",
+      "xRayAttack"
+    ],
+    "lichess_id": "0ASFO",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/1p2q1pp/p4n2/4n3/2P1p1b1/1P3PP1/P1N1Q1BP/R3NRK1 b - - 0 18",
+    "solution_moves": [
+      "e4f3",
+      "e1f3",
+      "e5f3",
+      "g2f3",
+      "e7e2",
+      "f3e2",
+      "g4e2"
+    ],
+    "solution_san": [
+      "exf3",
+      "Nxf3",
+      "Nxf3+",
+      "Bxf3",
+      "Qxe2",
+      "Bxe2",
+      "Bxe2"
+    ],
+    "motif": "x-ray_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1762,
+    "explanation": "exf3 is the key \u2014 it sets up a x-ray attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "fork",
+      "middlegame",
+      "veryLong",
+      "xRayAttack"
+    ],
+    "lichess_id": "0Alp4",
+    "source": "lichess"
+  }
+]

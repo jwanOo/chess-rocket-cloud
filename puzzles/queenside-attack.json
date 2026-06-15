@@ -1,0 +1,1023 @@
+[
+  {
+    "fen": "2kr3r/pppq1pp1/5n1p/3P4/2B2P2/1Qb2P2/P6P/1R3R1K w - - 0 21",
+    "solution_moves": [
+      "b3b7"
+    ],
+    "solution_san": [
+      "Qxb7#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 612,
+    "explanation": "Qxb7# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "02oSV",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr1bnr/ppp2ppp/8/8/8/P4N2/b1PBPPPP/2KR1B1R b - - 0 11",
+    "solution_moves": [
+      "f8a3"
+    ],
+    "solution_san": [
+      "Bxa3#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 719,
+    "explanation": "Bxa3# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "01BKZ",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3k2r/1bq1bppp/3ppn2/pN4B1/1n1QPP2/1N6/1PP1B1PP/2KR3R b kq - 1 15",
+    "solution_moves": [
+      "c7c2"
+    ],
+    "solution_san": [
+      "Qxc2#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 779,
+    "explanation": "Qxc2# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "03aeC",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b1kb1Q/ppp4p/6pB/3P4/2pn4/8/PPP1qPPP/RNK4R b q - 3 13",
+    "solution_moves": [
+      "e2c2"
+    ],
+    "solution_san": [
+      "Qxc2#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 818,
+    "explanation": "Qxc2# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "005x9",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1bq1k2/pp5R/2p1pNp1/4P3/5nQ1/5N2/PPP2PP1/2K5 b - - 2 27",
+    "solution_moves": [
+      "f4e2",
+      "c1b1",
+      "d8d1"
+    ],
+    "solution_san": [
+      "Ne2+",
+      "Kb1",
+      "Qd1#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 850,
+    "explanation": "Ne2+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "03j7O",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr4/Qp1n1pp1/p1p5/3p4/Nq1RP2R/8/PPP2P2/1K6 b - - 0 23",
+    "solution_moves": [
+      "b4e1",
+      "d4d1",
+      "e1d1"
+    ],
+    "solution_san": [
+      "Qe1+",
+      "Rd1",
+      "Qxd1#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 860,
+    "explanation": "Qe1+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "02FEp",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k1r3r/1pp2pp1/p2q1n2/2b1p1p1/4B3/1Q5P/PP3PP1/R3R1K1 w - - 0 19",
+    "solution_moves": [
+      "b3b7"
+    ],
+    "solution_san": [
+      "Qxb7#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 862,
+    "explanation": "Qxb7# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "04Dao",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k1r4/ppp3Qp/2q5/8/8/3P1P2/PPP1r1RP/2KR4 b - - 1 18",
+    "solution_moves": [
+      "c6c2"
+    ],
+    "solution_san": [
+      "Qxc2#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 877,
+    "explanation": "Qxc2# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn1",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "02w7n",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k2br1/1pprn3/p4p2/4p2Q/4P2P/2N1q3/PP4PK/3R4 w - - 0 23",
+    "solution_moves": [
+      "h5e8",
+      "d7d8",
+      "d1d8"
+    ],
+    "solution_san": [
+      "Qe8+",
+      "Rd8",
+      "Rxd8#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 879,
+    "explanation": "Qe8+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "00Lvv",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r3k1/4npp1/1r2p1p1/p2p4/1nPP2P1/qP3N1P/P2N1P2/1KQR3R b - - 2 22",
+    "solution_moves": [
+      "a3a2"
+    ],
+    "solution_san": [
+      "Qxa2#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 888,
+    "explanation": "Qxa2# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "02FB9",
+    "source": "lichess"
+  },
+  {
+    "fen": "r5k1/ppp1p1b1/4N1Q1/3pq1Bp/7P/5N2/PPP2rP1/2KR4 b - - 2 17",
+    "solution_moves": [
+      "e5b2"
+    ],
+    "solution_san": [
+      "Qxb2#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 916,
+    "explanation": "Qxb2# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "00cl7",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr1b1r/3n1pp1/p1p1p1b1/2p4p/3PPB1P/1PP2P2/6P1/R3KB1R w KQ - 0 17",
+    "solution_moves": [
+      "f1a6"
+    ],
+    "solution_san": [
+      "Bxa6#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 930,
+    "explanation": "Bxa6# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "bodenMate",
+      "master",
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "033ae",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/Q4ppp/3R4/1N2p1b1/4P3/5q1P/PPP2P2/1K5R b - - 0 20",
+    "solution_moves": [
+      "f3h1",
+      "d6d1",
+      "h1d1"
+    ],
+    "solution_san": [
+      "Qxh1+",
+      "Rd1",
+      "Qxd1#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 947,
+    "explanation": "Qxh1+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "hangingPiece",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "02R1e",
+    "source": "lichess"
+  },
+  {
+    "fen": "3k1r2/ppp5/2q2n2/3p2Q1/3P3R/1N3PP1/PP2r1P1/1K5R b - - 4 27",
+    "solution_moves": [
+      "c6c2",
+      "b1a1",
+      "c2b2"
+    ],
+    "solution_san": [
+      "Qc2+",
+      "Ka1",
+      "Qxb2#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 949,
+    "explanation": "Qc2+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "02jym",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr3r/1pp5/p1p2Q2/2b2p1P/q1P5/6BP/PP3P2/1K1RR3 b - - 2 26",
+    "solution_moves": [
+      "d8d1",
+      "e1d1",
+      "a4d1"
+    ],
+    "solution_san": [
+      "Rxd1+",
+      "Rxd1",
+      "Qxd1#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 991,
+    "explanation": "Rxd1+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "master",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "01N0w",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr2R1/p4p2/1p5p/2p1Pp1P/2Pp1P1Q/3P1q2/PP6/1K1R4 b - - 0 28",
+    "solution_moves": [
+      "f3d1"
+    ],
+    "solution_san": [
+      "Qxd1#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 994,
+    "explanation": "Qxd1# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "hangingPiece",
+      "master",
+      "mate",
+      "mateIn1",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "02FVj",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r1k2r/1p2pp1p/p2p4/4BPp1/3Q4/2q2P2/P1P3PP/2KR1R2 b k - 0 18",
+    "solution_moves": [
+      "c3c2"
+    ],
+    "solution_san": [
+      "Qxc2#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1010,
+    "explanation": "Qxc2# is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn1",
+      "middlegame",
+      "oneMove",
+      "queensideAttack"
+    ],
+    "lichess_id": "02BxU",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr1b1r/pp1n1pp1/2p1pnp1/8/2Bq1BP1/2N2Q1P/PPP2P2/2K1R2R w - - 0 16",
+    "solution_moves": [
+      "f3c6",
+      "b7c6",
+      "c4a6"
+    ],
+    "solution_san": [
+      "Qxc6+",
+      "bxc6",
+      "Ba6#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1036,
+    "explanation": "Qxc6+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "bodenMate",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "01z9G",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4b1r/ppp2k2/2n4p/6p1/3pQ3/3R2B1/qPP1PPPP/2K2B1R b - - 1 17",
+    "solution_moves": [
+      "a2a1",
+      "c1d2",
+      "f8b4"
+    ],
+    "solution_san": [
+      "Qa1+",
+      "Kd2",
+      "Bb4+"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1037,
+    "explanation": "Qa1+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "master",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "02eFM",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k1r3r/ppp4p/8/4Qp2/3n4/3P1P2/q5PP/1RR4K w - - 1 24",
+    "solution_moves": [
+      "e5c7",
+      "b8a8",
+      "c7b7"
+    ],
+    "solution_san": [
+      "Qxc7+",
+      "Ka8",
+      "Qxb7#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1167,
+    "explanation": "Qxc7+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "02Asj",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k1r4/pp1b4/2p1qp1p/6p1/8/1Q4P1/PP3PBP/3R2K1 w - - 1 28",
+    "solution_moves": [
+      "b3e6",
+      "d7e6",
+      "d1d8"
+    ],
+    "solution_san": [
+      "Qxe6",
+      "Bxe6",
+      "Rxd8+"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1214,
+    "explanation": "Qxe6 is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "endgame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "00RXz",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k1r3r/1Bq1b1p1/p2p4/2n1p1P1/4P3/4BP2/1PPQN3/2KR3R b - - 0 24",
+    "solution_moves": [
+      "c5b3",
+      "c1b1",
+      "b3d2"
+    ],
+    "solution_san": [
+      "Nb3+",
+      "Kb1",
+      "Nxd2+"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1227,
+    "explanation": "Nb3+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "pin",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "00tB9",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2qkr2/ppp4p/5B2/8/3np1bQ/8/PPP2PPP/2KR1B1R b q - 0 13",
+    "solution_moves": [
+      "d4b3",
+      "a2b3",
+      "d8d1"
+    ],
+    "solution_san": [
+      "Nb3+",
+      "axb3",
+      "Qxd1#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1232,
+    "explanation": "Nb3+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "discoveredAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "02F1X",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rrk1/2p2pbp/1p6/4PNNp/3q1P2/pP1P3P/P2Q4/2KR3R b - - 0 23",
+    "solution_moves": [
+      "d4a1",
+      "c1c2",
+      "a1b2"
+    ],
+    "solution_san": [
+      "Qa1+",
+      "Kc2",
+      "Qb2#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1351,
+    "explanation": "Qa1+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "02YCM",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r2bk1/5ppp/p2p4/3P2PP/P1nQ1B2/1q1R4/1P6/1K2R3 b - - 1 27",
+    "solution_moves": [
+      "c4a3",
+      "b1a1",
+      "a3c2"
+    ],
+    "solution_san": [
+      "Na3+",
+      "Ka1",
+      "Nc2+"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1375,
+    "explanation": "Na3+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "master",
+      "middlegame",
+      "pin",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "0371L",
+    "source": "lichess"
+  },
+  {
+    "fen": "1kr5/pp6/4bq2/4p2p/1P2P3/5p2/P2QB1PP/2R3K1 w - - 0 28",
+    "solution_moves": [
+      "d2d6",
+      "b8a8",
+      "c1c8",
+      "e6c8",
+      "d6f6"
+    ],
+    "solution_san": [
+      "Qd6+",
+      "Ka8",
+      "Rxc8+",
+      "Bxc8",
+      "Qxf6"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1377,
+    "explanation": "Qd6+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "deflection",
+      "endgame",
+      "long",
+      "queensideAttack"
+    ],
+    "lichess_id": "02BOt",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k1r3r/4pBb1/Q2pNn1p/8/p3qP1n/P3B3/1PP2P2/R3K3 w Q - 6 26",
+    "solution_moves": [
+      "a6a7",
+      "b8c8",
+      "a7c7"
+    ],
+    "solution_san": [
+      "Qa7+",
+      "Kc8",
+      "Qc7#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1424,
+    "explanation": "Qa7+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "018Bb",
+    "source": "lichess"
+  },
+  {
+    "fen": "2rr4/p4k1p/1p3ppP/8/4p3/P5Q1/1Pn1PP2/1K3B1R b - - 1 23",
+    "solution_moves": [
+      "d8d1",
+      "b1a2",
+      "d1a1",
+      "a2b3",
+      "c2d4"
+    ],
+    "solution_san": [
+      "Rd1+",
+      "Ka2",
+      "Ra1+",
+      "Kb3",
+      "Nd4+"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1429,
+    "explanation": "Rd1+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "endgame",
+      "long",
+      "queensideAttack"
+    ],
+    "lichess_id": "02Wc9",
+    "source": "lichess"
+  },
+  {
+    "fen": "k1r4r/3bbppp/1Qn1q3/1N1n4/5B2/5N2/PPP2PPP/R4RK1 w - - 5 18",
+    "solution_moves": [
+      "b6a6",
+      "c6a7",
+      "a6a7"
+    ],
+    "solution_san": [
+      "Qa6+",
+      "Na7",
+      "Qxa7#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1460,
+    "explanation": "Qa6+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "01cKS",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k1r3/ppq3pb/2p4p/4p2P/3rN1P1/1P2Q3/P1P2P2/1K1R3R w - - 3 25",
+    "solution_moves": [
+      "d1d4",
+      "e5d4",
+      "e4d6",
+      "c7d6",
+      "e3e8"
+    ],
+    "solution_san": [
+      "Rxd4",
+      "exd4",
+      "Nd6+",
+      "Qxd6",
+      "Qxe8+"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1461,
+    "explanation": "Rxd4 is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "long",
+      "middlegame",
+      "queensideAttack"
+    ],
+    "lichess_id": "02NlV",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/4Qp2/3p2p1/3P2Pp/2nB3P/1N6/qPP5/2KR1R2 b - - 2 32",
+    "solution_moves": [
+      "a2a1",
+      "b3a1",
+      "a8a1"
+    ],
+    "solution_san": [
+      "Qa1+",
+      "Nxa1",
+      "Rxa1#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1526,
+    "explanation": "Qa1+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "02FYq",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k5/p3qp2/bpp1p1p1/4r3/P4n1p/5P2/BPQ2B1P/1K1R4 w - - 0 31",
+    "solution_moves": [
+      "c2c6",
+      "c8b8",
+      "d1d7",
+      "e7d7",
+      "c6d7"
+    ],
+    "solution_san": [
+      "Qxc6+",
+      "Kb8",
+      "Rd7",
+      "Qxd7",
+      "Qxd7"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1557,
+    "explanation": "Qxc6+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "long",
+      "middlegame",
+      "queensideAttack"
+    ],
+    "lichess_id": "00T2k",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k1r2nr/1p1q3p/p3Qpb1/4n3/8/2BB4/PPP2PPP/R4RK1 w - - 2 21",
+    "solution_moves": [
+      "c3e5",
+      "b8a7",
+      "e6d7"
+    ],
+    "solution_san": [
+      "Bxe5+",
+      "Ka7",
+      "Qxd7"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1588,
+    "explanation": "Bxe5+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "01mVv",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1r3k1/4pp1p/3p2p1/8/q2RPP2/1N6/1PP2QPP/1K3R2 b - - 0 26",
+    "solution_moves": [
+      "a4a2",
+      "b1c1",
+      "a2b3"
+    ],
+    "solution_san": [
+      "Qa2+",
+      "Kc1",
+      "Qxb3"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1593,
+    "explanation": "Qa2+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "middlegame",
+      "pin",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "011JG",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr4/1rp1Q3/5p1p/4bN2/2b1p1P1/4P2P/4qP2/R1R3K1 w - - 6 37",
+    "solution_moves": [
+      "a1a8",
+      "b7b8",
+      "a8b8",
+      "c8b8",
+      "e7d8"
+    ],
+    "solution_san": [
+      "Ra8+",
+      "Rb8",
+      "Rxb8+",
+      "Kxb8",
+      "Qxd8+"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1612,
+    "explanation": "Ra8+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "long",
+      "middlegame",
+      "queensideAttack"
+    ],
+    "lichess_id": "033TG",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r3rk1/3Q1p1p/1qn2p2/4p3/pP2PP2/P5P1/2P3BP/RK1R4 b - - 0 30",
+    "solution_moves": [
+      "c6b4",
+      "a3b4",
+      "b6b4"
+    ],
+    "solution_san": [
+      "Nxb4",
+      "axb4",
+      "Qxb4+"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1683,
+    "explanation": "Nxb4 is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "03YMC",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k1r1r2/2p5/pp3p2/3qn2p/B4np1/1RQ2N2/PP3B2/5R1K w - - 0 36",
+    "solution_moves": [
+      "f2b6",
+      "c7b6",
+      "b3b6"
+    ],
+    "solution_san": [
+      "Bxb6",
+      "cxb6",
+      "Rxb6+"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1716,
+    "explanation": "Bxb6 is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "01e0v",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2r1/1kpq1p1B/pp2b3/4P3/8/2B5/nPP2QPP/1K1RR3 b - - 1 22",
+    "solution_moves": [
+      "d7d1",
+      "e1d1",
+      "d8d1"
+    ],
+    "solution_san": [
+      "Qxd1+",
+      "Rxd1",
+      "Rxd1#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1725,
+    "explanation": "Qxd1+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "037Iw",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k2b1r/2p2ppp/p1N1p3/8/q1P2n2/P5P1/5PBP/1R4K1 w - - 0 21",
+    "solution_moves": [
+      "b1b8",
+      "c8d7",
+      "b8d8"
+    ],
+    "solution_san": [
+      "Rb8+",
+      "Kd7",
+      "Rd8#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1733,
+    "explanation": "Rb8+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "01xaX",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k3b1r/1p4pp/pN2p3/8/4n1Pq/3r3P/PQ3P2/2R1K2R w K - 2 21",
+    "solution_moves": [
+      "c1c8",
+      "b8a7",
+      "c8a8"
+    ],
+    "solution_san": [
+      "Rc8+",
+      "Ka7",
+      "Ra8#"
+    ],
+    "motif": "queenside_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1749,
+    "explanation": "Rc8+ is the key \u2014 it sets up a queenside attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "short"
+    ],
+    "lichess_id": "00zeF",
+    "source": "lichess"
+  }
+]

@@ -1,0 +1,20 @@
+# Files we DON'T want baked into the container image.
+.git
+.github
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+data/
+.env
+.env.*
+node_modules
+*.log
+.DS_Store
+DEPLOYMENT.md
+README.md
+mcp-server/
+references/
+tests/

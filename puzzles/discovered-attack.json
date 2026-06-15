@@ -1,0 +1,1077 @@
+[
+  {
+    "fen": "8/5pk1/2q1p1p1/p1BpPnPp/Pp3P2/1P2P3/2Q2K2/8 w - - 4 43",
+    "solution_moves": [
+      "c5f8",
+      "g7f8",
+      "c2c6"
+    ],
+    "solution_san": [
+      "Bf8+",
+      "Kxf8",
+      "Qxc6"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "beginner",
+    "difficulty_rating": 790,
+    "explanation": "Bf8+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "01wTd",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1r1k/8/p4P1p/1p2BB1b/1P3P2/2PP4/p1NK4/8 w - - 0 37",
+    "solution_moves": [
+      "f6f7"
+    ],
+    "solution_san": [
+      "f7#"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 811,
+    "explanation": "f7# is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "discoveredAttack",
+      "discoveredCheck",
+      "endgame",
+      "master",
+      "mate",
+      "mateIn1",
+      "oneMove"
+    ],
+    "lichess_id": "02THe",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2rk1/ppp2ppp/3p4/3q4/P7/3BP2P/1PPQ1PP1/1R2K2R w K - 2 15",
+    "solution_moves": [
+      "d3h7",
+      "g8h7",
+      "d2d5"
+    ],
+    "solution_san": [
+      "Bxh7+",
+      "Kxh7",
+      "Qxd5"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 820,
+    "explanation": "Bxh7+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "kingsideAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "01y4w",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b1k2r/ppp1qppp/3p1n2/4n3/2BQ4/5N2/PP3PPP/RNB1R1K1 b kq - 0 10",
+    "solution_moves": [
+      "e5f3",
+      "g2f3",
+      "e7e1"
+    ],
+    "solution_san": [
+      "Nxf3+",
+      "gxf3",
+      "Qxe1+"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 821,
+    "explanation": "Nxf3+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "kingsideAttack",
+      "opening",
+      "short"
+    ],
+    "lichess_id": "02z11",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2rk1/p1pp1ppn/7p/1pq1P3/2B2P2/2Q5/P5PP/RN2R2K w - - 0 18",
+    "solution_moves": [
+      "c4f7",
+      "f8f7",
+      "c3c5"
+    ],
+    "solution_san": [
+      "Bxf7+",
+      "Rxf7",
+      "Qxc5"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 846,
+    "explanation": "Bxf7+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "02Nzh",
+    "source": "lichess"
+  },
+  {
+    "fen": "7r/ppp1k2p/2n5/8/8/2P2pP1/P6P/R1Br1BK1 w - - 0 21",
+    "solution_moves": [
+      "c1g5",
+      "e7e6",
+      "a1d1"
+    ],
+    "solution_san": [
+      "Bg5+",
+      "Ke6",
+      "Rxd1"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 851,
+    "explanation": "Bg5+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "endgame",
+      "master",
+      "short"
+    ],
+    "lichess_id": "00mvr",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r2k1nr/N3pp1p/6p1/8/8/8/PbP2PPP/1RB1K2R b Kk - 1 14",
+    "solution_moves": [
+      "b2c3",
+      "e1e2",
+      "b8b1"
+    ],
+    "solution_san": [
+      "Bc3+",
+      "Ke2",
+      "Rxb1"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 871,
+    "explanation": "Bc3+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "01vlR",
+    "source": "lichess"
+  },
+  {
+    "fen": "r6k/pp2n1pp/2nN4/4p1r1/1PB5/2P4b/P3Nb1P/R2R3K w - - 0 23",
+    "solution_moves": [
+      "d6f7",
+      "h8g8",
+      "f7g5"
+    ],
+    "solution_san": [
+      "Nf7+",
+      "Kg8",
+      "Nxg5+"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 883,
+    "explanation": "Nf7+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "discoveredCheck",
+      "fork",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00GBX",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r1k3/5ppp/8/p1npP3/Pp1N1P2/1P1b4/5KPP/2R1B3 b - - 3 31",
+    "solution_moves": [
+      "c5e4",
+      "f2e3",
+      "c8c1"
+    ],
+    "solution_san": [
+      "Ne4+",
+      "Ke3",
+      "Rxc1"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 896,
+    "explanation": "Ne4+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "endgame",
+      "master",
+      "short"
+    ],
+    "lichess_id": "0351q",
+    "source": "lichess"
+  },
+  {
+    "fen": "rn3rk1/p1q2p1p/1pp1pbp1/4P2N/8/7Q/PPP2PPP/3R1bK1 w - - 0 18",
+    "solution_moves": [
+      "h5f6",
+      "g8g7",
+      "h3h7"
+    ],
+    "solution_san": [
+      "Nxf6+",
+      "Kg7",
+      "Qxh7#"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 899,
+    "explanation": "Nxf6+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "discoveredAttack",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "02oX3",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r4/ppk2pp1/2p1p3/4b3/P3n1P1/8/KPP2PN1/3rBR1R w - - 3 32",
+    "solution_moves": [
+      "e1a5",
+      "b7b6",
+      "f1d1"
+    ],
+    "solution_san": [
+      "Ba5+",
+      "b6",
+      "Rxd1"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 901,
+    "explanation": "Ba5+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "master",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00sO1",
+    "source": "lichess"
+  },
+  {
+    "fen": "2kr1b1R/p5p1/8/3P1p2/2P5/4B3/PP1K1P2/8 b - - 0 25",
+    "solution_moves": [
+      "f8b4",
+      "d2d3",
+      "d8h8"
+    ],
+    "solution_san": [
+      "Bb4+",
+      "Kd3",
+      "Rxh8"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 947,
+    "explanation": "Bb4+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "00R2A",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2rk1/4bppp/p1n5/3q4/Pp6/3B1N2/1B3PPP/R2Q1RK1 w - - 0 18",
+    "solution_moves": [
+      "d3h7",
+      "g8h7",
+      "d1d5"
+    ],
+    "solution_san": [
+      "Bxh7+",
+      "Kxh7",
+      "Qxd5"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 955,
+    "explanation": "Bxh7+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "kingsideAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00E29",
+    "source": "lichess"
+  },
+  {
+    "fen": "R7/4k3/5p2/3p2p1/4b2p/2K1PP1P/6P1/8 b - - 0 47",
+    "solution_moves": [
+      "d5d4",
+      "c3d4",
+      "e4a8"
+    ],
+    "solution_san": [
+      "d4+",
+      "Kxd4",
+      "Bxa8"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1052,
+    "explanation": "d4+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "endgame",
+      "master",
+      "short"
+    ],
+    "lichess_id": "00Gt0",
+    "source": "lichess"
+  },
+  {
+    "fen": "r5k1/1p1r1pp1/p3pnp1/2qN4/8/1Q5P/PP3PP1/3RR1K1 w - - 0 25",
+    "solution_moves": [
+      "d5f6",
+      "g7f6",
+      "d1d7"
+    ],
+    "solution_san": [
+      "Nxf6+",
+      "gxf6",
+      "Rxd7"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1055,
+    "explanation": "Nxf6+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "kingsideAttack",
+      "master",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "008Y3",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/6p1/pp2np1p/8/2r1NR1P/6P1/1PP5/1K6 w - - 2 33",
+    "solution_moves": [
+      "e4f6",
+      "g7f6",
+      "f4c4"
+    ],
+    "solution_san": [
+      "Nxf6+",
+      "gxf6",
+      "Rxc4"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1071,
+    "explanation": "Nxf6+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "00UHZ",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/p5pk/1p3b1p/3r3P/6P1/3nBN2/P4PK1/3R4 b - - 4 30",
+    "solution_moves": [
+      "d3f4",
+      "e3f4",
+      "d5d1"
+    ],
+    "solution_san": [
+      "Nf4+",
+      "Bxf4",
+      "Rxd1"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1091,
+    "explanation": "Nf4+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "00DEc",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2k1r/pppp2pp/5q2/4n3/2BQ4/8/PPP2PPP/RN2R1K1 b - - 0 13",
+    "solution_moves": [
+      "e5f3",
+      "g2f3",
+      "f6d4"
+    ],
+    "solution_san": [
+      "Nf3+",
+      "gxf3",
+      "Qxd4"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1164,
+    "explanation": "Nf3+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00mvP",
+    "source": "lichess"
+  },
+  {
+    "fen": "4Q3/4qppk/2p2b1p/1p2pP2/2r1B3/5P1P/6P1/5R1K w - - 4 34",
+    "solution_moves": [
+      "e8e7",
+      "f6e7",
+      "f5f6",
+      "c4e4",
+      "f6e7"
+    ],
+    "solution_san": [
+      "Qxe7",
+      "Bxe7",
+      "f6+",
+      "Rxe4",
+      "fxe7"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1177,
+    "explanation": "Qxe7 is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "crushing",
+      "discoveredAttack",
+      "discoveredCheck",
+      "endgame",
+      "long"
+    ],
+    "lichess_id": "00Uo9",
+    "source": "lichess"
+  },
+  {
+    "fen": "5k2/5pp1/8/1p2N3/1P6/7P/3nR1PK/2r5 b - - 2 48",
+    "solution_moves": [
+      "d2f1",
+      "h2g1",
+      "f1g3",
+      "g1f2",
+      "g3e2"
+    ],
+    "solution_san": [
+      "Nf1+",
+      "Kg1",
+      "Ng3+",
+      "Kf2",
+      "Nxe2"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1193,
+    "explanation": "Nf1+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "discoveredCheck",
+      "endgame",
+      "long"
+    ],
+    "lichess_id": "00Y6y",
+    "source": "lichess"
+  },
+  {
+    "fen": "rnbqk2r/pp3ppp/5n2/4N3/2p5/2P5/P1PPQPPP/R1B1K2R w KQkq - 0 9",
+    "solution_moves": [
+      "e5c6",
+      "c8e6",
+      "c6d8"
+    ],
+    "solution_san": [
+      "Nc6+",
+      "Be6",
+      "Nxd8"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1240,
+    "explanation": "Nc6+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "discoveredCheck",
+      "opening",
+      "short"
+    ],
+    "lichess_id": "00Bul",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r4/4kp1p/1PQ1p1p1/p3b3/1p2P2P/1P5K/6P1/8 b - - 2 36",
+    "solution_moves": [
+      "d8d3",
+      "g2g3",
+      "d3g3",
+      "h3h2",
+      "g3c3"
+    ],
+    "solution_san": [
+      "Rd3+",
+      "g3",
+      "Rxg3+",
+      "Kh2",
+      "Rc3+"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1264,
+    "explanation": "Rd3+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "discoveredCheck",
+      "endgame",
+      "long",
+      "master"
+    ],
+    "lichess_id": "00AdI",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r5/p2n1pkp/4p1p1/2Np4/1r6/1P1K1P1P/P3R1P1/2R5 w - - 6 37",
+    "solution_moves": [
+      "c5e6",
+      "f7e6",
+      "c1c8"
+    ],
+    "solution_san": [
+      "Nxe6+",
+      "fxe6",
+      "Rxc8"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1275,
+    "explanation": "Nxe6+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "endgame",
+      "short"
+    ],
+    "lichess_id": "00f1Y",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1q1r1k1/1p3pp1/n1p4p/p2pp2P/P3P3/2P2P2/1P1QBb2/R1BK3R w - - 0 24",
+    "solution_moves": [
+      "e2a6",
+      "b7a6",
+      "d2f2"
+    ],
+    "solution_san": [
+      "Bxa6",
+      "bxa6",
+      "Qxf2"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1300,
+    "explanation": "Bxa6 is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00O37",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r3/7P/1p4Q1/1b4B1/1k4n1/8/1P2n1P1/4R2K b - - 3 41",
+    "solution_moves": [
+      "e2g3",
+      "h1g1",
+      "e8e1"
+    ],
+    "solution_san": [
+      "Ng3+",
+      "Kg1",
+      "Rxe1#"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1324,
+    "explanation": "Ng3+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "discoveredAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00Lh9",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4r1k/ppp1b1pp/3q1n2/6B1/8/1QN5/PPP2PPP/R4RK1 b - - 4 14",
+    "solution_moves": [
+      "f6g4",
+      "g2g3",
+      "e7g5"
+    ],
+    "solution_san": [
+      "Ng4",
+      "g3",
+      "Bxg5"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1359,
+    "explanation": "Ng4 is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00jCD",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3r1k1/1p3p1p/p1p3p1/8/6bP/Q3b1P1/PP2B3/R3K2R b KQ - 0 20",
+    "solution_moves": [
+      "g4e2",
+      "e1e2",
+      "e3c5",
+      "e2f3",
+      "c5a3"
+    ],
+    "solution_san": [
+      "Bxe2",
+      "Kxe2",
+      "Bc5+",
+      "Kf3",
+      "Bxa3"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1425,
+    "explanation": "Bxe2 is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "discoveredCheck",
+      "exposedKing",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "009zS",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/5ppp/p3bp2/2q2N1Q/Ppp5/8/1PP2PPP/R2R2K1 w - - 0 22",
+    "solution_moves": [
+      "f5h6",
+      "g7h6",
+      "h5c5"
+    ],
+    "solution_san": [
+      "Nh6+",
+      "gxh6",
+      "Qxc5"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1456,
+    "explanation": "Nh6+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00AFG",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k3rB/ppp2p1p/2np4/8/4P3/2NB1b2/PPP2PPP/R4RK1 b - - 0 13",
+    "solution_moves": [
+      "g8g2",
+      "g1h1",
+      "g2g4"
+    ],
+    "solution_san": [
+      "Rxg2+",
+      "Kh1",
+      "Rg4#"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1456,
+    "explanation": "Rxg2+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "discoveredAttack",
+      "discoveredCheck",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "morphysMate",
+      "short"
+    ],
+    "lichess_id": "00Vdx",
+    "source": "lichess"
+  },
+  {
+    "fen": "k4r2/pp6/2p3Q1/3p2P1/4r2P/8/PPP2q2/2KR1R2 b - - 2 30",
+    "solution_moves": [
+      "f2e3",
+      "c1b1",
+      "f8f1",
+      "g6g8",
+      "e4e8"
+    ],
+    "solution_san": [
+      "Qe3+",
+      "Kb1",
+      "Rxf1",
+      "Qg8+",
+      "Re8"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1487,
+    "explanation": "Qe3+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "endgame",
+      "long"
+    ],
+    "lichess_id": "00XQ8",
+    "source": "lichess"
+  },
+  {
+    "fen": "5bk1/2Q2p1p/5qp1/p7/P1Bp4/1P5P/2r2PP1/3R2K1 w - - 6 28",
+    "solution_moves": [
+      "c4f7",
+      "g8g7",
+      "c7c2"
+    ],
+    "solution_san": [
+      "Bxf7+",
+      "Kg7",
+      "Qxc2"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1501,
+    "explanation": "Bxf7+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "endgame",
+      "master",
+      "short"
+    ],
+    "lichess_id": "00Dke",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3r1k1/p2Q1p1p/1p2p1p1/8/1P1P4/P3P3/1B2Nb1q/2KR3R b - - 1 19",
+    "solution_moves": [
+      "f2e3",
+      "c1b1",
+      "h2e2"
+    ],
+    "solution_san": [
+      "Bxe3+",
+      "Kb1",
+      "Qxe2"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "advanced",
+    "difficulty_rating": 1551,
+    "explanation": "Bxe3+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "00EXS",
+    "source": "lichess"
+  },
+  {
+    "fen": "r3k2r/ppq1bppp/4pn2/2Ppn3/1P4bP/2P2N2/P3BPP1/RNBQ1RK1 w kq - 3 11",
+    "solution_moves": [
+      "f3e5",
+      "c7e5",
+      "e2g4"
+    ],
+    "solution_san": [
+      "Nxe5",
+      "Qxe5",
+      "Bxg4"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1615,
+    "explanation": "Nxe5 is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "middlegame",
+      "short"
+    ],
+    "lichess_id": "002KJ",
+    "source": "lichess"
+  },
+  {
+    "fen": "3Q4/p1p2ppp/4k3/8/5P2/4P3/Prqn2PP/3R1RK1 b - - 0 22",
+    "solution_moves": [
+      "d2f3",
+      "g1h1",
+      "c2g2"
+    ],
+    "solution_san": [
+      "Nf3+",
+      "Kh1",
+      "Qxg2#"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1620,
+    "explanation": "Nf3+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "discoveredAttack",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "short"
+    ],
+    "lichess_id": "009zR",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r2rk1/pbq1bppp/8/8/2p1N3/P1Bn2P1/2Q2PBP/1R3RK1 w - - 4 24",
+    "solution_moves": [
+      "b1b7",
+      "c7b7",
+      "e4f6",
+      "e7f6",
+      "g2b7"
+    ],
+    "solution_san": [
+      "Rxb7",
+      "Qxb7",
+      "Nf6+",
+      "Bxf6",
+      "Bxb7"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1687,
+    "explanation": "Rxb7 is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "long",
+      "master",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "001XA",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2qr1k1/p5bp/1pp1N1p1/8/2Q2p2/2P1n2P/PP3PP1/R1B1RNK1 b - - 0 18",
+    "solution_moves": [
+      "e3c4",
+      "e6d8",
+      "e8e1"
+    ],
+    "solution_san": [
+      "Nxc4",
+      "Nxd8",
+      "Rxe1"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1739,
+    "explanation": "Nxc4 is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "discoveredAttack",
+      "opening",
+      "short"
+    ],
+    "lichess_id": "009FS",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2r2/pp2n1p1/1qn1ppk1/3pP1N1/3P3P/P7/1P1Q1PP1/RN2K2R w KQ - 0 14",
+    "solution_moves": [
+      "h4h5",
+      "g6h6",
+      "g5e6",
+      "h6h7",
+      "e6f8"
+    ],
+    "solution_san": [
+      "h5+",
+      "Kh6",
+      "Nxe6+",
+      "Kh7",
+      "Nxf8+"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1742,
+    "explanation": "h5+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "discoveredCheck",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "00IYg",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/5ppp/1p6/1q3P1Q/2pp3P/6R1/6PK/8 w - - 0 31",
+    "solution_moves": [
+      "g3g7",
+      "g8g7",
+      "f5f6",
+      "g7f6",
+      "h5b5"
+    ],
+    "solution_san": [
+      "Rxg7+",
+      "Kxg7",
+      "f6+",
+      "Kxf6",
+      "Qxb5"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1746,
+    "explanation": "Rxg7+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "crushing",
+      "discoveredAttack",
+      "endgame",
+      "long",
+      "sacrifice"
+    ],
+    "lichess_id": "004RF",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b4r/pp1k2p1/2nb2qp/1B1p2B1/3p3Q/8/PPP2PPP/3RR1K1 w - - 0 18",
+    "solution_moves": [
+      "h4g4",
+      "d7c7",
+      "g5d8",
+      "h8d8",
+      "g4g6"
+    ],
+    "solution_san": [
+      "Qg4+",
+      "Kc7",
+      "Bd8+",
+      "Rxd8",
+      "Qxg6"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1752,
+    "explanation": "Qg4+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "exposedKing",
+      "long",
+      "middlegame"
+    ],
+    "lichess_id": "006fF",
+    "source": "lichess"
+  },
+  {
+    "fen": "5r1k/4n2p/1p4p1/pP5Q/P2pB2K/6P1/2P4P/4q3 w - - 0 38",
+    "solution_moves": [
+      "h5e5",
+      "h8g8",
+      "e4d5",
+      "e7d5",
+      "e5e1"
+    ],
+    "solution_san": [
+      "Qe5+",
+      "Kg8",
+      "Bd5+",
+      "Nxd5",
+      "Qxe1"
+    ],
+    "motif": "discovered_attack",
+    "difficulty": "expert",
+    "difficulty_rating": 1758,
+    "explanation": "Qe5+ is the key \u2014 it sets up a discovered attack. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "discoveredAttack",
+      "endgame",
+      "fork",
+      "long"
+    ],
+    "lichess_id": "00Kia",
+    "source": "lichess"
+  }
+]

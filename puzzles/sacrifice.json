@@ -1,0 +1,1135 @@
+[
+  {
+    "fen": "4r1k1/5ppp/B1R2b2/5P2/2Q2p1P/pP2qP2/P1P5/1K5R b - - 0 28",
+    "solution_moves": [
+      "e3e1",
+      "h1e1",
+      "e8e1"
+    ],
+    "solution_san": [
+      "Qe1+",
+      "Rxe1",
+      "Rxe1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "beginner",
+    "difficulty_rating": 620,
+    "explanation": "Qe1+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "01244",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k1r4/1p3Qp1/p2q3p/8/1N6/8/PP3PPP/2R3K1 b - - 0 22",
+    "solution_moves": [
+      "d6d1",
+      "c1d1",
+      "d8d1"
+    ],
+    "solution_san": [
+      "Qd1+",
+      "Rxd1",
+      "Rxd1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "beginner",
+    "difficulty_rating": 624,
+    "explanation": "Qd1+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00TU2",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/3Q1pp1/p4b1p/1pB1q3/1P6/P7/5PPP/3R2K1 b - - 1 24",
+    "solution_moves": [
+      "e5e1",
+      "d1e1",
+      "e8e1"
+    ],
+    "solution_san": [
+      "Qe1+",
+      "Rxe1",
+      "Rxe1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "beginner",
+    "difficulty_rating": 685,
+    "explanation": "Qe1+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "02k8t",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/1pb1qpp1/p5p1/2BQ4/8/7P/PP3PP1/3R3K b - - 0 29",
+    "solution_moves": [
+      "e7e1",
+      "d1e1",
+      "e8e1"
+    ],
+    "solution_san": [
+      "Qe1+",
+      "Rxe1",
+      "Rxe1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "beginner",
+    "difficulty_rating": 705,
+    "explanation": "Qe1+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "02cu7",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/pp3ppp/2p3b1/2n3P1/2B2q1P/5N2/PPP1QP2/4R1K1 w - - 0 24",
+    "solution_moves": [
+      "e2e8",
+      "d8e8",
+      "e1e8"
+    ],
+    "solution_san": [
+      "Qe8+",
+      "Rxe8",
+      "Rxe8#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "beginner",
+    "difficulty_rating": 792,
+    "explanation": "Qe8+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00HEh",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/p1p2ppp/1p6/5Q2/8/4P1qP/PP1r2P1/4RRK1 w - - 1 28",
+    "solution_moves": [
+      "f5f7",
+      "g8h8",
+      "f7f8",
+      "d8f8",
+      "f1f8"
+    ],
+    "solution_san": [
+      "Qxf7+",
+      "Kh8",
+      "Qf8+",
+      "Rxf8",
+      "Rxf8#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 849,
+    "explanation": "Qxf7+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "long",
+      "mate",
+      "mateIn3",
+      "sacrifice"
+    ],
+    "lichess_id": "02m66",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rrk1/ppp1qpp1/7p/6N1/4N1P1/b2Q3P/P4P2/1R4K1 w - - 0 25",
+    "solution_moves": [
+      "e4f6",
+      "g7f6",
+      "d3h7"
+    ],
+    "solution_san": [
+      "Nf6+",
+      "gxf6",
+      "Qh7#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 863,
+    "explanation": "Nf6+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "01LlS",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r4/pQ2pkbp/2n3p1/2q3B1/8/P4N2/1P3PPP/2R3K1 b - - 1 24",
+    "solution_moves": [
+      "c5c1",
+      "g5c1",
+      "d8d1",
+      "f3e1",
+      "d1e1"
+    ],
+    "solution_san": [
+      "Qxc1+",
+      "Bxc1",
+      "Rd1+",
+      "Ne1",
+      "Rxe1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 890,
+    "explanation": "Qxc1+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "fork",
+      "long",
+      "master",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "02nTH",
+    "source": "lichess"
+  },
+  {
+    "fen": "r5k1/pp3ppp/1qn2b2/3r4/4QB2/1P3N2/P4PPP/4R1K1 w - - 0 19",
+    "solution_moves": [
+      "e4e8",
+      "a8e8",
+      "e1e8"
+    ],
+    "solution_san": [
+      "Qe8+",
+      "Rxe8",
+      "Rxe8#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 894,
+    "explanation": "Qe8+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00aBq",
+    "source": "lichess"
+  },
+  {
+    "fen": "b5rk/6p1/1qpQR2p/5p2/3P4/5P2/1P4PP/6K1 w - - 0 33",
+    "solution_moves": [
+      "e6h6",
+      "g7h6",
+      "d6h6"
+    ],
+    "solution_san": [
+      "Rxh6+",
+      "gxh6",
+      "Qxh6#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 899,
+    "explanation": "Rxh6+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "01wS5",
+    "source": "lichess"
+  },
+  {
+    "fen": "2k3r1/pppb1prp/1q6/8/Q7/2P1R1P1/P4P1P/4R1K1 w - - 4 24",
+    "solution_moves": [
+      "e3e8",
+      "d7e8",
+      "e1e8",
+      "g8e8",
+      "a4e8"
+    ],
+    "solution_san": [
+      "Re8+",
+      "Bxe8",
+      "Rxe8+",
+      "Rxe8",
+      "Qxe8#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 938,
+    "explanation": "Re8+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "long",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "queensideAttack",
+      "sacrifice"
+    ],
+    "lichess_id": "00F6y",
+    "source": "lichess"
+  },
+  {
+    "fen": "5r2/R2R1pk1/P7/5p2/6p1/1KP5/5r2/8 w - - 0 45",
+    "solution_moves": [
+      "d7f7",
+      "f8f7",
+      "a7f7",
+      "g7f7",
+      "a6a7"
+    ],
+    "solution_san": [
+      "Rxf7+",
+      "Rxf7",
+      "Rxf7+",
+      "Kxf7",
+      "a7"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 968,
+    "explanation": "Rxf7+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "advantage",
+      "endgame",
+      "long",
+      "master",
+      "rookEndgame",
+      "sacrifice"
+    ],
+    "lichess_id": "00ZPK",
+    "source": "lichess"
+  },
+  {
+    "fen": "1k3r2/q5r1/2Qp3p/3Bp3/2N1P1p1/P7/1PP2PPP/R5K1 b - - 13 35",
+    "solution_moves": [
+      "a7f2",
+      "g1h1",
+      "f2f1",
+      "a1f1",
+      "f8f1"
+    ],
+    "solution_san": [
+      "Qxf2+",
+      "Kh1",
+      "Qf1+",
+      "Rxf1",
+      "Rxf1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 985,
+    "explanation": "Qxf2+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "long",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "00O9a",
+    "source": "lichess"
+  },
+  {
+    "fen": "r7/pp4kp/6p1/2P2q1n/1PBb1p2/P4P2/3B2PP/2Q1R2K b - - 2 28",
+    "solution_moves": [
+      "h5g3",
+      "h2g3",
+      "f5h5"
+    ],
+    "solution_san": [
+      "Ng3+",
+      "hxg3",
+      "Qh5#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1022,
+    "explanation": "Ng3+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00Yy4",
+    "source": "lichess"
+  },
+  {
+    "fen": "3q1r1k/p3r1pp/1p1b1p2/2p5/3pR2N/1QPn2P1/PP1B1P1P/R5K1 w - - 0 22",
+    "solution_moves": [
+      "h4g6",
+      "h7g6",
+      "e4h4"
+    ],
+    "solution_san": [
+      "Ng6+",
+      "hxg6",
+      "Rh4#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1023,
+    "explanation": "Ng6+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00M92",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1rk1/pp2bpp1/2p1b2p/4P3/3PNn2/1P1Q3P/P4BP1/1BR2RK1 w - - 5 26",
+    "solution_moves": [
+      "e4f6",
+      "g7f6",
+      "d3h7"
+    ],
+    "solution_san": [
+      "Nf6+",
+      "gxf6",
+      "Qh7#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1059,
+    "explanation": "Nf6+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00aCb",
+    "source": "lichess"
+  },
+  {
+    "fen": "5k2/5r1p/pp2Q3/8/8/1P6/P1q2PPP/4R1K1 b - - 0 32",
+    "solution_moves": [
+      "c2f2",
+      "g1h1",
+      "f2f1",
+      "e1f1",
+      "f7f1"
+    ],
+    "solution_san": [
+      "Qxf2+",
+      "Kh1",
+      "Qf1+",
+      "Rxf1",
+      "Rxf1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1130,
+    "explanation": "Qxf2+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "long",
+      "mate",
+      "mateIn3",
+      "sacrifice"
+    ],
+    "lichess_id": "00Ycz",
+    "source": "lichess"
+  },
+  {
+    "fen": "1rr3k1/5p1p/p5pQ/4p3/4q3/B1P1P3/PP1R1PPP/2KR4 b - - 0 27",
+    "solution_moves": [
+      "c8c3",
+      "b2c3",
+      "b8b1"
+    ],
+    "solution_san": [
+      "Rxc3+",
+      "bxc3",
+      "Rb1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1142,
+    "explanation": "Rxc3+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "queensideAttack",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00OCQ",
+    "source": "lichess"
+  },
+  {
+    "fen": "1n5k/6p1/p2q1rPp/1ppB4/8/3P4/PPP1rPQ1/2K4R w - - 0 26",
+    "solution_moves": [
+      "h1h6",
+      "g7h6",
+      "g6g7",
+      "h8h7",
+      "g7g8q"
+    ],
+    "solution_san": [
+      "Rxh6+",
+      "gxh6",
+      "g7+",
+      "Kh7",
+      "g8=Q#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1165,
+    "explanation": "Rxh6+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "kingsideAttack",
+      "long",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "promotion",
+      "sacrifice"
+    ],
+    "lichess_id": "00GuD",
+    "source": "lichess"
+  },
+  {
+    "fen": "kr6/1pR4p/p4R2/n7/P3p3/3rB3/6PP/6K1 w - - 1 39",
+    "solution_moves": [
+      "f6a6",
+      "b7a6",
+      "c7a7"
+    ],
+    "solution_san": [
+      "Rxa6+",
+      "bxa6",
+      "Ra7#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "intermediate",
+    "difficulty_rating": 1166,
+    "explanation": "Rxa6+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "operaMate",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00LNB",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r3rk1/q5pp/2R5/3P4/2Q5/1p2NpPb/1P3P1P/3R2K1 b - - 1 32",
+    "solution_moves": [
+      "a7e3",
+      "f2e3",
+      "f3f2"
+    ],
+    "solution_san": [
+      "Qxe3",
+      "fxe3",
+      "f2+"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1213,
+    "explanation": "Qxe3 is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "advantage",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00Oim",
+    "source": "lichess"
+  },
+  {
+    "fen": "r4rk1/6pp/1p1Bp3/p7/P1PP4/4nqP1/Q2R3P/4R1K1 b - - 2 25",
+    "solution_moves": [
+      "f3f1",
+      "e1f1",
+      "f8f1"
+    ],
+    "solution_san": [
+      "Qf1+",
+      "Rxf1",
+      "Rxf1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1259,
+    "explanation": "Qf1+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00Tya",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r5/3k1p2/5Pp1/PPBpP1P1/1K5P/5p2/8/8 b - - 2 45",
+    "solution_moves": [
+      "c8c5",
+      "b4c5",
+      "f3f2"
+    ],
+    "solution_san": [
+      "Rxc5",
+      "Kxc5",
+      "f2"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1279,
+    "explanation": "Rxc5 is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "crushing",
+      "endgame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00uDH",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r1r1k/5Qpp/2p3n1/p3p1N1/P2q4/3P4/B1P2P2/R4K2 w - - 0 26",
+    "solution_moves": [
+      "f7g8",
+      "f8g8",
+      "g5f7"
+    ],
+    "solution_san": [
+      "Qg8+",
+      "Rxg8",
+      "Nf7#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1332,
+    "explanation": "Qg8+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short",
+      "smotheredMate"
+    ],
+    "lichess_id": "0123H",
+    "source": "lichess"
+  },
+  {
+    "fen": "5rk1/5ppp/1r6/3Qp3/2B1P3/2q3P1/3R1PKP/8 w - - 0 28",
+    "solution_moves": [
+      "d5f7",
+      "f8f7",
+      "d2d8"
+    ],
+    "solution_san": [
+      "Qxf7+",
+      "Rxf7",
+      "Rd8#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1335,
+    "explanation": "Qxf7+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "pin",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00KhM",
+    "source": "lichess"
+  },
+  {
+    "fen": "3r2k1/6pp/8/5Q2/2pP4/2q3P1/5RKP/8 w - - 0 36",
+    "solution_moves": [
+      "f5f7",
+      "g8h8",
+      "f7f8",
+      "d8f8",
+      "f2f8"
+    ],
+    "solution_san": [
+      "Qf7+",
+      "Kh8",
+      "Qf8+",
+      "Rxf8",
+      "Rxf8#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1347,
+    "explanation": "Qf7+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "backRankMate",
+      "endgame",
+      "long",
+      "mate",
+      "mateIn3",
+      "sacrifice"
+    ],
+    "lichess_id": "00gH0",
+    "source": "lichess"
+  },
+  {
+    "fen": "r2q1rk1/1pp2ppp/8/p2pn3/P3N3/3Bb2Q/1P3PPP/R4RK1 w - - 0 18",
+    "solution_moves": [
+      "e4f6",
+      "g7f6",
+      "h3h7"
+    ],
+    "solution_san": [
+      "Nf6+",
+      "gxf6",
+      "Qxh7#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1380,
+    "explanation": "Nf6+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "master",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00y9H",
+    "source": "lichess"
+  },
+  {
+    "fen": "2r5/2r3k1/1p2Qp1p/p2p2p1/3P4/4P1P1/PPq2P1R/KR6 b - - 0 30",
+    "solution_moves": [
+      "c2b1",
+      "a1b1",
+      "c7c1"
+    ],
+    "solution_san": [
+      "Qxb1+",
+      "Kxb1",
+      "Rc1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1394,
+    "explanation": "Qxb1+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "attraction",
+      "endgame",
+      "mate",
+      "mateIn2",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00ouE",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2rk1/ppp2ppp/8/1B1p4/3bn3/5N2/PPP2qPP/RNBQR2K b - - 1 12",
+    "solution_moves": [
+      "f2g1",
+      "f3g1",
+      "e4f2"
+    ],
+    "solution_san": [
+      "Qg1+",
+      "Nxg1",
+      "Nf2#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1409,
+    "explanation": "Qg1+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "opening",
+      "sacrifice",
+      "short",
+      "smotheredMate"
+    ],
+    "lichess_id": "00wPZ",
+    "source": "lichess"
+  },
+  {
+    "fen": "1r5r/5pk1/4p3/3p2PP/N1nP4/n1P5/P3B3/K1R4R b - - 0 34",
+    "solution_moves": [
+      "b8b1",
+      "c1b1",
+      "a3c2"
+    ],
+    "solution_san": [
+      "Rb1+",
+      "Rxb1",
+      "Nc2#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1495,
+    "explanation": "Rb1+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00Cwz",
+    "source": "lichess"
+  },
+  {
+    "fen": "r1b2rk1/p4ppp/2p5/6q1/6P1/3p1Q1P/PPP5/1K2RR2 w - - 0 18",
+    "solution_moves": [
+      "f3f7",
+      "f8f7",
+      "e1e8",
+      "f7f8",
+      "f1f8"
+    ],
+    "solution_san": [
+      "Qxf7+",
+      "Rxf7",
+      "Re8+",
+      "Rf8",
+      "Rfxf8#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1510,
+    "explanation": "Qxf7+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "kingsideAttack",
+      "long",
+      "mate",
+      "mateIn3",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "00Pr6",
+    "source": "lichess"
+  },
+  {
+    "fen": "6k1/2P3pp/1P6/4b3/3p4/Br5P/4prP1/R5RK b - - 0 30",
+    "solution_moves": [
+      "b3h3",
+      "g2h3",
+      "f2h2"
+    ],
+    "solution_san": [
+      "Rxh3+",
+      "gxh3",
+      "Rh2#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1519,
+    "explanation": "Rxh3+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "endgame",
+      "mate",
+      "mateIn2",
+      "operaMate",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00NUc",
+    "source": "lichess"
+  },
+  {
+    "fen": "5k2/3b2q1/pn4p1/1rp2p2/8/8/1P2Q1P1/1K2R2R w - - 4 33",
+    "solution_moves": [
+      "h1h8",
+      "g7h8",
+      "e2e7",
+      "f8g8",
+      "e7d8"
+    ],
+    "solution_san": [
+      "Rh8+",
+      "Qxh8",
+      "Qe7+",
+      "Kg8",
+      "Qd8+"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1563,
+    "explanation": "Rh8+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "exposedKing",
+      "long",
+      "middlegame",
+      "sacrifice"
+    ],
+    "lichess_id": "00GVf",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/2p1r1kp/5pp1/3P3r/4P3/2N1QbPq/PPP2R1P/5RK1 b - - 4 23",
+    "solution_moves": [
+      "h3g3",
+      "h2g3",
+      "h5h1"
+    ],
+    "solution_san": [
+      "Qxg3+",
+      "hxg3",
+      "Rh1#"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "advanced",
+    "difficulty_rating": 1591,
+    "explanation": "Qxg3+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "clearance",
+      "kingsideAttack",
+      "mate",
+      "mateIn2",
+      "middlegame",
+      "operaMate",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00IUW",
+    "source": "lichess"
+  },
+  {
+    "fen": "4r1k1/p5bp/1q2N1p1/2pPrp2/1pP5/6PP/P4QB1/1R3RK1 b - - 3 25",
+    "solution_moves": [
+      "e5e6",
+      "d5e6",
+      "g7d4"
+    ],
+    "solution_san": [
+      "R5xe6",
+      "dxe6",
+      "Bd4"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "expert",
+    "difficulty_rating": 1657,
+    "explanation": "R5xe6 is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "advantage",
+      "clearance",
+      "master",
+      "middlegame",
+      "pin",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00eWz",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/3RP3/2Pn4/ppN1k2p/8/rP1K4/8 w - - 0 41",
+    "solution_moves": [
+      "d6d5",
+      "e4d5",
+      "e6e7"
+    ],
+    "solution_san": [
+      "Rxd5",
+      "Kxd5",
+      "e7"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "expert",
+    "difficulty_rating": 1669,
+    "explanation": "Rxd5 is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "advantage",
+      "endgame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00eXL",
+    "source": "lichess"
+  },
+  {
+    "fen": "4rrk1/1ppq2p1/p3Rp1p/3P4/2P2Q2/3B3P/PP4PK/8 w - - 2 26",
+    "solution_moves": [
+      "f4f5",
+      "e8e6",
+      "f5h7"
+    ],
+    "solution_san": [
+      "Qf5",
+      "Rxe6",
+      "Qh7+"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "expert",
+    "difficulty_rating": 1699,
+    "explanation": "Qf5 is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00NpT",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/p7/5P2/PP1bp3/4N3/K7/2kp4/8 w - - 0 49",
+    "solution_moves": [
+      "e4d2",
+      "c2d2",
+      "b5b6",
+      "a7b6",
+      "a5b6"
+    ],
+    "solution_san": [
+      "Nxd2",
+      "Kxd2",
+      "b6",
+      "axb6",
+      "axb6"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "expert",
+    "difficulty_rating": 1747,
+    "explanation": "Nxd2 is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "crushing",
+      "endgame",
+      "long",
+      "sacrifice"
+    ],
+    "lichess_id": "00Nqd",
+    "source": "lichess"
+  },
+  {
+    "fen": "8/8/1n4kP/1P2Kp2/3P4/2p1N3/8/8 b - - 5 49",
+    "solution_moves": [
+      "b6c4",
+      "e3c4",
+      "c3c2"
+    ],
+    "solution_san": [
+      "Nc4+",
+      "Nxc4",
+      "c2"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "expert",
+    "difficulty_rating": 1777,
+    "explanation": "Nc4+ is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "crushing",
+      "endgame",
+      "knightEndgame",
+      "sacrifice",
+      "short"
+    ],
+    "lichess_id": "00LMb",
+    "source": "lichess"
+  },
+  {
+    "fen": "7k/p3b2p/Pp1n4/1PpPp3/2B1PpP1/1P6/5BK1/8 w - - 1 34",
+    "solution_moves": [
+      "f2c5",
+      "b6c5",
+      "b5b6",
+      "a7b6",
+      "a6a7"
+    ],
+    "solution_san": [
+      "Bxc5",
+      "bxc5",
+      "b6",
+      "axb6",
+      "a7"
+    ],
+    "motif": "sacrifice",
+    "difficulty": "expert",
+    "difficulty_rating": 1783,
+    "explanation": "Bxc5 is the key \u2014 it sets up a sacrifice. Visualise the resulting threats before playing.",
+    "themes": [
+      "advancedPawn",
+      "advantage",
+      "endgame",
+      "long",
+      "master",
+      "masterVsMaster",
+      "sacrifice"
+    ],
+    "lichess_id": "00Lhb",
+    "source": "lichess"
+  }
+]

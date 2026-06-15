@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+
+# Data files (user-specific, generated at runtime)
+data/
+!data/.gitkeep
+
+# Openings data (built by scripts/build_openings_db.py)
+data/openings_raw/
+data/openings.db
+data/openings_trie.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+
+# OMC state
+.omc/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.todos/
+
+# Build artifacts
+.sidecar/
+archive/
+.vercel
