@@ -109,7 +109,48 @@ def _get_token(c: dict[str, str]) -> str:
 
 def invoke(messages: list[dict], *, system: str | None = None,
            max_tokens: int = 400) -> str:
-    """Call the deployed Claude model and return its text. Raises on failure."""
+    """Call the deployed Claude model and return its text. Raises on failure.
+
+    If AICORE_PROXY_URL + AICORE_PROXY_SECRET env vars are set, route through
+    the Cloudflare Worker proxy instead of speaking to SAP AI Core directly.
+    The proxy does the OAuth + Claude HTTPS work outside of this Python
+    process, which is essential on memory-constrained free-tier hosts (e.g.
+    Render 512 MB) where Stockfish + Python + a TLS client to SAP BTP all
+    running together OOM-kills the container.
+
+    The Worker accepts an Anthropic-Messages-compatible body (`messages`,
+    `system`, `max_tokens`) and returns `{"content": "...", ...}` — same
+    shape this function already produces. So the call site stays identical.
+    """
+    proxy_url = os.environ.get("AICORE_PROXY_URL", "").strip().rstrip("/")
+    proxy_secret = os.environ.get("AICORE_PROXY_SECRET", "").strip()
+    if proxy_url and proxy_secret:
+        # ─── Route via Cloudflare Worker (free-tier-friendly) ───
+        # ONE local-ish TLS connection to *.workers.dev, instead of TWO
+        # heavy ones to SAP IDM + AI Core. Memory pressure problem solved.
+        body: dict[str, Any] = {
+            "messages": messages,
+            "max_tokens": max_tokens,
+        }
+        if system:
+            body["system"] = system
+            # The Worker also accepts system in messages[0]; either works.
+            # We pass it as a top-level field so Claude 4.7 Opus on Bedrock
+            # doesn't have to special-case it.
+        with httpx.Client(timeout=60.0) as client:
+            r = client.post(
+                f"{proxy_url}/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {proxy_secret}",
+                    "Content-Type": "application/json",
+                },
+                json=body,
+            )
+        r.raise_for_status()
+        return (r.json().get("content") or "").strip()
+
+    # ─── Direct path (when no proxy configured) ───
+    # This is what runs locally where there's plenty of RAM.
     c = _config()
     base = c["AICORE_ORCH_BASE_URL"].rstrip("/")
     dep = c["AICORE_DIRECT_DEPLOYMENT_ID"]

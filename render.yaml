@@ -74,4 +74,14 @@ services:
       # /api/new request. 16 MB hash is plenty at the depths we ask for here.
       - key: STOCKFISH_LOW_MEMORY
         value: "1"
+      # ─── Cloudflare Worker proxy for SAP AI Core (free-tier-friendly) ───
+      # When set, scripts/sap_coach.py routes Claude calls through the
+      # Worker (one local-ish TLS connection) instead of opening two heavy
+      # HTTPS connections to SAP IDM + AI Core directly. Avoids the second
+      # OOM-kill we hit on /api/ask. See cloudflare-worker/README.md for
+      # how to deploy the Worker. Both must be set or the direct path runs.
+      - key: AICORE_PROXY_URL
+        sync: false
+      - key: AICORE_PROXY_SECRET
+        sync: false
       # Render injects PORT automatically; the Dockerfile binds 0.0.0.0:$PORT.

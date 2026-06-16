@@ -154,13 +154,20 @@ async function callClaude(env: Env, req: ChatRequest): Promise<ChatResponse> {
   const otherMessages = req.messages.filter((m) => m.role !== 'system');
   const system = systemMessages.map((m) => m.content).join('\n\n');
 
-  const body = {
+  // Claude 4.7 Opus on AI Core rejects `temperature` ("deprecated for this
+  // model"). Newer Claude reasoning-class models pick their own sampling.
+  // We keep the field optional so older Anthropic models on the same proxy
+  // still get the requested temperature.
+  const body: Record<string, unknown> = {
     anthropic_version: 'bedrock-2023-05-31',
     max_tokens: req.max_tokens ?? 1024,
-    temperature: req.temperature ?? 0.4,
     system: system || undefined,
     messages: otherMessages.map((m) => ({ role: m.role, content: m.content })),
   };
+  const isOpus47 = (model || '').toLowerCase().includes('claude-4.7');
+  if (req.temperature !== undefined && !isOpus47) {
+    body.temperature = req.temperature;
+  }
 
   const r = await fetch(url, {
     method: 'POST',
@@ -239,12 +246,21 @@ export default {
       // Bearer-token auth: anyone with PROXY_SECRET can use the Worker.
       // This is a coarse guard — fine for personal use; for multi-tenant
       // you'd want per-user tokens, rate-limiting, etc.
-      const auth = request.headers.get('Authorization') || '';
-      if (auth !== `Bearer ${env.PROXY_SECRET}`) {
-        return new Response(JSON.stringify({ error: 'unauthorized' }), {
-          status: 401,
-          headers: baseHeaders,
-        });
+      //
+      // We trim both sides because wrangler's "secret put" interactive prompt
+      // can leave a trailing newline in the stored value (silent gotcha).
+      const authHeader = (request.headers.get('Authorization') || '').trim();
+      const expected = `Bearer ${(env.PROXY_SECRET || '').trim()}`;
+      if (authHeader !== expected) {
+        return new Response(
+          JSON.stringify({
+            error: 'unauthorized',
+            // Debug hint: show how many chars we received vs expected, never
+            // the secret itself. Lets us tell whitespace from wrong-token.
+            hint: `received auth len=${authHeader.length}, expected len=${expected.length}`,
+          }),
+          { status: 401, headers: baseHeaders }
+        );
       }
 
       let body: ChatRequest;
