@@ -590,15 +590,29 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
         if not question:
             self._send_json(400, {"error": "question required"})
             return
-        game, lock = self._game_for_request()
-        with lock:
-            facts = game.situation_facts()
-        answer, source = sap_coach.answer_question(facts, question)
-        if not answer:
-            answer = ("I can't reach the coaching model right now, but check "
-                      "whether any of your pieces are hanging and what your "
-                      "opponent threatens.")
-        self._send_json(200, {"answer": answer, "source": source})
+        # Wrap the whole handler in try/except so any failure (Stockfish
+        # crash, httpx error, malformed response, etc.) surfaces as a JSON
+        # body the caller can read instead of dying mid-write and giving
+        # the upstream proxy a content-length-0 502. This is essential on
+        # memory-constrained hosts where partial-write failures look
+        # indistinguishable from "unrelated container crash" otherwise.
+        try:
+            game, lock = self._game_for_request()
+            with lock:
+                facts = game.situation_facts()
+            answer, source = sap_coach.answer_question(facts, question)
+            if not answer:
+                answer = ("I can't reach the coaching model right now, but check "
+                          "whether any of your pieces are hanging and what your "
+                          "opponent threatens.")
+            self._send_json(200, {"answer": answer, "source": source})
+        except Exception as exc:  # noqa: BLE001
+            import traceback
+            self._send_json(500, {
+                "error": f"{type(exc).__name__}: {str(exc)[:300]}",
+                "trace": traceback.format_exc()[-1500:],
+                "stage": "ask",
+            })
 
     # ---- helpers ---------------------------------------------------------
     def _read_json(self) -> dict:
