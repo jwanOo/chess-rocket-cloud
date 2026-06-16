@@ -68,4 +68,10 @@ services:
         value: /usr/games/stockfish
       - key: PYTHONUNBUFFERED
         value: "1"
+      # Cap Stockfish's hash table at 16 MB instead of the default 256 MB.
+      # On Render free tier (512 MB total RAM) the default Stockfish + Python +
+      # AI Core httpx client + dashboard_server reliably OOM-kills on the first
+      # /api/new request. 16 MB hash is plenty at the depths we ask for here.
+      - key: STOCKFISH_LOW_MEMORY
+        value: "1"
       # Render injects PORT automatically; the Dockerfile binds 0.0.0.0:$PORT.

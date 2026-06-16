@@ -10,6 +10,7 @@ Wraps Stockfish via python-chess UCI interface. Provides:
 from __future__ import annotations
 
 import argparse
+import os
 import random
 import shutil
 import sys
@@ -100,11 +101,35 @@ class ChessEngine:
         """
         self._stockfish_path = stockfish_path or _find_stockfish()
         self._engine = chess.engine.SimpleEngine.popen_uci(self._stockfish_path)
+        self._configure_low_memory(self._engine)
         self._target_elo: int = 800
         self._random_pct: float = 0.0
         self._depth: int = 1
         self._use_uci_elo: bool = False
         self.set_difficulty(self._target_elo)
+
+    @staticmethod
+    def _configure_low_memory(engine: chess.engine.SimpleEngine) -> None:
+        """Tighten Stockfish's memory budget so the process fits in
+        constrained environments (Render free tier = 512 MB total RAM).
+
+        Defaults are 256 MB Hash + 1 thread, which together with Python
+        + httpx + the rest of the dashboard server reliably OOM-kills
+        the container on first /api/new. We override only when the
+        STOCKFISH_LOW_MEMORY env var is truthy (set in render.yaml /
+        Dockerfile so local dev is unaffected).
+
+        Hash=16 MB is plenty for the depth/strength we ask for here
+        (at most depth 18 in the analyzer); the engine just re-explores
+        instead of caching, which is fine for one user at a time.
+        """
+        if not os.environ.get("STOCKFISH_LOW_MEMORY", "").strip():
+            return
+        try:
+            engine.configure({"Hash": 16, "Threads": 1})
+        except chess.engine.EngineError:
+            # Some Stockfish builds reject unknown options — skip silently.
+            pass
 
     def _open_engine(self) -> chess.engine.SimpleEngine:
         """Open a fresh Stockfish process.
@@ -112,7 +137,9 @@ class ChessEngine:
         Returns:
             New SimpleEngine instance.
         """
-        return chess.engine.SimpleEngine.popen_uci(self._stockfish_path)
+        engine = chess.engine.SimpleEngine.popen_uci(self._stockfish_path)
+        self._configure_low_memory(engine)
+        return engine
 
     def _ensure_engine(self) -> None:
         """Ensure engine process is alive, restart once if terminated."""
