@@ -747,45 +747,69 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
         raw = self.rfile.read(length)
         return json.loads(raw.decode("utf-8"))
 
+    def _safe_write(self, data: bytes) -> None:
+        # Browsers (and our own AbortController-driven fetches) can disconnect
+        # before the response body is finished. The default BaseHTTPRequestHandler
+        # lets the resulting BrokenPipeError / ConnectionResetError propagate up
+        # to socketserver.process_request_thread, which logs the traceback and —
+        # crucially on Render's free tier — counts as an unhealthy reply, causing
+        # the platform to restart the container in a loop. Swallow those two
+        # specific errors silently; anything else still surfaces.
+        try:
+            self.wfile.write(data)
+        except (BrokenPipeError, ConnectionResetError):
+            return
+
     def _send_json(self, code: int, obj) -> None:
         payload = json.dumps(obj, default=str).encode("utf-8")
-        self.send_response(code)
-        self.send_header("Content-Type", "application/json; charset=utf-8")
-        self.send_header("Content-Length", str(len(payload)))
-        self.send_header("Cache-Control", "no-cache")
-        self._cors_headers()
-        self._session_set_cookie()
-        self.end_headers()
-        self.wfile.write(payload)
+        try:
+            self.send_response(code)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(payload)))
+            self.send_header("Cache-Control", "no-cache")
+            self._cors_headers()
+            self._session_set_cookie()
+            self.end_headers()
+        except (BrokenPipeError, ConnectionResetError):
+            # Client gave up before we even finished the headers (common with
+            # the dashboard's 8s/30s AbortController). Nothing useful to do.
+            return
+        self._safe_write(payload)
 
     def _serve_file(self, path: Path, content_type: str) -> None:
         if not path.exists():
             self.send_error(404, f"File not found: {path.name}")
             return
         data = path.read_bytes()
-        self.send_response(200)
-        self.send_header("Content-Type", content_type)
-        self.send_header("Content-Length", str(len(data)))
-        # Static assets the frontend re-requests every page load — let the
-        # browser cache them for a few minutes but not forever, so quick fixes
-        # to voice_control.js or the manifest land without a hard reload.
-        if path.suffix in (".js", ".webmanifest"):
-            self.send_header("Cache-Control", "public, max-age=300")
-        self._cors_headers()
-        self._session_set_cookie()
-        self.end_headers()
-        self.wfile.write(data)
+        try:
+            self.send_response(200)
+            self.send_header("Content-Type", content_type)
+            self.send_header("Content-Length", str(len(data)))
+            # Static assets the frontend re-requests every page load — let the
+            # browser cache them for a few minutes but not forever, so quick fixes
+            # to voice_control.js or the manifest land without a hard reload.
+            if path.suffix in (".js", ".webmanifest"):
+                self.send_header("Cache-Control", "public, max-age=300")
+            self._cors_headers()
+            self._session_set_cookie()
+            self.end_headers()
+        except (BrokenPipeError, ConnectionResetError):
+            return
+        self._safe_write(data)
 
     def _serve_json(self, path: Path) -> None:
         payload = path.read_bytes() if path.exists() else json.dumps(None).encode()
-        self.send_response(200)
-        self.send_header("Content-Type", "application/json; charset=utf-8")
-        self.send_header("Content-Length", str(len(payload)))
-        self.send_header("Cache-Control", "no-cache")
-        self._cors_headers()
-        self._session_set_cookie()
-        self.end_headers()
-        self.wfile.write(payload)
+        try:
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(payload)))
+            self.send_header("Cache-Control", "no-cache")
+            self._cors_headers()
+            self._session_set_cookie()
+            self.end_headers()
+        except (BrokenPipeError, ConnectionResetError):
+            return
+        self._safe_write(payload)
 
     def _cors_headers(self) -> None:
         # When the frontend is hosted on a different origin (Vercel) the
