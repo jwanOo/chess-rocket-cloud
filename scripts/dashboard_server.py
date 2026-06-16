@@ -204,13 +204,22 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
                 "AICORE_ORCH_RESOURCE_GROUP",
                 "AICORE_DIRECT_DEPLOYMENT_ID",
                 "AICORE_DIRECT_MODEL_NAME",
+                "AICORE_PROXY_URL",
+                "AICORE_PROXY_SECRET",
             )
             present = {k: bool(os.environ.get(k, "").strip()) for k in keys}
+            # Surface the proxy URL value (non-secret) and lengths so we can
+            # tell whether the env vars actually reached the container.
+            proxy_url_val = (os.environ.get("AICORE_PROXY_URL", "") or "").strip()
+            proxy_secret_len = len((os.environ.get("AICORE_PROXY_SECRET", "") or "").strip())
             self._send_json(200, {
                 "available": sap_coach.is_available(),
                 "provider": sap_coach.provider_label(),
                 "env_keys_present": present,
                 "missing_keys": [k for k, v in present.items() if not v],
+                "proxy_url": proxy_url_val,
+                "proxy_secret_len": proxy_secret_len,
+                "proxy_active": bool(proxy_url_val and proxy_secret_len),
             })
         else:
             self.send_error(404)
