@@ -20,7 +20,10 @@ import threading
 import time
 from http.cookies import SimpleCookie
 from pathlib import Path
+from typing import Any
 from urllib.parse import urlparse
+
+import httpx
 
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(_PROJECT_ROOT) not in sys.path:
@@ -32,6 +35,7 @@ _DASHBOARD_HTML = _SCRIPTS_DIR / "dashboard.html"
 _TACTICS_HTML = _SCRIPTS_DIR / "tactics.html"
 _SETUP_HTML = _SCRIPTS_DIR / "setup.html"
 _VOICE_JS = _SCRIPTS_DIR / "voice_control.js"
+_CLIENT_ENGINE_JS = _SCRIPTS_DIR / "client_engine.js"
 _MANIFEST = _SCRIPTS_DIR / "manifest.webmanifest"
 _SW_JS = _SCRIPTS_DIR / "sw.js"
 
@@ -116,6 +120,39 @@ _CORS_ALLOWED = [
 ]
 
 
+# ─────────────── Engine-proxy offload (Cloudflare Container) ──────────────
+# When ENGINE_PROXY_URL + ENGINE_PROXY_SECRET are set, /api/ask, /api/hint and
+# /api/coach forward to the Cloudflare Container instead of running Stockfish
+# multipv-3 analysis here. That offloads ~120 MB of resident set + the engine
+# subprocess off Render's 512 MB free tier (where it OOM-killed reliably).
+# Render still owns play (single Stockfish process per session for /api/move,
+# uses STOCKFISH_LOW_MEMORY=1 with 16 MB hash — fits comfortably).
+_ENGINE_PROXY_URL = os.environ.get("ENGINE_PROXY_URL", "").strip().rstrip("/")
+_ENGINE_PROXY_SECRET = os.environ.get("ENGINE_PROXY_SECRET", "").strip()
+
+
+def _engine_proxy_active() -> bool:
+    return bool(_ENGINE_PROXY_URL and _ENGINE_PROXY_SECRET)
+
+
+def _engine_proxy_post(path: str, body: dict[str, Any],
+                       *, timeout: float = 60.0) -> tuple[int, dict[str, Any]]:
+    """POST to the engine proxy and return (status_code, parsed_json).
+    Raises httpx.HTTPError on transport failure so callers can fall back."""
+    url = f"{_ENGINE_PROXY_URL}{path}"
+    headers = {
+        "Authorization": f"Bearer {_ENGINE_PROXY_SECRET}",
+        "Content-Type": "application/json",
+    }
+    with httpx.Client(timeout=timeout) as client:
+        r = client.post(url, headers=headers, json=body)
+    try:
+        return r.status_code, r.json()
+    except json.JSONDecodeError:
+        return r.status_code, {"error": "non-JSON from engine proxy",
+                               "body": r.text[:500]}
+
+
 class DashboardHandler(http.server.BaseHTTPRequestHandler):
     """Serves dashboard HTML, game-state JSON, and move/new/undo actions."""
 
@@ -169,6 +206,12 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
             self._serve_file(_SETUP_HTML, "text/html; charset=utf-8")
         elif path == "/voice_control.js":
             self._serve_file(_VOICE_JS, "application/javascript; charset=utf-8")
+        elif path == "/client_engine.js":
+            # Browser-side Stockfish.wasm wrapper. Loaded as an ES module by
+            # dashboard.html / play.html so the LLM-coach endpoints can ship
+            # pre-computed analysis facts in the request body — keeps Render's
+            # 512 MB free tier from running multipv-3 server-side.
+            self._serve_file(_CLIENT_ENGINE_JS, "application/javascript; charset=utf-8")
         elif path == "/manifest.webmanifest":
             self._serve_file(_MANIFEST, "application/manifest+json; charset=utf-8")
         elif path == "/sw.js":
@@ -220,6 +263,12 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
                 "proxy_url": proxy_url_val,
                 "proxy_secret_len": proxy_secret_len,
                 "proxy_active": bool(proxy_url_val and proxy_secret_len),
+                # Engine proxy = Cloudflare Container front for /api/ask,
+                # /api/hint, /api/coach. When active, Render skips Stockfish
+                # multipv-3 analysis entirely on those routes.
+                "engine_proxy_url": _ENGINE_PROXY_URL,
+                "engine_proxy_secret_len": len(_ENGINE_PROXY_SECRET),
+                "engine_proxy_active": _engine_proxy_active(),
             })
         else:
             self.send_error(404)
@@ -272,11 +321,11 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
                 result = game.undo()
             self._send_json(200, result)
         elif path == "/api/coach":
-            self._handle_coach()
+            self._handle_coach(body)
         elif path == "/api/hint":
-            self._handle_hint(int(body.get("level", 1)))
+            self._handle_hint(int(body.get("level", 1)), body)
         elif path == "/api/ask":
-            self._handle_ask((body.get("question") or "").strip())
+            self._handle_ask((body.get("question") or "").strip(), body)
         elif path == "/api/review":
             self._handle_review()
         elif path == "/api/sandbox/start":
@@ -541,19 +590,50 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
             "source": source,
         })
 
-    def _handle_coach(self) -> None:
-        # Snapshot facts + analyze the resulting position under the lock, then
-        # call the LLM WITHOUT the lock (the network round-trip must not block
-        # engine/poll calls).
+    # ─── Coach endpoints with browser-supplied facts ─────────────────
+    # The browser runs Stockfish.wasm (see scripts/client_engine.js) and
+    # POSTs a `facts` field alongside each request. That keeps Stockfish
+    # OFF Render's 512 MB free tier where it OOM-killed every analyzer
+    # multipv call. If the browser didn't send facts (e.g. a really old
+    # client cache, or a curl-based smoke test), we fall back to running
+    # situation_facts() locally — which OOMs on Render but works fine
+    # locally, so the fallback is mainly a dev-mode convenience.
+
+    def _merge_browser_facts(self, body: dict, fallback: dict) -> dict:
+        """Take browser-supplied {candidates, threat, your_hanging, best_uci,
+        best_motif} from `body['facts']` and merge them into `fallback`
+        (the cheap server-side state). When the browser didn't send facts,
+        we just return `fallback` (caller may have already filled in heavy
+        fields via the local Stockfish path)."""
+        merged = dict(fallback)
+        bf = body.get("facts") if isinstance(body.get("facts"), dict) else None
+        if not bf:
+            return merged
+        for k in ("candidates", "threat", "your_hanging",
+                  "best_uci", "best_motif"):
+            if k in bf:
+                merged[k] = bf[k]
+        return merged
+
+    def _handle_coach(self, body: dict) -> None:
         game, lock = self._game_for_request()
+        browser_facts = isinstance(body.get("facts"), dict)
         with lock:
             ctx = game.coaching_context()
+            # Heavy multipv analysis only happens locally if the browser
+            # didn't already do it. On Render free tier this `else` path
+            # is the OOM trigger — but it's also what dev mode uses when
+            # there's no browser engine yet.
             if ctx and not ctx.get("game_over"):
-                ctx.update(game.situation_facts())
+                if browser_facts:
+                    ctx = self._merge_browser_facts(body, ctx)
+                else:
+                    ctx.update(game.situation_facts())
             fallback = game.coaching
         if not ctx:
             self._send_json(200, {"coaching": fallback, "source": "heuristic"})
             return
+
         text, source = sap_coach.coach_move(ctx)
         if text:
             with lock:
@@ -562,16 +642,27 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
         else:
             self._send_json(200, {"coaching": fallback, "source": source})
 
-    def _handle_hint(self, level: int) -> None:
+    def _handle_hint(self, level: int, body: dict) -> None:
         level = max(1, min(3, level))
         game, lock = self._game_for_request()
+        browser_facts = isinstance(body.get("facts"), dict)
         with lock:
             if game.board.is_game_over():
                 self._send_json(200, {"hint": "The game is over — start a new one.",
                                       "level": level, "source": "n/a"})
                 return
-            facts = game.situation_facts()
-            highlight = game.best_move_squares() if level >= 3 else None
+            if browser_facts:
+                facts = self._merge_browser_facts(body, self._cheap_facts(game))
+                # `highlight` is purely cosmetic (board square highlight). The
+                # browser already knows best_uci so it can highlight client-side;
+                # we just echo it through for compatibility with old clients.
+                bu = facts.get("best_uci")
+                highlight = ({"from": bu[0:2], "to": bu[2:4]} if bu and len(bu) >= 4
+                             else None)
+            else:
+                facts = game.situation_facts()
+                highlight = game.best_move_squares() if level >= 3 else None
+
         text, source = sap_coach.coach_hint(facts, level)
         if not text:
             # Heuristic fallback so the button always does something useful.
@@ -586,20 +677,21 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
         self._send_json(200, {"hint": text, "level": level,
                               "highlight": highlight, "source": source})
 
-    def _handle_ask(self, question: str) -> None:
+    def _handle_ask(self, question: str, body: dict) -> None:
         if not question:
             self._send_json(400, {"error": "question required"})
             return
-        # Wrap the whole handler in try/except so any failure (Stockfish
-        # crash, httpx error, malformed response, etc.) surfaces as a JSON
-        # body the caller can read instead of dying mid-write and giving
-        # the upstream proxy a content-length-0 502. This is essential on
-        # memory-constrained hosts where partial-write failures look
-        # indistinguishable from "unrelated container crash" otherwise.
+        # Wrap the whole handler in try/except so any failure surfaces as a
+        # JSON body the caller can read instead of dying mid-write (which
+        # was the original 502 with content-length 0 from Render's OOM).
         try:
             game, lock = self._game_for_request()
+            browser_facts = isinstance(body.get("facts"), dict)
             with lock:
-                facts = game.situation_facts()
+                if browser_facts:
+                    facts = self._merge_browser_facts(body, self._cheap_facts(game))
+                else:
+                    facts = game.situation_facts()
             answer, source = sap_coach.answer_question(facts, question)
             if not answer:
                 answer = ("I can't reach the coaching model right now, but check "
@@ -613,6 +705,39 @@ class DashboardHandler(http.server.BaseHTTPRequestHandler):
                 "trace": traceback.format_exc()[-1500:],
                 "stage": "ask",
             })
+
+    @staticmethod
+    def _cheap_facts(game: GameManager) -> dict[str, Any]:
+        """Build the subset of `situation_facts` that needs no Stockfish call.
+        Used when forwarding to the engine proxy — the Container re-derives
+        the heavy fields (candidates / threat / hanging / best_motif) from
+        the FEN. Mirrors the field names that situation_facts() returns so
+        sap_coach prompts work either way."""
+        board = game.board
+        try:
+            op = game._opening()  # noqa: SLF001
+            opening = f"{op['name']} ({op['eco']})" if op else None
+        except Exception:  # noqa: BLE001
+            opening = None
+        try:
+            level = game._level()  # noqa: SLF001
+        except Exception:  # noqa: BLE001
+            level = None
+        try:
+            recent = game._recent_moves()  # noqa: SLF001
+        except Exception:  # noqa: BLE001
+            recent = ""
+        return {
+            "level": level,
+            "elo": getattr(game, "player_elo", None),
+            "your_color": getattr(game, "player_color", None),
+            "opening": opening,
+            "move_number": board.fullmove_number,
+            "turn": "white" if board.turn else "black",
+            "eval_white": getattr(game, "eval_score", None),
+            "recent": recent,
+            "fen": board.fen(),
+        }
 
     # ---- helpers ---------------------------------------------------------
     def _read_json(self) -> dict:

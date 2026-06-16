@@ -27,6 +27,13 @@
      blocks the first paint; the OfflineMode shim below waits for window.Chess
      to exist before activating. Tiny (~30 KB gzipped). -->
 <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0-beta.6/dist/chess.min.js" defer></script>
+<!-- Browser-side Stockfish.wasm. Lazy-init on first coach interaction;
+     pulls ~250 KB of WASM only when the user actually presses Coach/Hint/Ask.
+     This replaces server-side multipv-3 analysis on Render free tier where
+     it OOM-killed every /api/ask|hint|coach. The LLM hop (Claude via SAP AI
+     Core through the Cloudflare Worker proxy) is unchanged — Render still
+     forwards the question + browser-computed facts to Claude. -->
+<script src="/client_engine.js" type="module" defer></script>
 <style>
   :root {
     --bg: #1a1a2e;
@@ -1376,6 +1383,32 @@
   // → http://localhost:8088) gives you the full AI coach exactly as before;
   // the fallback only fires when there genuinely is no backend.
 
+  // Endpoints whose request body must carry browser-computed Stockfish facts
+  // (candidates / threat / your_hanging / best_uci). Without this, Render would
+  // try to run multipv-3 server-side and OOM on its 512 MB free tier.
+  const _COACH_ENDPOINTS = new Set(['/api/coach', '/api/hint', '/api/ask']);
+
+  // Run the WASM engine against the current FEN and merge result into `body`
+  // under `.facts`. Bounded by a 12s timeout so a slow first-load worker boot
+  // doesn't block the user; on timeout we just send the request without
+  // facts and let the server's heuristic fallback take over.
+  async function _attachBrowserFacts(body) {
+    if (!window.ChessRocketEngine) return body;     // engine module not loaded yet
+    const fen = currentState && currentState.fen;
+    if (!fen) return body;                          // no game in progress
+    try {
+      const facts = await Promise.race([
+        window.ChessRocketEngine.analyzeFen(fen),
+        new Promise((_, rej) => setTimeout(
+          () => rej(new Error('engine analysis took >12s')), 12000)),
+      ]);
+      return { ...(body || {}), facts };
+    } catch (e) {
+      console.warn('[ChessRocket] browser engine failed:', e && e.message);
+      return body;                                  // server falls back gracefully
+    }
+  }
+
   async function postJSON(url, body) {
     // Already in offline mode? Route to the local shim immediately.
     if (OfflineMode.active) {
@@ -1390,11 +1423,18 @@
       if (url.startsWith('/api/sandbox')) return { error: 'Sandbox unavailable in offline mode.' };
       return {};
     }
-    // Try the real backend with a hard 8-second timeout so a stalled Fly
-    // machine doesn't make the page hang forever before we fall back.
+    // Coach endpoints: precompute Stockfish facts in the browser BEFORE the
+    // POST so Render never has to spawn its own analyzer.
+    if (_COACH_ENDPOINTS.has(url)) {
+      body = await _attachBrowserFacts(body);
+    }
+    // Try the real backend with a hard 30-second timeout — coach endpoints can
+    // take ~5s for the LLM round-trip plus ~2s for the browser engine. The
+    // older 8s cap fired during normal Claude responses.
     try {
       const ctrl = new AbortController();
-      const t = setTimeout(() => ctrl.abort(), 8000);
+      const timeoutMs = _COACH_ENDPOINTS.has(url) ? 30000 : 8000;
+      const t = setTimeout(() => ctrl.abort(), timeoutMs);
       const resp = await fetch(_api(url), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
