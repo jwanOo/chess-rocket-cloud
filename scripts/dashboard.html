@@ -23,10 +23,21 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2316213e'/%3E%3Ctext x='50%25' y='62%25' font-size='44' text-anchor='middle' fill='%23e94560'%3E%E2%99%9E%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='40' fill='%2316213e'/%3E%3Ctext x='50%25' y='65%25' font-size='130' text-anchor='middle' fill='%23e94560'%3E%E2%99%9E%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
-<!-- chess.js powers the offline-mode fallback. Loaded async so it never
-     blocks the first paint; the OfflineMode shim below waits for window.Chess
-     to exist before activating. Tiny (~30 KB gzipped). -->
-<script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0-beta.6/dist/chess.min.js" defer></script>
+<!-- chess.js powers the offline-mode fallback AND the browser-side Stockfish
+     coach (SAN conversion, hanging-piece detection, null-move threats).
+     Loaded as an ES module because chess.js >= 1.0 ships ESM-only — no UMD
+     bundle exists on jsdelivr/unpkg, and the old @1.0.0-beta.6 URL we used
+     to reference returns 404 (jsdelivr purged the deprecated tag).
+     We import the named `Chess` class and stash it on `window` so the rest
+     of the page (legacy `new Chess(fen)` callsites in OfflineMode + the
+     client_engine analyzer) keeps working without an ESM rewrite. -->
+<script type="module">
+  import { Chess } from "https://cdn.jsdelivr.net/npm/chess.js@1.4.0/dist/esm/chess.js";
+  window.Chess = Chess;
+  // Fire a custom event so any code that was waiting on window.Chess (e.g.
+  // OfflineMode._ready()) can notice the late arrival without polling.
+  window.dispatchEvent(new CustomEvent("chessjs-ready"));
+</script>
 <!-- Browser-side Stockfish.wasm. Lazy-init on first coach interaction;
      pulls ~250 KB of WASM only when the user actually presses Coach/Hint/Ask.
      This replaces server-side multipv-3 analysis on Render free tier where

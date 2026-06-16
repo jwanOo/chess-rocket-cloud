@@ -197,7 +197,12 @@ function _countAttackers(board, sq, color) {
 
 async function _opponentThreat(worker, fen) {
   const board = new Chess(fen);
-  if (board.in_check()) return null;
+  // chess.js 1.x renamed `in_check()` → `isCheck()`. Accept either so this
+  // file keeps working if jsdelivr serves a different version on retry.
+  const inCheck = typeof board.isCheck === "function"
+    ? board.isCheck()
+    : (typeof board.in_check === "function" ? board.in_check() : false);
+  if (inCheck) return null;
   // Flip side-to-move by editing the FEN's "w"/"b" token.
   const parts = fen.split(" ");
   parts[1] = parts[1] === "w" ? "b" : "w";
