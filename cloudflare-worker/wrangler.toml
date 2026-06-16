@@ -1,0 +1,12 @@
+name = "chess-rocket-aicore-proxy"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+
+# No KV binding by default. To enable cross-instance token caching:
+#   1. wrangler kv namespace create TOKEN_CACHE
+#   2. Paste the returned `id` into the [[kv_namespaces]] block below.
+#   3. Uncomment the block.
+#
+# [[kv_namespaces]]
+# binding = "TOKEN_CACHE"
+# id = "PASTE_ID_HERE"
